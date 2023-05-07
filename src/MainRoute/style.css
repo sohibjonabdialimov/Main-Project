@@ -6,11 +6,13 @@
   padding-top: 17px;
   border-radius: 50px;
 }
+
 .main-page {
   display: flex;
   gap: 19px;
   padding-top: 17px;
 }
+
 .search-main {
   width: 100%;
   padding: 15px 28px;
@@ -26,16 +28,46 @@
   outline: none;
   margin-bottom: 20px;
 }
-.search-main::placeholder{
+
+.search-main::placeholder {
   color: #fff;
 }
-.search-div{
+
+.search-div {
   position: relative;
 }
-.search-div img{
+
+.search-div img {
   display: block;
   position: absolute;
   top: 50%;
   transform: translateY(-80%);
   right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hisoblar {
+  padding-top: 130px;
+  width: 600px;
+  height: 202px;
+}
+
+.hisoblar h2 {
+  font-size: 30px;
+  margin-top: 45px;
+}
+
+.hisoblar p {
+  font-size: 35px;
 }
