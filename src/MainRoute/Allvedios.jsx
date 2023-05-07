@@ -8,54 +8,69 @@ import img12 from "../imgs/main1.png"
 import img13 from "../imgs/main2.png"
 import img14 from "../imgs/main3.png"
 import img15 from "../imgs/main4.png"
+import small1 from "../imgs/teacher-home1.png"
+import small2 from "../imgs/teacher-home2.png"
+import small3 from "../imgs/teacher-home3.png"
+import small4 from "../imgs/teacher-home4.png"
 import './style.css';
 function Allvedios() {
   let carts=[
     {
       kursId:12,
       img:img12,
-      name:"supermiya",
-      autorId:14
+      smallImg:small1,
+      name:"Super miya",
+      autorId:14,
+      author: "Davron Turdiyev",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+      
     }
     ,{
       kursId:13,
       img:img13,
-      name:"supermiya",
-      autorId:14
+      smallImg:small2,
+      name:"Kitoblarni effectiv o'qish",
+      autorId:14,
+      author: "Madina Olimova",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
     },
     {
       kursId:14,
       img:img14,
-      name:"supermiya",
-      autorId:14
+      smallImg:small3,
+      name:"Quvnoq ingliz tili",
+      autorId:14,
+      author: "Cambridge LC",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
     {
       kursId:15,
       img:img15,
-      name:"supermiya",
-      autorId:14
+      smallImg:small4,
+      name:"Inson omili yoki AI",
+      autorId:14,
+      author: "MohirDev",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     }
   ]
   return (
     <div className="main-page" >
       <div className="w100">
-        {/* <Input placeholder="Basic usage" /> */}
         <div className="search-div">
           <input type="search" className="search-main" placeholder="search..." />
           <img src={search} alt="" />
         </div>
         <div
           className="fife main-content"
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-          }}
+          // style={{
+          //   display: "flex",
+          //   flexWrap: "wrap",
+          //   justifyContent: "space-around",
+          // }}
         >
           {carts.map((cart, index) => {
             return (
               <Cart cart={cart} key={index} />
-
             )
 
           })}

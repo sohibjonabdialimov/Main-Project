@@ -1,11 +1,15 @@
 .main-content {
-  /* display: flex;
-  gap: 19px; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   background-color: #5b4784;
+  padding-top: 17px;
+  border-radius: 50px;
 }
 .main-page {
   display: flex;
   gap: 19px;
+  padding-top: 17px;
 }
 .search-main {
   width: 100%;
