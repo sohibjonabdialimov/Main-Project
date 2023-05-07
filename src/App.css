@@ -8,3 +8,7 @@
     width: 50vw;
     min-height: calc(100vh - 39px - 39px);
 }
+.app-content{
+    display: flex;
+    gap: 19px;
+}

@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className="app-content">
         <Nav />
         <MainPage />
 
