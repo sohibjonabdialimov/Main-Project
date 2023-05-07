@@ -1,8 +1,9 @@
 .Nav{
     width: 25vw;
-    background-color: red;
-    height: 100vh;
+    background: linear-gradient(#564282, #826A91);
+    /* min-height: calc(100vh - 39px - 39px); */
 }
 .fife{
     width: 50vw;
+    min-height: calc(100vh - 39px - 39px);
 }
