@@ -1,4 +1,15 @@
-.active{
+.active {
     font-weight: 700;
     color: yellowgreen;
+    background: rgba(0, 0, 0, 0.3)
+}
+.Nav ul{
+    margin-top: 30px;
+}
+.Nav ul li a{
+    display: block;
+    width: 270px;
+    height: 45px;
+    left: 66px;
+    top: 247px;
 }

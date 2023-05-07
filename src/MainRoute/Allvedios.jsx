@@ -17,8 +17,8 @@ function Allvedios() {
             justifyContent: "space-around",
           }}
         >
-          <Cart />
-          <Cart />
+          {/* <Cart />
+          <Cart /> */}
           <Cart />
           <Cart />
           <Cart />
