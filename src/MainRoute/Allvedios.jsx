@@ -7,7 +7,7 @@ import './style.css';
 function Allvedios() {
   return (
     <div style={{ display: "flex" }}>
-      <div>
+      <div className="w100">
         <Input placeholder="Basic usage" />
         <div
           className="fife main-content"
@@ -17,6 +17,8 @@ function Allvedios() {
             justifyContent: "space-around",
           }}
         >
+          <Cart />
+          <Cart />
           <Cart />
           <Cart />
           <Cart />
