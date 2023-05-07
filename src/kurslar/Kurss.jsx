@@ -34,25 +34,85 @@ function Kurss() {
       kursId:13,
       img:img13,
       name:"supermiya",
-      autorId:14
+      autorId:14,
+      commints:[
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        }
+
+      ]
     },
     {
       kursId:14,
       img:img14,
       name:"supermiya",
-      autorId:14
+      autorId:14,
+      commints:[
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        }
+
+      ]
     },
     {
       kursId:15,
       img:img15,
       name:"supermiya",
-      autorId:14
+      autorId:14,
+      commints:[
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        }
+
+      ]
     },
     {
       kursId:16,
       img:img16,
       name:"supermiya",
-      autorId:14
+      autorId:14,
+      commints:[
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        }
+
+      ]
     }
   ]
   let img;
