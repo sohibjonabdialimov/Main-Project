@@ -26,8 +26,8 @@ const Cart = (props) => {
             >
                 <Meta
                     avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
-                    title="Card title"
-                    description="This is the description"
+                    title={name}
+                    description={"jk"}
                 />
             </Card>
 

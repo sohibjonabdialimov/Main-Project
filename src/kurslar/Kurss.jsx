@@ -13,7 +13,22 @@ function Kurss() {
       kursId:12,
       img:img12,
       name:"supermiya",
-      autorId:14
+      autorId:14,
+      commints:[
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        },
+        {
+          username:"nargiza",
+          text:"lorem assalomu alaykum"
+        }
+
+      ]
     }
     ,{
       kursId:13,
@@ -43,11 +58,13 @@ function Kurss() {
   let img;
   let name
   let autorId
+  let commints
   for(let i=0;i<a.length;i++){
     if(a[i].kursId==kursId){
       img=a[i].img
       name=a[i].name
       autorId=a[i].autorId
+      commints=a[i].commints
     }
   }
   return (
@@ -56,7 +73,7 @@ function Kurss() {
         <img src={img} alt="" />
         <p>{name}</p>
       </div>
-      <Comminets />
+      <Comminets commints={commints}/>
     </div>
 
   )
