@@ -1,8 +1,10 @@
 .Nav{
     width: 25vw;
     background: linear-gradient(#564282, #826A91);
+  
     /* margin-left: 10px; */
     /* min-height: calc(100vh - 39px - 39px); */
+    /* height: calc(100vh - 78px); */
 }
 .fife{
     width: 50vw;
@@ -11,4 +13,5 @@
 .app-content{
     display: flex;
     gap: 19px;
+    
 }
