@@ -4,11 +4,18 @@
     /* margin-left: 10px; */
     /* min-height: calc(100vh - 39px - 39px); */
 }
+.w100{
+    max-height: 90vh;
+    overflow-y: scroll;
+}
 .fife{
     width: 50vw;
-    min-height: calc(100vh - 39px - 39px);
+    min-height: calc(100vh - 39px - 70px);
 }
 .app-content{
+    box-sizing: border-box;
+    max-height: 90vh;
     display: flex;
     gap: 19px;
+    /* height: 100vh; */
 }
