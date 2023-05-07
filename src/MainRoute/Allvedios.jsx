@@ -19,10 +19,10 @@ function Allvedios() {
         >
           {/* <Cart />
           <Cart /> */}
-          <Cart />
-          <Cart />
-          <Cart />
-          <Cart />
+          <Cart kursId={12}/>
+          <Cart kursId={13}/>
+          <Cart kursId={14}/>
+          <Cart kursId={15}/>
         </div>
       </div>
 

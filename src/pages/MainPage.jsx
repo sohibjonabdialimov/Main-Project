@@ -16,7 +16,7 @@ function MainPage() {
                 <Route path="/" element={<Allvedios />}></Route>
                 <Route path="/hisoblar" element={<Hisoblar />} />
                 <Route path="/Kurs/olinganlar" element={<Baykurs />} />
-                <Route path="/kurs/" element={<Kurss />} />
+                <Route path="/kurs/:kursId" element={<Kurss />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/teacherinfo" element={<TeacherInfo />} />
             </Routes>

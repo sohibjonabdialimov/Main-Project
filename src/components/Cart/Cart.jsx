@@ -1,12 +1,18 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom';
 import { Avatar, Card } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 const { Meta } = Card;
-const Cart = () => {
+const Cart = (props) => {
+    const navigate = useNavigate()
+    let kursId=props.kursId
+    console.log(kursId)
     return (
-        <div >
-            <Link to="/kurs/">
+        <div onClick={()=>{
+            navigate("/kurs/"+kursId)
+        }}>
+            {/* <Link to="/kurs/"> */}
                 <Card
                     style={{ width: 300 }}
                     cover={
@@ -22,7 +28,8 @@ const Cart = () => {
                         title="Card title"
                         description="This is the description"
                     />
-                </Card></Link>
+                </Card>
+                {/* </Link> */}
         </div>
     )
 }
