@@ -20,7 +20,7 @@ const Navvedio = () => {
           text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
         />
       </div>
-      <h2 className="saqlanganlar">Saqlanganlar - 2 ta</h2>
+      <h2 className="saqlanganlar">Saqlanganlar - 4 ta</h2>
       <div className="sidebar-line"></div>
       <SidebarCart
           img={homeSidebar3}
@@ -30,8 +30,6 @@ const Navvedio = () => {
           img={homeSidebar4}
           text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
         />
-      <h2 className="saqlanganlar">Saqlanganlar - 2 ta</h2>
-      <div className="sidebar-line"></div>
       <SidebarCart
           img={homeSidebar3}
           text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
@@ -40,6 +38,7 @@ const Navvedio = () => {
           img={homeSidebar4}
           text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
         />
+      
     </div>
   );
 };
