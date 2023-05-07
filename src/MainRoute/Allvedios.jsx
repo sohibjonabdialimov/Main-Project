@@ -3,13 +3,14 @@ import Cart from "../components/Cart/Cart";
 import Sitebar from "../layout/Sitebar";
 import Navvedio from "../sitebarRoute/Navvedio";
 import { Input } from "antd";
+import './style.css';
 function Allvedios() {
   return (
-    <div  style={{ display: "flex" ,gap:29}}>
+    <div style={{ display: "flex" }}>
       <div>
         <Input placeholder="Basic usage" />
         <div
-          className="fife"
+          className="fife main-content"
           style={{
             display: "flex",
             flexWrap: "wrap",
