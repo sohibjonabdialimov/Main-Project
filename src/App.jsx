@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex" ,gap:29}}>
         <Nav />
         <MainPage />
 

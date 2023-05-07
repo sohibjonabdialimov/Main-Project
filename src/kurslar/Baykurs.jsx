@@ -2,7 +2,12 @@ import React from 'react'
 
 function Baykurs() {
   return (
-    <div>Baykurs</div>
+    <div style={{ display: "flex" }}>
+      <div className='fife'>
+        <div>Baykurs</div>
+      </div>
+      <Comminets />
+    </div>
   )
 }
 

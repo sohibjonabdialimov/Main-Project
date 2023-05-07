@@ -5,9 +5,9 @@ import Navvedio from "../sitebarRoute/Navvedio";
 import { Input } from "antd";
 function Allvedios() {
   return (
-    <div style={{ display: "flex" }}>
+    <div  style={{ display: "flex" ,gap:29}}>
       <div>
-        <Input placeholder="Basic usage" />;
+        <Input placeholder="Basic usage" />
         <div
           className="fife"
           style={{
