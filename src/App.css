@@ -1,7 +1,7 @@
 .Nav{
-    width: 25vw;
+    width: 23.8vw;
     background: linear-gradient(#564282, #826A91);
-  
+    border-radius: 50px;
     /* margin-left: 10px; */
     /* min-height: calc(100vh - 39px - 39px); */
     /* height: calc(100vh - 78px); */
@@ -11,7 +11,7 @@
     overflow-y: scroll;
 }
 .fife{
-    width: 50vw;
+    width: 48vw;
     min-height: calc(100vh - 39px - 70px);
 }
 .app-content{

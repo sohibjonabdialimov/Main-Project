@@ -1,9 +1,37 @@
-.main-content{
+.main-content {
   /* display: flex;
   gap: 19px; */
-  background-color: #5B4784;
+  background-color: #5b4784;
 }
-.main-page{
+.main-page {
   display: flex;
   gap: 19px;
+}
+.search-main {
+  width: 100%;
+  padding: 15px 28px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 50px;
+  color: #ffffff;
+  background: #5B4784;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+.search-main::placeholder{
+  color: #fff;
+}
+.search-div{
+  position: relative;
+}
+.search-div img{
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-80%);
+  right: 20px;
 }

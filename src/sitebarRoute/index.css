@@ -1,0 +1,22 @@
+
+.sidebar-main-content {
+  padding: 0 6px;
+  padding-top: 21px;
+  margin-right: 50px;
+}
+.sidebar-main-content h2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: #ffffff;
+}
+.sidebar-line{
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background-color: #fff;
+  height: 1px;
+}

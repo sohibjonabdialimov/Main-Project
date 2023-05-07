@@ -1,9 +1,15 @@
 .sidebar-component{
   display: flex;
   gap: 6px;
-  
+  background-color: #3E305D;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.saqlanganlar{
+  margin-top: 43px;
 }
 .sidebar-component p{
+  padding: 3px;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
