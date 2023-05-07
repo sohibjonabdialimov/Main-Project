@@ -1,23 +1,18 @@
 import "./App.css";
 import About from "./layout/about";
-import Other from "./layout/other";
-import { Routes,Route } from "react-router-dom";
+import Other from "./layout/Sitebar";
+import { Routes, Route } from "react-router-dom";
 import Nav from "./pages/Nav";
+import MainPage from "./pages/MainPage";
+import Sitebar from "./layout/Sitebar";
 function App() {
 
   return (
     <>
-      <div>
-        <Nav/>
-        <Routes>
-          <Route path="/" element={<About />}>
-          </Route>
-          <Route
-            path="other"
-            element={<Other />}
-          />
-        </Routes>
-        ejwefwerewfherfhdrbhherferfbheerhf
+      <div style={{ display: "flex" }}>
+        <Nav />
+        <MainPage />
+
       </div>
     </>
   );
