@@ -1,13 +1,15 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import './style.css';
+import Userprofile from '../components/userprofile';
 function Nav() {
   return (
     <div className='Nav'>
-        <div></div>
+        <div><Userprofile/></div>
         <ul>
-            <li><Link to="/">darslar</Link></li>
-            <li><Link to="hisoblar">hisob balans</Link></li>
-            <li><Link to="profile">profile</Link></li>
+            <li><NavLink to="/">darslar</NavLink></li>
+            <li><NavLink to="hisoblar">hisob balans</NavLink></li>
+            <li><NavLink to="profile">profile</NavLink></li>
         </ul>
     </div>
   )
