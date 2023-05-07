@@ -1,3 +1,9 @@
 .main-content{
+  /* display: flex;
+  gap: 19px; */
   background-color: #5B4784;
+}
+.main-page{
+  display: flex;
+  gap: 19px;
 }

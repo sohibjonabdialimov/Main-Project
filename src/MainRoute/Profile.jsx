@@ -10,7 +10,7 @@ function Profile() {
     let email = "username@email.com"
 
     return (
-        <div style={{ display: "flex" }}>
+        <div className='main-page'>
             <div className='fife' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 
                     <div style={{ textAlign: "center" }}>

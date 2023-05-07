@@ -6,7 +6,7 @@ import { Input } from "antd";
 import './style.css';
 function Allvedios() {
   return (
-    <div style={{ display: "flex" }}>
+    <div className="main-page" >
       <div className="w100">
         <Input placeholder="Basic usage" />
         <div

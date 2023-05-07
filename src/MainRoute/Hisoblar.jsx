@@ -6,7 +6,7 @@ let hisobraqam=1234567890123456
 hisobraqam= hisobraqam.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ' ')
 function Hisoblar() {
     return (
-        <div style={{ display: "flex"}}>
+        <div className='main-page'>
             <div className='fife'>
                 <p style={{fontSize:22}}>Hisobdagi pul miqdori:</p>
                 <p style={{fontSize:45}}>{money}UZS</p>
