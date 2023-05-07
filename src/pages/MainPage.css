@@ -1,5 +1,5 @@
 .homepage{
     width: 75vw;
     height: 100vh;
-    /* background: linear-gradient(#564282, #826A91); */
+    display: flex;
 }

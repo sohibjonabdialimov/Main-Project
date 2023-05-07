@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <div className="app-content">
+
         <Nav />
         <MainPage />
 
