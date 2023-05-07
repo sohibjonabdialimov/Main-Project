@@ -6,6 +6,10 @@ import img13 from "../imgs/big-main2.png"
 import img14 from "../imgs/big-main3.png"
 import img15 from "../imgs/big-main1.png"
 import img16 from "../imgs/big-main2.png"
+import izohlar1 from "../imgs/izohlar1.png"
+import izohlar2 from "../imgs/izohlar2.png"
+import izohlar3 from "../imgs/izohlar3.png"
+import izohlar4 from "../imgs/izohlar4.png"
 function Kurss() {
   const { kursId } = useParams();
   let a=[
@@ -17,15 +21,23 @@ function Kurss() {
       commints:[
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar1,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar2,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar3,
+        },
+        {
+          username:"ahmatjon",
+          text:"lorem assalomu alaykum. chwdcsdbhcsbdjcsdcjsdcbshdc  hescj edhc",
+          avatar: izohlar4,
         }
 
       ]
@@ -38,18 +50,27 @@ function Kurss() {
       commints:[
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar1,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar2,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar3,
+        },
+        {
+          username:"ahmatjon",
+          text:"lorem assalomu alaykum. chwdcsdbhcsbdjcsdcjsdcbshdc  hescj edhc",
+          avatar: izohlar4,
         }
 
       ]
+
     },
     {
       kursId:14,
@@ -59,18 +80,27 @@ function Kurss() {
       commints:[
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar1,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar2,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar3,
+        },
+        {
+          username:"ahmatjon",
+          text:"lorem assalomu alaykum. chwdcsdbhcsbdjcsdcjsdcbshdc  hescj edhc",
+          avatar: izohlar4,
         }
 
       ]
+
     },
     {
       kursId:15,
@@ -80,15 +110,23 @@ function Kurss() {
       commints:[
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar1,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar2,
         },
         {
           username:"nargiza",
-          text:"lorem assalomu alaykum"
+          text:"lorem assalomu alaykum",
+          avatar: izohlar3,
+        },
+        {
+          username:"ahmatjon",
+          text:"lorem assalomu alaykum. chwdcsdbhcsbdjcsdcjsdcbshdc  hescj edhc",
+          avatar: izohlar4,
         }
 
       ]

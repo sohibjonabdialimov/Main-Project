@@ -1,22 +1,16 @@
-import React from 'react'
-import Commint from '../components/commint'
+import React from "react";
+import Commint from "../components/commint";
 
 const Comminets = (props) => {
-    console.log(props)
-    const commints = props.commints
-    return (
-        <div className='Nav'>Comminets
-            {
-                commints.map((commint, index) => {
-                    return (
-                        <Commint commint={commint} key={index} />
+  const commints = props.commints;
+  return (
+    <div className="Nav commit">
+      <h2>Izohlar</h2>
+      {commints.map((commint, index) => {
+        return <Commint commint={commint} key={index} />;
+      })}
+    </div>
+  );
+};
 
-                    )
-
-                })
-            }
-        </div>
-    )
-}
-
-export default Comminets
+export default Comminets;

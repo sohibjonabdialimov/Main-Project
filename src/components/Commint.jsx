@@ -1,11 +1,11 @@
 import React from 'react'
-
+import "./style.css";
 function Commint(props) {
-    console.log(props)
   return (
-    <div style={{padding:20}}>
+    <div className='commit-div'>
         <p>{props.commint.text}</p>
-        <strong>{props.commint.username}</strong>
+        <span>{props.commint.username}</span>
+        <img src={props.commint.avatar} alt="" />
     </div>
   )
 }

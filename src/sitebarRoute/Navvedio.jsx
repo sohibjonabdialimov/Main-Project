@@ -30,6 +30,16 @@ const Navvedio = () => {
           img={homeSidebar4}
           text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
         />
+      <h2 className="saqlanganlar">Saqlanganlar - 2 ta</h2>
+      <div className="sidebar-line"></div>
+      <SidebarCart
+          img={homeSidebar3}
+          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+        />
+        <SidebarCart
+          img={homeSidebar4}
+          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+        />
     </div>
   );
 };

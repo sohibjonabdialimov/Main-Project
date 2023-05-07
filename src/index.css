@@ -21,3 +21,6 @@ a{
   list-style: none;
   text-decoration: none;
 }
+::-webkit-scrollbar {
+  width: 1px;
+}
