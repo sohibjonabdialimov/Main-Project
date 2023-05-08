@@ -1,17 +1,14 @@
 import React from 'react'
 import opacha from "../imgs/user-logo.png"
+import "./style.css"
 function Userprofile() {
-    let name = "name"
-    let surname = "surname"
-    let username = "username"
-    let email = "username@email.com"
+    let name = "Name"
+    let surname = "Surname"
     return (
         <div>
-            <div style={{ textAlign: "center" }}>
+            <div className='userprofile' style={{ textAlign: "center",paddingTop:15 }}>
                 <img src={opacha} alt="" />
                 <h2>{name + " " + surname}</h2>
-                <p>{username}</p>
-                <p>{email}</p>
             </div>
         </div>
     )
