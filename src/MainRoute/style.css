@@ -10,7 +10,7 @@
 .main-page {
   display: flex;
   gap: 19px;
-  padding-top: 17px;
+  /* padding-top: 17px; */
 }
 
 .search-main {
