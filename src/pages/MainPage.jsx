@@ -3,11 +3,11 @@ import React from 'react'
 import { Input, Space } from "antd";
 import { Route,Routes } from "react-router-dom";
 import Allvedios from "../MainRoute/Allvedios";
-import Hisoblar from "../MainRoute/Hisoblar";
 import Profile from "../MainRoute/Profile";
 import TeacherInfo from "../MainRoute/TeacherInfo";
 import Baykurs from "../kurslar/Baykurs";
 import Kurss from "../kurslar/Kurss";
+import Hisoblar from "../MainRoute/Hisoblar";
 const { Search } = Input;
 function MainPage() {
     return (

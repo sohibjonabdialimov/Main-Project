@@ -1,10 +1,7 @@
 import "./App.css";
-import About from "./layout/about";
-import Other from "./layout/Sitebar";
-import { Routes, Route } from "react-router-dom";
+import React from "react";
 import Nav from "./pages/Nav";
 import MainPage from "./pages/MainPage";
-import Sitebar from "./layout/Sitebar";
 function App() {
 
   return (
