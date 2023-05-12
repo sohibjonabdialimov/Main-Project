@@ -1,26 +1,38 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./style.css";
-import Userprofile from "../components/userprofile";
+import TeachUserprofile from "../components/Userprofile";
 import nav1 from "../imgs/nav1.png";
 import nav2 from "../imgs/nav2.png";
 import nav3 from "../imgs/nav3.png";
-function Nav() {
+function TeachNav() {
   return (
     <div className="Nav user-navbar">
       <div>
-        <Userprofile />
+        <TeachUserprofile />
       </div>
       <ul>
         <li>
           <img src={nav1} alt="" />
-          <NavLink to="/student/">darslar</NavLink>
+          <NavLink to="/teacher/">darslar</NavLink>
         </li>
         <li>
           <img src={nav2} alt="" />
           <NavLink to="hisoblar">hisob balans</NavLink>
         </li>
-        <li> 
+        <li>
+          <img src={nav3} alt="" />
+          <NavLink to="kurs">kurs yuklash</NavLink>
+        </li>
+        <li>
+          <img src={nav3} alt="" />
+          <NavLink to="statistic">statistika</NavLink>
+        </li>
+        <li>
+          <img src={nav3} alt="" />
+          <NavLink to="update/kurs">kursni yangilash</NavLink>
+        </li>
+        <li>
           <img src={nav3} alt="" />
           <NavLink to="profile">profile</NavLink>
         </li>
@@ -29,4 +41,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default TeachNav;

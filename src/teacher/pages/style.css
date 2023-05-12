@@ -1,0 +1,39 @@
+.active {
+    font-weight: 700;
+    color: yellowgreen;
+    background: rgba(0, 0, 0, 0.3);
+    background-color: #3E305C;
+}
+.user-navbar{
+    width: 23vw;
+}
+.Nav ul {
+    margin-top: 30px;
+    padding: 0 27px;
+}
+.Nav ul li{
+    position: relative;
+    padding: 11px 12px;
+}
+.Nav ul li a {
+    display: block;
+    border-radius: 15px;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 14px 15px 14px 70px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+}
+.Nav ul li img{
+    width: 27px;
+    height: 27px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}

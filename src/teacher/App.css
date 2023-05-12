@@ -1,0 +1,21 @@
+.Nav{
+    width: 25.5vw;
+    background: linear-gradient(#564282, #826A91);
+    border-radius: 50px;
+}
+.w100{
+    width: 44vw;
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+.fife{
+    /* width: 48vw; */
+    min-height: calc(100vh - 39px - 70px);
+}
+.app-content{
+    box-sizing: border-box;
+    max-height: 90vh;
+    display: flex;
+    gap: 19px;
+}
+    
