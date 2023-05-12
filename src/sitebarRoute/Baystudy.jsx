@@ -18,6 +18,30 @@ const Baystudy = () => {
                     img={homeSidebar2}
                     text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
                 />
+                <SidebarCart
+                    img={homeSidebar1}
+                    text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+                />
+                <SidebarCart
+                    img={homeSidebar2}
+                    text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+                />
+                <SidebarCart
+                    img={homeSidebar1}
+                    text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+                />
+                <SidebarCart
+                    img={homeSidebar2}
+                    text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+                />
+                <SidebarCart
+                    img={homeSidebar1}
+                    text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+                />
+                <SidebarCart
+                    img={homeSidebar2}
+                    text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+                />
             </div>
         </div>
     )

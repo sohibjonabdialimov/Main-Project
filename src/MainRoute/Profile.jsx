@@ -1,9 +1,17 @@
 import React from "react";
 import Obuna from "../sitebarRoute/Obuna";
 import opacha from "../imgs/big-logo.png";
-import Userprofile from "../components/userprofile";
+import obuna1 from "../imgs/obuna1.png";
+import obuna2 from "../imgs/obuna2.png";
+import obuna3 from "../imgs/obuna3.png";
+import obuna4 from "../imgs/obuna4.png";
+import obuna5 from "../imgs/obuna5.png";
+import obuna6 from "../imgs/obuna6.png";
+import obuna7 from "../imgs/obuna7.png";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
   let me = [
     {
       type: 0,
@@ -14,39 +22,45 @@ function Profile() {
       subscibe: [
         {
           userId: 12,
-          name: "",
-          surname: "",
-          email: "",
+          name: "Guljahon Shermatova",
+          what: "Ingliz tili",
+          avatar: obuna1,
         },
         {
           userId: 13,
-          name: "",
-          surname: "",
-          email: "",
+          name: "Mavjuda Olimova",
+          what: "Matematika",
+          avatar: obuna2,
         },
         {
           userId: 14,
-          name: "",
-          surname: "",
-          email: "",
+          name: "Sevara Temirova",
+          what: "O'zbek tili",
+          avatar: obuna3,
         },
         {
           userId: 15,
-          name: "",
-          surname: "",
-          email: "",
+          name: "Mahmud Soliyev",
+          what: "Fizika",
+          avatar: obuna4,
         },
         {
           userId: 16,
-          name: "",
-          surname: "",
-          email: "",
+          name: "Everest English",
+          what: "Ingliz tili",
+          avatar: obuna5,
         },
         {
           userId: 17,
-          name: "",
-          surname: "",
-          email: "",
+          name: "Mavjuda Olimova",
+          what: "Matematika",
+          avatar: obuna6,
+        },
+        {
+          userId: 18,
+          name: "Davron Turdiyev",
+          what: "Mnemonika",
+          avatar: obuna7,
         },
       ],
     },
@@ -70,12 +84,12 @@ function Profile() {
             <p>Email: {me[0].email}</p>
           </div>
           <div className="profile-buttons">
-            <button>Video darslar</button>
-            <button>Kursni olish</button>
+            <button onClick={() => navigate('/editprofil')}>Profilni tahrirlash</button>
+            <button>Chiqib ketish</button>
           </div>
         </div>
       </div>
-      <Obuna />
+      <Obuna me={me} />
     </div>
   );
 }

@@ -10,6 +10,8 @@ body{
   color: #fff;
   padding: 37px 39px;
   font-family: 'Inter', sans-serif;
+  height: 100vh;
+  overflow: hidden;
 }
 a{
   color: #fff;
@@ -23,4 +25,9 @@ a{
 }
 ::-webkit-scrollbar {
   width: 1px;
+}
+.homepage{
+  width: 60vw;
+  height: 90%;
+  display: flex;
 }

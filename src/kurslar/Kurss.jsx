@@ -20,7 +20,8 @@ import izohlar3 from "../imgs/izohlar3.png"
 import izohlar4 from "../imgs/izohlar4.png"
 import save from "../imgs/save.png"
 import coin from "../imgs/coin.png"
-import heart from "../imgs/heart.png"
+import heart from "../imgs/heart.png";
+import "./index.css";
 function Kurss() {
   const { kursId } = useParams();
   let a=[
@@ -178,7 +179,7 @@ function Kurss() {
   } 
   return (
     <div className="main__course-buy">
-      <div className='every__cource-info'>
+      <div className='every__cource-info sidebar-main-wrap'>
         <img className='every__cource-bigImg' src={img} alt="" />
         <div className='every__cource-desc'>
           <div className="every__cource-header">

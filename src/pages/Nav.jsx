@@ -14,7 +14,7 @@ function Nav() {
       <ul>
         <li>
           <img src={nav1} alt="" />
-          <NavLink to="/">darslar</NavLink>
+          <NavLink to="/student/">darslar</NavLink>
         </li>
         <li>
           <img src={nav2} alt="" />

@@ -51,10 +51,28 @@ function Allvedios() {
       author: "MohirDev",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
+    {
+      kursId: 17,
+      img: img14,
+      smallImg: small3,
+      name: "Quvnoq ingliz tili",
+      autorId: 14,
+      author: "Cambridge LC",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      kursId: 18,
+      img: img15,
+      smallImg: small4,
+      name: "Inson omili yoki AI",
+      autorId: 14,
+      author: "MohirDev",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
   ];
   return (
     <div className="main-page">
-      <div className="w100">
+      <div className="w100 ">
         <div className="search-div">
           <input
             type="search"
@@ -63,7 +81,7 @@ function Allvedios() {
           />
           <img src={search} alt="" />
         </div>
-        <div className="fife main-content">
+        <div className="fife main-content sidebar-main-wrap">
           {carts.map((cart, index) => {
             return <Cart cart={cart} key={index} />;
           })}

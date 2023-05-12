@@ -5,6 +5,7 @@
   background-color: #5b4784;
   padding-top: 17px;
   border-radius: 50px;
+  gap: 21px;
 }
 .profile-content {
   width: 100%;
@@ -54,7 +55,6 @@
 }
 
 .search-main {
-  /* position: fixed; */
   width: 100%;
   padding: 15px 28px;
   font-family: "Inter";
@@ -121,4 +121,8 @@
   outline: none;
   color: #ffffff;
   padding: 7px 23px;
+}
+.sidebar-main-wrap {
+  overflow-y: scroll;
+  max-height: 79vh;
 }

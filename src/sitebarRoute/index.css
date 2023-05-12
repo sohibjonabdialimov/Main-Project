@@ -1,4 +1,3 @@
-
 .sidebar-main-content {
   padding: 0 5px;
   padding-top: 21px;
@@ -14,29 +13,29 @@
   text-align: center;
   color: #ffffff;
 }
-.sidebar-line{
+.sidebar-line {
   width: 90%;
   margin: 0 auto;
   margin-bottom: 15px;
   background-color: #fff;
   height: 1px;
 }
-.commit{
+.commit {
   padding: 21px 16px 16px 35px;
 }
-.commit h2{
-  font-family: 'Inter';
+.commit h2 {
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   padding-bottom: 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   text-align: center;
   margin-bottom: 26px;
 }
-.commit h2::after{
+.commit h2::after {
   content: "";
   width: 100%;
   height: 1px;
@@ -44,4 +43,91 @@
   position: absolute;
   bottom: 0;
   left: 0;
+}
+.users_subs {
+  padding: 11px 8px;
+}
+.users_subs-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.users_subs-buttons a {
+  padding: 5px 26px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 17px;
+  color: #ffffff;
+  border-radius: 20px;
+}
+.line-main {
+  background-color: #aaa;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 1.5px;
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+.users_subs-buttons a.active {
+  background-color: #3a2c5b;
+}
+.obunalar-cart {
+  padding: 12px 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background-color: #3a2c5b;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+.obunalar-cart img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.obunalar-cart div p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+}
+.obunalar-cart div span {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.darslar-cart{
+  display: flex;
+  gap: 6px;
+  background-color: #3a2c5b;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+.darslar-cart div{
+  padding: 3px;
+}
+.darslar-cart img{
+  width: 114px;
+  height: 90px;
+  border-radius: 20px;
+}
+.darslar-cart div p{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
+.sidebar-main-wrap {
+  overflow-y: scroll;
+  max-height: 90vh;
 }
