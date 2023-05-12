@@ -26,6 +26,7 @@ import TeachUpdatekurs from "./teacher/MainRoute/Updatekurs";
 import Statistik from "./teacher/MainRoute/Statistik";
 import TeachUpdateonekurs from "./teacher/MainRoute/Updateonekurs";
 import TeachProfile from "./teacher/MainRoute/Profile";
+import Begen from "./begen";
 function App() {
   const navigate = useNavigate();
   // useEffect(() => {
@@ -73,7 +74,7 @@ function App() {
           <Route path="update/kurs/:Id" element={<TeachUpdateonekurs />} />
           <Route path="profile" element={<TeachProfile />} />
         </Route>
-
+        <Route path="/" element={<Begen />} />
 
 
       </Routes>
