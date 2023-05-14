@@ -81,7 +81,7 @@ function Allvedios() {
           />
           <img src={search} alt="" />
         </div>
-        <div className="fife main-content sidebar-main-wrap">
+        <div className="fife  main-content sidebar-main-wrap">
           {carts.map((cart, index) => {
             return <Cart cart={cart} key={index} />;
           })}
