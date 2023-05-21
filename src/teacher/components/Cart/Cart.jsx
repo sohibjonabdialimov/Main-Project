@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import "./index.css";
 const TeachCart = (props) => {
   const navigate = useNavigate();
-  const { img, name, autorId } = props.cart;
   let kursId = props.cart.kursId;
   return (
     <div
       onClick={() => {
         navigate("kurs/" + kursId);
       }}
+      
     >
       <div className="main-cart">
         <img src={props.cart.img} alt="" />

@@ -8,10 +8,9 @@
     max-height: 90vh;
     overflow-y: scroll;
 }
-.fife{
-    /* width: 48vw; */
+/* .fife{
     min-height: calc(100vh - 39px - 70px);
-}
+} */
 .app-content{
     box-sizing: border-box;
     max-height: 90vh;

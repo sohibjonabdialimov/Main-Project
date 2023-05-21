@@ -1,7 +1,10 @@
 .main-cart {
-  width: 266px;
+  width: 100%;
   background-color: #241C35;
   border-radius: 50px;
+}
+.main-cart img{
+  width: 100%;
 }
 .main-cart h3 {
   font-style: normal;

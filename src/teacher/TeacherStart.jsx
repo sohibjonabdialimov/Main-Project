@@ -6,7 +6,7 @@ const TeacherStart = () => {
   return (
     <div className="app-content">
       <TeachNav />
-      <div className="homepage">
+      <div className="teacherHomePage">
         <Outlet />
       </div>
     </div>

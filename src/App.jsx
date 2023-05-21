@@ -1,8 +1,8 @@
 import "./App.css";
-import React, { useEffect } from "react";
+import React from "react";
 import Start from "./start";
 import Taxrirlash from "./Taxrirlash";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Allvedios from "./MainRoute/Allvedios";
 import Hisoblar from "./MainRoute/Hisoblar";
 import Baykurs from "./kurslar/Baykurs";
@@ -27,12 +27,7 @@ import Statistik from "./teacher/MainRoute/Statistik";
 import TeachUpdateonekurs from "./teacher/MainRoute/Updateonekurs";
 import TeachProfile from "./teacher/MainRoute/Profile";
 function App() {
-  const navigate = useNavigate();
-  // useEffect(() => {
-  //   navigate('/student/');
-  // }, []);
-
-  return ( 
+  return (
     <>
       <Routes>
         <Route path="/student" element={<Start />}>
@@ -49,7 +44,6 @@ function App() {
         </Route>
 
         <Route path="/editprofil" element={<Taxrirlash />} />
-
 
         <Route path="/teacher" element={<TeacherStart />}>
           <Route index element={<TeachAllvedios />} />
@@ -73,9 +67,6 @@ function App() {
           <Route path="update/kurs/:Id" element={<TeachUpdateonekurs />} />
           <Route path="profile" element={<TeachProfile />} />
         </Route>
-
-
-
       </Routes>
     </>
   );

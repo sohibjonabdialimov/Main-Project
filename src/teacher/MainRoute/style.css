@@ -1,6 +1,5 @@
 .main-content {
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
   background-color: #5b4784;
   padding-top: 17px;
@@ -10,11 +9,9 @@
 .main-page {
   display: flex;
   gap: 19px;
-  /* padding-top: 17px; */
 }
 
 .search-main {
-  /* position: fixed; */
   width: 100%;
   padding: 15px 28px;
   font-family: "Inter";
@@ -59,4 +56,12 @@
 
 .hisoblar p {
   font-size: 35px;
+}
+.sidebar-main-wrap {
+  overflow-y: scroll;
+  max-height: 90vh;
+}
+.teacher-main-sidebar{
+  display: flex;
+  column-gap: 0;
 }

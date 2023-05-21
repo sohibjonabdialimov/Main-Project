@@ -7,7 +7,7 @@ import nav2 from "../imgs/nav2.png";
 import nav3 from "../imgs/nav3.png";
 function TeachNav() {
   return (
-    <div className="Nav user-navbar">
+    <div className="teacher-navbar">
       <div>
         <TeachUserprofile />
       </div>

@@ -1,22 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+* {
   box-sizing: border-box;
 }
-body{
-  background: linear-gradient(#8D6CD7, #D2AAE8);
+body {
+  background: linear-gradient(#8d6cd7, #d2aae8);
   color: #fff;
   padding: 37px 39px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   height: 100vh;
   overflow: hidden;
+
 }
-a{
+a {
   color: #fff;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -26,8 +27,12 @@ a{
 ::-webkit-scrollbar {
   width: 1px;
 }
-.homepage{
+.homepage {
   width: 60vw;
   height: 90%;
+  display: flex;
+}
+.teacherHomePage {
+  width: 70vw;
   display: flex;
 }
