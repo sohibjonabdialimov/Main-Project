@@ -5,9 +5,9 @@ function Begen() {
     <div>
         <NavLink to="/student/">student</NavLink>
         <br />
-        <NavLink to="/teacher/">oqituvchi</NavLink>
+        <NavLink to="/teacher/darslar">oqituvchi</NavLink>
     </div>
   )
 }
 
-export default Begen
+export default Begen;

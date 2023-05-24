@@ -131,3 +131,6 @@
   overflow-y: scroll;
   max-height: 90vh;
 }
+.sidebar-bought-course{
+  padding-bottom: 20px;
+}

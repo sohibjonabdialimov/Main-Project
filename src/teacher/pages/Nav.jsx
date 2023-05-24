@@ -14,7 +14,7 @@ function TeachNav() {
       <ul>
         <li>
           <img src={nav1} alt="" />
-          <NavLink to="/teacher/">darslar</NavLink>
+          <NavLink to="darslar">darslar</NavLink>
         </li>
         <li>
           <img src={nav2} alt="" />

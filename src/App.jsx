@@ -48,6 +48,7 @@ function App() {
 
         <Route path="/teacher" element={<TeacherStart />}>
           <Route index element={<TeachAllvedios />} />
+          <Route path="darslar" element={<TeachAllvedios />} />
           <Route path="seekurs:kursId" element={<TeachSeekurs />} />
           <Route path="vediosinonekurs" element={<TeachVediosinonekurs />} />
           <Route path="hisoblar" element={<TeachHisoblar />} />
@@ -69,9 +70,7 @@ function App() {
           <Route path="profile" element={<TeachProfile />} />
         </Route>
 
-
         <Route path="/" element={<Begen />} />
-
       </Routes>
     </>
   );

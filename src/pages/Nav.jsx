@@ -22,7 +22,7 @@ function Nav() {
         </li>
         <li> 
           <img src={nav3} alt="" />
-          <NavLink to="profile">profile</NavLink>
+          <NavLink to="profile/subs">profile</NavLink>
         </li>
       </ul>
     </div>
