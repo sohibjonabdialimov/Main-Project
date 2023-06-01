@@ -66,13 +66,11 @@ function TeachAllvedios() {
     },
   ];
   return (
-    <div className="teacherNav">
-      <div className="main-content sidebar-main-wrap teacher-main-sidebar">
+      <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
         {carts.map((cart, index) => {
           return <TeachCart cart={cart} key={index} />;
         })}
       </div>
-    </div>
   );
 }
 

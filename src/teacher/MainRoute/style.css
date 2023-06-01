@@ -1,10 +1,14 @@
-.main-content {
+.main_teacher_content {
   display: flex;
   flex-wrap: wrap;
   background-color: #5b4784;
-  padding-top: 17px;
+  padding: 17px 6px 20px 6px;
   border-radius: 50px;
+  justify-content: space-evenly;
+  row-gap: 21px;
 }
+
+
 
 .main-page {
   display: flex;
@@ -61,7 +65,31 @@
   overflow-y: scroll;
   max-height: 90vh;
 }
-.teacher-main-sidebar{
+.sidebar-wrap {
+  height: 90vh;
+  overflow: hidden;
+}
+.teacher-main-sidebar {
   display: flex;
   column-gap: 0;
 }
+
+
+
+/* teacher profile start */
+.main_profile_container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5b4784;
+  border-radius: 50px;
+  justify-content: space-evenly;
+  row-gap: 21px;
+}
+.main_profile_container img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-top: 32px;
+  margin-bottom: 11px;
+}
+/* teacher profile end*/

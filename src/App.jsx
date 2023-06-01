@@ -62,13 +62,13 @@ function App() {
           />
           <Route path="Kurs/:id" element={<TeachKurss />} />
           <Route path="kurs/" element={<TeachCreatekurs />} />
-          <Route path="kurs/free" element={<TeachFreekurs />} />
-          <Route path="kurs/money" element={<TeachMoneykurs />} />
           <Route path="update/kurs/" element={<TeachUpdatekurs />} />
           <Route path="statistic" element={<Statistik />} />
           <Route path="update/kurs/:Id" element={<TeachUpdateonekurs />} />
           <Route path="profile" element={<TeachProfile />} />
         </Route>
+        <Route path="kurs/free" element={<TeachFreekurs />} />
+        <Route path="kurs/money" element={<TeachMoneykurs />} />
 
         <Route path="/" element={<Begen />} />
       </Routes>

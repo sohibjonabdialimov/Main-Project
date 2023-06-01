@@ -3,6 +3,12 @@
     background: linear-gradient(#564282, #826A91);
     border-radius: 50px;
 }
+.teacher_nav{
+    background: linear-gradient(#564282, #826A91);
+    border-radius: 50px;
+}
+
+  
 .w100{
     width: 44vw;
     max-height: 90vh;
@@ -16,8 +22,4 @@
     display: flex;
     gap: 19px;
 }
-.teacherNav{
-    width: 100%;
-    height: 90vh;
-}
-    
+  

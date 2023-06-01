@@ -1,6 +1,7 @@
 .main-content {
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+  padding: 0 6px;
   flex-wrap: wrap;
   background-color: #5b4784;
   padding-top: 20px;

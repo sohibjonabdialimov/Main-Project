@@ -1,5 +1,4 @@
 import React from "react";
-import search from "../imgs/search.png";
 import img12 from "../imgs/main1.png";
 import img13 from "../imgs/main2.png";
 import img14 from "../imgs/main3.png";
@@ -33,24 +32,39 @@ function TeachUpdatekurs() {
       name: "Inson omili yoki AI",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
+    {
+      kursId: 16,
+      img: img14,
+      name: "Quvnoq ingliz tili",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      kursId: 17,
+      img: img15,
+      name: "Inson omili yoki AI",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      kursId: 18,
+      img: img14,
+      name: "Quvnoq ingliz tili",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
+    {
+      kursId: 19,
+      img: img15,
+      name: "Inson omili yoki AI",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
   ];
   return (
-    <div className="main-page">
-      <div className="w100">
-        <div className="search-div">
-          <input
-            type="search"
-            className="search-main"
-            placeholder="search..."
-          />
-          <img src={search} alt="" />
-        </div>
-        <div className="fife main-content">
+    <div className="main-page teacherHomePage main-content sidebar-main-wrap teacher-main-sidebar">
+       
+        <div className="main_teacher_content">
           {carts.map((cart, index) => {
             return <TeachUpdateCart cart={cart} key={index} />;
           })}
         </div>
-      </div>
 
     </div>
   );
