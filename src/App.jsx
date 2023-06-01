@@ -25,8 +25,9 @@ import TeachMoneykurs from "./teacher/MainRoute/paidCouseDownload/Moneykurs";
 import TeachUpdatekurs from "./teacher/MainRoute/Updatekurs";
 import Statistik from "./teacher/MainRoute/Statistik";
 import TeachUpdateonekurs from "./teacher/MainRoute/Updateonekurs";
-import TeachProfile from "./teacher/MainRoute/Profile";
+import TeachProfile from "./teacher/MainRoute/profile/Profile";
 import Begen from "./begen";
+import TeachEditProfile from "./teacher/MainRoute/editProfile/TeachEditProfile";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         </Route>
 
         <Route path="/editprofil" element={<Taxrirlash />} />
+        <Route path="/editteacherprofile" element={<TeachEditProfile />} />
 
         <Route path="/teacher" element={<TeacherStart />}>
           <Route index element={<TeachAllvedios />} />

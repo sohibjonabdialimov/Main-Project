@@ -46,9 +46,7 @@ function TeachMoneykurs() {
                 </button>
               </div>
               {
-                
-              }
-              <div className={styles.video_download}>
+                plus &&  <div className={styles.video_download}>
                 <p>2-video dars</p>
                 <button type="button" className={styles.down_btn}>
                   Video dars yuklash
@@ -62,6 +60,8 @@ function TeachMoneykurs() {
                   </button>
                 </div>
               </div>
+              }
+             
             </div>
           </div>
           <div className={styles.extra_div}>

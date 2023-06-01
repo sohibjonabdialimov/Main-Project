@@ -1,0 +1,84 @@
+.teacher_profile_wrap {
+  text-align: center;
+  padding: 0 150px;
+  position: relative;
+}
+.teacher_profile_wrap img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 11px;
+}
+.teacher_profile_wrap h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.teacher_profile_wrap p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+.teacher_profile_wrap span {
+  display: block;
+  margin-bottom: 15px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.profile_bio p {
+  margin-bottom: 15px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+}
+.location {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+}
+.profile_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.profile_buttons button {
+  font-family: "Inter";
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #372b4f;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 7px 23px;
+}
