@@ -19,28 +19,41 @@
 }
 .kurs_yuklash {
   position: relative;
-  text-align: center;
   padding: 0 60px;
+  position: relative;
 }
 .kurs_yuklash h1 {
+  text-align: center;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  padding-top: 29px;
+  margin-bottom: 21px;
   color: #ffffff;
 }
 .input_file {
   background-color: #40325d;
   display: block;
   position: relative;
-
+}
+.input_file {
+  color: #fff;
+  width: 296px;
+  height: 159px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: 1.5px solid #ffffff;
+  border-radius: 20px;
+  background-color: #40325d;
 }
 .input_file p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  padding: 66px 49px;
   font-size: 20px;
   line-height: 24px;
   color: #ffffff;
@@ -54,4 +67,137 @@
   right: 0;
   height: 100%;
   opacity: 0;
+}
+
+.input_wrap input,
+.input_wrap textarea {
+  padding: 10px 20px;
+  color: #fff;
+  outline: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  width: 100%;
+  border: 1.5px solid #ffffff;
+  border-radius: 20px;
+  background-color: #40325d;
+}
+.input_wrap textarea {
+  height: 131px;
+}
+.input_wrap {
+  margin-bottom: 20px;
+}
+.input_wrap label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 0 20px;
+  color: #ffffff;
+}
+.upload_div {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.videos{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.video_download {
+  color: #fff;
+  padding: 11px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1.5px solid #ffffff;
+  border-radius: 20px;
+  background-color: #40325d;
+}
+.video_download p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.down_btn {
+  display: block;
+  background-color: #2d2341;
+  color: #fff;
+  outline: none;
+  border: 1px solid #aaa;
+  padding: 10px 100px;
+  font-size: 24px;
+  border-radius: 20px;
+}
+.plus_btn {
+  display: block;
+  background-color: #2d2341;
+  color: #fff;
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.plus_btn ion-icon {
+  font-size: 50px;
+  color: #fff;
+}
+.video_download p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.extra_div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 25%;
+}
+
+.amount {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.btn {
+  font-family: "Inter";
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  background: #8300ea;
+  border-radius: 20px;
+  border: 3px solid #4f0190;
+  padding: 12px 24px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.plus_minus{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
