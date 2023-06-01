@@ -1,7 +1,9 @@
 import React from "react";
-import TeachCart from "../components/Cart/Cart";
-import img15 from "../../imgs/teacher-main-sidebar.png";
-import "./style.css";
+import TeachCart from "../../../components/Cart/Cart";
+import img15 from "../../../imgs/teacher-main-sidebar.png";
+import styles from "./style.module.css";
+
+import "../style.css";
 function TeachAllvedios() {
   let carts = [
     {

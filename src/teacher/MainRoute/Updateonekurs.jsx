@@ -5,7 +5,7 @@ function TeachUpdateonekurs() {
     console.log(Id)
     return (
         <div>{Id}
-            
+            sws
         </div>
     )
 }

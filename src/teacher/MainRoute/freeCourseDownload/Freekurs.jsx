@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./style.module.css";
 
 function TeachFreekurs() {
   return (
@@ -6,4 +7,4 @@ function TeachFreekurs() {
   )
 }
 
-export default TeachFreekurs
+export default TeachFreekurs;

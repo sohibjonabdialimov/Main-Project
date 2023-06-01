@@ -1,0 +1,92 @@
+.hisob_wrap {
+  position: relative;
+  padding: 22px 27px;
+}
+.back {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  background-color: #48386a;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back ion-icon {
+  color: #fff;
+  font-size: 27px;
+}
+.hisob_form {
+  width: 450px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.hisob_form button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  padding: 4px 55px;
+  border-radius: 30px;
+  background-color: #48386a;
+  outline: none;
+  border: none;
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  cursor: pointer;
+}
+.input_wrap {
+  width: 450px;
+  margin-bottom: 36px;
+}
+.input_wrap label,
+.label_wrap label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  display: block;
+  padding: 5px 20px;
+}
+.label_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input_div {
+  background-color: #48386a;
+  width: 450px;
+  border-radius: 20px;
+  padding: 23px 25px 16px 25px;
+}
+.input_div input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  outline: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #fff;
+}
+.input_div input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+}

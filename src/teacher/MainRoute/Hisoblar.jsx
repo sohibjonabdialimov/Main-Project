@@ -7,14 +7,12 @@ let hisobraqam = 1234567890123456;
 hisobraqam = hisobraqam.toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ");
 function TeachHisoblar() {
   return (
-    <div className="teacherHomePage main_teacher_content sidebar-wrap teacher-main-sidebar">
-        <div className="fife main-content">
-          <div className="hisoblar">
-            <h2 style={{ fontSize: 22 }}>Hisobdagi pul miqdori:</h2>
-            <p style={{ fontSize: 45 }}>{money}UZS</p>
-            <h2>Hisob raqam:</h2>
-            <p style={{ fontSize: 45 }}>{hisobraqam}</p>
-            <NavLink to="/hisoblar/pulyichish"> pul yichish</NavLink>
+    <div className="teacherHomePage main_teacher_content sidebar-wrap teacher-main-sidebar ">
+        <div className="fife main-content teacher_hisoblar__wrapper">
+          <div className="teacher_hisoblar">
+            <h2 style={{ fontSize: 22 }}>Hisob balansi:</h2>
+            <p style={{ fontSize: 45 }}>{money}000.00 so'm</p>
+            <NavLink to="/hisoblar/pulyichish" className="price_btn">Pul yechib olish</NavLink>
           </div>
         </div>
       </div>

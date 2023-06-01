@@ -1,0 +1,57 @@
+.back {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  background-color: #48386a;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back ion-icon {
+  color: #fff;
+  font-size: 27px;
+}
+.kurs_yuklash {
+  position: relative;
+  text-align: center;
+  padding: 0 60px;
+}
+.kurs_yuklash h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.input_file {
+  background-color: #40325d;
+  display: block;
+  position: relative;
+
+}
+.input_file p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  padding: 66px 49px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.input_file input {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+}

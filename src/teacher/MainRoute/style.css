@@ -8,8 +8,6 @@
   row-gap: 21px;
 }
 
-
-
 .main-page {
   display: flex;
   gap: 19px;
@@ -47,20 +45,6 @@
   right: 20px;
 }
 
-.hisoblar {
-  padding-top: 130px;
-  width: 600px;
-  height: 202px;
-}
-
-.hisoblar h2 {
-  font-size: 30px;
-  margin-top: 45px;
-}
-
-.hisoblar p {
-  font-size: 35px;
-}
 .sidebar-main-wrap {
   overflow-y: scroll;
   max-height: 90vh;
@@ -74,8 +58,6 @@
   column-gap: 0;
 }
 
-
-
 /* teacher profile start */
 .main_profile_container {
   display: flex;
@@ -85,7 +67,7 @@
   justify-content: space-evenly;
   row-gap: 21px;
 }
-.main_profile_container img{
+.main_profile_container img {
   width: 180px;
   height: 180px;
   object-fit: cover;
@@ -93,3 +75,39 @@
   margin-bottom: 11px;
 }
 /* teacher profile end*/
+
+/* Hisoblar start */
+.teacher_hisoblar__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.teacher_hisoblar {
+  width: 420px;
+  height: 202px;
+  margin: 0 auto;
+}
+
+.teacher_hisoblar h2 {
+  font-size: 30px;
+  margin-top: 45px;
+}
+
+.teacher_hisoblar p {
+  font-size: 35px;
+}
+.price_btn {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  border-radius: 30px;
+  background-color: #372b4f;
+  padding: 4px 55px;
+  color: #ffffff;
+  display: block;
+  position: absolute;
+  bottom: 46px;
+  left: 46%;
+  transform: translateX(-50%);
+}
+/* Hisoblar end */

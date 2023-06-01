@@ -12,21 +12,22 @@ import Subs from "./sitebarRoute/Subs";
 import Darslar from "./sitebarRoute/Darslar";
 import TeacherInfo from "./MainRoute/TeacherInfo";
 import TeacherStart from "./teacher/TeacherStart";
-import TeachAllvedios from "./teacher/MainRoute/Allvedios";
+import TeachAllvedios from "./teacher/MainRoute/barchaVideolar/Allvedios";
 import TeachSeekurs from "./teacher/MainRoute/Seekurs";
 import TeachVediosinonekurs from "./teacher/MainRoute/Vediosinonekurs";
 import TeachHisoblar from "./teacher/MainRoute/Hisoblar";
-import TeachHisoblarpulyichish from "./teacher/MainRoute/Hisoblarpulyichish";
-import TeachPulyichishok from "./teacher/MainRoute/Pulyichishok";
+import TeachHisoblarpulyichish from "./teacher/MainRoute/pulYechishForm/Hisoblarpulyichish";
+import TeachPulyichishok from "./teacher/MainRoute/moneyProcess/Pulyichishok";
 import TeachKurss from "./teacher/kurslar/Kurss";
-import TeachCreatekurs from "./teacher/MainRoute/Createkurs";
-import TeachFreekurs from "./teacher/MainRoute/Freekurs";
-import TeachMoneykurs from "./teacher/MainRoute/Moneykurs";
+import TeachCreatekurs from "./teacher/MainRoute/downloadCourses/Createkurs";
+import TeachFreekurs from "./teacher/MainRoute/freeCourseDownload/Freekurs";
+import TeachMoneykurs from "./teacher/MainRoute/paidCouseDownload/Moneykurs";
 import TeachUpdatekurs from "./teacher/MainRoute/Updatekurs";
 import Statistik from "./teacher/MainRoute/Statistik";
 import TeachUpdateonekurs from "./teacher/MainRoute/Updateonekurs";
 import TeachProfile from "./teacher/MainRoute/Profile";
 import Begen from "./begen";
+
 function App() {
   return (
     <>
@@ -52,14 +53,7 @@ function App() {
           <Route path="seekurs:kursId" element={<TeachSeekurs />} />
           <Route path="vediosinonekurs" element={<TeachVediosinonekurs />} />
           <Route path="hisoblar" element={<TeachHisoblar />} />
-          <Route
-            path="hisoblar/pulyichish"
-            element={<TeachHisoblarpulyichish />}
-          />
-          <Route
-            path="hisoblar/pulyichish/ok"
-            element={<TeachPulyichishok />}
-          />
+
           <Route path="Kurs/:id" element={<TeachKurss />} />
           <Route path="kurs/" element={<TeachCreatekurs />} />
           <Route path="update/kurs/" element={<TeachUpdatekurs />} />
@@ -69,6 +63,11 @@ function App() {
         </Route>
         <Route path="kurs/free" element={<TeachFreekurs />} />
         <Route path="kurs/money" element={<TeachMoneykurs />} />
+        <Route
+          path="hisoblar/pulyichish"
+          element={<TeachHisoblarpulyichish />}
+        />
+        <Route path="hisoblar/pulyichish/ok" element={<TeachPulyichishok />} />
 
         <Route path="/" element={<Begen />} />
       </Routes>
