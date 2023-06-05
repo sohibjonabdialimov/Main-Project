@@ -1,6 +1,5 @@
 import React from "react";
 import Cart from "../../components/Cart/Cart";
-// import Sitebar from "../../layout/Sitebar";
 import Navvedio from "../../sidebarRouters/Navvedio";
 import search from "../../imgs/search.png";
 import img12 from "../../imgs/main1.png";
@@ -12,6 +11,7 @@ import small2 from "../../imgs/teacher-home2.png";
 import small3 from "../../imgs/teacher-home3.png";
 import small4 from "../../imgs/teacher-home4.png";
 import "./style.css";
+import "../style.css";
 function Lessons() {
   let carts = [
     {
