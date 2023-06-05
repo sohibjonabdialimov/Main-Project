@@ -1,6 +1,6 @@
 import React from "react";
-import Comminets from "../sidebarRouters/commentsList/CommentsList";
-import { useNavigate, useParams } from "react-router-dom";
+import CommentsList from "../sidebarRouters/commentsList/CommentsList";
+import { useParams } from "react-router-dom";
 import teacher1 from "../imgs/teacher-home1.png";
 import teacher2 from "../imgs/teacher-home2.png";
 import teacher3 from "../imgs/teacher-home3.png";
@@ -214,7 +214,7 @@ function AboutCourseInfo() {
           </div>
         </div>
       </div>
-      <Comminets commints={commints} />
+      <CommentsList commints={commints} />
     </div>
   );
 }

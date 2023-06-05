@@ -1,10 +1,7 @@
 import "./App.css";
 import React from "react";
 // import Start from "./start";
-import Taxrirlash from "./Taxrirlash";
 import { Route, Routes } from "react-router-dom";
-// import Allvedios from "./mainRouters/lessons/Lessons.student";
-// import Hisoblar from "./mainRouters/balance/Balance.student";
 import Baykurs from "./kurslar/Baykurs";
 // import Kurss from "./kurslar/Kurss";
 // import Profile from "./mainRouters/profile/Profile.student";
@@ -44,6 +41,7 @@ import TeacherProfile from "./teacher/MainRoute/profile/TeacherProfile";
 import LessonsStatistic from "./teacher/MainRoute/LessonsStatistic";
 import SelectDownloadCourse from "./teacher/MainRoute/selectDownloadCourse/SelectDownloadCourse";
 import TeacherBalance from "./teacher/MainRoute/teacherBalance/TeacherBalance";
+import StudentProfileEdit from "./teacher/pages/studentProfileEdit/StudentProfileEdit";
 
 function App() {
   return (
@@ -62,7 +60,7 @@ function App() {
           <Route path="teacherinfo" element={<TeacherInfo />} />
         </Route>
 
-        <Route path="/editprofil" element={<Taxrirlash />} />
+        <Route path="/editprofil" element={<StudentProfileEdit />} />
         <Route path="/editteacherprofile" element={<TeachEditProfile />} />
 
         <Route path="/teacher" element={<TeacherLayout />}>
