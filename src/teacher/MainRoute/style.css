@@ -6,8 +6,14 @@
   border-radius: 50px;
   justify-content: space-evenly;
   row-gap: 21px;
+  width: 100%;
 }
-
+@media only screen and (max-width: 420px){
+  .sidebar-wrap{
+    /* width: 100%;
+    margin: 0 auto; */
+  }
+}
 .main-page {
   display: flex;
   gap: 19px;
@@ -53,6 +59,7 @@
   height: 90vh;
   overflow: hidden;
 }
+
 .teacher-main-sidebar {
   display: flex;
   column-gap: 0;

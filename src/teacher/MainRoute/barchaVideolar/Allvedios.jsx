@@ -68,11 +68,21 @@ function TeachAllvedios() {
     },
   ];
   return (
+    <>
+      <header className="responsive_header">
+        <div className="menubar">
+          <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div className="header_desc">
+          <p>Darslar</p>
+        </div>
+      </header>
       <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
         {carts.map((cart, index) => {
           return <TeachCart cart={cart} key={index} />;
         })}
       </div>
+    </>
   );
 }
 

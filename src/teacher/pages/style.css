@@ -64,3 +64,10 @@
     background: linear-gradient(#564282, #826A91);
     border-radius: 50px;
 }
+
+/* Responsive */
+@media only screen and (max-width: 420px){
+    .teacher-navbar{
+        display: none;
+    }
+}

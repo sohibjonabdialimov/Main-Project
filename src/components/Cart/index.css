@@ -3,6 +3,11 @@
   background-color: #241C35;
   border-radius: 50px;
 }
+@media only screen and (max-width: 420px){
+  .main-cart{
+    width: 300px;
+  }
+}
 .main-cart h3 {
   font-style: normal;
   font-weight: 400;

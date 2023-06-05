@@ -10,7 +10,7 @@ function Statistik() {
     {
       kursId: 12,
       img: img12,
-      
+
       name: "Super miya",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
     },
@@ -59,13 +59,11 @@ function Statistik() {
   ];
   return (
     <div className="main-page teacherHomePage main-content sidebar-main-wrap teacher-main-sidebar">
-       
-        <div className="main_teacher_content">
-          {carts.map((cart, index) => {
-            return <TeachUpdateCart cart={cart} key={index} />;
-          })}
-        </div>
-
+      <div className="main_teacher_content">
+        {carts.map((cart, index) => {
+          return <TeachUpdateCart cart={cart} key={index} />;
+        })}
+      </div>
     </div>
   );
 }

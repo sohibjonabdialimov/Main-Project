@@ -28,6 +28,7 @@ import TeachUpdateonekurs from "./teacher/MainRoute/Updateonekurs";
 import TeachProfile from "./teacher/MainRoute/profile/Profile";
 import Begen from "./begen";
 import TeachEditProfile from "./teacher/MainRoute/editProfile/TeachEditProfile";
+import KursStatistic from "./teacher/MainRoute/kursStatistic/KursStatistic";
 
 function App() {
   return (
@@ -60,7 +61,7 @@ function App() {
           <Route path="kurs/" element={<TeachCreatekurs />} />
           <Route path="update/kurs/" element={<TeachUpdatekurs />} />
           <Route path="statistic" element={<Statistik />} />
-          <Route path="update/kurs/:Id" element={<TeachUpdateonekurs />} />
+          {/* <Route path="update/kurs/:Id" element={<TeachUpdateonekurs />} /> */}
           <Route path="profile" element={<TeachProfile />} />
         </Route>
         <Route path="kurs/free" element={<TeachFreekurs />} />
@@ -70,7 +71,8 @@ function App() {
           element={<TeachHisoblarpulyichish />}
         />
         <Route path="hisoblar/pulyichish/ok" element={<TeachPulyichishok />} />
-
+        <Route path="teacher/statistic/:course" element={<KursStatistic />} />
+        <Route path="teacher/update/kurs/:id" element={<TeachUpdateonekurs />} />
         <Route path="/" element={<Begen />} />
       </Routes>
     </>
