@@ -6,4 +6,4 @@ function TeachSeekurs() {
   )
 }
 
-export default TeachSeekurs
+export default TeachSeekurs;

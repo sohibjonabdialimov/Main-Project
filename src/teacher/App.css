@@ -15,4 +15,8 @@
     display: flex;
     gap: 19px;
 }
-    
+@media only screen and (max-width: 420px){
+    .app-content{
+        display: block;
+    }
+}

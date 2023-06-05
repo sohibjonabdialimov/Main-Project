@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./index.css";
+import "./style.css";
 const Cart = (props) => {
   const navigate = useNavigate();
   let kursId = props.cart.kursId;

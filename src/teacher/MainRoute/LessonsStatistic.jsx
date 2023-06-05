@@ -5,7 +5,7 @@ import img14 from "../../imgs/main3.png";
 import img15 from "../../imgs/main4.png";
 import "./style.css";
 import TeachUpdateCart from "../components/Cart/UpdateCart";
-function TeachUpdatekurs() {
+function LessonsStatistic() {
   let carts = [
     {
       kursId: 12,
@@ -68,4 +68,4 @@ function TeachUpdatekurs() {
   );
 }
 
-export default TeachUpdatekurs;
+export default LessonsStatistic;
