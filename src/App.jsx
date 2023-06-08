@@ -38,7 +38,7 @@ import TakingMoney from "./teacher/MainRoute/takingMoney/TakingMoney";
 import PaidCourseDownload from "./teacher/MainRoute/paidCouseDownload/PaidCourseDownload";
 import FreeCourseDownload from "./teacher/MainRoute/freeCourseDownload/FreeCourseDownload";
 import TeacherProfile from "./teacher/MainRoute/profile/TeacherProfile";
-import LessonsStatistic from "./teacher/MainRoute/LessonsStatistic";
+import Statistic from "./teacher/MainRoute/statistic/Statistic";
 import SelectDownloadCourse from "./teacher/MainRoute/selectDownloadCourse/SelectDownloadCourse";
 import TeacherBalance from "./teacher/MainRoute/teacherBalance/TeacherBalance";
 import StudentProfileEdit from "./teacher/pages/studentProfileEdit/StudentProfileEdit";
@@ -73,7 +73,7 @@ function App() {
           <Route path="Kurs/:id" element={<AboutCourseInfo />} />
           <Route path="kurs/" element={<SelectDownloadCourse />} />
           <Route path="update/kurs/" element={<TeachUpdatekurs />} />
-          <Route path="statistic" element={<LessonsStatistic />} />
+          <Route path="statistic" element={<Statistic />} />
           <Route path="profile" element={<TeacherProfile />} />
         </Route>
         <Route path="kurs/free" element={<FreeCourseDownload />} />

@@ -1,25 +1,23 @@
-.Nav{
+.Nav {
     width: 25.5vw;
-    background: linear-gradient(#564282, #826A91);
+    background: linear-gradient(#564282, #826a91);
     border-radius: 50px;
 }
-.teacher_nav{
-    background: linear-gradient(#564282, #826A91);
+.teacher_nav {
+    background: linear-gradient(#564282, #826a91);
     border-radius: 50px;
 }
 
-  
-.w100{
+.w100 {
     width: 44vw;
     max-height: 90vh;
     overflow-y: scroll;
 }
 
-.fife{
+.fife {
     height: calc(100vh - 39px - 39px);
 }
-.app-content{
+.app-content {
     display: flex;
     gap: 19px;
 }
-

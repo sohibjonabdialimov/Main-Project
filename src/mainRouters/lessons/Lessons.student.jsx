@@ -71,7 +71,7 @@ function Lessons() {
   ];
   return (
     <div className="main-page">
-      <div className="w100 ">
+      <div className="w100">
         <div className="search-div">
           <input
             type="search"
@@ -80,10 +80,12 @@ function Lessons() {
           />
           <img src={search} alt="" />
         </div>
-        <div className="fife  main-content sidebar-main-wrap_all">
-          {carts.map((cart, index) => {
-            return <Cart cart={cart} key={index} />;
-          })}
+        <div className="fife main-content sidebar-main-wrap_all">
+          <div className="student_lessons">
+            {carts.map((cart, index) => {
+              return <Cart cart={cart} key={index} />;
+            })}
+          </div>
         </div>
       </div>
 

@@ -67,7 +67,6 @@ a {
 
 /* navbar menu */
 .responsive_header {
-  /* padding-top: 54px; */
   margin-bottom: 12px;
   width: 100%;
   display: flex;
@@ -114,7 +113,7 @@ a {
   border-radius: 50px;
 }
 .w100{
-  width: 44vw;
+  width: 42vw;
   max-height: 90vh;
   overflow-y: scroll;
 }

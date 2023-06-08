@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./style.css";
+import "../style.css";
 
 let money = 650000;
 money = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

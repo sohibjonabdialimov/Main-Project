@@ -10,4 +10,4 @@ function TeachUpdateonekurs() {
     )
 }
 
-export default TeachUpdateonekurs
+export default TeachUpdateonekurs;

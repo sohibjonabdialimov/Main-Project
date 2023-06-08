@@ -1,16 +1,16 @@
 import React from "react";
-import img12 from "../../imgs/main1.png";
-import img13 from "../../imgs/main2.png";
-import img14 from "../../imgs/main3.png";
-import img15 from "../../imgs/main4.png";
+import img12 from "../../../imgs/main1.png";
+import img13 from "../../../imgs/main2.png";
+import img14 from "../../../imgs/main3.png";
+import img15 from "../../../imgs/main4.png";
 import "./style.css";
-import TeachUpdateCart from "../components/Cart/UpdateCart";
-function LessonsStatistic() {
+import "../style.css";
+import TeachUpdateCart from "../../components/Cart/UpdateCart";
+function Statistic() {
   let carts = [
     {
       kursId: 12,
       img: img12,
-
       name: "Super miya",
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
     },
@@ -59,7 +59,7 @@ function LessonsStatistic() {
   ];
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
-      <div className="main_teacher_content sidebar-statistic-wrap">
+      <div className="main_teacher_content sidebar-main-wrap">
         {carts.map((cart, index) => {
           return <TeachUpdateCart cart={cart} key={index} />;
         })}
@@ -68,4 +68,4 @@ function LessonsStatistic() {
   );
 }
 
-export default LessonsStatistic;
+export default Statistic;

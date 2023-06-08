@@ -29,3 +29,12 @@
   transform: translateY(-80%);
   right: 20px;
 }
+.student_lessons{
+  width: 100%;
+  padding: 15px 5px;
+  display: flex;
+  column-gap: 16px;
+  row-gap: 21px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

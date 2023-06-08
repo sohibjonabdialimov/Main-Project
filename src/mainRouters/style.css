@@ -4,8 +4,8 @@
   padding: 0 6px;
   flex-wrap: wrap;
   background-color: #5b4784;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px; */
+  /* padding-bottom: 20px; */
   border-radius: 50px;
   gap: 21px;
 }

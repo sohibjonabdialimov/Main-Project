@@ -8,12 +8,7 @@
   row-gap: 21px;
   width: 100%;
 }
-@media only screen and (max-width: 420px){
-  .sidebar-wrap{
-    /* width: 100%;
-    margin: 0 auto; */
-  }
-}
+
 .main-page {
   display: flex;
   gap: 19px;
@@ -55,10 +50,7 @@
   overflow-y: scroll;
   max-height: 90vh;
 }
-.sidebar-statistic-wrap{
-  overflow-y: scroll;
-  max-height: 85vh;
-}
+
 .sidebar-wrap {
   height: 90vh;
   overflow: hidden;
@@ -88,7 +80,7 @@
 /* teacher profile end*/
 
 /* Hisoblar start */
-.teacher_hisoblar__wrapper{
+.teacher_hisoblar__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
