@@ -4,17 +4,21 @@
     background: rgba(0, 0, 0, 0.3);
     background-color: #3E305C;
 }
-.user-navbar{
+
+.user-navbar {
     width: 23vw;
 }
+
 .Nav ul {
     margin-top: 30px;
     padding: 0 27px;
 }
-.Nav ul li{
+
+.Nav ul li {
     position: relative;
     padding: 5px 12px;
 }
+
 .Nav ul li a {
     display: block;
     border-radius: 15px;
@@ -28,7 +32,8 @@
     line-height: 15px;
     color: #ffffff;
 }
-.Nav ul li img{
+
+.Nav ul li img {
     width: 27px;
     height: 27px;
     object-fit: cover;
@@ -36,4 +41,35 @@
     top: 50%;
     left: 15%;
     transform: translateY(-50%);
+}
+
+.qaytish {
+    width: 40px;
+    height: 40px;
+    background: rgba(216, 29, 29, 0.3);
+}
+
+.circle {
+    background-color: #3E305C;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    margin-top: 8%;
+    margin-left: 8%;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.3);
+}
+.d-none{
+    display: none;
+}
+@media only screen and (max-width:540px) {
+    .studentNavbar-box {
+        display: none;
+    }
+
 }

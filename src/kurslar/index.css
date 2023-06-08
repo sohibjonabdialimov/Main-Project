@@ -28,17 +28,18 @@
   height: 90vh;
   width: 44vw;
   border-radius: 50px;
-  background: #5b4784;
+  background: #5b4784 !important;
 }
 .every__cource-bigImg {
-  width: 100%;
-  height: 340px;
+  width: 540px;
+  height: 370px;
 }
 .every__cource-title img {
   width: 55px;
   height: 55px;
   border-radius: 50%;
 }
+
 .every__cource-title {
   display: flex;
   align-items: center;

@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import "./style.css";
 const Cart = (props) => {
+  
   const navigate = useNavigate();
   let kursId = props.cart.kursId;
   return (
-    <div
+    <div className="d-flex justify-content-center"
       onClick={() => {
         navigate("/student/kurs/" + kursId);
       }}

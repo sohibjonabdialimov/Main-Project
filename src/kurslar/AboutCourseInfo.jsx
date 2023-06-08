@@ -183,7 +183,7 @@ function AboutCourseInfo() {
   }
   return (
     <div className="main__course-buy">
-      <div className="every__cource-info sidebar-main-wrap">
+      <div className="main-content sidebar-main-wrap">
         <img className="every__cource-bigImg" src={img} alt="" />
         <div className="every__cource-desc">
           <div className="every__cource-header">
@@ -214,7 +214,10 @@ function AboutCourseInfo() {
           </div>
         </div>
       </div>
+      <div className="mobileForedit">
       <CommentsList commints={commints} />
+      </div>
+      {/* <CommentsList commints={commints} /> */}
     </div>
   );
 }

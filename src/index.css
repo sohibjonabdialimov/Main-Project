@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); */
 * {
   box-sizing: border-box;
 }
@@ -32,7 +32,7 @@ a {
   width: 1px;
 }
 .homepage {
-  width: 60vw;
+  /* width: 60vw; */
   height: 90%;
   display: flex;
 }
@@ -94,5 +94,15 @@ a {
 @media only screen and (max-width: 420px){
   .responsive_header{
       display: flex;
+  }
+};
+
+@media only screen and (max-width:540px){
+  .homepage{
+    display: block;
+    width: 100%;
+  }
+  body{
+    padding: 54px 10px;
   }
 }

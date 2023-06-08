@@ -134,3 +134,8 @@
 .sidebar-bought-course{
   padding-bottom: 20px;
 }
+@media only screen and (max-width:540px){
+  .sidebar-main-content{
+    display: none;
+  }
+}

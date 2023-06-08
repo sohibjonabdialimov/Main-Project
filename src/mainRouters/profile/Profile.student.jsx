@@ -70,7 +70,7 @@ function Profile() {
   return (
     <div className="main-page">
       <div
-        className="fife w100"
+        className="fife w100 main_lesson"
         style={{
           display: "flex",
           alignItems: "center",

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import Navvedio from "../../sidebarRouters/Navvedio";
 import search from "../../imgs/search.png";
@@ -10,8 +10,11 @@ import small1 from "../../imgs/teacher-home1.png";
 import small2 from "../../imgs/teacher-home2.png";
 import small3 from "../../imgs/teacher-home3.png";
 import small4 from "../../imgs/teacher-home4.png";
+import mobileBurger from "../../imgs/mobile-burger.svg";
+import mobileMenu from "../../imgs/mobile_menu.svg";
 import "./style.css";
 import "../style.css";
+import StudentNavbar from "../../navbar/student/StudentNavbar";
 function Lessons() {
   let carts = [
     {
@@ -69,25 +72,65 @@ function Lessons() {
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
+  let [modal, setModal] = useState(false)
+  let [darslarModal, setDarslarModal] = useState(false)
+  function clickModal() {
+    console.log('vvvvv', modal);
+    setModal(!modal)
+  }
+  const changeModal = (value) => {
+    setModal(value)
+  }
+  function clickDarslarModal() {
+    console.log('vvvvv', modal);
+    setModal(!modal)
+  }
+  const changeDarslarModal = (value) => {
+    setModal(value)
+  }
+  console.log('vvvvv', modal, '222');
   return (
     <div className="main-page">
-      <div className="w100 ">
-        <div className="search-div">
-          <input
-            type="search"
-            className="search-main"
-            placeholder="search..."
-          />
-          <img src={search} alt="" />
+      <div className={modal ? "def modal-navbar" : "def yoq"} >
+        <StudentNavbar changeModal={changeModal} modal={modal} />
+      </div>
+      <div className={modal ? "blur w100 main_lesson" : "w100 main_lesson"}>
+        <div className="mobile-for">
+          <div className="burger" onClick={clickModal}>
+            <div className="burger-box">
+              <img src={mobileBurger} alt="burger" />
+            </div>
+
+          </div>
+          <div className="search-div">
+
+            <input
+              type="search"
+              className="search-main"
+              placeholder="search..."
+            />
+            <div className="search-img-box">
+              <img src={search} alt="" />
+            </div>
+          </div>
+          <div className="burger">
+            <div className="burger-box">
+              <img src={mobileMenu} alt="burger" />
+            </div>
+
+          </div>
         </div>
+
         <div className="fife  main-content sidebar-main-wrap_all">
           {carts.map((cart, index) => {
             return <Cart cart={cart} key={index} />;
           })}
         </div>
       </div>
-
       <Navvedio />
+      <div  className={modal ? "darslarModal modal-navbar" : "darslarModal yoq"} >
+      <Navvedio />
+      </div>
     </div>
   );
 }

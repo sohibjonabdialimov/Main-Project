@@ -1,6 +1,23 @@
+@keyframes mobileBurger {
+  0%   {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%)
+  }
+}
+@keyframes mobileBurgerQaytish {
+  0%   {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0)
+  }
+}
 .search-main {
   width: 100%;
-  padding: 15px 28px;
+  /* padding: 15px 28px; */
+  padding: 10px 12px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -18,14 +35,135 @@
   color: #fff;
 }
 
+.mobile-for {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
 .search-div {
+  width: 100%;
   position: relative;
+}
+
+.search-img-box {
+  width: 44px;
+  height: 40px;
+  box-sizing: border-box;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  position: absolute;
+  top: 34px;
+  right: 2px;
+  transform: translateY(-80%);
+  right: 6px;
+  background-color: #9E00FF;
+  border: 3px solid #23006F;
+  border-radius: 50%;
 }
 
 .search-div img {
   display: block;
-  position: absolute;
-  top: 50%;
   transform: translateY(-80%);
-  right: 20px;
+  right: 6px;
+  top: 27px;
+}
+
+.burger-box {
+  background-color: #5B4784;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13.42px 12.45px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.def{
+  display: none;
+  position: absolute;
+}
+.def .Nav{
+  width: 100%;
+  position: absolute;
+  transition: 2s;
+  left: -100%;
+}
+.modal-navbar{
+  width: 100%;
+}
+
+.modal-navbar .Nav{
+  animation-name: mobileBurger;
+  animation-duration: 2s;
+  animation-fill-mode:forwards;
+  transition: 2s;
+}
+.modal-navbar .qaytish, .yoq .qaytish{
+  animation-name: mobileBurgerQaytish;
+  animation-duration: 2s;
+  animation-fill-mode:forwards;
+  transition: 2s;
+}
+.yoq .Nav{
+  /* left: 100%; */
+
+ /* transform: translate(0%); */
+}
+
+.burger{
+  display: none;
+}
+
+.darslarModal{
+  display: none;
+}
+@media only screen and (max-width:540px){
+  /* .def{
+    display: block;
+  } */
+  .blur{
+    filter: blur(4px);
+  }
+.main-page{
+  position: relative;
+}
+  .main_lesson{
+    width: 100%;
+  }
+  .main-content{
+    display: block !important;
+  }
+  .search-img-box{
+    width: 42px;
+    top: 35px;
+    height: 40px;
+  }
+  .modal-navbar{
+    display: flex;
+    width: 100%;
+    z-index: 12;
+    justify-content: center;
+  }
+
+  .burger{
+    display: block;
+  }
+  .search-main{
+    padding: 12px;
+  }
+
+  .modal-navbar .Nav ul li a {
+    padding-left: 100px !important;
+  }
+}
+
+
+@media only screen and (max-width:430px){
+ 
+  .modal-navbar .Nav ul li a {
+    padding-left: 80px !important;
+  }
+
 }

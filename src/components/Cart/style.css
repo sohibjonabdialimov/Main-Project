@@ -3,11 +3,12 @@
   background-color: #241C35;
   border-radius: 50px;
 }
-@media only screen and (max-width: 420px){
+
+/* @media only screen and (max-width: 420px){
   .main-cart{
     width: 300px;
   }
-}
+} */
 .main-cart h3 {
   font-style: normal;
   font-weight: 400;
@@ -33,4 +34,13 @@
 }
 .cart-desc{
   padding: 8px 11px 13px 18px;
+}
+
+@media only screen and (max-width: 540px){
+  .main-cart{
+  width: 100%;
+  flex-grow: 1;
+  margin-bottom: 15px;
+  }
+
 }

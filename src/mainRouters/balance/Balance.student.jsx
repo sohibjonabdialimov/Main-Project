@@ -9,7 +9,7 @@ hisobraqam = hisobraqam.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ' ')
 function Balance() {
     return (
         <div className="main-page" >
-            <div className="w100">
+            <div className="w100 main_lesson">
                 <div
                     className="fife main-content">
                     <div className='hisoblar'>
