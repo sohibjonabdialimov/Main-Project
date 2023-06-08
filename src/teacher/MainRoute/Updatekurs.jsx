@@ -59,7 +59,7 @@ function TeachUpdatekurs() {
   ];
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
-      <div className="main_teacher_content sidebar-main-wrap">
+      <div className="main_teacher_content sidebar-statistic-wrap">
         {carts.map((cart, index) => {
           return <TeachUpdateCart cart={cart} key={index} />;
         })}

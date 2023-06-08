@@ -36,6 +36,17 @@ a {
   height: 90%;
   display: flex;
 }
+
+.w100 {
+  width: 44vw;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.fife {
+  height: calc(100vh - 39px - 39px);
+}
+
 .teacherHomePage {
   width: 70vw;
   position: relative;
@@ -94,5 +105,28 @@ a {
 @media only screen and (max-width: 420px){
   .responsive_header{
       display: flex;
+  }
+}
+
+.Nav{
+  width: 25.5vw;
+  background: linear-gradient(#564282, #826A91);
+  border-radius: 50px;
+}
+.w100{
+  width: 44vw;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.app-content{
+  box-sizing: border-box;
+  max-height: 90vh;
+  display: flex;
+  gap: 19px;
+}
+@media only screen and (max-width: 420px){
+  .app-content{
+      display: block;
   }
 }
