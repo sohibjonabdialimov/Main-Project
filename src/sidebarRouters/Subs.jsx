@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios"
 import obuna1 from "../imgs/obuna1.png";
 import obuna2 from "../imgs/obuna2.png";
 import obuna3 from "../imgs/obuna3.png";
@@ -9,6 +10,21 @@ import obuna7 from "../imgs/obuna7.png";
 import darslar1 from "../imgs/darslar1.png";
 import darslar2 from "../imgs/darslar2.png";
 const Subs = () => {
+  
+
+  const [profile,setProfil]=useState({})
+  useEffect(() => {
+    axios.get("http://165.232.127.62:5001/usersme", {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((res) => {
+      setProfil(res.data)
+      
+    })
+  }, [])
+  console.log(profile)
+  
   let me = [
     {
       type: 0,

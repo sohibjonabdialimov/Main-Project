@@ -19,7 +19,7 @@ function Profile() {
   const navigate = useNavigate();
   const [profile,setProfil]=useState({})
   useEffect(() => {
-    axios.get("http://165.232.127.62:5001/users/me", {
+    axios.get("http://165.232.127.62:5001/usersme", {
       headers: {
         Authorization: localStorage.getItem("token")
       }
@@ -29,59 +29,6 @@ function Profile() {
       
     })
   }, [])
-  let me = [
-    {
-      type: 0,
-      name: "name",
-      surname: "surname",
-      username: "username",
-      email: "username@email.com",
-      subscibe: [
-        {
-          userId: 12,
-          name: "Guljahon Shermatova",
-          what: "Ingliz tili",
-          avatar: obuna1,
-        },
-        {
-          userId: 13,
-          name: "Mavjuda Olimova",
-          what: "Matematika",
-          avatar: obuna2,
-        },
-        {
-          userId: 14,
-          name: "Sevara Temirova",
-          what: "O'zbek tili",
-          avatar: obuna3,
-        },
-        {
-          userId: 15,
-          name: "Mahmud Soliyev",
-          what: "Fizika",
-          avatar: obuna4,
-        },
-        {
-          userId: 16,
-          name: "Everest English",
-          what: "Ingliz tili",
-          avatar: obuna5,
-        },
-        {
-          userId: 17,
-          name: "Mavjuda Olimova",
-          what: "Matematika",
-          avatar: obuna6,
-        },
-        {
-          userId: 18,
-          name: "Davron Turdiyev",
-          what: "Mnemonika",
-          avatar: obuna7,
-        },
-      ],
-    },
-  ];
   let [modal, setModal] = useState(false)
   let [modalDarslar, setModalDarslar] = useState(false)
   const changeModal = (value) => {
@@ -90,6 +37,21 @@ function Profile() {
 
   const changeModalDars = (value) => {
     setModalDarslar(value)
+  }
+  function deleteplatforma(url) {
+    try {
+      if (url.includes("platforma")) {
+        url = url.split("/")
+        let res = ""
+        for (let i = 2; i < url.length; i++) {
+          res += "/" + url[i]
+        }
+        return (res)
+      }
+      return "/" + url
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <div className="main-page">
@@ -107,11 +69,11 @@ function Profile() {
         <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'Profile'} />
 
         <div className="profile-content">
-          <img src={opacha} alt="" />
-          <h1>{me[0].name + " " + me[0].surname}</h1>
+          <img src={"http://165.232.127.62:5001"+deleteplatforma(profile.path)} alt="" />
+          <h1>{profile.fullname}</h1>
           <div className="profile-content-para">
-            <p>Username: {me[0].username}</p>
-            <p>Email: {me[0].email}</p>
+            <p>Username: {profile.username}</p>
+            <p>Email: {profile.email}</p>
           </div>
           <div className="profile-buttons">
             <button onClick={() => navigate('/editprofil')}>Profilni tahrirlash</button>
@@ -119,9 +81,9 @@ function Profile() {
           </div>
         </div>
       </div>
-      <Obuna me={me} />
+      <Obuna me={profile.mycurs} />
       <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-        <Obuna  modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='obuna' me={me}/>
+        <Obuna  modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='obuna' me={profile.mycurs}/>
       </div>
     </div>
   );
