@@ -68,7 +68,7 @@ function App() {
           <Route path="hisoblar" element={<TeacherBalance />} />
           <Route path="Kurs/:id" element={<AboutCourseInfo />} />
           <Route path="kurs/" element={<SelectDownloadCourse />} />
-          <Route path="update/kurs/" element={<TeachUpdatekurs />} />
+          <Route path="update/kurs /" element={<TeachUpdatekurs />} />
           <Route path="statistic" element={<Statistic />} />
           <Route path="profile" element={<TeacherProfile />} />
         </Route>

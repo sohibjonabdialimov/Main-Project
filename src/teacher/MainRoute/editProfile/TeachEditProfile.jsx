@@ -11,34 +11,36 @@ const TeachEditProfile = () => {
   };
   const onHandleSubmit = (e) => {
     e.preventDefault();
-  }
+  };
   return (
-    <div className={styles.edit_student_profile}>
-      <button onClick={onBack} className={styles.back}>
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
-      <div className={styles.imgs_div}>
-        <img src={user} alt="" />
-        <img src={camera} alt="" />
-      </div>
-      <form onSubmit={(e) => onHandleSubmit(e)} className={styles.form}>
-        <div className={styles.input_wrap}>
-          <input type="text" placeholder="ism" />
-          <input type="text" placeholder="familiya" />
+    <div className="app-content">
+      <div className={styles.edit_student_profile}>
+        <button onClick={onBack} className={styles.back}>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <div className={styles.imgs_div}>
+          <img src={user} alt="" />
+          <img src={camera} alt="" />
         </div>
+        <form onSubmit={(e) => onHandleSubmit(e)} className={styles.form}>
+          <div className={styles.input_wrap}>
+            <input type="text" placeholder="ism" />
+            <input type="text" placeholder="familiya" />
+          </div>
 
-        <input type="text" placeholder="mutaxassislik" />
-        <input type="text" placeholder="bio" />
-        <div className={styles.input_wrap}>
-          <input type="text" placeholder="joylashuv" />
-          <input type="text" placeholder="havola" />
-        </div>
-        <div className={styles.input_wrap}>
-          <input type="text" placeholder="username" />
-          <input type="text" placeholder="parol" />
-        </div>
-        <button onClick={() => navigate("/teacher/profile")}>Saqlash</button>
-      </form>
+          <input type="text" placeholder="mutaxassislik" />
+          <input type="text" placeholder="bio" />
+          <div className={styles.input_wrap}>
+            <input type="text" placeholder="joylashuv" />
+            <input type="text" placeholder="havola" />
+          </div>
+          <div className={styles.input_wrap}>
+            <input type="text" placeholder="username" />
+            <input type="text" placeholder="parol" />
+          </div>
+          <button onClick={() => navigate("/teacher/profile")}>Saqlash</button>
+        </form>
+      </div>
     </div>
   );
 };

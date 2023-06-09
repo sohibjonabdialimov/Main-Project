@@ -13,22 +13,23 @@ const StudentProfileEdit = () => {
     e.preventDefault();
   };
   return (
-    <div className={style.edit_profile}>
-      <button onClick={onBack} className={style.back}>
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
-      <div className={style.imgs_div}>
-        <img src={user} alt="" />
-        <img src={camera} alt="" />
+    <div className="app-content">
+      <div className={style.edit_profile}>
+        <button onClick={onBack} className={style.back}>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <div className={style.imgs_div}>
+          <img src={user} alt="" />
+          <img src={camera} alt="" />
+        </div>
+        <form onSubmit={(e) => onHandleSubmit(e)} className={style.form}>
+          <input type="text" placeholder="ism" />
+          <input type="text" placeholder="familiya" />
+          <input type="text" placeholder="username" />
+          <input type="password" placeholder="parol" />
+          <button>Saqlash</button>
+        </form>
       </div>
-      <form onSubmit={(e) => onHandleSubmit(e)} className={style.form}>
-
-        <input type="text" placeholder="ism" />
-        <input type="text" placeholder="familiya" />
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="parol" />
-        <button>Saqlash</button>
-      </form>
     </div>
   );
 };

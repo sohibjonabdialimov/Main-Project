@@ -10,12 +10,14 @@ function CourseInfo() {
     navigate("/teacher/darslar");
   };
   return (
-    <div className={styles.course_info}>
-      <button onClick={onBack} className={styles.back}>
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
-      <VideosNavbar />
-      <VideoInformation />
+    <div className="app-content">
+      <div className={styles.course_info}>
+        <button onClick={onBack} className={styles.back}>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <VideosNavbar />
+        <VideoInformation />
+      </div>
     </div>
   );
 }

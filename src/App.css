@@ -17,8 +17,92 @@
 /* .fife{
     height: calc(100vh - 39px - 39px);
 } */
-.app-content{
+.app-content {
     height: 100%;
     display: flex;
     gap: 19px;
+}
+.ionex {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.ionex_header {
+    background: linear-gradient(90.03deg, rgba(0, 10, 255, 0.79) 0.03%, #3d9ffa 40.95%, #9e00ff 89.77%);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 95px;
+    color: #fff;
+}
+.ionex_logo {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #ffffff;
+}
+.ionex_header ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.ionex_header ul li a {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+}
+.ionex_header button {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    outline: none;
+}
+.ionex_hero {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 97px 24px 35px 123px;
+}
+.hero_logo img {
+    width: 419px;
+    height: 129px;
+    object-fit: cover;
+}
+.hero_logo p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 35px;
+    text-align: center;
+    color: #3545ff;
+}
+.hero_img {
+    width: 616px;
+    height: 374px;
+}
+
+.carousel_imgs{
+    padding: 0 112px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 36px;
+    /* padding-bottom: 74px; */
+}
+.carousel_imgs img{
+    width: 237px;
+    height: 144px;
+    object-fit: cover;
 }
