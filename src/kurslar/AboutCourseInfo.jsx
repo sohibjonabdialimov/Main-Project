@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
 import { useParams } from "react-router-dom";
 import teacher1 from "../imgs/teacher-home1.png";
@@ -17,7 +17,21 @@ import save from "../imgs/save.png";
 import coin from "../imgs/coin.png";
 import heart from "../imgs/heart.png";
 import "./index.css";
+import MobileHeader from "../components/mobileHeader/mobileHeader";
+import StudentNavbar from "../navbar/student/StudentNavbar";
+import Baystudy from "../sidebarRouters/boughtLessons/BoughtLessons";
+import Navvedio from "../sidebarRouters/Navvedio";
 function AboutCourseInfo() {
+
+  let [modal, setModal] = useState(false)
+  let [modalDarslar, setModalDarslar] = useState(false)
+  const changeModal = (value) => {
+    setModal(value)
+  }
+
+  const changeModalDars = (value) => {
+    setModalDarslar(value)
+  }
   const { kursId } = useParams();
   let a = [
     {
@@ -181,10 +195,24 @@ function AboutCourseInfo() {
       commints = a[i].commints;
     }
   }
+
   return (
     <div className="main__course-buy">
+<<<<<<< HEAD
       <div className="every__cource-info sidebar-main-wrap w100">
         <img className="every__cource-bigImg" src={img} alt="" />
+=======
+      <div className={modal ? "def modal-navbar" : "def yoq"} >
+        <StudentNavbar changeModal={changeModal} modal={modal} />
+      </div>
+      <div
+        className={(modal || modalDarslar) ? "blur sidebar-main-wrap mobile_none" : "sidebar-main-wrap mobile_none"}
+
+      >
+        <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'Hisob balansi'} />
+        <div className="every__cource-bigImg" style={{ backgroundImage: `url(${img})` }}></div>
+        {/* <img className="every__cource-bigImg" src={img} alt="" /> */}
+>>>>>>> dcf51b8744557b393b327038bd3758e71a3290de
         <div className="every__cource-desc">
           <div className="every__cource-header">
             <div className="every__cource-title">
@@ -214,7 +242,13 @@ function AboutCourseInfo() {
           </div>
         </div>
       </div>
-      <CommentsList commints={commints} />
+      <div className="mobileForedit">
+        <CommentsList commints={commints} />
+      </div>
+      <div className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"} >
+        <CommentsList modalDarslar={modalDarslar} changeModalDars={changeModalDars} commints={commints}/>
+      </div>
+      {/* <CommentsList commints={commints} /> */}
     </div>
   );
 }

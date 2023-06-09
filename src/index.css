@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); */
 * {
   box-sizing: border-box;
 }
@@ -12,6 +12,9 @@ body {
   font-family: "Inter", sans-serif;
   height: 100vh;
   overflow: hidden;
+}
+#root{
+  height: 100%;
 }
 @media only screen and (max-width: 420px){
   body{
@@ -32,13 +35,14 @@ a {
   width: 1px;
 }
 .homepage {
-  width: 60vw;
-  height: 90%;
+  /* width: 60vw; */
+  /* height: 0%; */
   display: flex;
 }
 
 .w100 {
-  width: 44vw;
+  /* width: 44vw; */
+
   max-height: 90vh;
   overflow-y: scroll;
 }
@@ -108,31 +112,33 @@ a {
   text-align: center;
   color: #ffffff;
 }
+
 @media only screen and (max-width: 420px){
   .responsive_header{
       display: flex;
   }
+};
+.mobile_none .mobile-for{
+display: none;
 }
-
-.Nav{
-  width: 25.5vw;
-  background: linear-gradient(#564282, #826A91);
-  border-radius: 50px;
-}
-.w100{
-  width: 42vw;
-  max-height: 90vh;
-  overflow-y: scroll;
-}
-
-.app-content{
-  box-sizing: border-box;
-  max-height: 90vh;
-  display: flex;
-  gap: 19px;
-}
-@media only screen and (max-width: 420px){
-  .app-content{
-      display: block;
+@media only screen and (max-width:540px){
+  .modal-navbar{
+    height: 100%;
+  }
+  .modalDarslar{
+    height: 100%;
+  }
+  .modalDarslar .Nav{
+    height: 100%;
+  }
+  .mobile_none .mobile-for{
+    display: flex;
+    }
+  .homepage{
+    display: block;
+    width: 100%;
+  }
+  body{
+    padding: 54px 10px;
   }
 }

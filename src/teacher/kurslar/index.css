@@ -25,13 +25,14 @@
   gap: 19px;
 }
 .every__cource-info {
+  height: 90vh;
   width: 44vw;
   border-radius: 50px;
   background: #5b4784;
 }
 .every__cource-bigImg {
   width: 100%;
-  height: 370px;
+  height: 340px;
 }
 .every__cource-title img {
   width: 55px;
@@ -56,7 +57,7 @@
 .every__cource-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 .every__cource-nav {
   display: flex;
@@ -91,7 +92,7 @@
   font-size: 14px;
   line-height: 24px;
   color: #ffffff;
-  margin-bottom: 21px;
+  margin-bottom: 15px;
 }
 .every__cource-num p {
   font-family: "Inter";
@@ -124,4 +125,8 @@
   line-height: 24px;
   color: #ffffff;
   padding: 12px 50px;
+}
+.sidebar-main-content {
+  overflow-y: scroll;
+  max-height: 90vh;
 }

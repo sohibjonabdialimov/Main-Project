@@ -45,6 +45,8 @@
 }
 .profile-content {
   text-align: center;
+    overflow-y: scroll;
+    /* height: 79vh; */
 }
 .profile-content-para {
   display: flex;
@@ -61,4 +63,9 @@
   line-height: 24px;
   text-align: center;
   color: #ffffff;
+}
+@media  only screen and (max-width:540px) {
+  .profile-content {
+      height: 79vh;
+  }
 }
