@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Cart from "../../components/Cart/Cart";
 import Navvedio from "../../sidebarRouters/Navvedio";
 import search from "../../imgs/search.png";
@@ -16,63 +16,15 @@ import "./style.css";
 import "../style.css";
 import StudentNavbar from "../../navbar/student/StudentNavbar";
 import MobileHeader from "../../components/mobileHeader/mobileHeader";
+import axios from "axios";
+
 function Lessons() {
-  let carts = [
-    {
-      kursId: 12,
-      img: img12,
-      smallImg: small1,
-      name: "Super miya",
-      autorId: 14,
-      author: "Davron Turdiyev",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-    },
-    {
-      kursId: 13,
-      img: img13,
-      smallImg: small2,
-      name: "Kitoblarni effectiv o'qish",
-      autorId: 14,
-      author: "Madina Olimova",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-    },
-    {
-      kursId: 14,
-      img: img14,
-      smallImg: small3,
-      name: "Quvnoq ingliz tili",
-      autorId: 14,
-      author: "Cambridge LC",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 15,
-      img: img15,
-      smallImg: small4,
-      name: "Inson omili yoki AI",
-      autorId: 14,
-      author: "MohirDev",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 17,
-      img: img14,
-      smallImg: small3,
-      name: "Quvnoq ingliz tili",
-      autorId: 14,
-      author: "Cambridge LC",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 18,
-      img: img15,
-      smallImg: small4,
-      name: "Inson omili yoki AI",
-      autorId: 14,
-      author: "MohirDev",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-  ];
+  const [courses,setCourses]=useState([]);
+  useEffect(()=>{
+    axios.get("http://165.232.127.62:5001/courses/").then((res)=>{
+      setCourses(res.data)
+    })
+  },[])
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
   function clickModal() {
@@ -101,31 +53,6 @@ function Lessons() {
           modal || modalDarslar ? "blur w100 main_lesson" : "w100 main_lesson"
         }
       >
-        {/* <div className="mobile-for">
-          <div className="burger" onClick={clickModal}>
-            <div className="burger-box">
-              <img src={mobileBurger} alt="burger" />
-            </div>
-
-          </div>
-          <div className="search-div">
-
-            <input
-              type="search"
-              className="search-main"
-              placeholder="search..."
-            />
-            <div className="search-img-box">
-              <img src={search} alt="" />
-            </div>
-          </div>
-          <div className="burger" onClick={clickDarslarModal}>
-            <div className="burger-box" >
-              <img src={mobileMenu} alt="burger" />
-            </div>
-
-          </div>
-        </div> */}
         <MobileHeader
           changeModalDars={changeModalDars}
           changeModal={changeModal}
@@ -134,7 +61,7 @@ function Lessons() {
           type={"search"}
         />
         <div className="fife  main-content sidebar-main-wrap_all">
-          {carts.map((cart, index) => {
+          {courses.map((cart, index) => {
             return <Cart cart={cart} key={index} />
           })}
         </div>
