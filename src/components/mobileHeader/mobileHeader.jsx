@@ -20,7 +20,6 @@ function MobileHeader({changeModalDars,changeModal, modal,modalDarslar,type}) {
             </div>
             <div className="search-div">
                 <input
-                    type="button"
                     className={(type=='search')?'search-main':"d-none"}
                     placeholder="search..."
                 />

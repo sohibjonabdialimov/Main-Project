@@ -8,6 +8,7 @@
   padding-bottom: 20px;
   border-radius: 50px;
   gap: 21px;
+  height: 100%;
 }
 
 .main-page {
@@ -26,6 +27,7 @@
 @media only screen and (max-width:540px) {
   .main-page{
     display: block;
+    /* height: 100%; */
   }
   
 }

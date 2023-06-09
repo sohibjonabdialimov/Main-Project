@@ -67,6 +67,9 @@
 .d-none{
     display: none;
 }
+.user-navbar{
+    height: 100%;
+}
 @media only screen and (max-width:540px) {
     .studentNavbar-box {
         display: none;

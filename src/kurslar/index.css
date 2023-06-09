@@ -3,6 +3,7 @@
   padding-top: 21px;
   margin-right: 50px;
 }
+
 .sidebar-main-content h2 {
   font-style: normal;
   font-weight: 400;
@@ -12,6 +13,7 @@
   text-align: center;
   color: #ffffff;
 }
+
 .sidebar-line {
   width: 90%;
   margin: 0 auto;
@@ -19,21 +21,27 @@
   background-color: #fff;
   height: 1px;
 }
+
 .main__course-buy {
   display: flex;
   justify-content: space-between;
   gap: 19px;
 }
+
 .every__cource-info {
   height: 90vh;
   width: 44vw;
   border-radius: 50px;
   background: #5b4784 !important;
 }
+
 .every__cource-bigImg {
-  width: 540px;
-  height: 370px;
+  /* width: 540px; */
+  /* width: 100%; */
+  height: 340px;
+  background-size: cover;
 }
+
 .every__cource-title img {
   width: 55px;
   height: 55px;
@@ -45,6 +53,7 @@
   align-items: center;
   gap: 12px;
 }
+
 .every__cource-title h3 {
   font-family: "Inter";
   font-style: normal;
@@ -52,31 +61,42 @@
   font-size: 20px;
   line-height: 24px;
 }
+
 .every__cource-desc {
   padding: 23px 30px 15px 23px;
+  background: #5B4784;
+box-shadow: 15px 15px 100px rgba(0, 0, 0, 0.3);
+border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
+
 .every__cource-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 }
+
 .every__cource-nav {
   display: flex;
   gap: 24px;
   align-items: center;
 }
+
 .every__cource-nav img:first-child {
   width: 25px;
   height: 25px;
 }
+
 .every__cource-nav img:last-child {
   width: 25px;
   height: 23px;
 }
+
 .every__cource-nav img:nth-child(2) {
   width: 29px;
   height: 29px;
 }
+
 .every__cource-name p {
   font-family: "Inter";
   font-style: normal;
@@ -86,6 +106,7 @@
   color: #ffffff;
   margin-bottom: 18px;
 }
+
 .every__cource-about p {
   font-family: "Inter";
   font-style: normal;
@@ -95,6 +116,7 @@
   color: #ffffff;
   margin-bottom: 15px;
 }
+
 .every__cource-num p {
   font-family: "Inter";
   font-style: normal;
@@ -103,22 +125,24 @@
   line-height: 18px;
   color: #ffffff;
 }
+
 .every__cource-num {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
+
 .every__course-buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 66px;
 }
+
 .every__course-buttons button {
   font-family: "Inter";
   font-style: normal;
   border-radius: 20px;
-  background-color: #372B4F;
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   outline: none;
   font-weight: 400;
@@ -127,7 +151,83 @@
   color: #ffffff;
   padding: 12px 50px;
 }
+
 .sidebar-main-content {
   overflow-y: scroll;
   max-height: 90vh;
+}
+.main__course-buy .Nav{
+  height: 100%;
+}
+@media only screen and (max-width:1000px) {
+  .every__cource-bigImg {
+    height: 270px;
+  }
+}
+
+@media only screen and (max-width:540px) {
+  .every__course-buttons {
+    margin-top: 78px;
+
+  }
+  .main__course-buy .modalDarslar{
+    height: 100%;
+  }
+  .every__cource-desc {
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .every__course-buttons button {
+    
+    border-radius: 20px;
+
+    padding: 7px 23px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .main__course-buy {
+    display: block;
+position: relative;
+  }
+
+  .every__cource-bigImg {
+    height: 290px;
+  }
+
+  .every__cource-header {
+    margin-bottom: 36px;
+  }
+
+  .every__cource-num {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width:490px) {
+  .every__cource-bigImg {
+    height: 250px;
+  }
+}
+
+@media only screen and (max-width:430px) {
+  .every__cource-bigImg {
+    height: 230px;
+  }
+
+  .every__cource-desc {
+    padding: 15px;
+  }
+
+  .every__cource-nav {
+    gap: 12px;
+  }
+}
+
+@media only screen and (max-width:390px) {
+  .every__cource-bigImg {
+    height: 200px;
+  }
 }

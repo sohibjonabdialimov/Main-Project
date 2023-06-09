@@ -108,7 +108,7 @@ function Profile() {
       </div>
       <Obuna me={me} />
       <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-        <Obuna  modalDarslar={modalDarslar} changeModalDars={changeModalDars} me={me}/>
+        <Obuna  modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='obuna' me={me}/>
       </div>
     </div>
   );

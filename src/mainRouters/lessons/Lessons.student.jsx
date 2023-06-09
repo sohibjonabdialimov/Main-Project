@@ -132,8 +132,9 @@ function Lessons() {
       </div>
       <Navvedio />
       <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-        <Navvedio modalDarslar={modalDarslar} changeModalDars={changeModalDars} />
+        <Navvedio modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='Darslaringiz' />
       </div>
+    
     </div>
   );
 }

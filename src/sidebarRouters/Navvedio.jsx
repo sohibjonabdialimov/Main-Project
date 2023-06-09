@@ -6,7 +6,7 @@ import homeSidebar3 from "../imgs/sidebar3.png";
 import homeSidebar4 from "../imgs/sidebar4.png";
 import prev from '../imgs/prev.svg';
 import SidebarCart from "../components/SidebarCart/SidebarCart";
-function  Navvedio ({modalDarslar,changeModalDars}) {
+function  Navvedio ({modalDarslar,changeModalDars,topic}) {
 console.log(modalDarslar,'saaaaaaaaa');
 
 const handleClick = () => {
@@ -18,9 +18,10 @@ const handleClick = () => {
          <div className="circle">
          <img src={prev} alt="prev" />
          </div>
-         <h3>Darslar</h3>
+         <h3>{topic}</h3>
          
       </div>
+      <div className="mobileForPadding">
       <h2>Olingan darslar - 2 ta</h2>
       <div className="sidebar-line"></div>
       <div className="sidebar-bought-course">
@@ -51,6 +52,8 @@ const handleClick = () => {
         img={homeSidebar4}
         text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
       />
+      </div>
+     
     </div>
   );
 };

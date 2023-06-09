@@ -15,10 +15,11 @@
     overflow-y: scroll;
 }
 
-.fife{
+/* .fife{
     height: calc(100vh - 39px - 39px);
-}
+} */
 .app-content{
+    height: 100%;
     display: flex;
     gap: 19px;
 }

@@ -5,7 +5,7 @@ import homeSidebar2 from "../../imgs/sidebar2.png";
 import prev from '../../imgs/prev.svg';
 
 import SidebarCart from "../../components/SidebarCart/SidebarCart";
-function Baystudy ({modalDarslar,changeModalDars}) {
+function Baystudy ({modalDarslar,changeModalDars,topic}) {
   const handleClick = () => {
     changeModalDars(false)
   }
@@ -15,9 +15,10 @@ function Baystudy ({modalDarslar,changeModalDars}) {
          <div className="circle">
          <img src={prev} alt="prev" />
          </div>
-         <h3>Darslar</h3>
+         <h3>{topic}</h3>
          
       </div>
+      <div className="mobileForPadding">
       <h2>Sotib olingan darslar - 2 ta</h2>
       <div className="sidebar-line"></div>
       <div className="sidebar-bought-course">
@@ -29,30 +30,10 @@ function Baystudy ({modalDarslar,changeModalDars}) {
           img={homeSidebar2}
           text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
         />
-        <SidebarCart
-          img={homeSidebar1}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar2}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar1}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar2}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar1}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar2}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
+      
+      </div>
+     
+       
       </div>
     </div>
   );

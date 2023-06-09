@@ -63,7 +63,7 @@
   border-radius: 20px;
 }
 .line-main {
-  background-color: #aaa;
+  /* background-color: #aaa; */
   width: 90%;
   margin-right: auto;
   margin-left: auto;
@@ -167,6 +167,9 @@ border-radius: 50px 50px 0px 0px;
   top: 15px;
   left: 25px;
   margin: 0;
+}
+.mobileForPadding{
+  padding: 17px 11px;
 }
 @media only screen and (max-width:540px){
   .darslarModal .sidebar-main-content{

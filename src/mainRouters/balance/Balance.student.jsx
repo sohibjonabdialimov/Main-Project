@@ -40,7 +40,7 @@ function Balance() {
 
             <Baystudy />
             <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-                <Baystudy modalDarslar={modalDarslar} changeModalDars={changeModalDars} />
+                <Baystudy modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='Olingan kurslarning narxi' />
             </div>
         </div>
 
