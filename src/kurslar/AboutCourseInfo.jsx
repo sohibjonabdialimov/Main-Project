@@ -22,16 +22,15 @@ import StudentNavbar from "../navbar/student/StudentNavbar";
 import Baystudy from "../sidebarRouters/boughtLessons/BoughtLessons";
 import Navvedio from "../sidebarRouters/Navvedio";
 function AboutCourseInfo() {
-
-  let [modal, setModal] = useState(false)
-  let [modalDarslar, setModalDarslar] = useState(false)
+  let [modal, setModal] = useState(false);
+  let [modalDarslar, setModalDarslar] = useState(false);
   const changeModal = (value) => {
-    setModal(value)
-  }
+    setModal(value);
+  };
 
   const changeModalDars = (value) => {
-    setModalDarslar(value)
-  }
+    setModalDarslar(value);
+  };
   const { kursId } = useParams();
   let a = [
     {
@@ -198,57 +197,75 @@ function AboutCourseInfo() {
 
   return (
     <div className="main__course-buy">
-<<<<<<< HEAD
       <div className="every__cource-info sidebar-main-wrap w100">
         <img className="every__cource-bigImg" src={img} alt="" />
-=======
-      <div className={modal ? "def modal-navbar" : "def yoq"} >
-        <StudentNavbar changeModal={changeModal} modal={modal} />
-      </div>
-      <div
-        className={(modal || modalDarslar) ? "blur sidebar-main-wrap mobile_none" : "sidebar-main-wrap mobile_none"}
 
-      >
-        <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'Hisob balansi'} />
-        <div className="every__cource-bigImg" style={{ backgroundImage: `url(${img})` }}></div>
-        {/* <img className="every__cource-bigImg" src={img} alt="" /> */}
->>>>>>> dcf51b8744557b393b327038bd3758e71a3290de
-        <div className="every__cource-desc">
-          <div className="every__cource-header">
-            <div className="every__cource-title">
-              <img src={avatar} alt="" />
-              <h3>{author}</h3>
+        <div className={modal ? "def modal-navbar" : "def yoq"}>
+          <StudentNavbar changeModal={changeModal} modal={modal} />
+        </div>
+        <div
+          className={
+            modal || modalDarslar
+              ? "blur sidebar-main-wrap mobile_none"
+              : "sidebar-main-wrap mobile_none"
+          }
+        >
+          <MobileHeader
+            changeModalDars={changeModalDars}
+            changeModal={changeModal}
+            modal={modal}
+            modalDarslar={modalDarslar}
+            type={"Hisob balansi"}
+          />
+          <div
+            className="every__cource-bigImg"
+            style={{ backgroundImage: `url(${img})` }}
+          ></div>
+
+          <div className="every__cource-desc">
+            <div className="every__cource-header">
+              <div className="every__cource-title">
+                <img src={avatar} alt="" />
+                <h3>{author}</h3>
+              </div>
+              <div className="every__cource-nav">
+                <img src={save} alt="" />
+                <img src={coin} alt="" />
+                <img src={heart} alt="" />
+              </div>
             </div>
-            <div className="every__cource-nav">
-              <img src={save} alt="" />
-              <img src={coin} alt="" />
-              <img src={heart} alt="" />
+            <div className="every__cource-name">
+              <p>Kurs nomi: {name}</p>
             </div>
-          </div>
-          <div className="every__cource-name">
-            <p>Kurs nomi: {name}</p>
-          </div>
-          <div className="every__cource-about">
-            <p>Kurs haqida: {aboutCource}</p>
-          </div>
-          <div className="every__cource-num">
-            <p className="every__cource-para">Kurs narxi: {priceCourse} so'm</p>
-            <p className="every__cource-para">Olingan: {bought}</p>
-            <p className="every__cource-para">Davomiyligi: {davomiyligi}</p>
-          </div>
-          <div className="every__course-buttons">
-            <button>Video darslar</button>
-            <button>Kursni olish</button>
+            <div className="every__cource-about">
+              <p>Kurs haqida: {aboutCource}</p>
+            </div>
+            <div className="every__cource-num">
+              <p className="every__cource-para">
+                Kurs narxi: {priceCourse} so'm
+              </p>
+              <p className="every__cource-para">Olingan: {bought}</p>
+              <p className="every__cource-para">Davomiyligi: {davomiyligi}</p>
+            </div>
+            <div className="every__course-buttons">
+              <button>Video darslar</button>
+              <button>Kursni olish</button>
+            </div>
           </div>
         </div>
+        <div className="mobileForedit">
+          <CommentsList commints={commints} />
+        </div>
+        <div
+          className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"}
+        >
+          <CommentsList
+            modalDarslar={modalDarslar}
+            changeModalDars={changeModalDars}
+            commints={commints}
+          />
+        </div>
       </div>
-      <div className="mobileForedit">
-        <CommentsList commints={commints} />
-      </div>
-      <div className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"} >
-        <CommentsList modalDarslar={modalDarslar} changeModalDars={changeModalDars} commints={commints}/>
-      </div>
-      {/* <CommentsList commints={commints} /> */}
     </div>
   );
 }

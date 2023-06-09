@@ -13,12 +13,12 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-#root{
+#root {
   height: 100%;
 }
-@media only screen and (max-width: 420px){
-  body{
-      padding: 30px 10px;
+@media only screen and (max-width: 420px) {
+  body {
+    padding: 30px 10px;
   }
 }
 a {
@@ -62,9 +62,9 @@ a {
   width: 70vw;
   position: relative;
 }
-@media only screen and (max-width: 420px){
-  .teacherHomePage{
-      width: 100%;
+@media only screen and (max-width: 420px) {
+  .teacherHomePage {
+    width: 100%;
   }
 }
 .global_wrap {
@@ -113,32 +113,32 @@ a {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 420px){
-  .responsive_header{
-      display: flex;
-  }
-};
-.mobile_none .mobile-for{
-display: none;
-}
-@media only screen and (max-width:540px){
-  .modal-navbar{
-    height: 100%;
-  }
-  .modalDarslar{
-    height: 100%;
-  }
-  .modalDarslar .Nav{
-    height: 100%;
-  }
-  .mobile_none .mobile-for{
+@media only screen and (max-width: 420px) {
+  .responsive_header {
     display: flex;
-    }
-  .homepage{
+  }
+}
+.mobile_none .mobile-for {
+  display: none;
+}
+@media only screen and (max-width: 540px) {
+  .modal-navbar {
+    height: 100%;
+  }
+  .modalDarslar {
+    height: 100%;
+  }
+  .modalDarslar .Nav {
+    height: 100%;
+  }
+  .mobile_none .mobile-for {
+    display: flex;
+  }
+  .homepage {
     display: block;
     width: 100%;
   }
-  body{
+  body {
     padding: 54px 10px;
   }
 }

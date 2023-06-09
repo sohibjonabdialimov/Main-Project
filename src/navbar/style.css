@@ -76,3 +76,40 @@
     }
 
 }
+
+.teacher-navbar ul {
+    margin-top: 30px;
+    padding: 0 27px;
+}
+.teacher-navbar ul li{
+    position: relative;
+    padding: 11px 12px;
+}
+.teacher-navbar ul li a {
+    display: block;
+    border-radius: 15px;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 14px 15px 14px 70px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+}
+.teacher-navbar ul li img{
+    width: 27px;
+    height: 27px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+}
+.teacher-navbar{
+    height: 90vh;
+    width: 23vw;
+    background: linear-gradient(#564282, #826A91);
+    border-radius: 50px;
+}
