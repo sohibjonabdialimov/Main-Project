@@ -73,31 +73,34 @@ function Lessons() {
       text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
-  let [modal, setModal] = useState(false)
-  let [modalDarslar, setModalDarslar] = useState(false)
+  let [modal, setModal] = useState(false);
+  let [modalDarslar, setModalDarslar] = useState(false);
   function clickModal() {
-    console.log('vvvvv', modal);
-    setModal(!modal)
+    console.log("vvvvv", modal);
+    setModal(!modal);
   }
   const changeModal = (value) => {
-    setModal(value)
-  }
+    setModal(value);
+  };
   function clickDarslarModal() {
-    console.log('darslarModal', modalDarslar);
-    setModalDarslar(!modalDarslar)
-    console.log('darslarModal', modalDarslar);
-
+    console.log("darslarModal", modalDarslar);
+    setModalDarslar(!modalDarslar);
+    console.log("darslarModal", modalDarslar);
   }
   const changeModalDars = (value) => {
-    setModalDarslar(value)
-  }
-  console.log('vvvvv', modal, '222');
+    setModalDarslar(value);
+  };
+  console.log("vvvvv", modal, "222");
   return (
     <div className="main-page">
-      <div className={modal ? "def modal-navbar" : "def yoq"} >
+      <div className={modal ? "def modal-navbar" : "def yoq"}>
         <StudentNavbar changeModal={changeModal} modal={modal} />
       </div>
-      <div className={(modal || modalDarslar) ? "blur w100 main_lesson" : "w100 main_lesson"}>
+      <div
+        className={
+          modal || modalDarslar ? "blur w100 main_lesson" : "w100 main_lesson"
+        }
+      >
         {/* <div className="mobile-for">
           <div className="burger" onClick={clickModal}>
             <div className="burger-box">
@@ -123,18 +126,27 @@ function Lessons() {
 
           </div>
         </div> */}
-        <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'search'} />
+        <MobileHeader
+          changeModalDars={changeModalDars}
+          changeModal={changeModal}
+          modal={modal}
+          modalDarslar={modalDarslar}
+          type={"search"}
+        />
         <div className="fife  main-content sidebar-main-wrap_all">
           {carts.map((cart, index) => {
-            return <Cart cart={cart} key={index} />;
+            return <Cart cart={cart} key={index} />
           })}
         </div>
       </div>
       <Navvedio />
-      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-        <Navvedio modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='Darslaringiz' />
+      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"}>
+        <Navvedio
+          modalDarslar={modalDarslar}
+          changeModalDars={changeModalDars}
+          topic="Darslaringiz"
+        />
       </div>
-    
     </div>
   );
 }
