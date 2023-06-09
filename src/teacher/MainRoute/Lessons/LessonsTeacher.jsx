@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import TeachCart from "../../../components/Cart/Cart";
 import img15 from "../../../imgs/teacher-main-sidebar.png";
-import styles from "./style.module.css";
+import "./style.css";
 
 import "../style.css";
 import MenuContext from "antd/es/menu/MenuContext";
@@ -70,12 +70,10 @@ function LessonsTeacher() {
     },
   ];
 
-
-
   return (
     <>
       <header className="responsive_header">
-        <div className="menubar" onClick={() => setMenubar(prev => !prev)}>
+        <div className="menubar" onClick={() => setMenubar((prev) => !prev)}>
           <ion-icon name="menu-outline"></ion-icon>
         </div>
         <div className="header_desc">
@@ -83,9 +81,11 @@ function LessonsTeacher() {
         </div>
       </header>
       <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
-        {carts.map((cart, index) => {
-          return <LessonCard cart={cart} key={index} />;
-        })}
+        <div className="lessons_wrap">
+          {carts.map((cart, index) => {
+            return <LessonCard cart={cart} key={index} />;
+          })}
+        </div>
       </div>
     </>
   );

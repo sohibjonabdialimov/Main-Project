@@ -7,7 +7,7 @@ function CourseInfo() {
   const { kursId } = useParams();
   const navigate = useNavigate();
   const onBack = () => {
-    navigate(-1);
+    navigate("/teacher/darslar");
   };
   return (
     <div className={styles.course_info}>
