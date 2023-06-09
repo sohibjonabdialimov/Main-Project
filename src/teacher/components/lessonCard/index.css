@@ -1,10 +1,10 @@
 .main-cart {
-  width: 100%;
   background-color: #241C35;
   border-radius: 50px;
 }
 .main-cart img{
   width: 100%;
+  height: 170px;
   border-radius: 50px 50px 0px 0px;
 }
 .main-cart h3 {
@@ -24,6 +24,7 @@
   width: 31px;
   height: 31px;
   object-fit: cover;
+  border-radius: 50%;
 }
 .desc{
   display: flex;
@@ -31,5 +32,8 @@
   gap: 7px;
 }
 .cart-desc{
-  padding: 8px 11px 13px 18px;
+  padding: 8px 18px 25px 18px;
+}
+.cart__content{
+  padding: 8px 18px 25px 18px;
 }

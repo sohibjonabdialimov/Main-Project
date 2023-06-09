@@ -37,11 +37,11 @@ const Cart = (props) => {
     >
       <div className="main-cart">
         <img src={"http://165.232.127.62:5001"+deleteplatforma(props.cart.obloshka)} alt="" />
-        <div className="cart-desc">
+        <div className="cart-desc_wrap">
           <h3>{props.cart.Kursname}</h3>
           <p>{props.cart.Kursdesc}</p>
           <div className="desc">
-            <img src={"http://165.232.127.62:5001"+deleteplatforma(teacher.path)} alt="" />
+            <img className="small_img" src={"http://165.232.127.62:5001"+deleteplatforma(teacher.path)} alt="" />
             <span>{teacher.fullname}</span>
           </div>
         </div>

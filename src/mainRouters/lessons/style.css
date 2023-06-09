@@ -4,7 +4,7 @@
   }
 
   100% {
-    transform: translateX(100%)
+    transform: translateX(100%);
   }
 }
 
@@ -14,7 +14,7 @@
   }
 
   100% {
-    transform: translateX(0)
+    transform: translateX(0);
   }
 }
 
@@ -62,27 +62,24 @@
   right: 2px;
   transform: translateY(-80%);
   right: 6px;
-  background-color: #9E00FF;
-  border: 3px solid #23006F;
+  background-color: #9e00ff;
+  border: 3px solid #23006f;
   border-radius: 50%;
 }
 
 .search-div img {
   display: block;
-<<<<<<< HEAD
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
-=======
   transform: translateY(-80%);
   right: 6px;
   top: 27px;
->>>>>>> dcf51b8744557b393b327038bd3758e71a3290de
 }
 
 .burger-box {
-  background-color: #5B4784;
+  background-color: #5b4784;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,7 +106,8 @@
   width: 100%;
 }
 
-.modal-navbar .Nav , .defDars .Nav{
+.modal-navbar .Nav,
+.defDars .Nav {
   animation-name: mobileBurger;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -134,28 +132,28 @@
   display: none;
 }
 
-.defDars .Nav{
+.defDars .Nav {
   width: 100%;
   position: absolute;
   transition: 2s;
   left: -100%;
 }
 
-@media only screen and (max-width:540px) {
-  .Nav{
+@media only screen and (max-width: 540px) {
+  .Nav {
     display: none;
   }
-.modalDarslar .Nav{
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  /* height: 100%; */
-  /* animation-name: mobileBurger;
+  .modalDarslar .Nav {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* height: 100%; */
+    /* animation-name: mobileBurger;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   transition: 2s; */
-}
+  }
 
   .modalDarslar {
     top: 0;
@@ -191,9 +189,9 @@
     z-index: 12;
     justify-content: center;
   }
-.modal-navbar .Nav{
-  display: block;
-}
+  .modal-navbar .Nav {
+    display: block;
+  }
   .modalDarslar {
     display: flex;
     width: 100%;
@@ -212,14 +210,19 @@
   .modal-navbar .Nav ul li a {
     padding-left: 100px !important;
   }
-
 }
 
-
-@media only screen and (max-width:430px) {
-
+@media only screen and (max-width: 430px) {
   .modal-navbar .Nav ul li a {
     padding-left: 80px !important;
   }
+}
 
+
+.student_lessons_wrap{
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 20px 0;
 }

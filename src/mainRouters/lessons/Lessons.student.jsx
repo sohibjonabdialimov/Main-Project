@@ -61,9 +61,12 @@ function Lessons() {
           type={"search"}
         />
         <div className="fife  main-content sidebar-main-wrap_all">
+          <div className="student_lessons_wrap">
           {courses.map((cart, index) => {
             return <Cart cart={cart} key={index} />
           })}
+          </div>
+          
         </div>
       </div>
       <Navvedio />
