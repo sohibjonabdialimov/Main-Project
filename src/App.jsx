@@ -1,6 +1,6 @@
 import "./App.css";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Baykurs from "./kurslar/Baykurs";
 import Subs from "./sidebarRouters/Subs";
 import Darslar from "./sidebarRouters/Darslar";
@@ -28,11 +28,23 @@ import StudentProfileEdit from "./teacher/pages/studentProfileEdit/StudentProfil
 import CourseInfo from "./teacher/MainRoute/courseInfo/CourseInfo";
 import TeachUpdateonekurs from "./teacher/MainRoute/updateCourseOne/Updateonekurs";
 import TeachUpdatekurs from "./teacher/MainRoute/updateCourse/Updatekurs";
+import StudentLogin from "./sign/login/StudentLogin";
+import TeacherLogin from "./sign/login/TeacherLogin";
 
 function App() {
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if(!localStorage.getItem("token")){
+  //     navigate("/login");
+  //   }
+  // }, [])
+  
   return (
     <>
       <Routes>
+        <Route path="login" element={<StudentLogin /> } />
+        <Route path="teacherlogin" element={<TeacherLogin /> } />
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />
           <Route path="hisoblar" element={<Balance />} />

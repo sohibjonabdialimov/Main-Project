@@ -2,7 +2,7 @@
     font-weight: 700;
     color: yellowgreen;
     background: rgba(0, 0, 0, 0.3);
-    background-color: #3E305C;
+    background-color: #3e305c;
 }
 
 .user-navbar {
@@ -50,7 +50,7 @@
 }
 
 .circle {
-    background-color: #3E305C;
+    background-color: #3e305c;
     padding: 10px;
     width: 40px;
     height: 40px;
@@ -64,24 +64,23 @@
 
     background: rgba(0, 0, 0, 0.3);
 }
-.d-none{
+.d-none {
     display: none;
 }
-.user-navbar{
+.user-navbar {
     height: 100%;
 }
-@media only screen and (max-width:540px) {
+@media only screen and (max-width: 540px) {
     .studentNavbar-box {
         display: none;
     }
-
 }
 
 .teacher-navbar ul {
     margin-top: 30px;
     padding: 0 27px;
 }
-.teacher-navbar ul li{
+.teacher-navbar ul li {
     position: relative;
     padding: 11px 12px;
 }
@@ -98,7 +97,7 @@
     line-height: 15px;
     color: #ffffff;
 }
-.teacher-navbar ul li img{
+.teacher-navbar ul li img {
     width: 27px;
     height: 27px;
     object-fit: cover;
@@ -107,9 +106,30 @@
     left: 15%;
     transform: translateY(-50%);
 }
-.teacher-navbar{
+.teacher-navbar {
     height: 90vh;
     width: 23vw;
-    background: linear-gradient(#564282, #826A91);
+    background: linear-gradient(#564282, #826a91);
     border-radius: 50px;
+}
+.videos_navbar {
+    height: 87vh;
+    width: 22vw;
+    background: linear-gradient(#564282, #826a91);
+    border-radius: 50px;
+}
+.videos_navbar ul {
+    padding: 33px 20px;
+}
+.videos_navbar ul li {
+    padding: 12px 5px 9px 5px;
+    border-bottom: 2px solid #ffffff;
+}
+.videos_navbar ul li a {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
 }

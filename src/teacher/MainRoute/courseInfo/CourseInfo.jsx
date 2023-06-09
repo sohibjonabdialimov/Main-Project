@@ -1,17 +1,22 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-
-import "./style.css";
+import { useNavigate, useParams } from "react-router-dom";
+import styles from "./courseInfo.module.css";
+import VideosNavbar from "../../../navbar/videos/VideosNavbar";
+import VideoInformation from "../../components/videoInformation/VideoInformation";
 function CourseInfo() {
   const { kursId } = useParams();
-
-
-
+  const navigate = useNavigate();
+  const onBack = () => {
+    navigate(-1);
+  };
   return (
-    
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis accusamus nostrum, placeat magnam ipsa illo quia laudantium praesentium, blanditiis ea nemo! Eius voluptatibus quos fugiat voluptas exercitationem aliquid mollitia voluptates consequuntur explicabo quis sequi libero a tempora officiis quasi perspiciatis optio vitae veritatis, minus voluptate hic similique laboriosam eum! Quos, eaque! Velit placeat illum sapiente autem molestias quis accusamus iure facilis enim maxime inventore beatae repudiandae harum soluta quod neque quos fugiat eaque voluptas distinctio, adipisci non odit. Culpa, hic provident? Similique corporis, eius, facere modi quasi commodi sapiente quis velit, repudiandae optio soluta a cum ratione cupiditate nisi facilis expedita. Debitis possimus numquam quis. Odit inventore similique adipisci nulla labore, obcaecati ratione minus nostrum, molestiae doloribus, sit vitae aliquid porro nesciunt ex odio eius sequi velit quos quidem eos perspiciatis at accusamus? Laudantium eaque, eum repellat magnam sequi, voluptas impedit ipsam harum facilis delectus quia numquam doloribus officiis eos eius nesciunt asperiores, veritatis officia nobis quae debitis perspiciatis. Alias ullam, iusto rem deserunt optio reiciendis nam consequuntur non provident nihil placeat quis esse quos aut necessitatibus sequi porro cumque atque magni, iure nisi fuga. Nesciunt doloremque perspiciatis totam, laboriosam est ullam expedita cum eius corrupti sapiente minus qui deserunt neque assumenda consequatur quod, illum aperiam eum ex optio! Provident repellat quos dolorum, sunt vitae alias error ad repellendus, suscipit consequatur consectetur, quia ullam quae rem corporis totam qui! Aspernatur magnam laudantium iusto! Minima, in quam? Cupiditate dolorum vel nam nostrum vitae. Quasi ab reiciendis sequi odio consequuntur, perferendis tempora nulla ducimus totam commodi eius maiores eligendi ipsa molestias atque facere minima qui non soluta dolores asperiores nam hic aut. Porro, quae qui et quia voluptate error eius iure quibusdam accusantium, beatae, commodi facere saepe autem earum odit. Quibusdam molestiae optio alias facilis? Quas sint consequatur, enim laudantium ad laboriosam hic ullam perspiciatis quia ipsam nemo eum tempore ratione labore vitae quaerat unde esse accusantium? Aliquam autem, explicabo temporibus impedit ipsa odit at provident facere voluptas nulla aut eveniet id? Consequatur ad veniam aliquam ex ab labore, tempore voluptas. Earum illum nemo id tempore. Dolorem corporis dolore quis consequuntur at porro suscipit iste consectetur! Iusto in soluta pariatur iure excepturi aperiam dolorem eius quas explicabo deserunt quod numquam laborum exercitationem nobis debitis, ab sit dignissimos voluptate porro nesciunt quam error assumenda fugit? Debitis harum iure nobis at error eius officiis! Aut nobis numquam tempore, architecto suscipit in quos adipisci vitae, voluptatum cupiditate quae cum quasi aspernatur, nam fugiat reiciendis nihil? Hic debitis maxime eius deleniti soluta fugit assumenda ea, architecto, non, in magnam neque! Dolorum maxime ipsa minus officia iure beatae laboriosam nemo eum nam quaerat nobis ratione ullam ad placeat asperiores saepe quis cupiditate non, optio voluptas. Facilis voluptates a, aliquam dolore fugit corporis repudiandae illo cumque, ea laudantium sint deleniti libero maxime quod dolor quisquam id molestias vitae ipsam, aut accusamus! Repudiandae, sit quidem numquam odio nemo quod quis. Aliquid alias nam temporibus ea sed voluptatum fuga, possimus ex repellat, laboriosam consequuntur autem eius, cum sunt voluptate similique.
-  </div>
+    <div className={styles.course_info}>
+      <button onClick={onBack} className={styles.back}>
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      <VideosNavbar />
+      <VideoInformation />
+    </div>
   );
 }
 

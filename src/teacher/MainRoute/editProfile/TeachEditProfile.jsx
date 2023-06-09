@@ -37,7 +37,7 @@ const TeachEditProfile = () => {
           <input type="text" placeholder="username" />
           <input type="text" placeholder="parol" />
         </div>
-        <button>Saqlash</button>
+        <button onClick={() => navigate("/teacher/profile")}>Saqlash</button>
       </form>
     </div>
   );
