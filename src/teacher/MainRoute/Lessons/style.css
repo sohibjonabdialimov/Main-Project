@@ -1,0 +1,6 @@
+.lessons_wrap{
+  display: flex;
+  column-gap: 24px;
+  row-gap: 24px;
+  flex-wrap: wrap;
+}

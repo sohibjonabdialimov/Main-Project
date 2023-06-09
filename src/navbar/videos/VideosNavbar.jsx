@@ -6,28 +6,28 @@ function VideosNavbar() {
     <div className="videos_navbar">
       <ul>
         <li>
-          <NavLink to="darslar">1-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/12">1-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="hisoblar">2-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/13">2-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="kurs">3-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/14">3-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="statistic">4-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/15">4-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="update/kurs">5-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/1452">5-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="profile">6-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/1545">6-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="profile">7-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/14521">7-dars. Lorem Ipsum is simply</NavLink>
         </li>
         <li>
-          <NavLink to="profile">8-dars. Lorem Ipsum is simply</NavLink>
+          <NavLink to="/teacher/course/154522">8-dars. Lorem Ipsum is simply</NavLink>
         </li>
       </ul>
     </div>

@@ -39,8 +39,6 @@ a {
 }
 
 .w100 {
-  /* width: 44vw; */
-
   max-height: 90vh;
   overflow-y: scroll;
 }
