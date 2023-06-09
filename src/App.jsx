@@ -42,6 +42,7 @@ import Statistic from "./teacher/MainRoute/statistic/Statistic";
 import SelectDownloadCourse from "./teacher/MainRoute/selectDownloadCourse/SelectDownloadCourse";
 import TeacherBalance from "./teacher/MainRoute/teacherBalance/TeacherBalance";
 import StudentProfileEdit from "./teacher/pages/studentProfileEdit/StudentProfileEdit";
+import CourseInfo from "./teacher/MainRoute/courseInfo/CourseInfo";
 
 function App() {
   return (
@@ -67,21 +68,17 @@ function App() {
           <Route index element={<LessonsTeacher />} />
           <Route path="darslar" element={<LessonsTeacher />} />
           <Route path="seekurs:kursId" element={<TeachSeekurs />} />
-          {/* <Route path="vediosinonekurs" element={<TeachVediosinonekurs />} /> */}
           <Route path="hisoblar" element={<TeacherBalance />} />
-
           <Route path="Kurs/:id" element={<AboutCourseInfo />} />
           <Route path="kurs/" element={<SelectDownloadCourse />} />
           <Route path="update/kurs/" element={<TeachUpdatekurs />} />
           <Route path="statistic" element={<Statistic />} />
           <Route path="profile" element={<TeacherProfile />} />
         </Route>
+        <Route path="teacher/course/:courseId" element={<CourseInfo />} />
         <Route path="kurs/free" element={<FreeCourseDownload />} />
         <Route path="kurs/money" element={<PaidCourseDownload />} />
-        <Route
-          path="hisoblar/pulyichish"
-          element={<TakingMoney />}
-        />
+        <Route path="hisoblar/pulyichish" element={<TakingMoney />} />
         <Route path="hisoblar/pulyichish/ok" element={<TeachPulyichishok />} />
         <Route path="teacher/statistic/:course" element={<CourseStatistic />} />
         <Route

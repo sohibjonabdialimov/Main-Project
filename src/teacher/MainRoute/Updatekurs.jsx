@@ -4,7 +4,7 @@ import img13 from "../../imgs/main2.png";
 import img14 from "../../imgs/main3.png";
 import img15 from "../../imgs/main4.png";
 import "./style.css";
-import TeachUpdateCart from "../components/Cart/UpdateCart";
+import TeachUpdateCart from "../components/lessonCard/UpdateCart";
 function TeachUpdatekurs() {
   let carts = [
     {

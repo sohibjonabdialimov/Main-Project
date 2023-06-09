@@ -1,0 +1,99 @@
+.edit_profile {
+  background-color: #5b4784;
+  width: 45%;
+  margin: 0 auto;
+  height: 90vh;
+  box-shadow: 15px 15px 100px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  position: relative;
+}
+.imgs_div {
+  padding-top: 50px;
+  width: 501px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding-bottom: 22px;
+}
+.imgs_div img:first-child {
+  width: 205px;
+  height: 205px;
+  object-fit: cover;
+}
+.imgs_div img:last-child {
+  width: 71px;
+  height: 71px;
+  object-fit: cover;
+}
+.back {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  background-color: #48386a;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back ion-icon {
+  color: #fff;
+  font-size: 27px;
+}
+.form {
+  width: 501px;
+  margin: 0 auto;
+}
+.form button {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  background: linear-gradient(180deg, #3706f4 4.65%, rgba(55, 6, 244, 0) 181.36%);
+  border-radius: 50px;
+  color: #ffffff;
+  outline: none;
+  padding: 7px 42px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: none;
+  cursor: pointer;
+}
+.edit_profile input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.edit_profile input {
+  color: #fff;
+  background-color: #5b4784;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  padding-bottom: 8px;
+  display: block;
+  width: 100%;
+  margin-bottom: 31px;
+}
+
+.input_wrap {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+}
+.input_wrap input {
+  width: 50%;
+}

@@ -5,6 +5,7 @@ import styles from "./style.module.css";
 
 import "../style.css";
 import MenuContext from "antd/es/menu/MenuContext";
+import LessonCard from "../../components/lessonCard/LessonCard";
 function LessonsTeacher() {
   let carts = [
     {
@@ -83,7 +84,7 @@ function LessonsTeacher() {
       </header>
       <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
         {carts.map((cart, index) => {
-          return <TeachCart cart={cart} key={index} />;
+          return <LessonCard cart={cart} key={index} />;
         })}
       </div>
     </>

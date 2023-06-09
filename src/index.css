@@ -44,8 +44,15 @@ a {
 }
 
 .fife {
-  height: calc(100vh - 39px - 39px);
+  height: 90vh;
 }
+
+/* .profile_student_height {
+  height: calc(100vh - 39px);
+}
+.balance_student_height {
+  height: 90vh;
+} */
 
 .teacherHomePage {
   width: 70vw;

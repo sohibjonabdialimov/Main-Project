@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./style.module.css";
+import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
 import user from "../../../imgs/edit_user.png";
 import camera from "../../../imgs/camera.png";
@@ -13,7 +13,7 @@ const TeachEditProfile = () => {
     e.preventDefault();
   }
   return (
-    <div className={styles.edit_profile}>
+    <div className={styles.edit_student_profile}>
       <button onClick={onBack} className={styles.back}>
         <ion-icon name="chevron-back-outline"></ion-icon>
       </button>

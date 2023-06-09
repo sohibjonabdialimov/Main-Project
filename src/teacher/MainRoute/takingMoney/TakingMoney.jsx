@@ -9,7 +9,7 @@ function TakingMoney() {
   };
   const onBack = () => {
     navigate(-1);
-  }
+  };
   return (
     <div className="global_wrap">
       <div className={styles.hisob_wrap}>

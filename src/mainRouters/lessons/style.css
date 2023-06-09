@@ -26,7 +26,7 @@
   display: block;
   position: absolute;
   top: 50%;
-  transform: translateY(-80%);
+  transform: translateY(-50%);
   right: 20px;
 }
 .student_lessons{

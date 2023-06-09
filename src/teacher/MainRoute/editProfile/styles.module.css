@@ -1,4 +1,4 @@
-.edit_profile {
+.edit_student_profile {
   background-color: #5b4784;
   width: 60%;
   margin: 0 auto;
@@ -68,10 +68,10 @@
   border: none;
   cursor: pointer;
 }
-input::placeholder {
+.edit_student_profile input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-input {
+.edit_student_profile input {
   color: #fff;
   background-color: #5b4784;
   border: none;
