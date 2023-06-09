@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -35,8 +35,6 @@ a {
   width: 1px;
 }
 .homepage {
-  /* width: 60vw; */
-  /* height: 0%; */
   display: flex;
 }
 

@@ -1,0 +1,62 @@
+.back {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  background-color: #48386a;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back ion-icon {
+  color: #fff;
+  font-size: 27px;
+}
+
+.course_statistic {
+  position: relative;
+  padding: 0 60px;
+  position: relative;
+}
+.course_statictic_wrap {
+  display: flex;
+  gap: 47px;
+  padding-top: 145px;
+  padding-left: 20px;
+}
+.img_card {
+  width: 348px;
+  border-radius: 50px;
+  background-color: #282039;
+}
+.img_card_desc {
+  padding: 11px 23px 31px 23px;
+}
+
+.img_card img {
+  border-radius: 50px 50px 0 0;
+}
+
+.course_statictic_desc h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  margin-bottom: 29px;
+}
+.course_statictic_desc p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}

@@ -7,8 +7,6 @@ import Darslar from "./sidebarRouters/Darslar";
 import TeacherInfo from "./mainRouters/TeacherInfo";
 import TeachSeekurs from "./teacher/MainRoute/Seekurs";
 import TeachPulyichishok from "./teacher/MainRoute/moneyProcess/Pulyichishok";
-import TeachUpdatekurs from "./teacher/MainRoute/Updatekurs";
-import TeachUpdateonekurs from "./teacher/MainRoute/Updateonekurs";
 import TeachEditProfile from "./teacher/MainRoute/editProfile/TeachEditProfile";
 import StudentLayout from "./layout/student/StudentLayout";
 import Lessons from "./mainRouters/lessons/Lessons.student";
@@ -28,6 +26,8 @@ import SelectDownloadCourse from "./teacher/MainRoute/selectDownloadCourse/Selec
 import TeacherBalance from "./teacher/MainRoute/teacherBalance/TeacherBalance";
 import StudentProfileEdit from "./teacher/pages/studentProfileEdit/StudentProfileEdit";
 import CourseInfo from "./teacher/MainRoute/courseInfo/CourseInfo";
+import TeachUpdateonekurs from "./teacher/MainRoute/updateCourseOne/Updateonekurs";
+import TeachUpdatekurs from "./teacher/MainRoute/updateCourse/Updatekurs";
 
 function App() {
   return (

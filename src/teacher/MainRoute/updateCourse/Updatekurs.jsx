@@ -1,10 +1,11 @@
 import React from "react";
-import img12 from "../../imgs/main1.png";
-import img13 from "../../imgs/main2.png";
-import img14 from "../../imgs/main3.png";
-import img15 from "../../imgs/main4.png";
+import img12 from "../../../imgs/main1.png";
+import img13 from "../../../imgs/main2.png";
+import img14 from "../../../imgs/main3.png";
+import img15 from "../../../imgs/main4.png";
 import "./style.css";
-import TeachUpdateCart from "../components/lessonCard/UpdateCart";
+import "../style.css";
+import TeachUpdateCart from "../../components/lessonCard/UpdateCart";
 function TeachUpdatekurs() {
   let carts = [
     {
