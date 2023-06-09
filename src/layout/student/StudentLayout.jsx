@@ -6,7 +6,10 @@ function StudentLayout() {
   return (
     <>
       <div className="app-content">
+        <div className="studentNavbar-box">
+
         <StudentNavbar />
+        </div>
         <div className="homepage">
           <Outlet />
         </div>

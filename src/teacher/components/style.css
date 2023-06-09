@@ -30,3 +30,13 @@
   text-align: center;
   padding-top: 15px;
 }
+@media only  screen and (max-width:540px) {
+  .commit-div{
+   max-width: calc(100% - 80px );
+   width: 100%;
+   right: -50px;
+ }
+ .commit-div img {
+  left: -35px;
+}
+}

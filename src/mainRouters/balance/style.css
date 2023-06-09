@@ -1,8 +1,5 @@
 .hisoblar {
-  padding-top: 130px;
-  padding: 130px 38px;
-  width: 600px;
-  height: 202px;
+  padding: 113px 38px;
 }
 
 .hisoblar h2 {
@@ -10,6 +7,70 @@
   margin-top: 45px;
 }
 
-.hisoblar p {
-  font-size: 35px;
+.hisoblar_header {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 80;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
 }
+
+.hisoblar_number {
+  font-family: 'Inter';
+  font-size: 32px;
+  max-width: 400px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+@media only screen and (max-width:540px) {
+  .main-content{
+    display: block;
+    overflow-y: scroll;
+    height: 79vh;
+  }
+  .hisoblar{
+    padding-left:120px 20px;
+  }
+}
+@media only screen and (max-width:468px) {
+  .hisoblar{
+    align-items: center;
+  }
+  .hisoblar_header {
+
+    text-align: left;
+    max-width: 306px;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .hisoblar_number {
+    max-width: 306px;
+    width: 100%;
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width:410px) {
+ 
+  .hisoblar_header {
+    max-width: 330px;
+  }
+
+  .hisoblar_number {
+    max-width: 330;
+  }
+}
+/* @media only screen and (max-width:368px) {
+  .hisoblar{
+    padding:200px 15px;
+    padding-bottom: 0;
+  }
+  .hisoblar_header {
+    max-width: 330px;
+  }
+
+  .hisoblar_number {
+    max-width: 330;
+  }
+} */

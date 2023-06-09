@@ -4,17 +4,21 @@
     background: rgba(0, 0, 0, 0.3);
     background-color: #3E305C;
 }
-.user-navbar{
+
+.user-navbar {
     width: 23vw;
 }
+
 .Nav ul {
     margin-top: 30px;
     padding: 0 27px;
 }
-.Nav ul li{
+
+.Nav ul li {
     position: relative;
     padding: 5px 12px;
 }
+
 .Nav ul li a {
     display: block;
     border-radius: 15px;
@@ -28,7 +32,8 @@
     line-height: 15px;
     color: #ffffff;
 }
-.Nav ul li img{
+
+.Nav ul li img {
     width: 27px;
     height: 27px;
     object-fit: cover;
@@ -37,39 +42,37 @@
     left: 15%;
     transform: translateY(-50%);
 }
-.teacher-navbar ul {
-    margin-top: 30px;
-    padding: 0 27px;
+
+.qaytish {
+    width: 40px;
+    height: 40px;
+    background: rgba(216, 29, 29, 0.3);
 }
-.teacher-navbar ul li{
-    position: relative;
-    padding: 11px 12px;
+
+.circle {
+    background-color: #3E305C;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    margin-top: 8%;
+    margin-left: 8%;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.3);
 }
-.teacher-navbar ul li a {
-    display: block;
-    border-radius: 15px;
-    text-transform: capitalize;
-    width: 100%;
-    padding: 14px 15px 14px 70px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    color: #ffffff;
+.d-none{
+    display: none;
 }
-.teacher-navbar ul li img{
-    width: 27px;
-    height: 27px;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 15%;
-    transform: translateY(-50%);
+.user-navbar{
+    height: 100%;
 }
-.teacher-navbar{
-    height: 90vh;
-    width: 23vw;
-    background: linear-gradient(#564282, #826A91);
-    border-radius: 50px;
+@media only screen and (max-width:540px) {
+    .studentNavbar-box {
+        display: none;
+    }
+
 }

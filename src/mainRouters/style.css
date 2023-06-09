@@ -1,6 +1,6 @@
 .main-content {
   display: flex;
-  /* justify-content: space-evenly; */
+  justify-content: space-evenly;
   padding: 0 6px;
   flex-wrap: wrap;
   background-color: #5b4784;
@@ -8,6 +8,7 @@
   /* padding-bottom: 20px; */
   border-radius: 50px;
   gap: 21px;
+  height: 100%;
 }
 
 .main-page {
@@ -22,4 +23,11 @@
 .sidebar-main-wrap_all {
   overflow-y: scroll;
   max-height: 79vh;
+}
+@media only screen and (max-width:540px) {
+  .main-page{
+    display: block;
+    /* height: 100%; */
+  }
+  
 }
