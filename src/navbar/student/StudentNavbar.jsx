@@ -12,14 +12,10 @@ function StudentNavbar( { changeModal ,modal} ) {
 
   console.log('bir',modal);
   const handleClick = () => {
-
     changeModal(false)
-    // console.log(modal,'ikki');
  }
  
  return (
-    // <button onClick={handleClick}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus necessitatibus quia esse.</button>
-
     <div className={(modalClass=='qaytish')?'Nav  user-navbar qaytish':'Nav user-navbar'}>
       <div className={(modal)?"circle":"d-none circle"} onClick={handleClick}>
         <img src={prev} alt="prev" />

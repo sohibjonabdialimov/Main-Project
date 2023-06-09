@@ -183,7 +183,7 @@ function AboutCourseInfo() {
   }
   return (
     <div className="main__course-buy">
-      <div className="main-content sidebar-main-wrap">
+      <div className="sidebar-main-wrap">
         <img className="every__cource-bigImg" src={img} alt="" />
         <div className="every__cource-desc">
           <div className="every__cource-header">

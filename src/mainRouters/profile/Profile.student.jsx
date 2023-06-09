@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Obuna from "../../sidebarRouters/Obuna";
 import opacha from "../../imgs/big-logo.png";
 import obuna1 from "../../imgs/obuna1.png";
@@ -10,6 +10,9 @@ import obuna6 from "../../imgs/obuna6.png";
 import obuna7 from "../../imgs/obuna7.png";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import StudentNavbar from "../../navbar/student/StudentNavbar";
+import MobileHeader from "../../components/mobileHeader/mobileHeader";
+import Baystudy from "../../sidebarRouters/boughtLessons/BoughtLessons";
 
 function Profile() {
   const navigate = useNavigate();
@@ -66,17 +69,30 @@ function Profile() {
       ],
     },
   ];
+  let [modal, setModal] = useState(false)
+  let [modalDarslar, setModalDarslar] = useState(false)
+  const changeModal = (value) => {
+    setModal(value)
+  }
 
+  const changeModalDars = (value) => {
+    setModalDarslar(value)
+  }
   return (
     <div className="main-page">
+      <div className={modal ? "def modal-navbar" : "def yoq"} >
+        <StudentNavbar changeModal={changeModal} modal={modal} />
+      </div>
       <div
-        className="fife w100 main_lesson"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        className={(modal || modalDarslar) ? "blur fife w100 main_lesson mobile_none" : "fife w100 main_lesson mobile_none"}
+      // style={{
+      //   display: "flex",
+      //   alignItems: "center",
+      //   justifyContent: "center",
+      // }}
       >
+        <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'Profile'} />
+
         <div className="profile-content">
           <img src={opacha} alt="" />
           <h1>{me[0].name + " " + me[0].surname}</h1>
@@ -91,6 +107,9 @@ function Profile() {
         </div>
       </div>
       <Obuna me={me} />
+      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
+        <Obuna  modalDarslar={modalDarslar} changeModalDars={changeModalDars} me={me}/>
+      </div>
     </div>
   );
 }

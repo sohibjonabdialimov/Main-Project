@@ -134,8 +134,42 @@
 .sidebar-bought-course{
   padding-bottom: 20px;
 }
+.mobile__header{
+  width: 100%;
+  display: flex;
+  gap: 72px;
+
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+border-radius: 50px 50px 0px 0px;
+  /* justify-content: center; */
+}
+.mobile__header{
+  position: relative;
+  padding: 24px 25px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 17px;
+}
+.mobile__header h2{
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+} 
+.mobile__header .circle{
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  margin: 0;
+}
 @media only screen and (max-width:540px){
-  .sidebar-main-content{
-    display: none;
+  .darslarModal .sidebar-main-content{
+    padding: 0;
   }
 }

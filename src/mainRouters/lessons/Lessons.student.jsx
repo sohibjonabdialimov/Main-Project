@@ -15,6 +15,7 @@ import mobileMenu from "../../imgs/mobile_menu.svg";
 import "./style.css";
 import "../style.css";
 import StudentNavbar from "../../navbar/student/StudentNavbar";
+import MobileHeader from "../../components/mobileHeader/mobileHeader";
 function Lessons() {
   let carts = [
     {
@@ -73,7 +74,7 @@ function Lessons() {
     },
   ];
   let [modal, setModal] = useState(false)
-  let [darslarModal, setDarslarModal] = useState(false)
+  let [modalDarslar, setModalDarslar] = useState(false)
   function clickModal() {
     console.log('vvvvv', modal);
     setModal(!modal)
@@ -82,11 +83,13 @@ function Lessons() {
     setModal(value)
   }
   function clickDarslarModal() {
-    console.log('vvvvv', modal);
-    setModal(!modal)
+    console.log('darslarModal', modalDarslar);
+    setModalDarslar(!modalDarslar)
+    console.log('darslarModal', modalDarslar);
+
   }
-  const changeDarslarModal = (value) => {
-    setModal(value)
+  const changeModalDars = (value) => {
+    setModalDarslar(value)
   }
   console.log('vvvvv', modal, '222');
   return (
@@ -94,8 +97,8 @@ function Lessons() {
       <div className={modal ? "def modal-navbar" : "def yoq"} >
         <StudentNavbar changeModal={changeModal} modal={modal} />
       </div>
-      <div className={modal ? "blur w100 main_lesson" : "w100 main_lesson"}>
-        <div className="mobile-for">
+      <div className={(modal || modalDarslar) ? "blur w100 main_lesson" : "w100 main_lesson"}>
+        {/* <div className="mobile-for">
           <div className="burger" onClick={clickModal}>
             <div className="burger-box">
               <img src={mobileBurger} alt="burger" />
@@ -113,14 +116,14 @@ function Lessons() {
               <img src={search} alt="" />
             </div>
           </div>
-          <div className="burger">
-            <div className="burger-box">
+          <div className="burger" onClick={clickDarslarModal}>
+            <div className="burger-box" >
               <img src={mobileMenu} alt="burger" />
             </div>
 
           </div>
-        </div>
-
+        </div> */}
+        <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'search'} />
         <div className="fife  main-content sidebar-main-wrap_all">
           {carts.map((cart, index) => {
             return <Cart cart={cart} key={index} />;
@@ -128,8 +131,8 @@ function Lessons() {
         </div>
       </div>
       <Navvedio />
-      <div  className={modal ? "darslarModal modal-navbar" : "darslarModal yoq"} >
-      <Navvedio />
+      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
+        <Navvedio modalDarslar={modalDarslar} changeModalDars={changeModalDars} />
       </div>
     </div>
   );

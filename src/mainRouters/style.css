@@ -23,3 +23,9 @@
   overflow-y: scroll;
   max-height: 79vh;
 }
+@media only screen and (max-width:540px) {
+  .main-page{
+    display: block;
+  }
+  
+}
