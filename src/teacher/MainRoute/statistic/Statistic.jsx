@@ -5,7 +5,7 @@ import img14 from "../../../imgs/main3.png";
 import img15 from "../../../imgs/main4.png";
 import "./style.css";
 import "../style.css";
-import TeachUpdateCart from "../../components/lessonCard/UpdateCart";
+import StatisticCard from "../../components/statisticCard/StatisticCard";
 function Statistic() {
   let carts = [
     {
@@ -61,7 +61,7 @@ function Statistic() {
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
       <div className="main_teacher_content sidebar-main-wrap">
         {carts.map((cart, index) => {
-          return <TeachUpdateCart cart={cart} key={index} />;
+          return <StatisticCard cart={cart} key={index} />;
         })}
       </div>
     </div>
