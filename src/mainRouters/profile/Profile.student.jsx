@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Obuna from "../../sidebarRouters/Obuna";
 import opacha from "../../imgs/big-logo.png";
 import obuna1 from "../../imgs/obuna1.png";
@@ -13,9 +13,22 @@ import "./style.css";
 import StudentNavbar from "../../navbar/student/StudentNavbar";
 import MobileHeader from "../../components/mobileHeader/mobileHeader";
 import Baystudy from "../../sidebarRouters/boughtLessons/BoughtLessons";
+import axios from "axios";
 
 function Profile() {
   const navigate = useNavigate();
+  const [profile,setProfil]=useState({})
+  useEffect(() => {
+    axios.get("http://165.232.127.62:5001/users/me", {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((res) => {
+      console.log(res.data)
+      setProfil(res.data)
+      
+    })
+  }, [])
   let me = [
     {
       type: 0,

@@ -18,7 +18,7 @@ function CommentsList ({modalDarslar,changeModalDars,commints}) {
          
       </div>
       <h2>Izohlar</h2>
-      {commints.map((commint, index) => {
+      {commints?.map((commint, index) => {
         return <Commint commint={commint} key={index} />;
       })}
     </div>
