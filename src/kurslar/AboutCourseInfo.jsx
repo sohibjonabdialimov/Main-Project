@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
 import { useParams } from "react-router-dom";
 import teacher1 from "../imgs/teacher-home1.png";
@@ -21,6 +21,7 @@ import MobileHeader from "../components/mobileHeader/mobileHeader";
 import StudentNavbar from "../navbar/student/StudentNavbar";
 import Baystudy from "../sidebarRouters/boughtLessons/BoughtLessons";
 import Navvedio from "../sidebarRouters/Navvedio";
+import axios from "axios";
 function AboutCourseInfo() {
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
@@ -31,10 +32,41 @@ function AboutCourseInfo() {
   const changeModalDars = (value) => {
     setModalDarslar(value);
   };
+  const [kurs, setKurs] = useState({})
+  const [teacher, setTeacher] = useState({});
   const { kursId } = useParams();
+  function deleteplatforma(url) {
+    try {
+      if (url.includes("platforma")) {
+        url = url.split("/")
+        let res = ""
+        for (let i = 2; i < url.length; i++) {
+          res += "/" + url[i]
+        }
+        return (res)
+      }
+      return "/" + url
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    axios.get("http://165.232.127.62:5001/courses/" + kursId, {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((res) => {
+      setKurs(res.data)
+      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId).then((res) => {
+        setTeacher(res.data)
+      })
+    })
+  }, [])
+
+  console.log(kurs)
   let a = [
     {
-      kursId: 12,
+      kursId: "64806a1f502810fdb36a1713",
       img: imgs1,
       avatar: teacher1,
       name: "supermiya",
@@ -195,10 +227,12 @@ function AboutCourseInfo() {
     }
   }
 
+
+
+
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
-        <img className="every__cource-bigImg" src={img} alt="" />
 
         <div className={modal ? "def modal-navbar" : "def yoq"}>
           <StudentNavbar changeModal={changeModal} modal={modal} />
@@ -219,14 +253,14 @@ function AboutCourseInfo() {
           />
           <div
             className="every__cource-bigImg"
-            style={{ backgroundImage: `url(${img})` }}
+            style={{ backgroundImage: `url(${"http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)})` }}
           ></div>
 
           <div className="every__cource-desc">
             <div className="every__cource-header">
               <div className="every__cource-title">
-                <img src={avatar} alt="" />
-                <h3>{author}</h3>
+                <img src={"http://165.232.127.62:5001" + deleteplatforma(teacher.path)} alt="" />
+                <h3>{teacher.fullname}</h3>
               </div>
               <div className="every__cource-nav">
                 <img src={save} alt="" />
@@ -235,17 +269,17 @@ function AboutCourseInfo() {
               </div>
             </div>
             <div className="every__cource-name">
-              <p>Kurs nomi: {name}</p>
+              <p>Kurs nomi: {kurs.Kursname}</p>
             </div>
             <div className="every__cource-about">
-              <p>Kurs haqida: {aboutCource}</p>
+              <p>Kurs haqida: {kurs.Kursname}</p>
             </div>
             <div className="every__cource-num">
               <p className="every__cource-para">
-                Kurs narxi: {priceCourse} so'm
+                Kurs narxi: {kurs.narxi} so'm
               </p>
-              <p className="every__cource-para">Olingan: {bought}</p>
-              <p className="every__cource-para">Davomiyligi: {davomiyligi}</p>
+              <p className="every__cource-para">Olingan: {kurs.subs}</p>
+              <p className="every__cource-para">Davomiyligi: {kurs.muddati}oy</p>
             </div>
             <div className="every__course-buttons">
               <button>Video darslar</button>
