@@ -218,7 +218,7 @@
   padding: 20px 0;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 540px) {
   .student_lessons_wrap{
   grid-template-columns: auto;
 
