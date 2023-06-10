@@ -20,7 +20,6 @@
 
 .search-main {
   width: 100%;
-  /* padding: 15px 28px; */
   padding: 10px 12px;
   font-family: "Inter";
   font-style: normal;
@@ -54,9 +53,6 @@
   width: 44px;
   height: 40px;
   box-sizing: border-box;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   position: absolute;
   top: 34px;
   right: 2px;
@@ -122,11 +118,6 @@
   transition: 2s;
 }
 
-.yoq .Nav {
-  /* left: 100%; */
-
-  /* transform: translate(0%); */
-}
 
 .burger {
   display: none;
@@ -225,4 +216,11 @@
   column-gap: 20px;
   row-gap: 20px;
   padding: 20px 0;
+}
+
+@media only screen and (max-width: 430px) {
+  .student_lessons_wrap{
+  grid-template-columns: auto;
+
+  }
 }

@@ -30,9 +30,9 @@ import TeachUpdateonekurs from "./teacher/MainRoute/updateCourseOne/Updateonekur
 import TeachUpdatekurs from "./teacher/MainRoute/updateCourse/Updatekurs";
 import StudentLogin from "./sign/login/StudentLogin";
 import TeacherLogin from "./sign/login/TeacherLogin";
+import Select from "./select/Select";
 
 function App() {
-  const navigate = useNavigate();
 
   // useEffect(() => {
   //   if(!localStorage.getItem("token")){
@@ -45,6 +45,7 @@ function App() {
       <Routes>
         <Route path="login" element={<StudentLogin /> } />
         <Route path="teacherlogin" element={<TeacherLogin /> } />
+        <Route path="select" element={<Select /> } />
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />
           <Route path="hisoblar" element={<Balance />} />

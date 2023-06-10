@@ -7,7 +7,13 @@ import carousel2 from "./imgs/carousel2.png";
 import carousel3 from "./imgs/carousel3.png";
 import carousel4 from "./imgs/carousel4.png";
 import hero_img from "./imgs/hero_img.png";
+import { useNavigate } from "react-router-dom";
 function Begin() {
+  const navigate = useNavigate();
+  const startFunc = () => {
+    console.log("salom");
+    navigate("/select")
+  }
   return (
     <div className="ionex">
       <div className="ionex_header">
@@ -27,7 +33,7 @@ function Begin() {
             </li>
           </ul>
         </nav>
-        <button>Boshlash</button>
+        <button onClick={() => startFunc()}>Boshlash</button>
       </div>
 
       <div className="ionex_hero">
