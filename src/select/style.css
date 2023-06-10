@@ -1,0 +1,50 @@
+.back {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  background-color: #48386a;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back ion-icon {
+  color: #fff;
+  font-size: 27px;
+}
+.sign_wrap {
+  background-color: #5b4784;
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  height: 90vh;
+  box-shadow: 15px 15px 100px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}
+.select_div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  margin: 0 auto;
+  width: 70%;
+  gap: 20px;
+}
+.select_link {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  padding: 80px 40px;
+  color: #ffffff;
+  background-color: #48386a;
+  box-shadow: 15px 15px 100px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}

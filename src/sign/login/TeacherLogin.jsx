@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "../style.css";
 const TeacherLogin = () => {
   const passwordRef = useRef();
   const usernameRef = useRef();
   const navigate = useNavigate();
+  const onBack = () => {
+    navigate(-1);
+  };
   const onHandler = (e) => {
     e.preventDefault();
     const obj = {
@@ -25,12 +28,18 @@ const TeacherLogin = () => {
       });
   };
   return (
-    <div>
-      <form onSubmit={(e) => onHandler(e)}>
-        <input ref={usernameRef} type="text" placeholder="username" />
-        <input ref={passwordRef} type="password" placeholder="password" />
-        <button type="submit">Login</button>
-      </form>
+    <div className="app-content">
+      
+      <div className="sign_wrap">
+      <button onClick={onBack} className="back">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+        <form className="sign_form" onSubmit={(e) => onHandler(e)}>
+          <input ref={usernameRef} type="text" placeholder="username" />
+          <input ref={passwordRef} type="password" placeholder="password" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   );
 };

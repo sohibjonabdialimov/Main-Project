@@ -99,7 +99,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 36px;
-    /* padding-bottom: 74px; */
+    padding-bottom: 74px;
 }
 .carousel_imgs img{
     width: 237px;

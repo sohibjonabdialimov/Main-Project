@@ -1,0 +1,67 @@
+.back {
+  position: absolute;
+  top: 22px;
+  left: 27px;
+  background-color: #48386a;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.back ion-icon {
+  color: #fff;
+  font-size: 27px;
+}
+.sign_wrap {
+  background-color: #5b4784;
+  width: 70%;
+  position: relative;
+  margin: 0 auto;
+  height: 90vh;
+  box-shadow: 15px 15px 100px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}
+.sign_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  height: 100%;
+}
+.sign_form input {
+  width: 100%;
+  background-color: #453663;
+  color: #fff;
+  outline: none;
+  padding: 10px 25px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  border: none;
+  margin-bottom: 25px;
+  border-radius: 20px;
+}
+.sign_form button {
+  padding: 4px 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+  background-color: tr;
+  outline: none;
+  border: none;
+  background-color: #453663;
+  border-radius: 30px;
+  width: 100%;
+}

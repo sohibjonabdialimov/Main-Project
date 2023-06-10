@@ -11,8 +11,7 @@ import { useNavigate } from "react-router-dom";
 function Begin() {
   const navigate = useNavigate();
   const startFunc = () => {
-    console.log("salom");
-    navigate("/select")
+    navigate("/select");
   }
   return (
     <div className="ionex">
@@ -49,9 +48,7 @@ function Begin() {
         <img src={carousel3} alt="" />
         <img src={carousel4} alt="" />
       </div>
-      <NavLink to="/login/">student</NavLink>
-      <br />
-      <NavLink to="/teacherlogin">oqituvchi</NavLink>
+     
     </div>
   );
 }
