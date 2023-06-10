@@ -33,12 +33,9 @@
   margin-bottom: 21px;
   color: #ffffff;
 }
+
 .input_file {
-  background-color: #40325d;
-  display: block;
   position: relative;
-}
-.input_file {
   color: #fff;
   width: 296px;
   height: 159px;

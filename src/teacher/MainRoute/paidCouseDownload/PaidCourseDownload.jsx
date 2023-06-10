@@ -39,7 +39,7 @@ function PaidCourseDownload() {
               <div className={styles.videos}>
                 <div className={styles.video_download}>
                   <p>1-video dars</p>
-                  <button type="button" className={styles.down_btn}>
+                  <button type="button" onClick={() => {navigate("/teacher/processmoneydownload")}} className={styles.down_btn}>
                     Video dars yuklash
                   </button>
                   <button type="button" className={styles.plus_btn}>

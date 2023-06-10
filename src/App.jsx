@@ -31,6 +31,8 @@ import TeachUpdatekurs from "./teacher/MainRoute/updateCourse/Updatekurs";
 import StudentLogin from "./sign/login/StudentLogin";
 import TeacherLogin from "./sign/login/TeacherLogin";
 import Select from "./select/Select";
+import ProcessFreeDownload from "./teacher/MainRoute/processFreeDownload/ProcessFreeDownload";
+import SuccessFreeDownload from "./teacher/MainRoute/successFreeDownload/SuccessFreeDownload";
 
 function App() {
   return (
@@ -71,7 +73,10 @@ function App() {
         <Route path="kurs/money" element={<PaidCourseDownload />} />
         <Route path="hisoblar/pulyichish" element={<TakingMoney />} />
         <Route path="hisoblar/pulyichish/ok" element={<TeachPulyichishok />} />
+        <Route path="free/success" element={<SuccessFreeDownload />} />
         <Route path="teacher/statistic/:course" element={<CourseStatistic />} />
+        <Route path="teacher/processfreedownload" element={<ProcessFreeDownload />} />
+        <Route path="teacher/processmoneydownload" element={<ProcessFreeDownload />} />
         <Route
           path="teacher/update/kurs/:id"
           element={<TeachUpdateonekurs />}
