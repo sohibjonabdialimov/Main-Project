@@ -31,23 +31,14 @@ import TeachUpdatekurs from "./teacher/MainRoute/updateCourse/Updatekurs";
 import StudentLogin from "./sign/login/StudentLogin";
 import TeacherLogin from "./sign/login/TeacherLogin";
 import Select from "./select/Select";
-import {useParams} from "react-router-dom";
 
 function App() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    // console.log(window.location.pathname);
-    // if(window.location.pathname === "/login" && localStorage.getItem("token")){
-    //   navigate("/student/");
-    // }
-  }, [])
-  
   return (
     <>
       <Routes>
-        <Route path="login" element={<StudentLogin /> } />
-        <Route path="teacherlogin" element={<TeacherLogin /> } />
-        <Route path="select" element={<Select /> } />
+        <Route path="login" element={<StudentLogin />} />
+        <Route path="teacherlogin" element={<TeacherLogin />} />
+        <Route path="select" element={<Select />} />
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />
           <Route path="hisoblar" element={<Balance />} />

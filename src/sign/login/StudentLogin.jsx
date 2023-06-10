@@ -31,11 +31,10 @@ const StudentLogin = () => {
   };
   return (
     <div className="app-content">
-      
       <div className="sign_wrap">
-      <button onClick={onBack} className="back">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
+        <button onClick={onBack} className="back">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
         <form className="sign_form" onSubmit={(e) => onHandler(e)}>
           <input ref={usernameRef} type="text" placeholder="username" />
           <input ref={passwordRef} type="password" placeholder="password" />

@@ -14,9 +14,6 @@
     overflow-y: scroll;
 }
 
-/* .fife{
-    height: calc(100vh - 39px - 39px);
-} */
 .app-content {
     height: 100%;
     display: flex;
@@ -94,14 +91,14 @@
     height: 374px;
 }
 
-.carousel_imgs{
+.carousel_imgs {
     padding: 0 112px;
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 36px;
     padding-bottom: 74px;
 }
-.carousel_imgs img{
+.carousel_imgs img {
     width: 237px;
     height: 144px;
     object-fit: cover;

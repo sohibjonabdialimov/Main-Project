@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./App.css";
 import logo from "./imgs/ionex.png";
 import carousel1 from "./imgs/carousel1.png";
@@ -12,7 +12,7 @@ function Begin() {
   const navigate = useNavigate();
   const startFunc = () => {
     navigate("/select");
-  }
+  };
   return (
     <div className="ionex">
       <div className="ionex_header">
@@ -48,7 +48,6 @@ function Begin() {
         <img src={carousel3} alt="" />
         <img src={carousel4} alt="" />
       </div>
-     
     </div>
   );
 }
