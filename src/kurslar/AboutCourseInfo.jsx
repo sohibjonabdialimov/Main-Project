@@ -57,13 +57,11 @@ function AboutCourseInfo() {
       }
     }).then((res) => {
       setKurs(res.data)
-      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId).then((res) => {
+      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id).then((res) => {
         setTeacher(res.data)
       })
     })
   }, [])
-
-  console.log(kurs)
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import obuna1 from "../imgs/obuna1.png";
 import obuna2 from "../imgs/obuna2.png";
 import obuna3 from "../imgs/obuna3.png";
@@ -8,6 +8,7 @@ import obuna6 from "../imgs/obuna6.png";
 import obuna7 from "../imgs/obuna7.png";
 import darslar1 from "../imgs/darslar1.png";
 import darslar2 from "../imgs/darslar2.png";
+import axios from 'axios';
 const Darslar = () => {
   let me = [
     {
@@ -112,13 +113,68 @@ const Darslar = () => {
       ]
     },
   ];
+  const [profile, setProfil] = useState({});
+  const [teacherData, setTeacherData] = useState([]);
+  function deleteplatforma(url) {
+    try {
+      if (url.includes("platforma")) {
+        url = url.split("/")
+        let res = ""
+        for (let i = 2; i < url.length; i++) {
+          res += "/" + url[i]
+        }
+        return (res)
+      }
+      return "/" + url
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    axios
+      .get("http://165.232.127.62:5001/usersme", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setProfil(res.data);
+      });
+  }, []);
+
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      const fetchedTeacherData = [];
+      for (let i = 0; i < profile.mycurs.length; i++) {
+        const response = await axios.get(
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,{
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            }
+          }
+        );
+        fetchedTeacherData.push(response.data);
+      }
+      setTeacherData(fetchedTeacherData);
+    };
+
+    if (profile.teachers) {
+      fetchTeachers();
+    }
+  }, [profile]);
+
+  console.log(teacherData);
   return (
     <div className="carts-wrapper">
-      {me[0].darslar.map((item) => (
+      {teacherData.map((item, index) => (
         <div className="darslar-cart">
-          <img src={item.img} alt="" />
+          <img
+            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+            alt=""
+          />
           <div>
-            <p>{item.text}</p>
+            <p>{item.Kursname}</p>
+            <p>{item.Kursdesc}</p>
           </div>
         </div>
       ))}
