@@ -14,11 +14,11 @@ const Select = () => {
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
         <div className="select_div">
-          <Link className="select_link" to="/login/">
+          <Link className="select_link" to="/registration">
             O'quvchi sifatida ro'yhatdan o'tish
           </Link>
           <br />
-          <Link className="select_link" to="/teacherlogin">
+          <Link className="select_link" to="/teacherregistration">
             O'qituvchi sifatida ro'yhatdan o'tish
           </Link>
         </div>
