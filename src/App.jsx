@@ -33,13 +33,17 @@ import TeacherLogin from "./sign/login/TeacherLogin";
 import Select from "./select/Select";
 import ProcessFreeDownload from "./teacher/MainRoute/processFreeDownload/ProcessFreeDownload";
 import SuccessFreeDownload from "./teacher/MainRoute/successFreeDownload/SuccessFreeDownload";
+import StudentRegistration from "./sign/registration/StudentRegistration";
+import TeacherRegistration from "./sign/registration/TeacherRegistration";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="login" element={<StudentLogin />} />
+        <Route path="registration" element={<StudentRegistration />} />
         <Route path="teacherlogin" element={<TeacherLogin />} />
+        <Route path="teacherregistration" element={<TeacherRegistration />} />
         <Route path="select" element={<Select />} />
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />

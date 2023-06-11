@@ -65,3 +65,51 @@
   border-radius: 30px;
   width: 100%;
 }
+.registr_form {
+  width: 402px;
+  margin: 0 auto;
+}
+.registr_title {
+  text-align: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  padding-top: 31px;
+  padding-bottom: 31px;
+  color: #ffffff;
+}
+.registr_form input {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  outline: none;
+  margin-bottom: 24px;
+}
+.registr_form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.registr_form button {
+  margin-top: 33px;
+  padding: 11px 41px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  background: linear-gradient(180deg, #3706f4 4.65%, rgba(55, 6, 244, 0) 181.36%);
+  border-radius: 50px;
+  width: 100%;
+}
