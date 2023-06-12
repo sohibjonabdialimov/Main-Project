@@ -1,26 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
 import { useParams } from "react-router-dom";
-import teacher1 from "../imgs/teacher-home1.png";
-import teacher2 from "../imgs/teacher-home2.png";
-import teacher3 from "../imgs/teacher-home3.png";
-import teacher4 from "../imgs/teacher-home4.png";
-import imgs1 from "../imgs/main1.png";
-import imgs2 from "../imgs/main2.png";
-import imgs3 from "../imgs/main3.png";
-import imgs4 from "../imgs/main4.png";
-import izohlar1 from "../imgs/izohlar1.png";
-import izohlar2 from "../imgs/izohlar2.png";
-import izohlar3 from "../imgs/izohlar3.png";
-import izohlar4 from "../imgs/izohlar4.png";
 import save from "../imgs/save.png";
 import coin from "../imgs/coin.png";
 import heart from "../imgs/heart.png";
 import "./index.css";
 import MobileHeader from "../components/mobileHeader/mobileHeader";
 import StudentNavbar from "../navbar/student/StudentNavbar";
-import Baystudy from "../sidebarRouters/boughtLessons/BoughtLessons";
-import Navvedio from "../sidebarRouters/Navvedio";
 import axios from "axios";
 function AboutCourseInfo() {
   let [modal, setModal] = useState(false);
