@@ -55,7 +55,7 @@ function App() {
             <Route path="subs" element={<Subs />} />
             <Route path="darslar" element={<Darslar />} />
           </Route>
-          <Route path="teacherinfo" element={<TeacherInfo />} />
+          <Route path="teacherinfo/:teacherId" element={<TeacherInfo />} />
         </Route>
 
         <Route path="/editprofil" element={<StudentProfileEdit />} />

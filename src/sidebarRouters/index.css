@@ -110,7 +110,9 @@
   background-color: #3a2c5b;
   border-radius: 20px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
+
 .darslar-cart div{
   padding: 3px;
 }

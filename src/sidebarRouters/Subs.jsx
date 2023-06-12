@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Subs = () => {
+  const navigate = useNavigate();
   function deleteplatforma(url) {
     try {
       if (url.includes("platforma")) {
@@ -18,7 +20,6 @@ const Subs = () => {
   }
 
   const [profile, setProfil] = useState({});
-  const [profil, setProf] = useState({});
   const [teacherData, setTeacherData] = useState([]);
 
   useEffect(() => {
@@ -50,11 +51,16 @@ const Subs = () => {
     }
   }, [profile]);
 
-
   return (
     <div className="carts-wrapper">
       {teacherData.map((item, index) => (
-        <div className="obunalar-cart" key={index}>
+        <div
+          className="obunalar-cart"
+          key={index}
+          onClick={() => {
+            navigate("/student/teacherinfo/" + item._id);
+          }}
+        >
           <img
             src={"http://165.232.127.62:5001" + deleteplatforma(item.path)}
             alt=""

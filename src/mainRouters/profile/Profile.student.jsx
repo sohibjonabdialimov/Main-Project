@@ -18,72 +18,88 @@ import { userme } from "../../../unvervars/userme";
 
 function Profile() {
   const navigate = useNavigate();
-  const [profile, setProfil] = useState({})
+  const [profile, setProfil] = useState({});
   useEffect(() => {
-    axios.get("http://165.232.127.62:5001/usersme", {
-      headers: {
-        Authorization: localStorage.getItem("token")
-      }
-    }).then((res) => {
-      setProfil(res.data)
-
-    })
-  }, [])
-  let [modal, setModal] = useState(false)
-  let [modalDarslar, setModalDarslar] = useState(false)
+    axios
+      .get("http://165.232.127.62:5001/usersme", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setProfil(res.data);
+      });
+  }, []);
+  let [modal, setModal] = useState(false);
+  let [modalDarslar, setModalDarslar] = useState(false);
   const changeModal = (value) => {
-    setModal(value)
-  }
+    setModal(value);
+  };
 
   const changeModalDars = (value) => {
-    setModalDarslar(value)
-  }
+    setModalDarslar(value);
+  };
   function deleteplatforma(url) {
     try {
       if (url.includes("platforma")) {
-        url = url.split("/")
-        let res = ""
+        url = url.split("/");
+        let res = "";
         for (let i = 2; i < url.length; i++) {
-          res += "/" + url[i]
+          res += "/" + url[i];
         }
-        return (res)
+        return res;
       }
-      return  url
+      return url;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
   return (
     <div className="main-page">
-      <div className={modal ? "def modal-navbar" : "def yoq"} >
+      <div className={modal ? "def modal-navbar" : "def yoq"}>
         <StudentNavbar changeModal={changeModal} modal={modal} />
       </div>
       <div
-        className={(modal || modalDarslar) ? "blur fife w100 main_lesson mobile_none" : "fife w100 main_lesson mobile_none"}
-      // style={{
-      //   display: "flex",
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      // }}
+        className={
+          modal || modalDarslar
+            ? "blur fife w100 main_lesson mobile_none"
+            : "fife w100 main_lesson mobile_none"
+        }
       >
-        <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'Profile'} />
+        <MobileHeader
+          changeModalDars={changeModalDars}
+          changeModal={changeModal}
+          modal={modal}
+          modalDarslar={modalDarslar}
+          type={"Profile"}
+        />
 
         <div className="profile-content">
-          <img src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)} alt="" />
+          <img
+            src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)}
+            alt=""
+          />
           <h1>{profile.fullname}</h1>
           <div className="profile-content-para">
             <p>Username: {profile.username}</p>
             <p>Email: {profile.email}</p>
           </div>
           <div className="profile-buttons">
-            <button onClick={() => navigate('/editprofil')}>Profilni tahrirlash</button>
+            <button onClick={() => navigate("/editprofil")}>
+              Profilni tahrirlash
+            </button>
             <button>Chiqib ketish</button>
           </div>
         </div>
       </div>
       <Obuna me={profile.mycurs} />
-      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-        <Obuna modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='obuna' me={profile.mycurs} />
+      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"}>
+        <Obuna
+          modalDarslar={modalDarslar}
+          changeModalDars={changeModalDars}
+          topic="obuna"
+          me={profile.mycurs}
+        />
       </div>
     </div>
   );
