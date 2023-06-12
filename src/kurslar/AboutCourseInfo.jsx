@@ -7,8 +7,6 @@ import heart from "../imgs/heart.png";
 import "./index.css";
 import MobileHeader from "../components/mobileHeader/mobileHeader";
 import StudentNavbar from "../navbar/student/StudentNavbar";
-import Baystudy from "../sidebarRouters/boughtLessons/BoughtLessons";
-import Navvedio from "../sidebarRouters/Navvedio";
 import axios from "axios";
 function AboutCourseInfo() {
   function savekurs(id) {
