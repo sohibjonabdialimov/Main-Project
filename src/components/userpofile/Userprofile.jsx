@@ -11,7 +11,7 @@ function deleteplatforma(url) {
       }
       return (res)
     }
-    else { return "/" + url }
+    else { return url }
 
   } catch (error) {
     console.log(error)

@@ -9,7 +9,10 @@ import obuna7 from "../imgs/obuna7.png";
 import darslar1 from "../imgs/darslar1.png";
 import darslar2 from "../imgs/darslar2.png";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Darslar = () => {
+  const navigate = useNavigate();
+
   let me = [
     {
       type: 0,
@@ -147,11 +150,11 @@ const Darslar = () => {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,{
-            headers: {
-              Authorization: localStorage.getItem("token"),
-            }
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId, {
+          headers: {
+            Authorization: localStorage.getItem("token"),
           }
+        }
         );
         fetchedTeacherData.push(response.data);
       }
@@ -167,14 +170,22 @@ const Darslar = () => {
   return (
     <div className="carts-wrapper">
       {teacherData.map((item, index) => (
+
         <div className="darslar-cart">
-          <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
-            alt=""
-          />
-          <div>
-            <p>{item.Kursname}</p>
-            <p>{item.Kursdesc}</p>
+          <div className="d-flex justify-content-center"
+            onClick={() => {
+              navigate("/student/kurs/"+item._id);
+              console.log(item)
+            }}
+          >
+            <img
+              src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+              alt=""
+            />
+            <div>
+              <p>{item.Kursname}</p>
+              <p>{item.Kursdesc}</p>
+            </div>
           </div>
         </div>
       ))}

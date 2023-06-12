@@ -48,7 +48,7 @@ function Profile() {
         }
         return (res)
       }
-      return "/" + url
+      return  url
     } catch (error) {
       console.log(error)
     }
