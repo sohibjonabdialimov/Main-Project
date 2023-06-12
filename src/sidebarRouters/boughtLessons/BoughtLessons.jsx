@@ -2,29 +2,29 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import homeSidebar1 from "../../imgs/sidebar1.png";
 import homeSidebar2 from "../../imgs/sidebar2.png";
-import prev from '../../imgs/prev.svg';
+import prev from "../../imgs/prev.svg";
 
 import SidebarCart from "../../components/SidebarCart/SidebarCart";
 import axios from "axios";
 function deleteplatforma(url) {
   try {
     if (url.includes("platforma")) {
-      url = url.split("/")
-      let res = ""
+      url = url.split("/");
+      let res = "";
       for (let i = 2; i < url.length; i++) {
-        res += "/" + url[i]
+        res += "/" + url[i];
       }
-      return (res)
+      return res;
     }
-    return "/" + url
+    return "/" + url;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
-function Baystudy ({modalDarslar,changeModalDars,topic}) {
+function Baystudy({ modalDarslar, changeModalDars, topic }) {
   const handleClick = () => {
-    changeModalDars(false)
-  }
+    changeModalDars(false);
+  };
   const [profile, setProfil] = useState({});
   const [teacherData, setTeacherData] = useState([]);
   const [save, setSave] = useState([]);
@@ -44,10 +44,11 @@ function Baystudy ({modalDarslar,changeModalDars,topic}) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,{
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,
+          {
             headers: {
               Authorization: localStorage.getItem("token"),
-            }
+            },
           }
         );
         fetchedTeacherData.push(response.data);
@@ -61,36 +62,37 @@ function Baystudy ({modalDarslar,changeModalDars,topic}) {
   }, [profile]);
   return (
     <div className="Nav sidebar-main-content">
-      <div className={(modalDarslar)?"mobile__header":'d-none '} onClick={handleClick}>
-         <div className="circle">
-         <img src={prev} alt="prev" />
-         </div>
-         <h3>{topic}</h3>
-         
+      <div
+        className={modalDarslar ? "mobile__header" : "d-none "}
+        onClick={handleClick}
+      >
+        <div className="circle">
+          <img src={prev} alt="prev" />
+        </div>
+        <h3>{topic}</h3>
       </div>
       <div className="mobileForPadding">
-      <h2>Sotib olingan darslar - {teacherData.length} ta</h2>
-      <div className="sidebar-line"></div>
-      <div className="sidebar-bought-course">
-      {teacherData.map((item, index) => (
-        <div className="darslar-cart" >
-          <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
-            alt=""
-          />
-          <div>
-            <p>{item.Kursname}</p>
-            <p>{item.Kursdesc}</p>
-          </div>
+        <h2>Sotib olingan darslar - {teacherData.length} ta</h2>
+        <div className="sidebar-line"></div>
+        <div className="sidebar-bought-course">
+          {teacherData.map((item, index) => (
+            <div className="darslar-cart">
+              <img
+                src={
+                  "http://165.232.127.62:5001" + deleteplatforma(item.obloshka)
+                }
+                alt=""
+              />
+              <div>
+                <p>{item.Kursname}</p>
+                <p>{item.Kursdesc}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-      
-      </div>
-     
-       
       </div>
     </div>
   );
-};
+}
 
 export default Baystudy;
