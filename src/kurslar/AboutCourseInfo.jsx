@@ -1,18 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
 import { useParams } from "react-router-dom";
-import teacher1 from "../imgs/teacher-home1.png";
-import teacher2 from "../imgs/teacher-home2.png";
-import teacher3 from "../imgs/teacher-home3.png";
-import teacher4 from "../imgs/teacher-home4.png";
-import imgs1 from "../imgs/main1.png";
-import imgs2 from "../imgs/main2.png";
-import imgs3 from "../imgs/main3.png";
-import imgs4 from "../imgs/main4.png";
-import izohlar1 from "../imgs/izohlar1.png";
-import izohlar2 from "../imgs/izohlar2.png";
-import izohlar3 from "../imgs/izohlar3.png";
-import izohlar4 from "../imgs/izohlar4.png";
 import save from "../imgs/save.png";
 import coin from "../imgs/coin.png";
 import heart from "../imgs/heart.png";
@@ -23,6 +11,20 @@ import Baystudy from "../sidebarRouters/boughtLessons/BoughtLessons";
 import Navvedio from "../sidebarRouters/Navvedio";
 import axios from "axios";
 function AboutCourseInfo() {
+  function savekurs(id) {
+
+    axios.post("http://165.232.127.62:5001/users/savecurs", {
+      cursId:id
+    },{
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((res) => {
+      setProfil(res.data)
+
+    })
+
+  }
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
   const changeModal = (value) => {
@@ -33,6 +35,7 @@ function AboutCourseInfo() {
     setModalDarslar(value);
   };
   const [kurs, setKurs] = useState({})
+  const [price, setPrice] = useState(false)
   const [teacher, setTeacher] = useState({});
   const { kursId } = useParams();
   function deleteplatforma(url) {
@@ -62,6 +65,7 @@ function AboutCourseInfo() {
       })
     })
   }, [])
+
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
@@ -95,7 +99,7 @@ function AboutCourseInfo() {
                 <h3>{teacher.fullname}</h3>
               </div>
               <div className="every__cource-nav">
-                <img src={save} alt="" />
+                <img src={save} alt="" onClick={() => { savekurs(kursId) }} />
                 <img src={coin} alt="" />
                 <img src={heart} alt="" />
               </div>
@@ -119,7 +123,9 @@ function AboutCourseInfo() {
             </div>
           </div>
         </div>
-        <div className="mobileForedit">
+        
+      </div>
+      <div className="mobileForedit">
           <CommentsList commints={kurs?.Commint} />
         </div>
         <div
@@ -128,10 +134,9 @@ function AboutCourseInfo() {
           <CommentsList
             modalDarslar={modalDarslar}
             changeModalDars={changeModalDars}
-            commints={kurs?.Commint} 
+            commints={kurs?.Commint}
           />
         </div>
-      </div>
     </div>
   );
 }
