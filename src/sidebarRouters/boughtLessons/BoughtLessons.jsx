@@ -6,6 +6,7 @@ import prev from '../../imgs/prev.svg';
 
 import SidebarCart from "../../components/SidebarCart/SidebarCart";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function deleteplatforma(url) {
   try {
     if (url.includes("platforma")) {
@@ -21,7 +22,9 @@ function deleteplatforma(url) {
     console.log(error)
   }
 }
-function Baystudy ({modalDarslar,changeModalDars,topic}) {
+function Baystudy({ modalDarslar, changeModalDars, topic }) {
+  const navigate = useNavigate();
+
   const handleClick = () => {
     changeModalDars(false)
   }
@@ -44,11 +47,11 @@ function Baystudy ({modalDarslar,changeModalDars,topic}) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,{
-            headers: {
-              Authorization: localStorage.getItem("token"),
-            }
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId, {
+          headers: {
+            Authorization: localStorage.getItem("token"),
           }
+        }
         );
         fetchedTeacherData.push(response.data);
       }
@@ -61,33 +64,36 @@ function Baystudy ({modalDarslar,changeModalDars,topic}) {
   }, [profile]);
   return (
     <div className="Nav sidebar-main-content">
-      <div className={(modalDarslar)?"mobile__header":'d-none '} onClick={handleClick}>
-         <div className="circle">
-         <img src={prev} alt="prev" />
-         </div>
-         <h3>{topic}</h3>
-         
+      <div className={(modalDarslar) ? "mobile__header" : 'd-none '} onClick={handleClick}>
+        <div className="circle">
+          <img src={prev} alt="prev" />
+        </div>
+        <h3>{topic}</h3>
+
       </div>
       <div className="mobileForPadding">
-      <h2>Sotib olingan darslar - {teacherData.length} ta</h2>
-      <div className="sidebar-line"></div>
-      <div className="sidebar-bought-course">
-      {teacherData.map((item, index) => (
-        <div className="darslar-cart" >
-          <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
-            alt=""
-          />
-          <div>
-            <p>{item.Kursname}</p>
-            <p>{item.Kursdesc}</p>
-          </div>
+        <h2>Sotib olingan darslar - {teacherData.length} ta</h2>
+        <div className="sidebar-line"></div>
+        <div className="sidebar-bought-course">
+          {teacherData.map((item, index) => (
+            <div className="darslar-cart" onClick={() => {
+              navigate("/student/kurs/" + item._id);
+              console.log(item)
+            }} >
+              <img
+                src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+                alt=""
+              />
+              <div>
+                <p>{item.Kursname}</p>
+                <p>{item.Kursdesc}</p>
+              </div>
+            </div>
+          ))}
+
         </div>
-      ))}
-      
-      </div>
-     
-       
+
+
       </div>
     </div>
   );
