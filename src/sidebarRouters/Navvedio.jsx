@@ -7,6 +7,7 @@ import homeSidebar4 from "../imgs/sidebar4.png";
 import prev from "../imgs/prev.svg";
 import SidebarCart from "../components/SidebarCart/SidebarCart";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function deleteplatforma(url) {
   try {
     if (url.includes("platforma")) {
@@ -23,6 +24,8 @@ function deleteplatforma(url) {
   }
 }
 function Navvedio({ modalDarslar, changeModalDars, topic }) {
+  const navigate = useNavigate();
+
   const handleClick = () => {
     changeModalDars(false);
   };
@@ -45,11 +48,11 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,{
-            headers: {
-              Authorization: localStorage.getItem("token"),
-            }
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId, {
+          headers: {
+            Authorization: localStorage.getItem("token"),
           }
+        }
         );
         fetchedTeacherData.push(response.data);
       }
@@ -92,36 +95,51 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
         <h3>{topic}</h3>
       </div>
       <div className="mobileForPadding">
-        <h2>Olingan darslar - 2 ta</h2>
+        <h2>Olingan darslar - {teacherData.length} ta</h2>
         <div className="sidebar-line"></div>
         <div className="sidebar-bought-course">
-        {teacherData.map((item, index) => (
-        <div className="darslar-cart" >
-          <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
-            alt=""
-          />
-          <div>
-            <p>{item.Kursname}</p>
-            <p>{item.Kursdesc}</p>
-          </div>
+          {teacherData.map((item, index) => (
+            <div className="d-flex justify-content-center"
+            onClick={() => {
+              navigate("/student/kurs/" + item._id);
+              console.log(item)
+            }}
+          >
+            <div className="darslar-cart" >
+              <img
+                src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+                alt=""
+              />
+              <div>
+                <p>{item.Kursname}</p>
+                <p>{item.Kursdesc}</p>
+              </div>
+            </div>
+            </div>
+          ))}
         </div>
-      ))}
-        </div>
-        <h2 className="saqlanganlar">Saqlanganlar - 4 ta</h2>
+        <h2 className="saqlanganlar">Saqlanganlar - {save.length} ta</h2>
         <div className="sidebar-line"></div>
         {save.map((item, index) => (
-        <div className="darslar-cart" >
-          <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
-            alt=""
-          />
-          <div>
-            <p>{item.Kursname}</p>
-            <p>{item.Kursdesc}</p>
+
+          <div className="d-flex justify-content-center"
+            onClick={() => {
+              navigate("/student/kurs/" + item._id);
+              console.log(item)
+            }}
+          >
+            <div className="darslar-cart" >
+              <img
+                src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+                alt=""
+              />
+              <div>
+                <p>{item.Kursname}</p>
+                <p>{item.Kursdesc}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   );
