@@ -2,3 +2,8 @@
   text-align: center;
   padding-top: 15px;
 }
+.userprofile img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}

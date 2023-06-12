@@ -7,10 +7,8 @@ import t2 from "../../imgs/t2.svg";
 import t6 from "../../imgs/t6.svg";
 import prev from "../../imgs/prev.svg";
 function StudentNavbar({ changeModal, modal }) {
-  console.log(modal, "ssd");
   const [modalClass, setModalClass] = useState("");
 
-  console.log("bir", modal);
   const handleClick = () => {
     changeModal(false);
   };

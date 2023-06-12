@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 import axios from "axios";
 const Cart = (props) => {
-  console.log(props.cart)
   const navigate = useNavigate();
   let kursId = props.cart._id;
   function deleteplatforma(url){

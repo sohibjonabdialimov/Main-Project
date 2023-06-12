@@ -1,16 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Baystudy from '../../sidebarRouters/boughtLessons/BoughtLessons';
 import "./style.css";
 import "../style.css";
 import MobileHeader from '../../components/mobileHeader/mobileHeader';
 import Navvedio from '../../sidebarRouters/Navvedio';
 import StudentNavbar from '../../navbar/student/StudentNavbar';
+import axios from 'axios';
 let money = 650000
 money = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 let hisobraqam = 1234567890123456
 hisobraqam = hisobraqam.toString().replace(/\B(?=(\d{4})+(?!\d))/g, ' ')
+function deleteplatforma(url) {
+    try {
+        if (url.includes("platforma")) {
+            url = url.split("/")
+            let res = ""
+            for (let i = 2; i < url.length; i++) {
+                res += "/" + url[i]
+            }
+            return (res)
+        }
+        return "/" + url
+    } catch (error) {
+        console.log(error)
+    }
+}
 function Balance() {
+    const [profile, setProfil] = useState({})
+    useEffect(() => {
+        axios.get("http://165.232.127.62:5001/usersme", {
+            headers: {
+                Authorization: localStorage.getItem("token")
+            }
+        }).then((res) => {
+            setProfil(res.data)
 
+        })
+    }, [])
     let [modal, setModal] = useState(false)
     let [modalDarslar, setModalDarslar] = useState(false)
     const changeModal = (value) => {
@@ -31,9 +57,9 @@ function Balance() {
                     className="fife main-content">
                     <div className='hisoblar'>
                         <p className='hisoblar_header'>Hisobdagi pul miqdori:</p>
-                        <p className='hisoblar_number'>{money}UZS</p>
-                        <p className='hisoblar_header'>Hisob raqam:</p>
-                        <p className='hisoblar_number'>XXXX XXXX XXXX XXXX</p>
+                        <p className='hisoblar_number'>{profile.price}UZS</p>
+                        <p className='hisoblar_header'>Tolov uchun Id:</p>
+                        <p className='hisoblar_number'>{profile._id}</p>
                     </div>
                 </div>
             </div>
@@ -43,9 +69,9 @@ function Balance() {
                 <Baystudy modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='Olingan kurslarning narxi' />
             </div>
 
-      <Baystudy />
-    </div>
-  );
+            <Baystudy />
+        </div>
+    );
 }
 
 export default Balance;

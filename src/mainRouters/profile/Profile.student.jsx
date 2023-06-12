@@ -14,19 +14,19 @@ import StudentNavbar from "../../navbar/student/StudentNavbar";
 import MobileHeader from "../../components/mobileHeader/mobileHeader";
 import Baystudy from "../../sidebarRouters/boughtLessons/BoughtLessons";
 import axios from "axios";
+import { userme } from "../../../unvervars/userme";
 
 function Profile() {
   const navigate = useNavigate();
-  const [profile,setProfil]=useState({})
+  const [profile, setProfil] = useState({})
   useEffect(() => {
     axios.get("http://165.232.127.62:5001/usersme", {
       headers: {
         Authorization: localStorage.getItem("token")
       }
     }).then((res) => {
-      console.log(res.data)
       setProfil(res.data)
-      
+
     })
   }, [])
   let [modal, setModal] = useState(false)
@@ -48,7 +48,7 @@ function Profile() {
         }
         return (res)
       }
-      return "/" + url
+      return  url
     } catch (error) {
       console.log(error)
     }
@@ -69,7 +69,7 @@ function Profile() {
         <MobileHeader changeModalDars={changeModalDars} changeModal={changeModal} modal={modal} modalDarslar={modalDarslar} type={'Profile'} />
 
         <div className="profile-content">
-          <img src={"http://165.232.127.62:5001"+deleteplatforma(profile.path)} alt="" />
+          <img src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)} alt="" />
           <h1>{profile.fullname}</h1>
           <div className="profile-content-para">
             <p>Username: {profile.username}</p>
@@ -83,7 +83,7 @@ function Profile() {
       </div>
       <Obuna me={profile.mycurs} />
       <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"} >
-        <Obuna  modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='obuna' me={profile.mycurs}/>
+        <Obuna modalDarslar={modalDarslar} changeModalDars={changeModalDars} topic='obuna' me={profile.mycurs} />
       </div>
     </div>
   );

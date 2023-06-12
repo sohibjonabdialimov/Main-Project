@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import homeSidebar1 from "../imgs/sidebar1.png";
 import homeSidebar2 from "../imgs/sidebar2.png";
@@ -6,12 +6,80 @@ import homeSidebar3 from "../imgs/sidebar3.png";
 import homeSidebar4 from "../imgs/sidebar4.png";
 import prev from "../imgs/prev.svg";
 import SidebarCart from "../components/SidebarCart/SidebarCart";
+import axios from "axios";
+function deleteplatforma(url) {
+  try {
+    if (url.includes("platforma")) {
+      url = url.split("/")
+      let res = ""
+      for (let i = 2; i < url.length; i++) {
+        res += "/" + url[i]
+      }
+      return (res)
+    }
+    return "/" + url
+  } catch (error) {
+    console.log(error)
+  }
+}
 function Navvedio({ modalDarslar, changeModalDars, topic }) {
-  console.log(modalDarslar, "saaaaaaaaa");
-
   const handleClick = () => {
     changeModalDars(false);
   };
+  const [profile, setProfil] = useState({});
+  const [teacherData, setTeacherData] = useState([]);
+  const [save, setSave] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://165.232.127.62:5001/usersme", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setProfil(res.data);
+      });
+  }, []);
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      const fetchedTeacherData = [];
+      for (let i = 0; i < profile.mycurs.length; i++) {
+        const response = await axios.get(
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,{
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            }
+          }
+        );
+        fetchedTeacherData.push(response.data);
+      }
+      setTeacherData(fetchedTeacherData);
+    };
+
+    if (profile.teachers) {
+      fetchTeachers();
+    }
+  }, [profile]);
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      const fetchedTeacherData = [];
+      for (let i = 0; i < profile.savecurss.length; i++) {
+        const response = await axios.get(
+          "http://165.232.127.62:5001/courses/" + profile.savecurss[i], {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          }
+        }
+        );
+        fetchedTeacherData.push(response.data);
+      }
+      setSave(fetchedTeacherData);
+    };
+
+    if (profile.teachers) {
+      fetchTeachers();
+    }
+  }, [profile]);
   return (
     <div className="Nav sidebar-main-content">
       <div
@@ -27,33 +95,33 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
         <h2>Olingan darslar - 2 ta</h2>
         <div className="sidebar-line"></div>
         <div className="sidebar-bought-course">
-          <SidebarCart
-            img={homeSidebar1}
-            text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
+        {teacherData.map((item, index) => (
+        <div className="darslar-cart" >
+          <img
+            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+            alt=""
           />
-          <SidebarCart
-            img={homeSidebar2}
-            text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-          />
+          <div>
+            <p>{item.Kursname}</p>
+            <p>{item.Kursdesc}</p>
+          </div>
+        </div>
+      ))}
         </div>
         <h2 className="saqlanganlar">Saqlanganlar - 4 ta</h2>
         <div className="sidebar-line"></div>
-        <SidebarCart
-          img={homeSidebar3}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar4}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar3}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
-        <SidebarCart
-          img={homeSidebar4}
-          text={`Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}
-        />
+        {save.map((item, index) => (
+        <div className="darslar-cart" >
+          <img
+            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+            alt=""
+          />
+          <div>
+            <p>{item.Kursname}</p>
+            <p>{item.Kursdesc}</p>
+          </div>
+        </div>
+      ))}
       </div>
     </div>
   );

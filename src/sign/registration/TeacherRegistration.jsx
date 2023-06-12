@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../style.css";
 
 const TeacherRegistration = () => {
@@ -55,6 +55,8 @@ const TeacherRegistration = () => {
           />
           <button type="submit">Ro'yxatdan o'tish</button>
         </form>
+        <Link to={"/teacherlogin"}>alrigth have you account</Link>
+
       </div>
     </div>
   );

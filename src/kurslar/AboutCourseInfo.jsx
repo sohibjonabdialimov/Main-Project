@@ -9,6 +9,20 @@ import MobileHeader from "../components/mobileHeader/mobileHeader";
 import StudentNavbar from "../navbar/student/StudentNavbar";
 import axios from "axios";
 function AboutCourseInfo() {
+  function savekurs(id) {
+
+    axios.post("http://165.232.127.62:5001/users/savecurs", {
+      cursId:id
+    },{
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((res) => {
+      setProfil(res.data)
+
+    })
+
+  }
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
   const changeModal = (value) => {
@@ -19,6 +33,7 @@ function AboutCourseInfo() {
     setModalDarslar(value);
   };
   const [kurs, setKurs] = useState({})
+  const [price, setPrice] = useState(false)
   const [teacher, setTeacher] = useState({});
   const { kursId } = useParams();
   function deleteplatforma(url) {
@@ -31,7 +46,7 @@ function AboutCourseInfo() {
         }
         return (res)
       }
-      return "/" + url
+      return  url
     } catch (error) {
       console.log(error)
     }
@@ -43,13 +58,12 @@ function AboutCourseInfo() {
       }
     }).then((res) => {
       setKurs(res.data)
-      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId).then((res) => {
+      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id).then((res) => {
         setTeacher(res.data)
       })
     })
   }, [])
 
-  console.log(kurs)
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
@@ -83,7 +97,7 @@ function AboutCourseInfo() {
                 <h3>{teacher.fullname}</h3>
               </div>
               <div className="every__cource-nav">
-                <img src={save} alt="" />
+                <img src={save} alt="" onClick={() => { savekurs(kursId) }} />
                 <img src={coin} alt="" />
                 <img src={heart} alt="" />
               </div>
@@ -107,7 +121,9 @@ function AboutCourseInfo() {
             </div>
           </div>
         </div>
-        <div className="mobileForedit">
+        
+      </div>
+      <div className="mobileForedit">
           <CommentsList commints={kurs?.Commint} />
         </div>
         <div
@@ -116,10 +132,9 @@ function AboutCourseInfo() {
           <CommentsList
             modalDarslar={modalDarslar}
             changeModalDars={changeModalDars}
-            commints={kurs?.Commint} 
+            commints={kurs?.Commint}
           />
         </div>
-      </div>
     </div>
   );
 }

@@ -31,7 +31,6 @@ function Lessons() {
   const changeModalDars = (value) => {
     setModalDarslar(value);
   };
-  console.log("vvvvv", modal, "222");
   return (
     <div className="main-page">
       <div className={modal ? "def modal-navbar" : "def yoq"}>

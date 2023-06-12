@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../style.css";
 
 const StudentRegistration = () => {
@@ -10,31 +10,35 @@ const StudentRegistration = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordRepeatRef = useRef();
+  const fileRef = useRef();
   const navigate = useNavigate();
 
   const onBack = () => {
     navigate("/select");
   };
+
   const onHandler = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", fileRef.current.files[0]);
+    formData.append("username", usernameRef.current.value);
+    formData.append("password", passwordRef.current.value);
+    formData.append("email", emailRef.current.value);
+    formData.append("fullname", `${nameRef.current.value} ${surnameRef.current.value}`);
 
-    navigate("/login");
-    // const obj = {
-    //   username: usernameRef.current.value,
-    //   password: passwordRef.current.value,
-    // };
-    // axios
-    //   .post("http://165.232.127.62:5001/users/login", obj)
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       localStorage.setItem("token", res.data.token);
-    //       navigate("/student/");
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    axios
+      .post("http://165.232.127.62:5001/users/register/", formData)
+      .then((response) => {
+        // Handle successful registration
+        console.log(response.data);
+        navigate("/login");
+      })
+      .catch((error) => {
+        // Handle registration error
+        console.error(error);
+      });
   };
+
   return (
     <div className="app-content">
       <div className="sign_wrap">
@@ -43,14 +47,16 @@ const StudentRegistration = () => {
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
         <form className="registr_form" onSubmit={(e) => onHandler(e)}>
-          <input ref={nameRef} type="text" placeholder="ism" />
-          <input ref={surnameRef} type="text" placeholder="familiya" />
-          <input ref={usernameRef} type="text" placeholder="username" />
-          <input ref={emailRef} type="email" placeholder="email" />
-          <input ref={passwordRef} type="password" placeholder="parol" />
-          <input ref={passwordRepeatRef} type="password" placeholder="parolni qayta yozing" />
+          <input ref={nameRef} type="text" placeholder="ism" required />
+          <input ref={surnameRef} type="text" placeholder="familiya" required />
+          <input ref={usernameRef} type="text" placeholder="username" required />
+          <input ref={emailRef} type="email" placeholder="email" required />
+          <input ref={fileRef} type="file" placeholder="profilephoto" required />
+          <input ref={passwordRef} type="password" placeholder="parol" required />
+          <input ref={passwordRepeatRef} type="password" placeholder="parolni qayta yozing" required />
           <button type="submit">Ro'yxatdan o'tish</button>
         </form>
+        <Link to={"/login"}>alright, do you have an account?</Link>
       </div>
     </div>
   );
