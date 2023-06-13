@@ -85,7 +85,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 39px;
   color: #fff;
   width: 100%;
@@ -93,18 +93,18 @@
   border: none;
   border-bottom: 2px solid #ffffff;
   outline: none;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 .registr_form input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 .registr_form button {
   margin-top: 33px;
-  padding: 11px 41px;
+  padding: 5px 41px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 39px;
   color: #ffffff;
   outline: none;
@@ -113,3 +113,46 @@
   border-radius: 50px;
   width: 100%;
 }
+.alright_note{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+}
+/* 
+.input_registr_file {
+  display: block;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+} */
+/* .input_registr_file p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 39px;
+  color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 2px solid #ffffff;
+  margin-bottom: 14px;
+} */
+/* .input_registr_file ion-icon{
+ font-size: 50px;
+ position: absolute;
+ top: -6px;
+ right: 0;
+} */
+/* .input_registr_file input {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+} */

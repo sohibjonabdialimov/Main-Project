@@ -25,7 +25,8 @@ const StudentRegistration = () => {
     formData.append("password", passwordRef.current.value);
     formData.append("email", emailRef.current.value);
     formData.append("fullname", `${nameRef.current.value} ${surnameRef.current.value}`);
-
+    
+    console.log(formData);
     axios
       .post("http://165.232.127.62:5001/users/register/", formData)
       .then((response) => {
@@ -56,7 +57,7 @@ const StudentRegistration = () => {
           <input ref={passwordRepeatRef} type="password" placeholder="parolni qayta yozing" required />
           <button type="submit">Ro'yxatdan o'tish</button>
         </form>
-        <Link to={"/login"}>alright, do you have an account?</Link>
+        <Link className="alright_note" to={"/login"}>alright, do you have an account?</Link>
       </div>
     </div>
   );

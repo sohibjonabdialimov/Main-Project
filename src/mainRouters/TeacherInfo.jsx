@@ -10,7 +10,7 @@ import axios from "axios";
 
 function TeacherInfo() {
   const [profile, setProfil] = useState({});
-//   const [teacherData, setTeacherData] = useState([]);
+  const [teacherData, setTeacherData] = useState([]);
   const { teacherId } = useParams();
 
   function deleteplatforma(url) {
@@ -33,7 +33,6 @@ function TeacherInfo() {
     axios
       .get("http://165.232.127.62:5001/teacherinfo/" + teacherId)
       .then((res) => {
-        console.log(res.data);
         setProfil(res.data);
       });
   }, [teacherId]);
@@ -74,6 +73,29 @@ const obj = [
         desc: "loremwee Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ut perferendis impedit repellat ipsa vero debitis voluptatem eum cupiditate expedita." 
     },
 ]
+
+// useEffect(() => {
+//     const fetchTeachers = async () => {
+//       const fetchedTeacherData = [];
+//       for (let i = 0; i < profile.mycurs.length; i++) {
+//         const response = await axios.get(
+//           "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,
+//           {
+//             headers: {
+//               Authorization: localStorage.getItem("token"),
+//             },
+//           }
+//         );
+//         console.log(response.data);
+//         fetchedTeacherData.push(response.data);
+//       }
+//       setTeacherData(fetchedTeacherData);
+//     };
+
+//     if (profile.teachers) {
+//       fetchTeachers();
+//     }
+//   }, []);
   return (
     <>
       <div className="main-page">
