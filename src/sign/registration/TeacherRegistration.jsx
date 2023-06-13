@@ -34,7 +34,7 @@ const TeacherRegistration = () => {
       .then((response) => {
         // Handle successful registration
         console.log(response.data);
-        navigate("/login");
+        navigate("/teacherlogin");
       })
       .catch((error) => {
         // Handle registration error
@@ -85,7 +85,7 @@ const TeacherRegistration = () => {
           />
           <button type="submit">Ro'yxatdan o'tish</button>
         </form>
-        <Link className="alright_note" to={"/login"}>
+        <Link className="alright_note" to={"/teacherlogin"}>
           alright, do you have an account?
         </Link>
       </div>
