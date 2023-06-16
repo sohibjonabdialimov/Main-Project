@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import save from "../imgs/save.png";
 import coin from "../imgs/coin.png";
 import heart from "../imgs/heart.png";
@@ -12,8 +12,8 @@ function AboutCourseInfo() {
   function savekurs(id) {
 
     axios.post("http://165.232.127.62:5001/users/savecurs", {
-      cursId:id
-    },{
+      cursId: id
+    }, {
       headers: {
         Authorization: localStorage.getItem("token")
       }
@@ -46,7 +46,7 @@ function AboutCourseInfo() {
         }
         return (res)
       }
-      return "/"+ url
+      return "/" + url
     } catch (error) {
       console.log(error)
     }
@@ -63,7 +63,7 @@ function AboutCourseInfo() {
       })
     })
   }, [])
-
+  const navigate = useNavigate();
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
@@ -92,7 +92,9 @@ function AboutCourseInfo() {
 
           <div className="every__cource-desc">
             <div className="every__cource-header">
-              <div className="every__cource-title">
+              <div className="every__cource-title" onClick={() => {
+                navigate("/student/teacherinfo/" + teacher._id);
+              }}>
                 <img src={"http://165.232.127.62:5001" + deleteplatforma(teacher.path)} alt="" />
                 <h3>{teacher.fullname}</h3>
               </div>
@@ -116,25 +118,28 @@ function AboutCourseInfo() {
               <p className="every__cource-para">Davomiyligi: {kurs.muddati}oy</p>
             </div>
             <div className="every__course-buttons">
-              <button>Video darslar</button>
+              <button onClick={() => {
+                navigate("/student/kurs/olinganlar/" + kursId);
+              }}>Video darslar</button>
+
               <button>Kursni olish</button>
             </div>
           </div>
         </div>
-        
+
       </div>
       <div className="mobileForedit">
-          <CommentsList commints={kurs?.Commint} />
-        </div>
-        <div
-          className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"}
-        >
-          <CommentsList
-            modalDarslar={modalDarslar}
-            changeModalDars={changeModalDars}
-            commints={kurs?.Commint}
-          />
-        </div>
+        <CommentsList commints={kurs?.Commint} />
+      </div>
+      <div
+        className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"}
+      >
+        <CommentsList
+          modalDarslar={modalDarslar}
+          changeModalDars={changeModalDars}
+          commints={kurs?.Commint}
+        />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img12 from "../../../imgs/main1.png";
 import img13 from "../../../imgs/main2.png";
 import img14 from "../../../imgs/main3.png";
@@ -6,7 +6,18 @@ import img15 from "../../../imgs/main4.png";
 import "./style.css";
 import "../style.css";
 import StatisticCard from "../../components/statisticCard/StatisticCard";
+import axios from "axios";
 function Statistic() {
+  const [courses,setCourses]=useState([]);
+  useEffect(()=>{
+    axios.get("http://165.232.127.62:5001/teacher-mycurs/",{
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    }).then((res)=>{
+      setCourses(res.data)
+    })
+  },[])
   let carts = [
     {
       kursId: 12,
@@ -60,8 +71,8 @@ function Statistic() {
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
       <div className="main_teacher_content sidebar-main-wrap">
-        {carts.map((cart, index) => {
-          return <StatisticCard cart={cart} key={index} />;
+        {courses.map((course, index) => {
+          return <StatisticCard cart={course} key={index} />;
         })}
       </div>
     </div>

@@ -17,6 +17,21 @@ import axios from "axios";
 import { userme } from "../../../unvervars/userme";
 
 function Profile() {
+  function deleteplatforma(url){
+    try {
+      if(url.includes("platforma")){
+        url=url.split("/")
+        let res=""
+        for(let i=2;i<url.length;i++){
+          res+="/"+url[i]
+        }
+        return(res)
+      }
+      return "/"+url
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const navigate = useNavigate();
   const [profile, setProfil] = useState({});
   useEffect(() => {

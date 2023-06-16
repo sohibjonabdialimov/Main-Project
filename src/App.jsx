@@ -45,10 +45,11 @@ function App() {
         <Route path="teacherlogin" element={<TeacherLogin />} />
         <Route path="teacherregistration" element={<TeacherRegistration />} />
         <Route path="select" element={<Select />} />
+        <Route path="/student/kurs/olinganlar/:kursId" element={<Baykurs />} />
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />
           <Route path="hisoblar" element={<Balance />} />
-          <Route path="Kurs/olinganlar" element={<Baykurs />} />
+          
           <Route path="kurs/:kursId" element={<AboutCourseInfo />} />
           <Route path="profile" element={<Profile />}>
             <Route index element={<Subs />} />

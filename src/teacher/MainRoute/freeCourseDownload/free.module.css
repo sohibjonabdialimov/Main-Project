@@ -17,6 +17,11 @@
   color: #fff;
   font-size: 27px;
 }
+._plus_btn_idk4j_277 {
+  height: 24px;
+  width: 24px;
+  padding: 0;
+}
 .kurs_yuklash {
   position: relative;
   padding: 0 60px;
@@ -150,6 +155,7 @@
 }
 .plus_btn ion-icon {
   font-size: 50px;
+  height: 25px;
   color: #fff;
 }
 .video_download p {

@@ -45,7 +45,7 @@ const TeacherRegistration = () => {
   return (
     <div className="app-content">
       <div className="sign_wrap">
-        <h3 className="registr_title">O'quvchi sifatida ro'yxatdan o'tish</h3>
+        <h3 className="registr_title">O'qituvchi sifatida ro'yxatdan o'tish</h3>
         <button onClick={onBack} className="back">
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>

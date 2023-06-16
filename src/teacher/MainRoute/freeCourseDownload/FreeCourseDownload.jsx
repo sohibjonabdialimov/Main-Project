@@ -1,16 +1,66 @@
 import React, { useState } from "react";
 import styles from "./free.module.css";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 function FreeCourseDownload() {
-  const [plus, setPlus] = useState(false);
+  const titleInputRef = useRef();
+  const descriptionInputRef = useRef();
+  const fileInputRef = useRef();
+  const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
+  const [videoDataArray, setVideoDataArray] = useState([]);
   const navigate = useNavigate();
   const onBack = () => {
     navigate(-1);
   };
+  console.log(videoLessons)
+  const addVideoLesson = (e) => {
+    try {
+      const title = titleInputRef.current.value;
+      const description = descriptionInputRef.current.value;
+      const file = fileInputRef.current.files[0];
+      if (!title || !description || !file) {
+        return 0;
+      }
+      const newId = videoLessons.length + 1;
+      const newVideoLesson = { id: newId };
+      setVideoLessons([...videoLessons, newVideoLesson]);
+      const videoData = {
+        id: newId-1,
+        title,
+        description,
+        file,
+      };
+
+      setVideoDataArray((prevData) => [...prevData, videoData]);
+    } catch (error) {
+      const newId = videoLessons.length + 1;
+      const newVideoLesson = { id: newId };
+      setVideoLessons([...videoLessons, newVideoLesson]);
+    }
+    e.preventDefault();
+
+
+  };
+  const handleRemoveVideoLesson = (id) => {
+    const updatedVideoLessons = videoLessons.filter((lesson, index) => index !== id-1);
+    setVideoLessons(updatedVideoLessons);
+    const updatedVideoDataArray = videoDataArray.filter(
+      (videoData) => videoData.id !== id
+    );
+    setVideoDataArray(updatedVideoDataArray);
+  };
+  console.log(videoDataArray);
+  const handleVideoLessonUpload = () => {
+    navigate("/teacher/processfreedownload");
+  };
+
+
+
   const onHandleForm = (e) => {
     e.preventDefault();
   };
+
   return (
     <div className="app-content">
       <div className="global_wrap">
@@ -37,31 +87,34 @@ function FreeCourseDownload() {
                 <input type="file" placeholder="Muqova uchun rasm" />
               </div>
               <div className={styles.videos}>
-                <div className={styles.video_download}>
-                  <p>1-video dars</p>
-                  <button type="button" onClick={() => {navigate("/teacher/processfreedownload")}} className={styles.down_btn}>
-                    Video dars yuklash
-                  </button>
-                  <button type="button" className={styles.plus_btn}>
-                    <ion-icon name="add-outline"></ion-icon>
-                  </button>
-                </div>
-                {plus && (
-                  <div className={styles.video_download}>
-                    <p>2-video dars</p>
-                    <button type="button" className={styles.down_btn}>
-                      Video dars yuklash
-                    </button>
-                    <div className={styles.plus_minus}>
-                      <button type="button" className={styles.plus_btn}>
+                {videoLessons.map((lesson, index) => (
+                  <div className={styles.video_download} key={lesson.id}>
+                    <p key={index}>{index + 1}-video dars</p>
+
+                    {videoLessons.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveVideoLesson(lesson.id)}
+                        className={`${styles.plus_btn} ${styles.minus_btn}`}
+                      >
                         <ion-icon name="remove-outline"></ion-icon>
                       </button>
-                      <button type="button" className={styles.plus_btn}>
-                        <ion-icon name="add-outline"></ion-icon>
-                      </button>
-                    </div>
+                    )}
+                    <input type="text" placeholder="Enter video title" ref={titleInputRef} />
+                    <input type="text" placeholder="Enter video description" ref={descriptionInputRef} />
+                    <input type="file" placeholder="Muqova uchun video" ref={fileInputRef} />
+
                   </div>
-                )}
+
+                ))}
+                <button
+                  type="submit"
+                  onClick={addVideoLesson}
+                  style={{ height: "75px" }}
+                  className={styles.plus_btn}
+                >
+                  <ion-icon name="add-outline"></ion-icon>
+                </button>
               </div>
             </div>
             <div className={styles.extra_div}>

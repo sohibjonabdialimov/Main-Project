@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TeachCart from "../../../components/Cart/Cart";
 import img15 from "../../../imgs/teacher-main-sidebar.png";
 import "./style.css";
@@ -6,69 +6,18 @@ import "./style.css";
 import "../style.css";
 import MenuContext from "antd/es/menu/MenuContext";
 import LessonCard from "../../components/lessonCard/LessonCard";
+import axios from "axios";
 function LessonsTeacher() {
-  let carts = [
-    {
-      kursId: 12,
-      img: img15,
-      name: "Super miya",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-    },
-    {
-      kursId: 13,
-      img: img15,
-      name: "Kitoblarni effectiv o'qish",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-    },
-    {
-      kursId: 14,
-      img: img15,
-      name: "Quvnoq ingliz tili",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 15,
-      img: img15,
-      name: "Inson omili yoki AI",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 1452,
-      img: img15,
-      name: "Quvnoq ingliz tili",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 1545,
-      img: img15,
-      name: "Inson omili yoki AI",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 14521,
-      img: img15,
-      name: "Quvnoq ingliz tili",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 154522,
-      img: img15,
-      name: "Inson omili yoki AI",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 14522121,
-      img: img15,
-      name: "Quvnoq ingliz tili",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-    {
-      kursId: 15454444,
-      img: img15,
-      name: "Inson omili yoki AI",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    },
-  ];
+  const [courses,setCourses]=useState([]);
+  useEffect(()=>{
+    axios.get("http://165.232.127.62:5001/teacher-mycurs/",{
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    }).then((res)=>{
+      setCourses(res.data)
+    })
+  },[])
 
   return (
     <>
@@ -82,8 +31,8 @@ function LessonsTeacher() {
       </header>
       <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
         <div className="lessons_wrap">
-          {carts.map((cart, index) => {
-            return <LessonCard cart={cart} key={index} />;
+          {courses.map((course, index) => {
+            return <LessonCard cart={course} key={index} />;
           })}
         </div>
       </div>

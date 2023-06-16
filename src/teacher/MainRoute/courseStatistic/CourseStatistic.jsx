@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./style.module.css";
 import img from "../../../imgs/statistika.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const CourseStatistic = () => {
+  
+  const { course } = useParams();
   const navigate = useNavigate();
   const onBack = () => {
     navigate(-1);
