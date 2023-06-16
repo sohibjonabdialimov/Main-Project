@@ -93,4 +93,4 @@ const TeacherRegistration = () => {
   );
 };
 
-export default TeacherRegistration;
+export default TeacherRegistration
