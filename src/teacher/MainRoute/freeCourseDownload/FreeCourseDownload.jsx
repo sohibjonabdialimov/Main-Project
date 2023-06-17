@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./free.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRef } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 
 function FreeCourseDownload() {
@@ -15,7 +16,6 @@ function FreeCourseDownload() {
   const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
   const [videoDataArray, setVideoDataArray] = useState([]);
   const navigate = useNavigate();
-  const { kursId } = useParams();
   const onBack = () => {
     navigate("/teacher/kurs");
   };
@@ -24,7 +24,18 @@ function FreeCourseDownload() {
       const title = titleInputRef.current.value;
       const description = descriptionInputRef.current.value;
       const file = fileInputRef.current.files[0];
-      if (!title || !description || !file) {
+      // if (!title || !description || !file) {
+      //   toast("Iltimos", {autoClose: 3000});
+      //   return 0;
+      // }else 
+      if(!title){
+        toast("Iltimos, video nomini kiriting");
+        return 0;
+      }else if(!description){
+        toast("Iltimos, videoga izoh bering");
+        return 0;
+      }else if(!file){
+        toast("Iltimos, videoni kiriting");
         return 0;
       }
       const newId = videoLessons.length + 1;
@@ -66,8 +77,7 @@ function FreeCourseDownload() {
 
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
-  }
-
+  };
 
   // useEffect(() => {
   //   axios
@@ -95,6 +105,7 @@ function FreeCourseDownload() {
 
   return (
     <>
+    <ToastContainer autoClose={2000} />
       <div className="app-content">
         <div className="global_wrap">
           <div className={styles.kurs_yuklash}>
@@ -117,34 +128,33 @@ function FreeCourseDownload() {
               <div className={styles.upload_div}>
                 <div className={styles.input_file}>
                   <p>Muqova uchun rasm</p>
-                  <input ref={courseImgRef} type="file" placeholder="Muqova uchun rasm" />
+                  <input
+                    ref={courseImgRef}
+                    type="file"
+                    placeholder="Muqova uchun rasm"
+                  />
                 </div>
                 <div className={styles.videos}>
                   {videoLessons.map((lesson, index) => (
                     <div className={styles.video_download} key={lesson.id}>
-                      <p key={index}>{index + 1}-video dars</p>
-
-                      {/* {videoLessons.length > 1 && (
-                        
-                      )} */}
-                      <input
-                        type="text"
-                        placeholder="Enter video title"
-                        ref={titleInputRef}
-                      />
-                      <input
-                        type="text"
-                        placeholder="Enter video description"
-                        ref={descriptionInputRef}
-                      />
-                      <input
-                        type="file"
-                        placeholder="Muqova uchun video"
-                        ref={fileInputRef}
-                      />
-                      {/* <button onClick={() => onSendFunc()} className={styles.free_video_lesson_download}>
-                        Video dars yuklash
-                      </button> */}
+                      <p key={index}>{index + 1}-dars</p>
+                        <input
+                          type="text"
+                          placeholder="Enter video title"
+                          ref={titleInputRef}
+                          className={styles.video_download_input_title}
+                        />
+                        <input
+                          type="text"
+                          placeholder="Enter video description"
+                          ref={descriptionInputRef}
+                          className={styles.video_download_input_desc}
+                        />
+                        <input
+                          type="file"
+                          placeholder="Muqova uchun video"
+                          ref={fileInputRef}
+                        />
                       <div className={styles.plus_minus}>
                         <button
                           type="button"
@@ -162,34 +172,6 @@ function FreeCourseDownload() {
                         </button>
                       </div>
                     </div>
-                    // <div className={styles.video_download} key={lesson.id}>
-                    //   <p key={index}>{index + 1}-video dars</p>
-
-                    //   {videoLessons.length > 1 && (
-                    //     <button
-                    //       type="button"
-                    //       onClick={() => handleRemoveVideoLesson(lesson.id)}
-                    //       className={`${styles.plus_btn} ${styles.minus_btn}`}
-                    //     >
-                    //       <ion-icon name="remove-outline"></ion-icon>
-                    //     </button>
-                    //   )}
-                    //   <input
-                    //     type="text"
-                    //     placeholder="Enter video title"
-                    //     ref={titleInputRef}
-                    //   />
-                    //   <input
-                    //     type="text"
-                    //     placeholder="Enter video description"
-                    //     ref={descriptionInputRef}
-                    //   />
-                    //   <input
-                    //     type="file"
-                    //     placeholder="Muqova uchun video"
-                    //     ref={fileInputRef}
-                    //   />
-                    // </div>
                   ))}
                 </div>
               </div>
