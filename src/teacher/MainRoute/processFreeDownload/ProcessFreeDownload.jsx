@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 const ProcessFreeDownload = () => {
   const navigate = useNavigate();
+  const videoNameRef = useRef();
+  const videoDescRef = useRef();
+  const videoImgRef = useRef();
   const onBack = () => {
     navigate("/kurs/free");
   };
@@ -18,15 +21,15 @@ const ProcessFreeDownload = () => {
             <form className="process_free_form">
               <div className="free_input_wrap">
                 <label htmlFor="name">Video dars nomi</label>
-                <input type="text" id="name" />
+                <input ref={videoNameRef} type="text" id="name" />
               </div>
               <div className="free_input_wrap">
                 <label htmlFor="about">Video dars haqida</label>
-                <textarea name="about" id="about"></textarea>
+                <textarea ref={videoDescRef} name="about" id="about"></textarea>
               </div>
               <div className="process_input_file">
                 <p>Video dars</p>
-                <input type="file" placeholder="Muqova uchun rasm" />
+                <input ref={videoImgRef} type="file" placeholder="Muqova uchun rasm" />
               </div>
               <button type="submit">Saqlash</button>
             </form>

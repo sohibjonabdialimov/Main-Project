@@ -7,6 +7,9 @@ import axios from "axios";
 function FreeCourseDownload() {
   const modalRef = useRef();
   const titleInputRef = useRef();
+  const courseNameRef = useRef();
+  const courseDescRef = useRef();
+  const courseImgRef = useRef();
   const descriptionInputRef = useRef();
   const fileInputRef = useRef();
   const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
@@ -105,16 +108,16 @@ function FreeCourseDownload() {
             >
               <div className={styles.input_wrap}>
                 <label htmlFor="amount">Kurs nomi</label>
-                <input type="text" />
+                <input ref={courseNameRef} type="text" />
               </div>
               <div className={styles.input_wrap}>
                 <label htmlFor="amount">Kurs haqida</label>
-                <textarea></textarea>
+                <textarea ref={courseDescRef}></textarea>
               </div>
               <div className={styles.upload_div}>
                 <div className={styles.input_file}>
                   <p>Muqova uchun rasm</p>
-                  <input type="file" placeholder="Muqova uchun rasm" />
+                  <input ref={courseImgRef} type="file" placeholder="Muqova uchun rasm" />
                 </div>
                 <div className={styles.videos}>
                   {videoLessons.map((lesson, index) => (
@@ -124,7 +127,7 @@ function FreeCourseDownload() {
                       {/* {videoLessons.length > 1 && (
                         
                       )} */}
-                      {/* <input
+                      <input
                         type="text"
                         placeholder="Enter video title"
                         ref={titleInputRef}
@@ -138,10 +141,10 @@ function FreeCourseDownload() {
                         type="file"
                         placeholder="Muqova uchun video"
                         ref={fileInputRef}
-                      /> */}
-                      <button onClick={() => onSendFunc()} className={styles.free_video_lesson_download}>
+                      />
+                      {/* <button onClick={() => onSendFunc()} className={styles.free_video_lesson_download}>
                         Video dars yuklash
-                      </button>
+                      </button> */}
                       <div className={styles.plus_minus}>
                         <button
                           type="button"

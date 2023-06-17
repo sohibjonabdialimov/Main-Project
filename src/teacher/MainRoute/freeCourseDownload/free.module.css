@@ -42,8 +42,8 @@
 .input_file {
   position: relative;
   color: #fff;
-  width: 296px;
-  height: 159px;
+  width: 150px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 24px;
   color: #ffffff;
 }
@@ -107,7 +107,7 @@
   margin-bottom: 10px;
 }
 .videos {
-  width: 80%;
+  width: 89%;
   display: flex;
   flex-direction: column;
   gap: 11px;
