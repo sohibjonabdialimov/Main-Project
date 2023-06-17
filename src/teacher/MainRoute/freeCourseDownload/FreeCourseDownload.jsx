@@ -60,38 +60,48 @@ function FreeCourseDownload() {
     navigate("/teacher/processfreedownload");
   };
 
-  const onHandleForm = (e) => {
+  const onHandleForm = async (e) => {
+    addVideoLesson()
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("obloshka", courseImgRef.current.files[0]);
+    formData.append("name", courseNameRef.current.value);
+    formData.append("desc", courseDescRef.current.value);
+    formData.append("narxi", 0);
+    formData.append("muddati", 0);
+  
+    for (let i = 0; i < videoDataArray.length; i++) {
+      const videoData = videoDataArray[i];
+      formData.append("vediosdesc", videoData.description);
+      formData.append("vediosname", videoData.title);
+      if (videoData.file) {
+        formData.append("file", videoData.file);
+      } else {
+        console.error(`Missing file for video data at index ${i}`);
+      }
+    }
+  
+    try {
+      const response = await axios.post("http://165.232.127.62:5001/courses/", formData, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
+  
 
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
   }
 
 
-  // useEffect(() => {
-  //   axios
-  //     .post("http://165.232.127.62:5001/courses/" + "12ddd", {
-  //       name: "testmuddat",
-  //       desc: "ok",
-  //       narxi: 100000,
-  //       muddati: 3,
-  //       vediosdesc: ["lorem1", "lorem2"],
-  //       vediosname: ["lorem1", "lorem2"],
-  //       file: ["ok", "ok2"],
-  //       obloshka: "ok.png",
-  //     }, {
-  //       headers: {
-  //         Authorization: localStorage.getItem("token"),
-  //       }
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [kursId]);
+
 
   return (
     <>
@@ -162,34 +172,7 @@ function FreeCourseDownload() {
                         </button>
                       </div>
                     </div>
-                    // <div className={styles.video_download} key={lesson.id}>
-                    //   <p key={index}>{index + 1}-video dars</p>
-
-                    //   {videoLessons.length > 1 && (
-                    //     <button
-                    //       type="button"
-                    //       onClick={() => handleRemoveVideoLesson(lesson.id)}
-                    //       className={`${styles.plus_btn} ${styles.minus_btn}`}
-                    //     >
-                    //       <ion-icon name="remove-outline"></ion-icon>
-                    //     </button>
-                    //   )}
-                    //   <input
-                    //     type="text"
-                    //     placeholder="Enter video title"
-                    //     ref={titleInputRef}
-                    //   />
-                    //   <input
-                    //     type="text"
-                    //     placeholder="Enter video description"
-                    //     ref={descriptionInputRef}
-                    //   />
-                    //   <input
-                    //     type="file"
-                    //     placeholder="Muqova uchun video"
-                    //     ref={fileInputRef}
-                    //   />
-                    // </div>
+                    
                   ))}
                 </div>
               </div>
@@ -202,7 +185,7 @@ function FreeCourseDownload() {
                 </div>
               </div>
               <button
-                onClick={() => (modalRef.current.style.display = "flex")}
+                // onClick={() => (modalRef.current.style.display = "flex")}
                 className={styles.btn}
                 type="submit"
               >
