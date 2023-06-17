@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import "./style.css";
 import Obuna from "../sidebarRouters/Obuna";
 import Subs from "../sidebarRouters/Subs";
-import avatar from "../imgs/edit_user.png";
 import axios from "axios";
 
 function TeacherInfo() {

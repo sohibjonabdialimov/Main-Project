@@ -85,16 +85,19 @@ border-bottom-left-radius: 50px;
 .every__cource-nav img:first-child {
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 
 .every__cource-nav img:last-child {
   width: 25px;
   height: 23px;
+  cursor: pointer;
 }
 
 .every__cource-nav img:nth-child(2) {
   width: 29px;
   height: 29px;
+  cursor: pointer;
 }
 
 .every__cource-name p {

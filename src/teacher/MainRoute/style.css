@@ -34,18 +34,6 @@
   color: #fff;
 }
 
-.search-div {
-  position: relative;
-}
-
-.search-div img {
-  display: block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-80%);
-  right: 20px;
-}
-
 .sidebar-main-wrap {
   overflow-y: scroll;
   max-height: 90vh;

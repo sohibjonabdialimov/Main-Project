@@ -22,6 +22,7 @@ function deleteplatforma(url) {
   }
 }
 function Baykurs() {
+  const [lessonIndex, setLessonIndex] = useState(1);
   const navigate = useNavigate();
   const onBack = () => {
     navigate("/student/kurs/" + kursId);
@@ -61,6 +62,7 @@ function Baykurs() {
                 key={index}
                 onClick={() => {
                   setSelectedVideo(course);
+                  setLessonIndex(index + 1);
                 }}
               >
                 {index + 1}-dars. {course.nomi}
@@ -71,7 +73,6 @@ function Baykurs() {
         <div className="video_information video_information_scroll">
           <div className="img_div">
             <video
-              style={{ width: "350px" }}
               src={`http://165.232.127.62:5001/${deleteplatforma(
                 selectedVideo.orni
               )}`}
@@ -81,7 +82,7 @@ function Baykurs() {
             />
           </div>
           <div className="video_information_content">
-            <h3>{selectedVideo.nomi}</h3>
+            <h3>{lessonIndex} - dars. {selectedVideo.nomi}</h3>
             <p>{selectedVideo.desc}</p>
           </div>
         </div>

@@ -14,7 +14,7 @@ function Statistic() {
       })
       .then((res) => {
         setCourses(res.data);
-      });
+      }).catch(err => console.log(err));
   }, []);
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
@@ -22,7 +22,6 @@ function Statistic() {
         {courses.map((course, index) => {
           return <StatisticCard cart={course} key={index} />;
         })}
-       
       </div>
     </div>
   );

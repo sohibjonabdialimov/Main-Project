@@ -7,11 +7,13 @@ import camera from "../../../imgs/camera.png";
 const StudentProfileEdit = () => {
   const navigate = useNavigate();
   const onBack = () => {
-    navigate(-1);
+    navigate("/student/profile/subs");
   };
   const onHandleSubmit = (e) => {
     e.preventDefault();
+    
   };
+
   return (
     <div className="app-content">
       <div className={style.edit_profile}>

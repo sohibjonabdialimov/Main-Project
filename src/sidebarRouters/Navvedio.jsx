@@ -11,16 +11,16 @@ import { useNavigate } from "react-router-dom";
 function deleteplatforma(url) {
   try {
     if (url.includes("platforma")) {
-      url = url.split("/")
-      let res = ""
+      url = url.split("/");
+      let res = "";
       for (let i = 2; i < url.length; i++) {
-        res += "/" + url[i]
+        res += "/" + url[i];
       }
-      return (res)
+      return res;
     }
-    return "/" + url
+    return "/" + url;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 function Navvedio({ modalDarslar, changeModalDars, topic }) {
@@ -48,11 +48,12 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId, {
-          headers: {
-            Authorization: localStorage.getItem("token"),
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
           }
-        }
         );
         fetchedTeacherData.push(response.data);
       }
@@ -68,11 +69,12 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.savecurss.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.savecurss[i], {
-          headers: {
-            Authorization: localStorage.getItem("token"),
+          "http://165.232.127.62:5001/courses/" + profile.savecurss[i],
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
           }
-        }
         );
         fetchedTeacherData.push(response.data);
       }
@@ -99,38 +101,44 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
         <div className="sidebar-line"></div>
         <div className="sidebar-bought-course">
           {teacherData.map((item, index) => (
-            <div className="d-flex justify-content-center"
-            onClick={() => {
-              navigate("/student/kurs/" + item._id);
-              console.log(item)
-            }}
-          >
-            <div className="darslar-cart" >
-              <img
-                src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
-                alt=""
-              />
-              <div>
-                <p>{item.Kursname}</p>
-                <p>{item.Kursdesc}</p>
+            <div
+              className="d-flex justify-content-center"
+              onClick={() => {
+                navigate("/student/kurs/" + item._id);
+                console.log(item);
+              }}
+            >
+              <div className="darslar-cart">
+                <img
+                  src={
+                    "http://165.232.127.62:5001" +
+                    deleteplatforma(item.obloshka)
+                  }
+                  alt=""
+                />
+                <div>
+                  <p>{item.Kursname}</p>
+                  <p>{item.Kursdesc}</p>
+                </div>
               </div>
-            </div>
             </div>
           ))}
         </div>
         <h2 className="saqlanganlar">Saqlanganlar - {save.length} ta</h2>
         <div className="sidebar-line"></div>
         {save.map((item, index) => (
-
-          <div className="d-flex justify-content-center"
+          <div
+            className="d-flex justify-content-center"
             onClick={() => {
               navigate("/student/kurs/" + item._id);
-              console.log(item)
+              console.log(item);
             }}
           >
-            <div className="darslar-cart" >
+            <div className="darslar-cart">
               <img
-                src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+                src={
+                  "http://165.232.127.62:5001" + deleteplatforma(item.obloshka)
+                }
                 alt=""
               />
               <div>

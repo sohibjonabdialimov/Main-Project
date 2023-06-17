@@ -35,6 +35,7 @@
 .videos_navbar ul li {
   padding: 12px 5px 9px 5px;
   border-bottom: 2px solid #ffffff;
+  cursor: pointer;
 }
 .videos_navbar ul li a {
   font-family: "Inter";

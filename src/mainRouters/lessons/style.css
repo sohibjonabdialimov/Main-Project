@@ -45,33 +45,27 @@
 }
 
 .search-div {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .search-img-box {
   width: 44px;
-  height: 40px;
-  box-sizing: border-box;
+  height: 44px;
   position: absolute;
-  top: 34px;
-  right: 2px;
-  transform: translateY(-80%);
+  top: 50%;
+  transform: translateY(-70%);
   right: 6px;
   background-color: #9e00ff;
   border: 3px solid #23006f;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-div img {
-  display: block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  transform: translateY(-80%);
-  right: 6px;
-  top: 27px;
+  width: 22px;
 }
 
 .burger-box {

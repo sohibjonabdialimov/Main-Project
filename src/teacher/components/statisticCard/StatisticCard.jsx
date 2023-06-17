@@ -11,7 +11,7 @@ function deleteplatforma(url){
       for(let i=2;i<url.length;i++){
         res+="/"+url[i]
       }
-      return(res)
+      return(res);
     }
     return "/"+url
   } catch (error) {

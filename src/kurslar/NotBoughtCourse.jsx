@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
 import { useNavigate, useParams } from "react-router-dom";
-import save from "../imgs/save.png";
-import coin from "../imgs/coin.png";
-import heart from "../imgs/heart.png";
 import "./index.css";
 import MobileHeader from "../components/mobileHeader/mobileHeader";
 import StudentNavbar from "../navbar/student/StudentNavbar";
 import axios from "axios";
-function AboutCourseInfo() {
+function NotBoughtCourse() {
   function savekurs(id) {
-
-    axios.post("http://165.232.127.62:5001/users/savecurs", {
-      cursId: id
-    }, {
-      headers: {
-        Authorization: localStorage.getItem("token")
-      }
-    }).then((res) => {
-      setProfil(res.data)
-
-    })
-
+    axios
+      .post(
+        "http://165.232.127.62:5001/users/savecurs",
+        {
+          cursId: id,
+        },
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
+      )
+      .then((res) => {
+        setProfil(res.data);
+      });
   }
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
@@ -32,42 +32,45 @@ function AboutCourseInfo() {
   const changeModalDars = (value) => {
     setModalDarslar(value);
   };
-  const [kurs, setKurs] = useState({})
-  const [price, setPrice] = useState(false)
+  const [kurs, setKurs] = useState({});
+  const [price, setPrice] = useState(false);
   const [teacher, setTeacher] = useState({});
   const { kursId } = useParams();
   function deleteplatforma(url) {
     try {
       if (url.includes("platforma")) {
-        url = url.split("/")
-        let res = ""
+        url = url.split("/");
+        let res = "";
         for (let i = 2; i < url.length; i++) {
-          res += "/" + url[i]
+          res += "/" + url[i];
         }
-        return (res)
+        return res;
       }
-      return "/" + url
+      return "/" + url;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
   useEffect(() => {
-    axios.get("http://165.232.127.62:5001/courses/" + kursId, {
-      headers: {
-        Authorization: localStorage.getItem("token")
-      }
-    }).then((res) => {
-      setKurs(res.data)
-      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id).then((res) => {
-        setTeacher(res.data)
+    axios
+      .get("http://165.232.127.62:5001/courses/" + kursId, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
       })
-    })
-  }, [])
+      .then((res) => {
+        setKurs(res.data);
+        axios
+          .get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id)
+          .then((res) => {
+            setTeacher(res.data);
+          });
+      });
+  }, []);
   const navigate = useNavigate();
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
-
         <div className={modal ? "def modal-navbar" : "def yoq"}>
           <StudentNavbar changeModal={changeModal} modal={modal} />
         </div>
@@ -87,21 +90,28 @@ function AboutCourseInfo() {
           />
           <div
             className="every__cource-bigImg"
-            style={{ backgroundImage: `url(${"http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)})` }}
+            style={{
+              backgroundImage: `url(${
+                "http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)
+              })`,
+            }}
           ></div>
 
           <div className="every__cource-desc">
             <div className="every__cource-header">
-              <div className="every__cource-title" onClick={() => {
-                navigate("/student/teacherinfo/" + teacher._id);
-              }}>
-                <img src={"http://165.232.127.62:5001" + deleteplatforma(teacher.path)} alt="" />
+              <div
+                className="every__cource-title"
+                onClick={() => {
+                  navigate("/student/teacherinfo/" + teacher._id);
+                }}
+              >
+                <img
+                  src={
+                    "http://165.232.127.62:5001" + deleteplatforma(teacher.path)
+                  }
+                  alt=""
+                />
                 <h3>{teacher.fullname}</h3>
-              </div>
-              <div className="every__cource-nav">
-                <img src={save} alt="" onClick={() => { savekurs(kursId) }} />
-                <img src={coin} alt="" />
-                <img src={heart} alt="" />
               </div>
             </div>
             <div className="every__cource-name">
@@ -115,25 +125,24 @@ function AboutCourseInfo() {
                 Kurs narxi: {kurs.narxi} so'm
               </p>
               <p className="every__cource-para">Olingan: {kurs.subs}</p>
-              <p className="every__cource-para">Davomiyligi: {kurs.muddati}oy</p>
+              <p className="every__cource-para">
+                Davomiyligi: {kurs.muddati}oy
+              </p>
             </div>
             <div className="every__course-buttons">
-              <button onClick={() => {
-                navigate("/student/kurs/olinganlar/" + kursId);
-              }}>Video darslar</button>
-
-              <button onClick={() => navigate("/student/notboughtcouse/"+kursId)}>Kursni olish</button>
+              <button
+                onClick={() => {
+                  alert("sotib olish");
+                }}
+              >sotib olish</button>
             </div>
           </div>
         </div>
-
       </div>
       <div className="mobileForedit">
         <CommentsList commints={kurs?.Commint} />
       </div>
-      <div
-        className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"}
-      >
+      <div className={modalDarslar ? "defDars modalDarslar aa" : "defDars yoq"}>
         <CommentsList
           modalDarslar={modalDarslar}
           changeModalDars={changeModalDars}
@@ -144,4 +153,4 @@ function AboutCourseInfo() {
   );
 }
 
-export default AboutCourseInfo;
+export default NotBoughtCourse;

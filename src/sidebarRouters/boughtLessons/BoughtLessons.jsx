@@ -47,12 +47,12 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId, {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-
+          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
           }
-        }
         );
         fetchedTeacherData.push(response.data);
       }
@@ -65,7 +65,6 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
   }, [profile]);
   return (
     <div className="Nav sidebar-main-content">
-
       <div
         className={modalDarslar ? "mobile__header" : "d-none "}
         onClick={handleClick}
@@ -80,7 +79,6 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
         <div className="sidebar-line"></div>
         <div className="sidebar-bought-course">
           {teacherData.map((item, index) => (
-
             <div className="darslar-cart">
               <img
                 src={
@@ -94,7 +92,6 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </div>

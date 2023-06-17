@@ -35,6 +35,7 @@ import ProcessFreeDownload from "./teacher/MainRoute/processFreeDownload/Process
 import SuccessFreeDownload from "./teacher/MainRoute/successFreeDownload/SuccessFreeDownload";
 import StudentRegistration from "./sign/registration/StudentRegistration";
 import TeacherRegistration from "./sign/registration/TeacherRegistration";
+import NotBoughtCourse from "./kurslar/NotBoughtCourse";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />
           <Route path="hisoblar" element={<Balance />} />
-          
+          <Route path="notboughtcouse/:kursId" element={<NotBoughtCourse />} />
           <Route path="kurs/:kursId" element={<AboutCourseInfo />} />
           <Route path="profile" element={<Profile />}>
             <Route index element={<Subs />} />
@@ -80,8 +81,14 @@ function App() {
         <Route path="hisoblar/pulyichish/ok" element={<TeachPulyichishok />} />
         <Route path="free/success" element={<SuccessFreeDownload />} />
         <Route path="teacher/statistic/:course" element={<CourseStatistic />} />
-        <Route path="teacher/processfreedownload" element={<ProcessFreeDownload />} />
-        <Route path="teacher/processmoneydownload" element={<ProcessFreeDownload />} />
+        <Route
+          path="teacher/processfreedownload"
+          element={<ProcessFreeDownload />}
+        />
+        <Route
+          path="teacher/processmoneydownload"
+          element={<ProcessFreeDownload />}
+        />
         <Route
           path="teacher/update/kurs/:id"
           element={<TeachUpdateonekurs />}

@@ -94,9 +94,7 @@ function CourseInfo() {
           </div>
           <div className="video_information_content">
             <h3>
-              {courseIndex} - dars. {selectedVideo.nomi} Lorem ipsum dolor sit
-              amet consectetur adipisicing elit. Quod aut adipisci cum nisi
-              veritati
+              {courseIndex} - dars. {selectedVideo.nomi}
             </h3>
             <p>{selectedVideo.desc}</p>
           </div>

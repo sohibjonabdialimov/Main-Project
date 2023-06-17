@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import img from "../../../imgs/statistika.png";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 const CourseStatistic = () => {
   
   const { course } = useParams();
@@ -9,6 +10,18 @@ const CourseStatistic = () => {
   const onBack = () => {
     navigate(-1);
   };
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://165.232.127.62:5001/teacher-mycurs/", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setCourses(res.data);
+      });
+  }, []);
   return (
     <div className="app-content">
       <div className="global_wrap">
