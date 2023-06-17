@@ -58,12 +58,27 @@ function AboutCourseInfo() {
       }
     }).then((res) => {
       setKurs(res.data)
-      axios.get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id).then((res) => {
-        setTeacher(res.data)
-      })
+      axios.get(res.data.teacher_Id ? "http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id
+        : "http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId).then((res) => {
+          setTeacher(res.data)
+        })
     })
   }, [])
   const navigate = useNavigate();
+
+  const [profile, setProfil] = useState({})
+  useEffect(() => {
+    axios.get("http://165.232.127.62:5001/usersme", {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    }).then((res) => {
+      setProfil(res.data)
+
+    })
+  }, [])
+
+
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
@@ -119,7 +134,15 @@ function AboutCourseInfo() {
             </div>
             <div className="every__course-buttons">
               <button onClick={() => {
-                navigate("/student/kurs/olinganlar/" + kursId);
+
+                const isCursIdExists = profile.mycurs.some(curs => curs.cursId === kursId);
+
+                if (isCursIdExists) {
+                  navigate("/student/kurs/olinganlar/" + kursId);
+                } else {
+                  alert(`bu kurs sotib olinmagan`);
+                }
+                
               }}>Video darslar</button>
 
               <button>Kursni olish</button>

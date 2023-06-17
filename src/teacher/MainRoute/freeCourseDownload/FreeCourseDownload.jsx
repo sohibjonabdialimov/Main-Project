@@ -11,6 +11,7 @@ function FreeCourseDownload() {
   const courseNameRef = useRef();
   const courseDescRef = useRef();
   const courseImgRef = useRef();
+  const courseMuddatiRef = useRef();
   const descriptionInputRef = useRef();
   const fileInputRef = useRef();
   const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
@@ -72,14 +73,13 @@ function FreeCourseDownload() {
   };
 
   const onHandleForm = async (e) => {
-    addVideoLesson()
     e.preventDefault();
     const formData = new FormData();
     formData.append("obloshka", courseImgRef.current.files[0]);
     formData.append("name", courseNameRef.current.value);
     formData.append("desc", courseDescRef.current.value);
     formData.append("narxi", 0);
-    formData.append("muddati", 0);
+    formData.append("muddati", courseMuddatiRef);
   
     for (let i = 0; i < videoDataArray.length; i++) {
       const videoData = videoDataArray[i];
@@ -142,6 +142,7 @@ function FreeCourseDownload() {
                     ref={courseImgRef}
                     type="file"
                     placeholder="Muqova uchun rasm"
+                    accept="image/*"
                   />
                 </div>
                 <div className={styles.videos}>
@@ -163,6 +164,7 @@ function FreeCourseDownload() {
                         <input
                           type="file"
                           placeholder="Muqova uchun video"
+                          accept="video/*"
                           ref={fileInputRef}
                         />
                       <div className={styles.plus_minus}>
@@ -182,10 +184,7 @@ function FreeCourseDownload() {
                         </button>
                       </div>
                     </div>
-<<<<<<< HEAD
                     
-=======
->>>>>>> 8bcee30485750f4a16c384bf636cb45ac20af41e
                   ))}
                 </div>
               </div>
@@ -194,7 +193,7 @@ function FreeCourseDownload() {
                   <p htmlFor="amount" className={styles.amount}>
                     Davomiylik
                   </p>
-                  <input className={styles.second} type="text" />
+                  <input ref={courseMuddatiRef} className={styles.second} type="text" />
                 </div>
               </div>
               <button
