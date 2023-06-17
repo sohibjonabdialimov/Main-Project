@@ -112,7 +112,7 @@
     background: linear-gradient(#564282, #826a91);
     border-radius: 50px;
 }
-.videos_navbar {
+/* .videos_navbar {
     height: 87vh;
     width: 22vw;
     background: linear-gradient(#564282, #826a91);
@@ -136,4 +136,4 @@
 .videos_navbar ul li a.active {
     color: rgba(255, 255, 255, 0.6);
     background-color: transparent;
-}
+} */

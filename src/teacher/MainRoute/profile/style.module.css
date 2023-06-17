@@ -1,5 +1,5 @@
 .teacher_profile_wrap {
-  text-align: center;
+  /* text-align: center; */
   padding: 0 150px;
   position: relative;
 }
@@ -8,6 +8,7 @@
   height: 180px;
   object-fit: cover;
   margin-bottom: 11px;
+  border-radius: 50%;
 }
 .teacher_profile_wrap h2 {
   font-family: "Inter";
@@ -19,7 +20,7 @@
   margin-bottom: 10px;
   color: #ffffff;
 }
-.teacher_profile_wrap p {
+.teacher_profile_wrap h4 {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -29,7 +30,7 @@
   color: #ffffff;
   margin-bottom: 32px;
 }
-.teacher_profile_wrap span {
+/* .teacher_profile_wrap span {
   display: block;
   margin-bottom: 15px;
   font-family: "Inter";
@@ -38,16 +39,26 @@
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
-}
-.profile_bio p {
+} */
+.profile_teacher_desc p:first-child {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
   margin-bottom: 15px;
+}
+.profile_teacher_desc p:nth-child(2) {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   color: #ffffff;
+  margin-bottom: 15px;
 }
+
 .location {
   font-family: "Inter";
   font-style: normal;
@@ -66,6 +77,7 @@
   bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
 }
 .profile_buttons button {
   font-family: "Inter";
@@ -74,7 +86,6 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  text-align: center;
   border-radius: 20px;
   background-color: #372b4f;
   border: none;

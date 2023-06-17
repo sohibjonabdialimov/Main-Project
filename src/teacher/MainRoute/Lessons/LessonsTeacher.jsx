@@ -1,23 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
-import TeachCart from "../../../components/Cart/Cart";
-import img15 from "../../../imgs/teacher-main-sidebar.png";
 import "./style.css";
-
 import "../style.css";
-import MenuContext from "antd/es/menu/MenuContext";
 import LessonCard from "../../components/lessonCard/LessonCard";
 import axios from "axios";
 function LessonsTeacher() {
-  const [courses,setCourses]=useState([]);
-  useEffect(()=>{
-    axios.get("http://165.232.127.62:5001/teacher-mycurs/",{
-      headers: {
-        Authorization: localStorage.getItem("token"),
-      },
-    }).then((res)=>{
-      setCourses(res.data)
-    })
-  },[])
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://165.232.127.62:5001/teacher-mycurs/", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setCourses(res.data);
+      });
+  }, []);
 
   return (
     <>

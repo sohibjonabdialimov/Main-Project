@@ -29,7 +29,6 @@ const TeacherLogin = () => {
   };
   return (
     <div className="app-content">
-      
       <div className="sign_wrap">
       <button onClick={onBack} className="back">
         <ion-icon name="chevron-back-outline"></ion-icon>

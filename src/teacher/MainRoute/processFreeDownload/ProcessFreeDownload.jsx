@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const ProcessFreeDownload = () => {
   const navigate = useNavigate();
   const onBack = () => {
-    navigate(-1);
+    navigate("/kurs/free");
   };
   return (
     <>
@@ -30,16 +30,6 @@ const ProcessFreeDownload = () => {
               </div>
               <button type="submit">Saqlash</button>
             </form>
-          </div>
-        </div>
-      </div>
-
-      <div className="free_modal">
-        <div className="free_modal_content">
-          <p>Bu kursni haqiqatdan yuklamoqchimisiz?</p>
-          <div className="free_modal_wrap">
-            <button onClick={() => navigate(-1)}>YO'Q</button>
-            <button onClick={() => navigate("/free/success")}>HA</button>
           </div>
         </div>
       </div>
