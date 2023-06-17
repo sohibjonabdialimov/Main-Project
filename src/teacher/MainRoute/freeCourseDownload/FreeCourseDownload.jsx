@@ -11,6 +11,7 @@ function FreeCourseDownload() {
   const courseNameRef = useRef();
   const courseDescRef = useRef();
   const courseImgRef = useRef();
+  const courseMuddatiRef = useRef();
   const descriptionInputRef = useRef();
   const fileInputRef = useRef();
   const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
@@ -71,37 +72,46 @@ function FreeCourseDownload() {
     navigate("/teacher/processfreedownload");
   };
 
-  const onHandleForm = (e) => {
+  const onHandleForm = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("obloshka", courseImgRef.current.files[0]);
+    formData.append("name", courseNameRef.current.value);
+    formData.append("desc", courseDescRef.current.value);
+    formData.append("narxi", 0);
+    formData.append("muddati", courseMuddatiRef);
+  
+    for (let i = 0; i < videoDataArray.length; i++) {
+      const videoData = videoDataArray[i];
+      formData.append("vediosdesc", videoData.description);
+      formData.append("vediosname", videoData.title);
+      if (videoData.file) {
+        formData.append("file", videoData.file);
+      } else {
+        console.error(`Missing file for video data at index ${i}`);
+      }
+    }
+  
+    try {
+      const response = await axios.post("http://165.232.127.62:5001/courses/", formData, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
+  
 
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .post("http://165.232.127.62:5001/courses/" + "12ddd", {
-  //       name: "testmuddat",
-  //       desc: "ok",
-  //       narxi: 100000,
-  //       muddati: 3,
-  //       vediosdesc: ["lorem1", "lorem2"],
-  //       vediosname: ["lorem1", "lorem2"],
-  //       file: ["ok", "ok2"],
-  //       obloshka: "ok.png",
-  //     }, {
-  //       headers: {
-  //         Authorization: localStorage.getItem("token"),
-  //       }
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [kursId]);
+
 
   return (
     <>
@@ -132,6 +142,7 @@ function FreeCourseDownload() {
                     ref={courseImgRef}
                     type="file"
                     placeholder="Muqova uchun rasm"
+                    accept="image/*"
                   />
                 </div>
                 <div className={styles.videos}>
@@ -153,6 +164,7 @@ function FreeCourseDownload() {
                         <input
                           type="file"
                           placeholder="Muqova uchun video"
+                          accept="video/*"
                           ref={fileInputRef}
                         />
                       <div className={styles.plus_minus}>
@@ -172,6 +184,7 @@ function FreeCourseDownload() {
                         </button>
                       </div>
                     </div>
+                    
                   ))}
                 </div>
               </div>
@@ -180,11 +193,11 @@ function FreeCourseDownload() {
                   <p htmlFor="amount" className={styles.amount}>
                     Davomiylik
                   </p>
-                  <input className={styles.second} type="text" />
+                  <input ref={courseMuddatiRef} className={styles.second} type="text" />
                 </div>
               </div>
               <button
-                onClick={() => (modalRef.current.style.display = "flex")}
+                // onClick={() => (modalRef.current.style.display = "flex")}
                 className={styles.btn}
                 type="submit"
               >
