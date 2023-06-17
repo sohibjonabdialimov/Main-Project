@@ -42,8 +42,8 @@
 .input_file {
   position: relative;
   color: #fff;
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +71,37 @@
   opacity: 0;
 }
 
+.video_download_input_desc{
+  padding: 5px 10px;
+  color: #fff;
+  outline: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  border: 1.5px solid #ffffff;
+  border-radius: 20px;  
+  background-color: #40325d;
+  width: 39%;
+}
+.video_download_input_title{
+  padding: 5px 10px;
+  color: #fff;
+  outline: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  border: 1.5px solid #ffffff;
+  border-radius: 20px;  
+  background-color: #40325d;
+  width: 23%;
+}
+.video_download_input::placeholder{
+  color: #ccc;
+}
 .input_wrap input,
 .input_wrap textarea {
   padding: 10px 20px;
@@ -138,10 +169,12 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 5px;
   border: 1.5px solid #ffffff;
   border-radius: 20px;
   background-color: #40325d;
 }
+
 .video_download p {
   font-family: "Inter";
   font-style: normal;
@@ -150,6 +183,7 @@
   line-height: 24px;
   color: #ffffff;
 }
+
 .down_btn {
   display: block;
   background-color: #2d2341;
@@ -162,8 +196,8 @@
 }
 .plus_btn {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background-color: #2d2341;
   color: #fff;
   outline: none;
