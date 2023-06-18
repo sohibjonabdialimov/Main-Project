@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./free.module.css";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 
 function FreeCourseDownload() {
@@ -28,7 +28,7 @@ function FreeCourseDownload() {
       // if (!title || !description || !file) {
       //   toast("Iltimos", {autoClose: 3000});
       //   return 0;
-      // }else 
+      // }else
       if (!title) {
         toast("Iltimos, video nomini kiriting");
         return 0;
@@ -93,24 +93,23 @@ function FreeCourseDownload() {
     }
 
     try {
-      const response = await axios.post("http://165.232.127.62:5001/courses/", formData, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      console.log(response.data);
+      const response = await axios
+        .post("http://165.232.127.62:5001/courses/", formData, {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((res) => console.log(res));
     } catch (error) {
       console.error(error);
     }
   };
 
-
-
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
   };
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
 
   const handleInputChange = (event) => {
     const file = event.target.files[0];
@@ -120,7 +119,6 @@ function FreeCourseDownload() {
       setImage(reader.result);
     };
   };
-
 
   return (
     <>
@@ -146,7 +144,7 @@ function FreeCourseDownload() {
               </div>
               <div className={styles.upload_div}>
                 <div className={styles.input_file}>
-                  {!image&&(<p>Muqova uchun rasm</p>)}
+                  {!image && <p>Muqova uchun rasm</p>}
                   <input
                     onChange={handleInputChange}
                     ref={courseImgRef}
@@ -155,8 +153,16 @@ function FreeCourseDownload() {
                     accept="image/*"
                   />
                   {image && (
-                    <div style={{height: "100%"}}>
-                      <img src={image} alt="selected" style={{ width: '100%',height:"100%",objectFit:"cover"}} />
+                    <div style={{ height: "100%" }}>
+                      <img
+                        src={image}
+                        alt="selected"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
                     </div>
                   )}
                 </div>
@@ -199,7 +205,6 @@ function FreeCourseDownload() {
                         </button>
                       </div>
                     </div>
-
                   ))}
                 </div>
               </div>
@@ -208,13 +213,14 @@ function FreeCourseDownload() {
                   <p htmlFor="amount" className={styles.amount}>
                     Davomiylik
                   </p>
-                  <input ref={courseMuddatiRef} className={styles.second} type="text" />
+                  <input
+                    ref={courseMuddatiRef}
+                    className={styles.second}
+                    type="text"
+                  />
                 </div>
               </div>
-              <button
-                className={styles.btn}
-                type="submit"
-              >
+              <button className={styles.btn} type="submit">
                 KURSNI YUKLASH
               </button>
             </form>
