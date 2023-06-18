@@ -29,13 +29,13 @@ function FreeCourseDownload() {
       //   toast("Iltimos", {autoClose: 3000});
       //   return 0;
       // }else 
-      if(!title){
+      if (!title) {
         toast("Iltimos, video nomini kiriting");
         return 0;
-      }else if(!description){
+      } else if (!description) {
         toast("Iltimos, videoga izoh bering");
         return 0;
-      }else if(!file){
+      } else if (!file) {
         toast("Iltimos, videoni kiriting");
         return 0;
       }
@@ -79,8 +79,8 @@ function FreeCourseDownload() {
     formData.append("name", courseNameRef.current.value);
     formData.append("desc", courseDescRef.current.value);
     formData.append("narxi", 0);
-    formData.append("muddati", courseMuddatiRef);
-  
+    formData.append("muddati", courseMuddatiRef.current.value);
+
     for (let i = 0; i < videoDataArray.length; i++) {
       const videoData = videoDataArray[i];
       formData.append("vediosdesc", videoData.description);
@@ -91,7 +91,7 @@ function FreeCourseDownload() {
         console.error(`Missing file for video data at index ${i}`);
       }
     }
-  
+
     try {
       const response = await axios.post("http://165.232.127.62:5001/courses/", formData, {
         headers: {
@@ -104,18 +104,27 @@ function FreeCourseDownload() {
       console.error(error);
     }
   };
-  
-  
+
+
 
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
   };
+  const [image, setImage] = useState('');
 
+  const handleInputChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
+  };
 
 
   return (
     <>
-    <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={2000} />
       <div className="app-content">
         <div className="global_wrap">
           <div className={styles.kurs_yuklash}>
@@ -137,36 +146,42 @@ function FreeCourseDownload() {
               </div>
               <div className={styles.upload_div}>
                 <div className={styles.input_file}>
-                  <p>Muqova uchun rasm</p>
+                  {/* {!image&&(<p>Muqova uchun rasm</p>)} */}
                   <input
+                    onChange={handleInputChange}
                     ref={courseImgRef}
                     type="file"
                     placeholder="Muqova uchun rasm"
                     accept="image/*"
                   />
+                  {image && (
+                    <div style={{height: "100%"}}>
+                      <img src={image} alt="selected" style={{ width: '100%',height:"100%",objectFit:"cover"}} />
+                    </div>
+                  )}
                 </div>
                 <div className={styles.videos}>
                   {videoLessons.map((lesson, index) => (
                     <div className={styles.video_download} key={lesson.id}>
                       <p key={index}>{index + 1}-dars</p>
-                        <input
-                          type="text"
-                          placeholder="Enter video title"
-                          ref={titleInputRef}
-                          className={styles.video_download_input_title}
-                        />
-                        <input
-                          type="text"
-                          placeholder="Enter video description"
-                          ref={descriptionInputRef}
-                          className={styles.video_download_input_desc}
-                        />
-                        <input
-                          type="file"
-                          placeholder="Muqova uchun video"
-                          accept="video/*"
-                          ref={fileInputRef}
-                        />
+                      <input
+                        type="text"
+                        placeholder="Enter video title"
+                        ref={titleInputRef}
+                        className={styles.video_download_input_title}
+                      />
+                      <input
+                        type="text"
+                        placeholder="Enter video description"
+                        ref={descriptionInputRef}
+                        className={styles.video_download_input_desc}
+                      />
+                      <input
+                        type="file"
+                        placeholder="Muqova uchun video"
+                        accept="video/*"
+                        ref={fileInputRef}
+                      />
                       <div className={styles.plus_minus}>
                         <button
                           type="button"
@@ -184,7 +199,7 @@ function FreeCourseDownload() {
                         </button>
                       </div>
                     </div>
-                    
+
                   ))}
                 </div>
               </div>

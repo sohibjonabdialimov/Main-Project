@@ -38,12 +38,15 @@
   margin-bottom: 21px;
   color: #ffffff;
 }
-
+.input_file img{
+  border-radius: 20px;
+}
 .input_file {
   position: relative;
+  
   color: #fff;
   width: 140px;
-  height: 180px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;

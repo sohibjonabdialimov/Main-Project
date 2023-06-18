@@ -60,14 +60,26 @@ function NotBoughtCourse() {
       })
       .then((res) => {
         setKurs(res.data);
-        axios
-          .get("http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id)
-          .then((res) => {
-            setTeacher(res.data);
+        axios.get(res.data.teacher_Id ? "http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id
+          : "http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId).then((res) => {
+            setTeacher(res.data)
           });
       });
   }, []);
   const navigate = useNavigate();
+  function kursOlish(kursId) {
+    axios.post('http://165.232.127.62:5001/baycurs', {
+      cursId: kursId
+    }, {
+      headers: { Authorization: localStorage.getItem('token') }
+    })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
@@ -91,9 +103,8 @@ function NotBoughtCourse() {
           <div
             className="every__cource-bigImg"
             style={{
-              backgroundImage: `url(${
-                "http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)
-              })`,
+              backgroundImage: `url(${"http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)
+                })`,
             }}
           ></div>
 
@@ -131,9 +142,7 @@ function NotBoughtCourse() {
             </div>
             <div className="every__course-buttons">
               <button
-                onClick={() => {
-                  alert("sotib olish");
-                }}
+                onClick={()=>kursOlish(kursId)}
               >sotib olish</button>
             </div>
           </div>

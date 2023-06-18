@@ -61,9 +61,10 @@ function TeachUpdatekurs() {
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
       <div className="main_teacher_content sidebar-main-wrap">
-        {carts.map((cart, index) => {
+        <h1>Tez orada bu funksiya ishlanadi</h1>
+        {/* {carts.map((cart, index) => {
           return <TeachUpdateCart cart={cart} key={index} />;
-        })}
+        })} */}
       </div>
     </div>
   );

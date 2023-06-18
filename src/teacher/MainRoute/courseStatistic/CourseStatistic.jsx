@@ -4,7 +4,7 @@ import img from "../../../imgs/statistika.png";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 const CourseStatistic = () => {
-  
+
   const { course } = useParams();
   const navigate = useNavigate();
   const onBack = () => {
@@ -12,12 +12,11 @@ const CourseStatistic = () => {
   };
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    axios
-      .get("http://165.232.127.62:5001/teacher-mycurs/", {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      })
+    axios.post("http://165.232.127.62:5001/courseone/me", { cursId: course }, {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
       .then((res) => {
         setCourses(res.data);
       });
@@ -33,22 +32,17 @@ const CourseStatistic = () => {
             <div className={styles.img_card}>
               <img src={img} alt="" />
               <div className={styles.img_card_desc}>
-                <h3>IELTS-8.0 English Course</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Voluptate aliquid assumenda magnam nihil sed iure.
-                </p>
+                <h3>{courses.Kursname}</h3>
+                <p>{courses.Kursdesc}</p>
               </div>
             </div>
             <div className={styles.course_statictic_desc}>
               <h2>Kurs statistikasi</h2>
               <p>Yuklangan vaqt: 4, April, 2022</p>
-              <p>Narxi: 150 000 so'm</p>
+              <p>Narxi: {courses.narxi} UZS</p>
               <p>Kurs davomiyligi: 2 oy</p>
-              <p>Olingan: 450</p>
-              <p>Kurs tugatilgan: 300</p>
-              <p>Kurs o'qilish jarayonida: 150</p>
-              <p>Kurs daromadi: 67 500 000 so'm</p>
+              <p>Kurs o'qilish jarayonida:{courses.subs?.length}</p>
+              <p>Kurs daromadi: {courses.narxi*courses.subs?.length*0.8}</p>
             </div>
           </div>
         </div>
