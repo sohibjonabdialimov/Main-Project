@@ -146,7 +146,7 @@ function FreeCourseDownload() {
               </div>
               <div className={styles.upload_div}>
                 <div className={styles.input_file}>
-                  {/* {!image&&(<p>Muqova uchun rasm</p>)} */}
+                  {!image&&(<p>Muqova uchun rasm</p>)}
                   <input
                     onChange={handleInputChange}
                     ref={courseImgRef}
