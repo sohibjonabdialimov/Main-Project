@@ -25,16 +25,11 @@ function FreeCourseDownload() {
       const title = titleInputRef.current.value;
       const description = descriptionInputRef.current.value;
       const file = fileInputRef.current.files[0];
-<<<<<<< HEAD
       // if (!title || !description || !file) {
       //   toast("Iltimos", {autoClose: 3000});
       //   return 0;
       // }else 
       if (!title) {
-=======
-     
-      if(!title){
->>>>>>> 095b4c7bb12f1c537750452c05505804e540eff9
         toast("Iltimos, video nomini kiriting");
         return 0;
       } else if (!description) {
@@ -112,13 +107,10 @@ function FreeCourseDownload() {
 
 
 
-<<<<<<< HEAD
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
   };
   const [image, setImage] = useState('');
-=======
->>>>>>> 095b4c7bb12f1c537750452c05505804e540eff9
 
   const handleInputChange = (event) => {
     const file = event.target.files[0];
