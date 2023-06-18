@@ -97,7 +97,7 @@ function PaidCourseDownload() {
     formData.append("name", courseNameRef.current.value);
     formData.append("desc", courseDescRef.current.value);
     formData.append("narxi", +coursePriceRef.current.value);
-    formData.append("muddati", courseMuddatiRef);
+    formData.append("muddati", +courseMuddatiRef.current.value);
 
     for (let i = 0; i < videoDataArray.length; i++) {
       const videoData = videoDataArray[i];
