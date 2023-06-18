@@ -38,6 +38,8 @@ function PaidCourseDownload() {
   const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
   const [videoDataArray, setVideoDataArray] = useState([]);
   const navigate = useNavigate();
+
+  const [image, setImage] = useState('');
   const onBack = () => {
     navigate("/teacher/kurs");
   };
@@ -125,6 +127,15 @@ function PaidCourseDownload() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleInputChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImage(reader.result);
+    };
   };
 
   return (
@@ -231,14 +242,20 @@ function PaidCourseDownload() {
                 <textarea ref={courseDescRef}></textarea>
               </div>
               <div className={styles.upload_div}>
-                <div className={styles.input_file}>
-                  <p>Muqova uchun rasm</p>
+              <div className={styles.input_file}>
+                  {!image&&(<p>Muqova uchun rasm</p>)}
                   <input
+                    onChange={handleInputChange}
                     ref={courseImgRef}
                     type="file"
                     placeholder="Muqova uchun rasm"
                     accept="image/*"
                   />
+                  {image && (
+                    <div style={{height: "100%"}}>
+                      <img src={image} alt="selected" style={{ width: '100%',height:"100%",objectFit:"cover"}} />
+                    </div>
+                  )}
                 </div>
                 <div className={styles.videos}>
                   {videoLessons.map((lesson, index) => (
