@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./free.module.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
@@ -25,11 +25,16 @@ function FreeCourseDownload() {
       const title = titleInputRef.current.value;
       const description = descriptionInputRef.current.value;
       const file = fileInputRef.current.files[0];
+<<<<<<< HEAD
       // if (!title || !description || !file) {
       //   toast("Iltimos", {autoClose: 3000});
       //   return 0;
       // }else 
       if (!title) {
+=======
+     
+      if(!title){
+>>>>>>> 095b4c7bb12f1c537750452c05505804e540eff9
         toast("Iltimos, video nomini kiriting");
         return 0;
       } else if (!description) {
@@ -107,10 +112,13 @@ function FreeCourseDownload() {
 
 
 
+<<<<<<< HEAD
   const onSendFunc = () => {
     navigate("/teacher/processfreedownload");
   };
   const [image, setImage] = useState('');
+=======
+>>>>>>> 095b4c7bb12f1c537750452c05505804e540eff9
 
   const handleInputChange = (event) => {
     const file = event.target.files[0];
@@ -212,7 +220,6 @@ function FreeCourseDownload() {
                 </div>
               </div>
               <button
-                // onClick={() => (modalRef.current.style.display = "flex")}
                 className={styles.btn}
                 type="submit"
               >
