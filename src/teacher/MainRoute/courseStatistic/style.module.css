@@ -40,6 +40,7 @@
 
 .img_card img {
   border-radius: 50px 50px 0 0;
+  width: 100%;
 }
 
 .course_statictic_desc h2 {

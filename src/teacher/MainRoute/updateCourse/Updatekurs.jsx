@@ -61,7 +61,7 @@ function TeachUpdatekurs() {
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
       <div className="main_teacher_content sidebar-main-wrap">
-        <h1>Tez orada bu funksiya ishlanadi</h1>
+        <h1>Bu funksya tez orada ishlaydi</h1>
         {/* {carts.map((cart, index) => {
           return <TeachUpdateCart cart={cart} key={index} />;
         })} */}
