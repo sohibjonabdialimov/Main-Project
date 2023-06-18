@@ -1,108 +1,323 @@
 import React, { useState } from "react";
 import styles from "./style.module.css";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import axios from "axios";
 
 function PaidCourseDownload() {
-  const [courseSections, setCourseSections] = useState([{ id: 1 }]);
+  // const [courseSections, setCourseSections] = useState([{ id: 1 }]);
+  // const navigate = useNavigate();
+  // const onBack = () => {
+  //   navigate("/teacher/kurs");
+  // };
+  // const onHandleForm = (e) => {
+  //   e.preventDefault();
+  // };
+  // const addCourseSection = () => {
+  //   const newId = courseSections.length + 1;
+  //   const newCourseSection = { id: newId };
+  //   setCourseSections([...courseSections, newCourseSection]);
+  // };
+  // const removeCourseSection = (id) => {
+  //   const updatedSections = courseSections.filter(
+  //     (section) => section.id !== id
+  //   );
+  //   setCourseSections(updatedSections);
+  // };
+
+  const modalRef = useRef();
+  const titleInputRef = useRef();
+  const courseNameRef = useRef();
+  const courseDescRef = useRef();
+  const courseImgRef = useRef();
+  const coursePriceRef = useRef();
+  const courseMuddatiRef = useRef();
+  const descriptionInputRef = useRef();
+  const fileInputRef = useRef();
+  const [videoLessons, setVideoLessons] = useState([{ id: 1 }]);
+  const [videoDataArray, setVideoDataArray] = useState([]);
   const navigate = useNavigate();
   const onBack = () => {
-    navigate(-1);
+    navigate("/teacher/kurs");
   };
-  const onHandleForm = (e) => {
+  const addVideoLesson = (e) => {
+    try {
+      const title = titleInputRef.current.value;
+      const description = descriptionInputRef.current.value;
+      const file = fileInputRef.current.files[0];
+
+      if (!title) {
+        toast("Iltimos, video nomini kiriting");
+        return 0;
+      } else if (!description) {
+        toast("Iltimos, videoga izoh bering");
+        return 0;
+      } else if (!file) {
+        toast("Iltimos, videoni kiriting");
+        return 0;
+      }
+      const newId = videoLessons.length + 1;
+      const newVideoLesson = { id: newId };
+      setVideoLessons([...videoLessons, newVideoLesson]);
+      const videoData = {
+        id: newId - 1,
+        title,
+        description,
+        file,
+      };
+
+      setVideoDataArray((prevData) => [...prevData, videoData]);
+    } catch (error) {
+      const newId = videoLessons.length + 1;
+      const newVideoLesson = { id: newId };
+      setVideoLessons([...videoLessons, newVideoLesson]);
+    }
     e.preventDefault();
   };
-  const addCourseSection = () => {
-    const newId = courseSections.length + 1;
-    const newCourseSection = { id: newId };
-    setCourseSections([...courseSections, newCourseSection]);
-  };
-  const removeCourseSection = (id) => {
-    const updatedSections = courseSections.filter(
-      (section) => section.id !== id
+  const handleRemoveVideoLesson = (id) => {
+    const updatedVideoLessons = videoLessons.filter(
+      (lesson, index) => index !== id - 1
     );
-    setCourseSections(updatedSections);
+    setVideoLessons(updatedVideoLessons);
+    const updatedVideoDataArray = videoDataArray.filter(
+      (videoData) => videoData.id !== id
+    );
+    setVideoDataArray(updatedVideoDataArray);
   };
+  console.log(videoDataArray);
+  const handleVideoLessonUpload = () => {
+    navigate("/teacher/processfreedownload");
+  };
+
+  const onHandleForm = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("obloshka", courseImgRef.current.files[0]);
+    formData.append("name", courseNameRef.current.value);
+    formData.append("desc", courseDescRef.current.value);
+    formData.append("narxi", +coursePriceRef.current.value);
+    formData.append("muddati", courseMuddatiRef);
+
+    for (let i = 0; i < videoDataArray.length; i++) {
+      const videoData = videoDataArray[i];
+      formData.append("vediosdesc", videoData.description);
+      formData.append("vediosname", videoData.title);
+      if (videoData.file) {
+        formData.append("file", videoData.file);
+      } else {
+        console.error(`Missing file for video data at index ${i}`);
+      }
+    }
+
+    try {
+      const response = await axios.post(
+        "http://165.232.127.62:5001/courses/",
+        formData,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div className="app-content">
-      <div className="global_wrap">
-        <div className={styles.kurs_yuklash}>
-          <button onClick={onBack} className={styles.back}>
-            <ion-icon name="chevron-back-outline"></ion-icon>
-          </button>
-          <h1>Pullik kurs yuklash</h1>
-          <form
-            onSubmit={(e) => onHandleForm(e)}
-            className={styles.kurs_yuklash_form}
-          >
-            <div className={styles.input_wrap}>
-              <label htmlFor="amount">Kurs nomi</label>
-              <input type="text" />
-            </div>
-            <div className={styles.input_wrap}>
-              <label htmlFor="amount">Kurs haqida</label>
-              <textarea></textarea>
-            </div>
-            <div className={styles.upload_div}>
-              <div className={styles.input_file}>
-                <p>Muqova uchun rasm</p>
-                <input type="file" placeholder="Muqova uchun rasm" />
+    // <div className="app-content">
+    //   <div className="global_wrap">
+    //     <div className={styles.kurs_yuklash}>
+    //       <button onClick={onBack} className={styles.back}>
+    //         <ion-icon name="chevron-back-outline"></ion-icon>
+    //       </button>
+    //       <h1>Pullik kurs yuklash</h1>
+    //       <form
+    //         onSubmit={(e) => onHandleForm(e)}
+    //         className={styles.kurs_yuklash_form}
+    //       >
+    //         <div className={styles.input_wrap}>
+    //           <label htmlFor="amount">Kurs nomi</label>
+    //           <input type="text" />
+    //         </div>
+    //         <div className={styles.input_wrap}>
+    //           <label htmlFor="amount">Kurs haqida</label>
+    //           <textarea></textarea>
+    //         </div>
+    //         <div className={styles.upload_div}>
+    //           <div className={styles.input_file}>
+    //             <p>Muqova uchun rasm</p>
+    //             <input type="file" placeholder="Muqova uchun rasm" />
+    //           </div>
+    //           <div className={styles.videos}>
+    //             {courseSections.map((section) => (
+    //               <div className={styles.video_download} key={section.id}>
+    //                 <p>{section.id}-video dars</p>
+    //                 <button
+    //                   type="button"
+    //                   onClick={() => {
+    //                     navigate("/teacher/processmoneydownload");
+    //                   }}
+    //                   className={styles.down_btn}
+    //                 >
+    //                   Video dars yuklash
+    //                 </button>
+    //                 {section.id > 1 && (
+    //                   <div className={styles.plus_minus}>
+    //                     <button
+    //                       type="button"
+    //                       className={styles.plus_btn}
+    //                       onClick={() => {
+    //                         removeCourseSection(section.id);
+    //                       }}
+    //                     >
+    //                       <ion-icon name="remove-outline"></ion-icon>
+    //                     </button>
+    //                   </div>
+    //                 )}
+    //               </div>
+    //             ))}
+    //           </div>
+    //           <button
+    //             type="button"
+    //             className={styles.plus_btn}
+    //             onClick={addCourseSection}
+    //           >
+    //             <ion-icon name="add-outline"></ion-icon>
+    //           </button>
+    //         </div>
+    //         <div className={styles.extra_div}>
+    //           <div className={styles.input_wrap}>
+    //             <label htmlFor="amount">Kur narxi (so'm)</label>
+    //             <input className={styles.first} type="text" />
+    //           </div>
+    //           <div className={styles.input_wrap}>
+    //             <p htmlFor="amount" className={styles.amount}>
+    //               Davomiylik
+    //             </p>
+    //             <input className={styles.second} type="text" />
+    //           </div>
+    //         </div>
+    //         <button className={styles.btn} type="submit">
+    //           KURSNI YUKLASH
+    //         </button>
+    //       </form>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <>
+      <ToastContainer autoClose={2000} />
+      <div className="app-content">
+        <div className="global_wrap">
+          <div className={styles.kurs_yuklash}>
+            <button onClick={onBack} className={styles.back}>
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <h1>Pullik kurs yuklash</h1>
+            <form
+              onSubmit={(e) => onHandleForm(e)}
+              className={styles.kurs_yuklash_form}
+            >
+              <div className={styles.input_wrap}>
+                <label htmlFor="amount">Kurs nomi</label>
+                <input ref={courseNameRef} type="text" />
               </div>
-              <div className={styles.videos}>
-                {courseSections.map((section) => (
-                  <div className={styles.video_download} key={section.id}>
-                    <p>{section.id}-video dars</p>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        navigate("/teacher/processmoneydownload");
-                      }}
-                      className={styles.down_btn}
-                    >
-                      Video dars yuklash
-                    </button>
-                    {section.id > 1 && (
+              <div className={styles.input_wrap}>
+                <label htmlFor="amount">Kurs haqida</label>
+                <textarea ref={courseDescRef}></textarea>
+              </div>
+              <div className={styles.upload_div}>
+                <div className={styles.input_file}>
+                  <p>Muqova uchun rasm</p>
+                  <input
+                    ref={courseImgRef}
+                    type="file"
+                    placeholder="Muqova uchun rasm"
+                    accept="image/*"
+                  />
+                </div>
+                <div className={styles.videos}>
+                  {videoLessons.map((lesson, index) => (
+                    <div className={styles.video_download} key={lesson.id}>
+                      <p key={index}>{index + 1}-dars</p>
+                      <input
+                        type="text"
+                        placeholder="Enter video title"
+                        ref={titleInputRef}
+                        className={styles.video_download_input_title}
+                      />
+                      <input
+                        type="text"
+                        placeholder="Enter video description"
+                        ref={descriptionInputRef}
+                        className={styles.video_download_input_desc}
+                      />
+                      <input
+                        type="file"
+                        placeholder="Muqova uchun video"
+                        accept="video/*"
+                        ref={fileInputRef}
+                      />
                       <div className={styles.plus_minus}>
                         <button
                           type="button"
-                          className={styles.plus_btn}
-                          onClick={() => {
-                            removeCourseSection(section.id);
-                          }}
+                          onClick={() => handleRemoveVideoLesson(lesson.id)}
+                          className={`${styles.plus_btn} ${styles.minus_btn}`}
                         >
                           <ion-icon name="remove-outline"></ion-icon>
                         </button>
+                        <button
+                          type="submit"
+                          onClick={addVideoLesson}
+                          className={styles.plus_btn}
+                        >
+                          <ion-icon name="add-outline"></ion-icon>
+                        </button>
                       </div>
-                    )}
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <button
-                type="button"
-                className={styles.plus_btn}
-                onClick={addCourseSection}
-              >
-                <ion-icon name="add-outline"></ion-icon>
+              <div className={styles.extra_div}>
+                <div className={styles.input_wrap}>
+                  <label htmlFor="amount">Kurs narxi (so'm)</label>
+                  <input ref={coursePriceRef} className={styles.first} type="text" />
+                </div>
+                <div className={styles.input_wrap}>
+                  <p htmlFor="amount" className={styles.amount}>
+                    Davomiylik
+                  </p>
+                  <input
+                    ref={courseMuddatiRef}
+                    className={styles.second}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <button className={styles.btn} type="submit">
+                KURSNI YUKLASH
               </button>
-            </div>
-            <div className={styles.extra_div}>
-              <div className={styles.input_wrap}>
-                <label htmlFor="amount">Kur narxi (so'm)</label>
-                <input className={styles.first} type="text" />
-              </div>
-              <div className={styles.input_wrap}>
-                <p htmlFor="amount" className={styles.amount}>
-                  Davomiylik
-                </p>
-                <input className={styles.second} type="text" />
-              </div>
-            </div>
-            <button className={styles.btn} type="submit">
-              KURSNI YUKLASH
-            </button>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div ref={modalRef} className={styles.free_modal}>
+        <div className={styles.free_modal_content}>
+          <p>Bu kursni haqiqatdan yuklamoqchimisiz?</p>
+          <div className={styles.free_modal_wrap}>
+            <button onClick={() => (modalRef.current.style.display = "none")}>
+              YO'Q
+            </button>
+            <button onClick={() => navigate("/free/success")}>HA</button>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
