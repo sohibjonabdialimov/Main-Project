@@ -49,7 +49,6 @@ const Subs = () => {
       fetchTeachers();
     }
   }, [profile]);
-  console.log(teacherData);
   return (
     <div className="carts-wrapper">
       {teacherData.map((item, index) => (

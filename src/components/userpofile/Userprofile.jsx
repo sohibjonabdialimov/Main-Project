@@ -25,7 +25,7 @@ function Userprofile() {
         Authorization: localStorage.getItem("token")
       }
     }).then((res) => {
-      setProfil(res.data)
+      setProfil(res?.data)
     })
   }, [])
   return (

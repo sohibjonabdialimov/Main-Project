@@ -40,6 +40,7 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
         },
       })
       .then((res) => {
+        console.log(res.data);
         setProfil(res.data);
       });
   }, []);
@@ -102,11 +103,10 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
         <div className="sidebar-bought-course">
           {teacherData.map((item, index) => (
             <div
-              className="d-flex justify-content-center"
+              className="cursor_class"
               key={index}
               onClick={() => {
                 navigate("/student/kurs/" + item._id);
-                console.log(item);
               }}
             >
               <div className="darslar-cart">

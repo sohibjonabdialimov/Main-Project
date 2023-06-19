@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Obuna from "../../sidebarRouters/Obuna";
-import opacha from "../../imgs/big-logo.png";
-import obuna1 from "../../imgs/obuna1.png";
-import obuna2 from "../../imgs/obuna2.png";
-import obuna3 from "../../imgs/obuna3.png";
-import obuna4 from "../../imgs/obuna4.png";
-import obuna5 from "../../imgs/obuna5.png";
-import obuna6 from "../../imgs/obuna6.png";
-import obuna7 from "../../imgs/obuna7.png";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import StudentNavbar from "../../navbar/student/StudentNavbar";
 import MobileHeader from "../../components/mobileHeader/mobileHeader";
-import Baystudy from "../../sidebarRouters/boughtLessons/BoughtLessons";
 import axios from "axios";
-import { userme } from "../../../unvervars/userme";
 
 function Profile() {
   function deleteplatforma(url){
@@ -69,6 +59,10 @@ function Profile() {
       console.log(error);
     }
   }
+  const deleteAccount = () => {
+    localStorage.clear();
+    navigate("/");
+  }
   return (
     <div className="main-page">
       <div className={modal ? "def modal-navbar" : "def yoq"}>
@@ -103,7 +97,7 @@ function Profile() {
             <button onClick={() => navigate("/editprofil")}>
               Profilni tahrirlash
             </button>
-            <button>Chiqib ketish</button>
+            <button onClick={() => deleteAccount()}>Chiqib ketish</button>
           </div>
         </div>
       </div>

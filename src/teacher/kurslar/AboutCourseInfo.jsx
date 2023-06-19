@@ -1,4 +1,3 @@
-
 import React from "react";
 import CommentsList from "../sidebarRouters/commentsList/CommentsList";
 import { useParams } from "react-router-dom";
@@ -216,7 +215,6 @@ function AboutCourseInfo() {
         </div>
       </div>
       <CommentsList commints={commints} />
-    
     </div>
   );
 }

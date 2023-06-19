@@ -6,19 +6,21 @@ import "../style.css";
 import StudentNavbar from "../../navbar/student/StudentNavbar";
 import MobileHeader from "../../components/mobileHeader/mobileHeader";
 import axios from "axios";
+import Loader from "../../loader/Loader";
 
 function Lessons() {
-  const [courses,setCourses]=useState([]);
-  useEffect(()=>{
-    axios.get("http://165.232.127.62:5001/courses/").then((res)=>{
-      console.log(res.data);
-      setCourses(res.data)
-    })
-  },[])
+  const [courses, setCourses] = useState([]);
+  const [loader, setLoader] = useState(false);
+  useEffect(() => {
+    setLoader(true);
+    axios.get("http://165.232.127.62:5001/courses/").then((res) => {
+      setLoader(false);
+      setCourses(res.data);
+    });
+  }, []);
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
   function clickModal() {
-    console.log("vvvvv", modal);
     setModal(!modal);
   }
   const changeModal = (value) => {
@@ -33,40 +35,51 @@ function Lessons() {
     setModalDarslar(value);
   };
   return (
-    <div className="main-page">
-      <div className={modal ? "def modal-navbar" : "def yoq"}>
-        <StudentNavbar changeModal={changeModal} modal={modal} />
-      </div>
-      <div
-        className={
-          modal || modalDarslar ? "blur w100 main_lesson" : "w100 main_lesson"
-        }
-      >
-        <MobileHeader
-          changeModalDars={changeModalDars}
-          changeModal={changeModal}
-          modal={modal}
-          modalDarslar={modalDarslar}
-          type={"search"}
-        />
-        <div className="fife  main-content sidebar-main-wrap_all">
-          <div className="student_lessons_wrap">
-          {courses.map((cart, index) => {
-            return <Cart cart={cart} key={index} />
-          })}
-          </div>
-          
+    <>
+      {loader ? (
+        <div className="loader_style">
+          <Loader />
         </div>
-      </div>
-      <Navvedio />
-      <div className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"}>
-        <Navvedio
-          modalDarslar={modalDarslar}
-          changeModalDars={changeModalDars}
-          topic="Darslaringiz"
-        />
-      </div>
-    </div>
+      ) : (
+        <div className="main-page">
+          <div className={modal ? "def modal-navbar" : "def yoq"}>
+            <StudentNavbar changeModal={changeModal} modal={modal} />
+          </div>
+          <div
+            className={
+              modal || modalDarslar
+                ? "blur w100 main_lesson"
+                : "w100 main_lesson"
+            }
+          >
+            <MobileHeader
+              changeModalDars={changeModalDars}
+              changeModal={changeModal}
+              modal={modal}
+              modalDarslar={modalDarslar}
+              type={"search"}
+            />
+            <div className="fife  main-content sidebar-main-wrap_all">
+              <div className="student_lessons_wrap">
+                {courses.map((cart, index) => {
+                  return <Cart cart={cart} key={index} />;
+                })}
+              </div>
+            </div>
+          </div>
+          <Navvedio />
+          <div
+            className={modalDarslar ? "defDars modalDarslar" : "defDars yoq"}
+          >
+            <Navvedio
+              modalDarslar={modalDarslar}
+              changeModalDars={changeModalDars}
+              topic="Darslaringiz"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

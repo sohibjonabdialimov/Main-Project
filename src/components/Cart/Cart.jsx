@@ -25,7 +25,7 @@ const Cart = (props) => {
 
   useEffect(()=>{
     axios.get("http://165.232.127.62:5001/teacherinfo/"+props?.cart?.teacher_Id).then((res)=>{
-      setTeacher(res.data)
+      setTeacher(res.data);
     })
   },[])
   return (

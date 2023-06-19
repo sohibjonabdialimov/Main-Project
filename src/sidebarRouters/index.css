@@ -20,6 +20,12 @@
   background-color: #fff;
   height: 1px;
 }
+.cursor_class{
+  cursor: pointer;
+}
+.scroll_paragraph_div{
+
+}
 .commit {
   padding: 21px 16px 16px 35px;
 }
@@ -82,6 +88,7 @@
   background-color: #3a2c5b;
   border-radius: 15px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .obunalar-cart img {
   width: 40px;
@@ -114,10 +121,13 @@
   border-radius: 20px;
   margin-bottom: 8px;
   cursor: pointer;
+  height: 90px;
 }
 
 .darslar-cart div{
-  padding: 3px;
+  padding: 5px 8px 5px 5px;
+  height: 100%;
+  overflow-y: scroll;
 }
 .darslar-cart img{
   width: 114px;
@@ -128,7 +138,8 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
+  padding: 3px 0;
   line-height: 15px;
   color: #FFFFFF;
 }
