@@ -11,6 +11,7 @@ function Lessons() {
   const [courses,setCourses]=useState([]);
   useEffect(()=>{
     axios.get("http://165.232.127.62:5001/courses/").then((res)=>{
+      console.log(res.data);
       setCourses(res.data)
     })
   },[])

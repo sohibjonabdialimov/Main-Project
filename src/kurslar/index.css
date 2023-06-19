@@ -82,23 +82,17 @@ border-bottom-left-radius: 50px;
   align-items: center;
 }
 
-.every__cource-nav img:first-child {
-  width: 25px;
-  height: 25px;
+.every__cource-nav ion-icon {
+  font-size: 25px;
   cursor: pointer;
 }
 
-.every__cource-nav img:last-child {
-  width: 25px;
-  height: 23px;
+.every__cource-nav img {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 }
 
-.every__cource-nav img:nth-child(2) {
-  width: 29px;
-  height: 29px;
-  cursor: pointer;
-}
 
 .every__cource-name p {
   font-family: "Inter";

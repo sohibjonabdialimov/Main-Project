@@ -29,6 +29,10 @@ a {
   list-style: none;
   text-decoration: none;
 }
+button{
+  outline: none;
+  cursor: pointer;
+}
 ::-webkit-scrollbar {
   width: 1px;
 }

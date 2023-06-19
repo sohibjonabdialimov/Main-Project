@@ -103,6 +103,7 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
           {teacherData.map((item, index) => (
             <div
               className="d-flex justify-content-center"
+              key={index}
               onClick={() => {
                 navigate("/student/kurs/" + item._id);
                 console.log(item);
@@ -126,28 +127,30 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
         </div>
         <h2 className="saqlanganlar">Saqlanganlar - {save.length} ta</h2>
         <div className="sidebar-line"></div>
-        {save.map((item, index) => (
-          <div
-            className="d-flex justify-content-center"
-            onClick={() => {
-              navigate("/student/kurs/" + item._id);
-              console.log(item);
-            }}
-          >
-            <div className="darslar-cart">
-              <img
-                src={
-                  "http://165.232.127.62:5001" + deleteplatforma(item.obloshka)
-                }
-                alt=""
-              />
-              <div>
-                <p>{item.Kursname}</p>
-                <p>{item.Kursdesc}</p>
+        <div className="saved_courses">
+          {save.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                navigate("/student/kurs/" + item._id);
+              }}
+            >
+              <div className="darslar-cart">
+                <img
+                  src={
+                    "http://165.232.127.62:5001" +
+                    deleteplatforma(item.obloshka)
+                  }
+                  alt=""
+                />
+                <div>
+                  <p>{item.Kursname}</p>
+                  <p>{item.Kursdesc}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

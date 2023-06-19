@@ -104,6 +104,9 @@
   line-height: 13px;
   color: rgba(255, 255, 255, 0.5);
 }
+.carts-wrapper{
+  padding-bottom: 10px;
+}
 .darslar-cart{
   display: flex;
   gap: 6px;
@@ -135,7 +138,32 @@
 }
 .sidebar-bought-course{
   padding-bottom: 20px;
+  /* height: 200px;
+  overflow-y: scroll; */
 }
+/* .saved_courses{
+  height: 250px;
+  overflow-y: scroll;
+} */
+
+/* .saved_courses::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.saved_courses::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+.saved_courses::-webkit-scrollbar-thumb {
+  background: #bbb; 
+  width: 50px;
+  border-radius: 10px;
+}
+.saved_courses::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+} */
+
+
 .mobile__header{
   width: 100%;
   display: flex;

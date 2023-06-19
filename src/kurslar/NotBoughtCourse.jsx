@@ -143,7 +143,7 @@ function NotBoughtCourse() {
             <div className="every__course-buttons">
               <button
                 onClick={()=>kursOlish(kursId)}
-              >sotib olish</button>
+              >Sotib olish</button>
             </div>
           </div>
         </div>

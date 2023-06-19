@@ -39,7 +39,7 @@ function PaidCourseDownload() {
   const [videoDataArray, setVideoDataArray] = useState([]);
   const navigate = useNavigate();
 
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
   const onBack = () => {
     navigate("/teacher/kurs");
   };
@@ -91,9 +91,11 @@ function PaidCourseDownload() {
   const handleVideoLessonUpload = () => {
     navigate("/teacher/processfreedownload");
   };
-
-  const onHandleForm = async (e) => {
+  const onHandleForm = (e) => {
     e.preventDefault();
+    modalRef.current.style.display = "flex";
+  };
+  const onSendForm = () => {
     const formData = new FormData();
     formData.append("obloshka", courseImgRef.current.files[0]);
     formData.append("name", courseNameRef.current.value);
@@ -112,21 +114,22 @@ function PaidCourseDownload() {
       }
     }
 
-    try {
-      const response = await axios.post(
-        "http://165.232.127.62:5001/courses/",
-        formData,
-        {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-            "Content-Type": "multipart/form-data",
-          },
+    axios
+      .post("http://165.232.127.62:5001/courses/", formData, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          navigate("/free/success");
         }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+        console.log(res);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const handleInputChange = (event) => {
@@ -242,8 +245,8 @@ function PaidCourseDownload() {
                 <textarea ref={courseDescRef}></textarea>
               </div>
               <div className={styles.upload_div}>
-              <div className={styles.input_file}>
-                  {!image&&(<p>Muqova uchun rasm</p>)}
+                <div className={styles.input_file}>
+                  {!image && <p>Muqova uchun rasm</p>}
                   <input
                     onChange={handleInputChange}
                     ref={courseImgRef}
@@ -252,8 +255,16 @@ function PaidCourseDownload() {
                     accept="image/*"
                   />
                   {image && (
-                    <div style={{height: "100%"}}>
-                      <img src={image} alt="selected" style={{ width: '100%',height:"100%",objectFit:"cover"}} />
+                    <div style={{ height: "100%" }}>
+                      <img
+                        src={image}
+                        alt="selected"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
                     </div>
                   )}
                 </div>
@@ -302,7 +313,11 @@ function PaidCourseDownload() {
               <div className={styles.extra_div}>
                 <div className={styles.input_wrap}>
                   <label htmlFor="amount">Kurs narxi (so'm)</label>
-                  <input ref={coursePriceRef} className={styles.first} type="text" />
+                  <input
+                    ref={coursePriceRef}
+                    className={styles.first}
+                    type="text"
+                  />
                 </div>
                 <div className={styles.input_wrap}>
                   <p htmlFor="amount" className={styles.amount}>
@@ -330,7 +345,7 @@ function PaidCourseDownload() {
             <button onClick={() => (modalRef.current.style.display = "none")}>
               YO'Q
             </button>
-            <button onClick={() => navigate("/free/success")}>HA</button>
+            <button onClick={() => onSendForm()}>HA</button>
           </div>
         </div>
       </div>

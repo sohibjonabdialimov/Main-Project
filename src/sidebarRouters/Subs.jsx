@@ -33,7 +33,6 @@ const Subs = () => {
         setProfil(res.data);
       });
   }, []);
-
   useEffect(() => {
     const fetchTeachers = async () => {
       const fetchedTeacherData = [];
@@ -50,7 +49,7 @@ const Subs = () => {
       fetchTeachers();
     }
   }, [profile]);
-
+  console.log(teacherData);
   return (
     <div className="carts-wrapper">
       {teacherData.map((item, index) => (

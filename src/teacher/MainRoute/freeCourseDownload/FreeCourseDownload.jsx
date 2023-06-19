@@ -21,14 +21,11 @@ function FreeCourseDownload() {
     navigate("/teacher/kurs");
   };
   const addVideoLesson = (e) => {
+    e.preventDefault();
     try {
       const title = titleInputRef.current.value;
       const description = descriptionInputRef.current.value;
       const file = fileInputRef.current.files[0];
-      // if (!title || !description || !file) {
-      //   toast("Iltimos", {autoClose: 3000});
-      //   return 0;
-      // }else
       if (!title) {
         toast("Iltimos, video nomini kiriting");
         return 0;
@@ -55,7 +52,7 @@ function FreeCourseDownload() {
       const newVideoLesson = { id: newId };
       setVideoLessons([...videoLessons, newVideoLesson]);
     }
-    e.preventDefault();
+    
   };
   const handleRemoveVideoLesson = (id) => {
     const updatedVideoLessons = videoLessons.filter(
@@ -72,8 +69,11 @@ function FreeCourseDownload() {
     navigate("/teacher/processfreedownload");
   };
 
-  const onHandleForm = async (e) => {
+  const onHandleForm = (e) => {
     e.preventDefault();
+    modalRef.current.style.display = "flex";
+  };
+  const onSendForm = () => {
     const formData = new FormData();
     formData.append("obloshka", courseImgRef.current.files[0]);
     formData.append("name", courseNameRef.current.value);
@@ -92,23 +92,24 @@ function FreeCourseDownload() {
       }
     }
 
-    try {
-      const response = await axios
-        .post("http://165.232.127.62:5001/courses/", formData, {
-          headers: {
-            Authorization: localStorage.getItem("token"),
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((res) => console.log(res));
-    } catch (error) {
-      console.error(error);
-    }
+    axios
+      .post("http://165.232.127.62:5001/courses/", formData, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        if(res.status === 200){
+          navigate("/free/success");
+        }
+        console.log(res);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
-  const onSendFunc = () => {
-    navigate("/teacher/processfreedownload");
-  };
   const [image, setImage] = useState("");
 
   const handleInputChange = (event) => {
@@ -235,7 +236,7 @@ function FreeCourseDownload() {
             <button onClick={() => (modalRef.current.style.display = "none")}>
               YO'Q
             </button>
-            <button onClick={() => navigate("/free/success")}>HA</button>
+            <button onClick={() => onSendForm()}>HA</button>
           </div>
         </div>
       </div>

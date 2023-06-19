@@ -18,7 +18,7 @@ function Statistic() {
   }, []);
   return (
     <div className="main-page teacherHomePage main-content teacher-main-sidebar">
-      <div className="main_teacher_content sidebar-main-wrap">
+      <div className="main_teacher_content sidebar-main-wrap statistic__wrapper">
         {courses.map((course, index) => {
           return <StatisticCard cart={course} key={index} />;
         })}

@@ -60,6 +60,7 @@ const Darslar = () => {
     <div className="carts-wrapper">
       {teacherData.map((item, index) => (
         <div
+          key={item.id}
           className="darslar-cart"
           onClick={() => {
             navigate("/student/kurs/" + item._id);
