@@ -228,3 +228,10 @@ position: relative;
     height: 200px;
   }
 }
+.free_mark{
+  display: block;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+}

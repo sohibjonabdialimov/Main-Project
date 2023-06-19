@@ -29,6 +29,9 @@ button{
   outline: none;
   cursor: pointer;
 }
+img{
+  object-fit: cover;
+}
 ::-webkit-scrollbar {
   width: 1px;
 }

@@ -176,7 +176,10 @@ function AboutCourseInfo() {
                     name="bookmark-outline"
                   ></ion-icon>
                 )}
-                <img src={coin} alt="" />
+                {
+                  kurs.narxi > 0 ? <img src={coin} alt="" /> : <span className="free_mark">Free</span>
+                }
+                
               </div>
             </div>
             <div className="every__cource-name">
