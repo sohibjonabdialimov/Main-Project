@@ -14,11 +14,7 @@ body {
 #root {
   height: 100%;
 }
-@media only screen and (max-width: 420px) {
-  body {
-    padding: 30px 10px;
-  }
-}
+
 a {
   color: #fff;
 }
@@ -56,11 +52,10 @@ a {
   width: 70vw;
   position: relative;
 }
-@media only screen and (max-width: 420px) {
-  .teacherHomePage {
-    width: 100%;
-  }
+button{
+  cursor: pointer;
 }
+
 .global_wrap {
   background-color: #5b4784;
   width: 100%;
@@ -106,12 +101,12 @@ a {
   text-align: center;
   color: #ffffff;
 }
-
-@media only screen and (max-width: 420px) {
-  .responsive_header {
-    display: flex;
-  }
+.app-content{
+  padding: 37px 39px;
+  height: 100vh;
+  overflow: hidden;
 }
+
 .mobile_none .mobile-for {
   display: none;
 }
@@ -132,15 +127,23 @@ a {
     display: block;
     width: 100%;
   }
-  body {
+  /* body {
+  } */
+  .app-content{
     padding: 54px 10px;
+
+    background-color: transparent;
   }
 }
-.app-content{
-  padding: 37px 39px;
-  height: 100vh;
-  overflow: hidden;
-}
-button{
-  cursor: pointer;
+
+@media only screen and (max-width: 420px) {
+  .responsive_header {
+    display: flex;
+  }
+  .app-content {
+    padding: 30px 10px;
+  }
+  .teacherHomePage {
+    width: 100%;
+  }
 }
