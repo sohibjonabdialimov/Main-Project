@@ -177,7 +177,7 @@ function AboutCourseInfo() {
                   ></ion-icon>
                 )}
                 {
-                  kurs.narxi > 0 ? <img src={coin} alt="" /> : <span className="free_mark">Free</span>
+                  kurs.narxi == 0 ? <span className="free_mark">Free</span> : <img src={coin} alt="" />
                 }
                 
               </div>
