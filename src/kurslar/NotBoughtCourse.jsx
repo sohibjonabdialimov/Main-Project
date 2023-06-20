@@ -60,19 +60,29 @@ function NotBoughtCourse() {
       })
       .then((res) => {
         setKurs(res.data);
-        axios.get(res.data.teacher_Id ? "http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id
-          : "http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId).then((res) => {
-            setTeacher(res.data)
+        axios
+          .get(
+            res.data.teacher_Id
+              ? "http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id
+              : "http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId
+          )
+          .then((res) => {
+            setTeacher(res.data);
           });
       });
   }, []);
   const navigate = useNavigate();
   function kursOlish(kursId) {
-    axios.post('http://165.232.127.62:5001/baycurs', {
-      cursId: kursId
-    }, {
-      headers: { Authorization: localStorage.getItem('token') }
-    })
+    axios
+      .post(
+        "http://165.232.127.62:5001/baycurs",
+        {
+          cursId: kursId,
+        },
+        {
+          headers: { Authorization: localStorage.getItem("token") },
+        }
+      )
       .then((response) => {
         console.log(response.data);
       })
@@ -103,8 +113,9 @@ function NotBoughtCourse() {
           <div
             className="every__cource-bigImg"
             style={{
-              backgroundImage: `url(${"http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)
-                })`,
+              backgroundImage: `url(${
+                "http://165.232.127.62:5001" + deleteplatforma(kurs?.obloshka)
+              })`,
             }}
           ></div>
 
@@ -113,37 +124,38 @@ function NotBoughtCourse() {
               <div
                 className="every__cource-title"
                 onClick={() => {
-                  navigate("/student/teacherinfo/" + teacher._id);
+                  navigate("/student/teacherinfo/" + teacher?._id);
                 }}
               >
                 <img
                   src={
-                    "http://165.232.127.62:5001" + deleteplatforma(teacher.path)
+                    "http://165.232.127.62:5001" +
+                    deleteplatforma(teacher?.path)
                   }
                   alt=""
                 />
-                <h3>{teacher.fullname}</h3>
+                <h3>{teacher?.fullname}</h3>
               </div>
             </div>
             <div className="every__cource-name">
-              <p>Kurs nomi: {kurs.Kursname}</p>
+              <p>Kurs nomi: {kurs?.Kursname}</p>
             </div>
             <div className="every__cource-about">
-              <p>Kurs haqida: {kurs.Kursdesc}</p>
+              <p>Kurs haqida: {kurs?.Kursdesc}</p>
             </div>
             <div className="every__cource-num">
               <p className="every__cource-para">
-                Kurs narxi: {kurs.narxi} so'm
+                Kurs narxi: {kurs?.narxi} so'm
               </p>
-              <p className="every__cource-para">Olingan: {kurs.subs}</p>
               <p className="every__cource-para">
-                Davomiyligi: {kurs.muddati}oy
+                Olingan: {kurs?.subs?.length}
+              </p>
+              <p className="every__cource-para">
+                Davomiyligi: {kurs?.muddati}oy
               </p>
             </div>
             <div className="every__course-buttons">
-              <button
-                onClick={()=>kursOlish(kursId)}
-              >sotib olish</button>
+              <button onClick={() => kursOlish(kursId)}>Sotib olish</button>
             </div>
           </div>
         </div>

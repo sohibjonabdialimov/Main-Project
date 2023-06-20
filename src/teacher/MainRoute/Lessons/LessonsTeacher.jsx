@@ -19,14 +19,14 @@ function LessonsTeacher() {
 
   return (
     <>
-      <header className="responsive_header">
+      {/* <header className="responsive_header">
         <div className="menubar" onClick={() => setMenubar((prev) => !prev)}>
           <ion-icon name="menu-outline"></ion-icon>
         </div>
         <div className="header_desc">
           <p>Darslar</p>
         </div>
-      </header>
+      </header> */}
       <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
         <div className="lessons_wrap">
           {courses.map((course, index) => {

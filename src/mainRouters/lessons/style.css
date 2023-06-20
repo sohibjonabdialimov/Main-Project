@@ -1,3 +1,10 @@
+.loader_style{
+  position: absolute;
+  top: 0%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
 @keyframes mobileBurger {
   0% {
     transform: translateX(0);

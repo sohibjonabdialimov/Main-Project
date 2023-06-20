@@ -4,6 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 body {
   background: linear-gradient(#8d6cd7, #d2aae8);
@@ -17,6 +20,7 @@ body {
 
 a {
   color: #fff;
+  text-decoration: none;
 }
 * {
   margin: 0;
@@ -24,6 +28,13 @@ a {
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+}
+button{
+  outline: none;
+  cursor: pointer;
+}
+img{
+  object-fit: cover;
 }
 ::-webkit-scrollbar {
   width: 1px;

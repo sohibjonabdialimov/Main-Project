@@ -55,7 +55,11 @@
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  z-index: 2;
+  
+}
+.extra_class{
+  overflow-y: scroll;
+  height: 90vh;
 }
 .my_subs img.teacher_img {
   width: 130px;
@@ -158,7 +162,9 @@
   color: #FFFFFF;
   margin: 0;
   padding: 0;
-  padding: 20px 14px 27px 10px;
+  padding: 10px 20px 27px 10px;
   text-indent: 10px;
   text-align: start;
+  height: 95%;
+  overflow-y: scroll;
 }

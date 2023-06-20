@@ -20,6 +20,12 @@
   background-color: #fff;
   height: 1px;
 }
+.cursor_class{
+  cursor: pointer;
+}
+.scroll_paragraph_div{
+
+}
 .commit {
   padding: 21px 16px 16px 35px;
 }
@@ -82,6 +88,7 @@
   background-color: #3a2c5b;
   border-radius: 15px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 .obunalar-cart img {
   width: 40px;
@@ -104,6 +111,9 @@
   line-height: 13px;
   color: rgba(255, 255, 255, 0.5);
 }
+.carts-wrapper{
+  padding-bottom: 10px;
+}
 .darslar-cart{
   display: flex;
   gap: 6px;
@@ -111,10 +121,13 @@
   border-radius: 20px;
   margin-bottom: 8px;
   cursor: pointer;
+  height: 90px;
 }
 
 .darslar-cart div{
-  padding: 3px;
+  padding: 5px 8px 5px 5px;
+  height: 100%;
+  overflow-y: scroll;
 }
 .darslar-cart img{
   width: 114px;
@@ -125,7 +138,8 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
+  padding: 3px 0;
   line-height: 15px;
   color: #FFFFFF;
 }
@@ -135,7 +149,32 @@
 }
 .sidebar-bought-course{
   padding-bottom: 20px;
+  /* height: 200px;
+  overflow-y: scroll; */
 }
+/* .saved_courses{
+  height: 250px;
+  overflow-y: scroll;
+} */
+
+/* .saved_courses::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.saved_courses::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+.saved_courses::-webkit-scrollbar-thumb {
+  background: #bbb; 
+  width: 50px;
+  border-radius: 10px;
+}
+.saved_courses::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+} */
+
+
 .mobile__header{
   width: 100%;
   display: flex;

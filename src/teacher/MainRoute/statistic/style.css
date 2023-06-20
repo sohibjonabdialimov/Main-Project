@@ -1,0 +1,12 @@
+.statistic__wrapper{
+  display: grid;
+  column-gap: 24px;
+  row-gap: 24px;
+  grid-template-columns: auto auto auto;
+  min-height: 84.5vh;
+}
+@media only screen and (max-width: 1100px) {
+  .statistic__wrapper {
+    grid-template-columns: auto auto;
+  }
+}

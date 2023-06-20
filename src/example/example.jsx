@@ -14,8 +14,6 @@ function AboutCourseInfo() {
   const { kursId } = useParams();
   const [savedCourse, setSavedCourse] = useState([]);
   const [saved, setSaved] = useState(false);
-  const navigate = useNavigate();
-  const [profile, setProfil] = useState({});
   function savekurs(id) {
     axios
       .post(
@@ -46,6 +44,7 @@ function AboutCourseInfo() {
         setSavedCourse(res?.data?.savecurss);
       });
   }, []);
+  console.log(savedCourse);
   useEffect(() => {
     for (let i = 0; i < savedCourse.length; i++) {
       if (savedCourse[i] == kursId) {
@@ -99,6 +98,9 @@ function AboutCourseInfo() {
           });
       });
   }, []);
+  const navigate = useNavigate();
+
+  const [profile, setProfil] = useState({});
   useEffect(() => {
     axios
       .get("http://165.232.127.62:5001/usersme", {
@@ -135,7 +137,7 @@ function AboutCourseInfo() {
             className="every__cource-bigImg"
             style={{
               backgroundImage: `url(${
-                "http://165.232.127.62:5001" + deleteplatforma(kurs?.obloshka)
+                "http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)
               })`,
             }}
           ></div>
@@ -145,16 +147,16 @@ function AboutCourseInfo() {
               <div
                 className="every__cource-title"
                 onClick={() => {
-                  navigate("/student/teacherinfo/" + teacher?._id);
+                  navigate("/student/teacherinfo/" + teacher._id);
                 }}
               >
                 <img
                   src={
-                    "http://165.232.127.62:5001" + deleteplatforma(teacher?.path)
+                    "http://165.232.127.62:5001" + deleteplatforma(teacher.path)
                   }
                   alt=""
                 />
-                <h3>{teacher?.fullname}</h3>
+                <h3>{teacher.fullname}</h3>
               </div>
               <div className="every__cource-nav">
                 {saved ? (
@@ -174,26 +176,22 @@ function AboutCourseInfo() {
                     name="bookmark-outline"
                   ></ion-icon>
                 )}
-                {kurs?.narxi == 0 ? (
-                  <span className="free_mark">Free</span>
-                ) : (
-                  <img src={coin} alt="" />
-                )}
+                <img src={coin} alt="" />
               </div>
             </div>
             <div className="every__cource-name">
-              <p>Kurs nomi: {kurs?.Kursname}</p>
+              <p>Kurs nomi: {kurs.Kursname}</p>
             </div>
             <div className="every__cource-about">
-              <p>Kurs haqida: {kurs?.Kursdesc}</p>
+              <p>Kurs haqida: {kurs.Kursdesc}</p>
             </div>
             <div className="every__cource-num">
               <p className="every__cource-para">
-                Kurs narxi: {kurs?.narxi} so'm
+                Kurs narxi: {kurs.narxi} so'm
               </p>
-              <p className="every__cource-para">Olingan: {kurs?.subs?.length || kurs?.subs}</p>
+              <p className="every__cource-para">Olingan: {kurs.subs?.length}</p>
               <p className="every__cource-para">
-                Davomiyligi: {kurs?.muddati}oy
+                Davomiyligi: {kurs.muddati}oy
               </p>
             </div>
             <div className="every__course-buttons">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Darslar = () => {
@@ -55,11 +55,11 @@ const Darslar = () => {
     }
   }, [profile]);
 
-  console.log(teacherData);
   return (
     <div className="carts-wrapper">
       {teacherData.map((item, index) => (
         <div
+          key={item.id}
           className="darslar-cart"
           onClick={() => {
             navigate("/student/kurs/" + item._id);
@@ -69,9 +69,8 @@ const Darslar = () => {
             src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
             alt=""
           />
-          <div>
-            {/* <p>{item.Kursname}</p> */}
-            <p>{item.Kursdesc}</p>
+          <div className="scroll_paragraph_div">
+            <p>{item.Kursdesc.length > 110 ? item.Kursdesc.split(0, 110) + "..." : item.Kursdesc}</p>
           </div>
         </div>
       ))}
@@ -79,4 +78,4 @@ const Darslar = () => {
   );
 };
 
-export default Darslar;
+export default memo(Darslar);

@@ -24,8 +24,8 @@ const Cart = (props) => {
   const [teacher,setTeacher]=useState({});
 
   useEffect(()=>{
-    axios.get("http://165.232.127.62:5001/teacherinfo/"+props.cart.teacher_Id).then((res)=>{
-      setTeacher(res.data)
+    axios.get("http://165.232.127.62:5001/teacherinfo/"+props?.cart?.teacher_Id).then((res)=>{
+      setTeacher(res.data);
     })
   },[])
   return (
@@ -35,13 +35,13 @@ const Cart = (props) => {
       }}
     >
       <div className="main-cart">
-        <img src={"http://165.232.127.62:5001"+deleteplatforma(props.cart.obloshka)} alt="" />
+        <img src={"http://165.232.127.62:5001"+deleteplatforma(props?.cart?.obloshka)} alt="" />
         <div className="cart-desc_wrap">
-          <h3>{props.cart.Kursname}</h3>
-          <p>{props.cart.Kursdesc}</p>
+          <h3>{props?.cart?.Kursname?.length < 45 ? props?.cart?.Kursname : props?.cart?.Kursname?.split(0, 43) + "..."}</h3>
+          <p>{props?.cart?.Kursdesc}</p>
           <div className="desc">
             <img className="small_img" src={"http://165.232.127.62:5001"+deleteplatforma(teacher.path)} alt="" />
-            <span>{teacher.fullname}</span>
+            <span>{teacher?.fullname?.length < 30 ? teacher?.fullname : teacher.fullname?.split(0, 28) + "..."}</span>
           </div>
         </div>
       </div>

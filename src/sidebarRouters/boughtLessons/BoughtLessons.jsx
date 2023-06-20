@@ -75,11 +75,11 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
         <h3>{topic}</h3>
       </div>
       <div className="mobileForPadding">
-        <h2>Sotib olingan darslar - {teacherData.length} ta</h2>
+        <h2>Sotib olingan darslar - {teacherData?.length} ta</h2>
         <div className="sidebar-line"></div>
         <div className="sidebar-bought-course">
-          {teacherData.map((item, index) => (
-            <div className="darslar-cart">
+          {teacherData && teacherData.map((item, index) => (
+            <div className="darslar-cart cursor_bought_class">
               <img
                 src={
                   "http://165.232.127.62:5001" + deleteplatforma(item.obloshka)
@@ -87,8 +87,7 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
                 alt=""
               />
               <div>
-                <p>{item.Kursname}</p>
-                <p>{item.Kursdesc}</p>
+                <p>{item?.Kursname}</p>
               </div>
             </div>
           ))}
