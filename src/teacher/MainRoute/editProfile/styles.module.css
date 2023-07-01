@@ -18,6 +18,7 @@
   padding-bottom: 22px;
 }
 .imgs_div img:first-child {
+  border-radius: 50%;
   width: 205px;
   height: 205px;
   object-fit: cover;

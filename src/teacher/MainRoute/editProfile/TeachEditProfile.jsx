@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./styles.module.css";
 import { useNavigate } from "react-router-dom";
-import user from "../../../imgs/edit_user.png";
 import axios from "axios";
 
 function deleteplatforma(url) {
