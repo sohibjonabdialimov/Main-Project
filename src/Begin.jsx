@@ -9,6 +9,7 @@ import carousel4 from "./imgs/carousel4.png";
 import hero_img from "./imgs/hero_img.png";
 import ionex_content from "./imgs/hero_img_2.png";
 import ionex_content2 from "./imgs/hero_img_3.png";
+import ionex_mobile from "./imgs/ionex_mobile.png"
 import big_img from "./imgs/hero_img_1.svg";
 import { useNavigate } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -40,12 +41,16 @@ function Begin() {
         <button onClick={() => startFunc()}>Boshlash</button>
       </div>
 
-      <div className="ionex_hero">
+      <div className="ionex_hero" >
         <div className="hero_logo">
-          <img src={logo} alt="" />
+          {/* <img src={logo} alt="" /> */}
+          <button className="ionex-btn">ionex</button>
           <p>Yangi avlod ta'lim platformasi</p>
         </div>
-        <img className="hero_img" src={hero_img} alt="" />
+        <div>
+          <img className="hero_img mobile-noneb" src={hero_img} alt="ionex" />
+          <img src={ionex_mobile} alt="img" className="desktop-none"/>
+        </div>
       </div>
       <div className="carousel_imgs">
         <img src={carousel1} alt="" />
@@ -57,7 +62,7 @@ function Begin() {
         <img src={big_img} alt="" />
       </div>
       <div className="hero_text_content">
-        <p>
+        <p className="mobile--text">
           ionex.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish va
           o’rgatish uchun yaratilgan.
         </p>
@@ -66,7 +71,7 @@ function Begin() {
         <img src={ionex_content} alt="" />
         <div className="ionex_about_content_desc">
           <h3>O’qituvchilar</h3>
-          <p>
+          <p className="mobile--text">
             <span className="bold_class">ionex.com</span> ta'lim platformasi,
             masofaviy ta'lim berishni maqsad qilgan o'qituvchilar uchun
             yaratilgan. Bunda siz o'zingizning video darslardan iborat
@@ -79,17 +84,17 @@ function Begin() {
         <p>ionex.com</p>
       </div>
 
-      <div className="ionex_about_content">
-        <div className="ionex_about_content_desc">
+      <div className="ionex_about_content ionex-more">
+        <div className="ionex_about_content_desc child-1">
           <h3>O’qituvchilar</h3>
-          <p>
+          <p  className="mobile--text">
             <span className="bold_class">ionex.com</span> ta'lim platformasi,
             masofaviy ta'lim olishni istaganlar uchun to'g'ri tanlov. Siz bu
             platformada, barcha fanlar bo'yicha video kurslarni topishingiz
             mumkin. O'zingiz uchun qulay vaqtda va qulay joyda ta'lim oling.
           </p>
         </div>
-        <img src={ionex_content2} alt="" />
+        <img src={ionex_content2} alt="" className="child-2" />
       </div>
 
       <div className="ionex_advertise">

@@ -66,8 +66,10 @@
   width: 100%;
 }
 .registr_form {
-  width: 402px;
+  max-width: 402px;
+  width: 100%;
   margin: 0 auto;
+  padding-top:30px ;
 }
 .registr_title {
   text-align: center;
@@ -118,6 +120,20 @@
   top: 15px;
   right: 35px;
 }
+input{
+  color-scheme: dark;
+}
+.registr_form input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #5b4784 inset;
+}
+.sign_form input:-webkit-autofill{
+  -webkit-box-shadow: 0 0 0px 1000px #453663 inset;
+
+}
+
+/* input:autofill {
+background-color: #3706f4;
+} */
 /* 
 .input_registr_file {
   display: block;
