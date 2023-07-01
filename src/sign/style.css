@@ -66,10 +66,12 @@
   width: 100%;
 }
 .registr_form {
+  height: 68vh;
+  overflow-y: scroll;
   max-width: 402px;
   width: 100%;
   margin: 0 auto;
-  padding-top:30px ;
+  padding-top: 30px;
 }
 .registr_title {
   text-align: center;
@@ -111,24 +113,27 @@
   color: #ffffff;
   outline: none;
   border: none;
-  background: linear-gradient(180deg, #3706f4 4.65%, rgba(55, 6, 244, 0) 181.36%);
+  background: linear-gradient(
+    180deg,
+    #3706f4 4.65%,
+    rgba(55, 6, 244, 0) 181.36%
+  );
   border-radius: 50px;
   width: 100%;
 }
-.alright_note{
+.alright_note {
   position: absolute;
   top: 15px;
   right: 35px;
 }
-input{
+input {
   color-scheme: dark;
 }
 .registr_form input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #5b4784 inset;
 }
-.sign_form input:-webkit-autofill{
+.sign_form input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #453663 inset;
-
 }
 
 /* input:autofill {
@@ -172,3 +177,80 @@ background-color: #3706f4;
   height: 100%;
   opacity: 0;
 } */
+
+@media only screen and (max-width: 720px) {
+  .registr_title {
+    font-size: 30px;
+    line-height: 30px;
+    padding-bottom: 23px;
+    padding-top: 40px;
+    max-width: 400px;
+    width: 100%;
+  }
+  .registr_form {
+    padding-top: 0;
+    max-width: 300px;
+    height: 63vh;
+  }
+  .sign_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .registr_form input {
+    font-size: 22px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  .register-mobile__forBtn {
+    display: flex;
+    justify-content: center;
+  }
+  .registr_form button {
+    /* margin: 0 auto; */
+    max-width: 300px;
+    margin-top: 7px;
+    padding: 5px 35px;
+    font-size: 22px;
+    line-height: 30px;
+    border-radius: 50px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .registr_title {
+    max-width: 360px;
+    font-size: 25px;
+    line-height: 30px;
+    padding-top: 30px;
+    max-width: 500px;
+  }
+  .registr_form {
+    height: 100%;
+  }
+  .registr_form input {
+    max-width: 280px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .sign_wrap{
+    padding-top: 10px;
+  }
+  .back{
+    margin-top: 10px !important;
+    left: 15px !important;
+  }
+  .sign_form {
+    max-width: 400px;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .registr_title {
+    padding-left: 50px;
+    max-width: 500px;
+    padding-bottom: 10px;
+  }
+ 
+
+}

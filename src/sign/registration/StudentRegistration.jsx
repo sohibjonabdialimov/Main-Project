@@ -55,9 +55,12 @@ const StudentRegistration = () => {
           <input ref={fileRef} type="file" placeholder="profilephoto" required />
           <input ref={passwordRef} type="password" placeholder="parol" required />
           <input ref={passwordRepeatRef} type="password" placeholder="parolni qayta yozing" required />
+          <div className="register-mobile__forBtn">
           <button type="submit">Ro'yxatdan o'tish</button>
+          </div>
+          
         </form>
-        <Link className="alright_note" to={"/login"}>alright, do you have an account?</Link>
+        {/* <Link className="alright_note" to={"/login"}>alright, do you have an account?</Link> */}
       </div>
     </div>
   );

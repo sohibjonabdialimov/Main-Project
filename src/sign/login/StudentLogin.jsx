@@ -10,7 +10,7 @@ const StudentLogin = () => {
   const navigate = useNavigate();
 
   const onBack = () => {
-    navigate("/select");
+    navigate("/");
   };
   const onHandler = (e) => {
     e.preventDefault();

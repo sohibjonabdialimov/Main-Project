@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import logo from "./imgs/ionex.png";
@@ -9,15 +9,22 @@ import carousel4 from "./imgs/carousel4.png";
 import hero_img from "./imgs/hero_img.png";
 import ionex_content from "./imgs/hero_img_2.png";
 import ionex_content2 from "./imgs/hero_img_3.png";
-import ionex_mobile from "./imgs/ionex_mobile.png"
+import ionex_mobile from "./imgs/ionex_mobile.png";
 import big_img from "./imgs/hero_img_1.svg";
 import { useNavigate } from "react-router-dom";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 function Begin() {
+  const [start,setStart]=useState(false)
   const navigate = useNavigate();
   const startFunc = () => {
     navigate("/select");
+  };
+  const startFuncLogin = () => {
+    navigate("/login");
+  };
+  const startClick = () => {
+   setStart(!start)
   };
   return (
     <div className="ionex">
@@ -38,10 +45,15 @@ function Begin() {
             </li>
           </ul>
         </nav>
-        <button onClick={() => startFunc()}>Boshlash</button>
+        <button onClick={startClick}>Boshlash</button>
+        {/* className="route-select"  */}
+        <div className={start?'route-select':'route-select d-none'} >
+          <div onClick={() => startFuncLogin()}>Kirish</div>
+          <div onClick={() => startFunc()}>Ro'yhatdan o'tish</div>
+        </div>
       </div>
 
-      <div className="ionex_hero" >
+      <div className="ionex_hero">
         <div className="hero_logo">
           {/* <img src={logo} alt="" /> */}
           <button className="ionex-btn">ionex</button>
@@ -49,7 +61,7 @@ function Begin() {
         </div>
         <div>
           <img className="hero_img mobile-noneb" src={hero_img} alt="ionex" />
-          <img src={ionex_mobile} alt="img" className="desktop-none"/>
+          <img src={ionex_mobile} alt="img" className="desktop-none" />
         </div>
       </div>
       <div className="carousel_imgs">
@@ -87,7 +99,7 @@ function Begin() {
       <div className="ionex_about_content ionex-more">
         <div className="ionex_about_content_desc child-1">
           <h3>O’qituvchilar</h3>
-          <p  className="mobile--text">
+          <p className="mobile--text">
             <span className="bold_class">ionex.com</span> ta'lim platformasi,
             masofaviy ta'lim olishni istaganlar uchun to'g'ri tanlov. Siz bu
             platformada, barcha fanlar bo'yicha video kurslarni topishingiz
