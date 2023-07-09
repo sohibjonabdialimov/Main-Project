@@ -85,9 +85,9 @@ const TeacherRegistration = () => {
           />
           <button type="submit">Ro'yxatdan o'tish</button>
         </form>
-        {/* <Link className="alright_note" to={"/teacherlogin"}>
+        <Link className="alright_note" to={"/teacherlogin"}>
           alright, do you have an account?
-        </Link> */}
+        </Link>
       </div>
     </div>
   );

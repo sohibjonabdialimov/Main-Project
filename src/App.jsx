@@ -36,6 +36,7 @@ import SuccessFreeDownload from "./teacher/MainRoute/successFreeDownload/Success
 import StudentRegistration from "./sign/registration/StudentRegistration";
 import TeacherRegistration from "./sign/registration/TeacherRegistration";
 import NotBoughtCourse from "./kurslar/NotBoughtCourse";
+import SelectLogin from "./select/SelectLogin";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="teacherlogin" element={<TeacherLogin />} />
         <Route path="teacherregistration" element={<TeacherRegistration />} />
         <Route path="select" element={<Select />} />
+        <Route path="selectLogin" element={<SelectLogin />} />
         <Route path="/student/kurs/olinganlar/:kursId" element={<Baykurs />} />
         <Route path="/student" element={<StudentLayout />}>
           <Route index element={<Lessons />} />

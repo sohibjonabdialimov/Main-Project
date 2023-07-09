@@ -21,7 +21,7 @@ function Begin() {
     navigate("/select");
   };
   const startFuncLogin = () => {
-    navigate("/login");
+    navigate("/selectLogin");
   };
   const startClick = () => {
    setStart(!start)
