@@ -12,7 +12,8 @@ const TeacherLayout = () => {
   }, [])
   return (
     <div className="app-content">
-      <TeachNav />
+      <div className="pad studentNavbar-box"><TeachNav /></div>
+      
       <div className="teacherHomePage">
         <Outlet />
       </div>

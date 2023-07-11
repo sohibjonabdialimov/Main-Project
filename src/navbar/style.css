@@ -108,6 +108,7 @@
 }
 .teacher-navbar {
     height: 90vh;
+    overflow-y: scroll;
     width: 23vw;
     background: linear-gradient(#564282, #826a91);
     border-radius: 50px;

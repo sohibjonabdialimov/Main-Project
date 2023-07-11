@@ -16,3 +16,14 @@
   display: flex;
   gap: 19px;
 }
+.teacher .main_lesson{
+  display: none;
+  }
+@media only  screen and (max-width:540px){
+  .teacherHomePage{
+    width: 100% !important;
+  }
+  .teacher .main_lesson{
+    display: block;
+    }
+}

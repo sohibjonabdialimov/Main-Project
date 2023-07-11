@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import MobileHeader from "../../../components/mobileHeader/mobileHeader";
+import TeacherNavbar from "../../../navbar/teacher/TeacherNavbar";
 function deleteplatforma(url) {
   try {
     if (url.includes("platforma")) {
@@ -32,8 +34,46 @@ function TeacherProfile() {
       });
   }, []);
 
+  let [modal, setModal] = useState(false);
+  let [modalDarslar, setModalDarslar] = useState(false);
+  function clickModal() {
+    setModal(!modal);
+  }
+  const changeModal = (value) => {
+    setModal(value);
+  };
+  function clickDarslarModal() {
+    console.log("darslarModal", modalDarslar);
+    setModalDarslar(!modalDarslar);
+    console.log("darslarModal", modalDarslar);
+  }
+  const changeModalDars = (value) => {
+    setModalDarslar(value);
+  };
+  
   return (
-    <div className="teacherHomePage main_profile_container sidebar-wrap teacher-main-sidebar">
+    <div className={styles.teacher_profil}>
+      <div className={modal ? "def modal-navbar" : "def yoq"}>
+          {/* <StudentNavbar changeModal={changeModal} modal={modal} /> */}
+          <TeacherNavbar changeModal={changeModal} modal={modal} />
+        </div>
+        <div
+          className={
+            modal || modalDarslar
+              ? "blur w100 main_lesson mobile mobile_none"
+              : "w100 main_lesson mobile_none"
+          }
+        >
+          <MobileHeader
+            changeModalDars={changeModalDars}
+            changeModal={changeModal}
+            modal={modal}
+            modalDarslar={modalDarslar}
+            type={"search"}
+            where="teacher"
+          />
+        </div>
+      <div className="teacherHomePage main_profile_container sidebar-wrap teacher-main-sidebar">
       <div className={styles.teacher_profile_wrap}>
         <img
           src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)}
@@ -57,6 +97,8 @@ function TeacherProfile() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
 

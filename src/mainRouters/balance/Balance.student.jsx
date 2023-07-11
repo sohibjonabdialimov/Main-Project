@@ -47,6 +47,7 @@ function Balance() {
   const changeModalDars = (value) => {
     setModalDarslar(value);
   };
+  
   return (
     <div className="main-page">
       <div className={modal ? "def modal-navbar" : "def yoq"}>

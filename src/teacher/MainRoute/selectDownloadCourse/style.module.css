@@ -20,3 +20,17 @@
   color: #ffffff;
   cursor: pointer;
 }
+
+@media only screen and (max-width:540px){
+  .buttons{
+    padding: 10px;
+    padding-top: 20px ;
+    flex-direction: column;
+  }
+  .buttons a{
+    padding: 59px 47px;
+  }
+  .price_btn{
+    bottom: 0;
+  }
+}

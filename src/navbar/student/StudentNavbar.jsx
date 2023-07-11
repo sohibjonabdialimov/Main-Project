@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../style.css";
 import Userprofile from "../../components/userpofile/Userprofile";
 import t1 from "../../imgs/t1.svg";
@@ -28,15 +28,15 @@ function StudentNavbar({ changeModal, modal }) {
       <ul>
         <li>
           <img src={t1} alt="" />
-          <NavLink to="/student/">darslar</NavLink>
+          <Link to="/student">darslar</Link>
         </li>
         <li>
           <img src={t2} alt="" />
-          <NavLink to="hisoblar">hisob balans</NavLink>
+          <Link to="/student/hisoblar">hisob balans</Link>
         </li>
         <li>
           <img src={t6} alt="" />
-          <NavLink to="profile/subs">profile</NavLink>
+          <Link to="/student/profile/subs">profile</Link>
         </li>
       </ul>
     </div>

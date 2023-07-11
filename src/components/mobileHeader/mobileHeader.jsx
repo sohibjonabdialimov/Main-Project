@@ -9,6 +9,7 @@ function MobileHeader({
   modal,
   modalDarslar,
   type,
+  where
 }) {
   const handleClickDarslar = () => {
     changeModalDars(!modalDarslar);
@@ -37,7 +38,7 @@ function MobileHeader({
           {type}
         </button>
       </div>
-      <div className="burger" onClick={handleClickDarslar}>
+      <div className={(where) ? "burger d-none" : "burger"} onClick={handleClickDarslar}>
         <div className="burger-box">
           <img src={mobileMenu} alt="burger" />
         </div>

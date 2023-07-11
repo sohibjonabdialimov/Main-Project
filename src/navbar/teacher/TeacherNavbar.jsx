@@ -8,36 +8,48 @@ import t3 from "../../imgs/t3.svg";
 import t4 from "../../imgs/t4.svg";
 import t5 from "../../imgs/t5.svg";
 import t6 from "../../imgs/t6.svg";
-function TeacherNavbar() {
+import prev from "../../imgs/prev.svg";
+function TeacherNavbar({ changeModal, modal }) {
+  const [modalClass, setModalClass] = useState("");
+
+  const handleClick = () => {
+    changeModal(false);
+  };
+
   return (
-    <div className="teacher-navbar">
+    <div  className={
+      modalClass == "qaytish" ? "Nav  teacher-navbar qaytish" : "Nav teacher-navbar"
+    }>
+      <div className={modal ? "circle" : "d-none circle"} onClick={handleClick}>
+        <img src={prev} alt="prev" />
+      </div>
       <div>
         <TeachUserprofile />
       </div>
       <ul>
         <li>
           <img src={t1} alt="" />
-          <NavLink to="darslar">darslar</NavLink>
+          <Link to="/teacher/darslar">darslar</Link>
         </li>
         <li>
           <img src={t2} alt="" />
-          <NavLink to="hisoblar">hisob balans</NavLink>
+          <Link to="/teacher/hisoblar">hisob balans</Link>
         </li>
         <li>
           <img src={t3} alt="" />
-          <NavLink to="kurs">kurs yuklash</NavLink>
+          <Link to="/teacher/kurs">kurs yuklash</Link>
         </li>
         <li>
           <img src={t4} alt="" />
-          <NavLink to="statistic">statistika</NavLink>
+          <Link to="/teacher/statistic">statistika</Link>
         </li>
         <li>
           <img src={t5} alt="" />
-          <NavLink to="update/kurs">kursni yangilash</NavLink>
+          <Link to="/teacher/update/kurs">kursni yangilash</Link>
         </li>
         <li>
           <img src={t6} alt="" />
-          <NavLink to="profile">profile</NavLink>
+          <Link to="/teacher/profile">profile</Link>
         </li>
       </ul>
     </div>
