@@ -13,7 +13,7 @@ function Lessons() {
   const [loader, setLoader] = useState(false);
   useEffect(() => {
     setLoader(true);
-    axios.get("http://165.232.127.62:5001/courses/").then((res) => {
+    axios.get("https://api.ilmlar.com/courses/").then((res) => {
       setLoader(false);
       setCourses(res.data);
     });

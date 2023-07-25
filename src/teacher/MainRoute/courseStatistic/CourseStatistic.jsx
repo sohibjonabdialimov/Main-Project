@@ -27,7 +27,7 @@ const CourseStatistic = () => {
   };
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    axios.post("http://165.232.127.62:5001/courseone/me", { cursId: course }, {
+    axios.post("https://api.ilmlar.com/courseone/me", { cursId: course }, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -45,7 +45,7 @@ const CourseStatistic = () => {
           </button>
           <div className={styles.course_statictic_wrap}>
             <div className={styles.img_card}>
-              <img src={"http://165.232.127.62:5001" + deleteplatforma(courses.obloshka)} alt="" />
+              <img src={"https://api.ilmlar.com" + deleteplatforma(courses.obloshka)} alt="" />
               <div className={styles.img_card_desc}>
                 <h3>{courses.Kursname}</h3>
                 <p>{courses.Kursdesc}</p>

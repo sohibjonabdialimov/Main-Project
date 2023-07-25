@@ -22,7 +22,7 @@ function TeachUserprofile() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState([]);
   useEffect(() => {
-    axios.get("http://165.232.127.62:5001/teacherme/", {
+    axios.get("https://api.ilmlar.com/teacherme/", {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -33,7 +33,7 @@ function TeachUserprofile() {
   return (
     <div>
       <div className='userprofile' style={{ textAlign: "center", paddingTop: 15 }}>
-        <img src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)} alt="" />
+        <img src={"https://api.ilmlar.com" + deleteplatforma(profile.path)} alt="" />
         <h2>{profile.fullname}</h2>
       </div>
     </div>

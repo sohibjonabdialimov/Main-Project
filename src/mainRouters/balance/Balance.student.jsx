@@ -29,7 +29,7 @@ function Balance() {
   const [profile, setProfil] = useState({});
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },

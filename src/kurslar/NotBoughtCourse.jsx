@@ -9,7 +9,7 @@ function NotBoughtCourse() {
   function savekurs(id) {
     axios
       .post(
-        "http://165.232.127.62:5001/users/savecurs",
+        "https://api.ilmlar.com/users/savecurs",
         {
           cursId: id,
         },
@@ -53,7 +53,7 @@ function NotBoughtCourse() {
   }
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/courses/" + kursId, {
+      .get("https://api.ilmlar.com/courses/" + kursId, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -63,8 +63,8 @@ function NotBoughtCourse() {
         axios
           .get(
             res.data.teacher_Id
-              ? "http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id
-              : "http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId
+              ? "https://api.ilmlar.com/teacherinfo/" + res.data.teacher_Id
+              : "https://api.ilmlar.com/teacherinfo/" + res.data.teacherId
           )
           .then((res) => {
             setTeacher(res.data);
@@ -75,7 +75,7 @@ function NotBoughtCourse() {
   function kursOlish(kursId) {
     axios
       .post(
-        "http://165.232.127.62:5001/baycurs",
+        "https://api.ilmlar.com/baycurs",
         {
           cursId: kursId,
         },
@@ -114,7 +114,7 @@ function NotBoughtCourse() {
             className="every__cource-bigImg"
             style={{
               backgroundImage: `url(${
-                "http://165.232.127.62:5001" + deleteplatforma(kurs?.obloshka)
+                "https://api.ilmlar.com" + deleteplatforma(kurs?.obloshka)
               })`,
             }}
           ></div>
@@ -129,7 +129,7 @@ function NotBoughtCourse() {
               >
                 <img
                   src={
-                    "http://165.232.127.62:5001" +
+                    "https://api.ilmlar.com" +
                     deleteplatforma(teacher?.path)
                   }
                   alt=""

@@ -23,7 +23,7 @@ const Darslar = () => {
   }
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -38,7 +38,7 @@ const Darslar = () => {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,
+          "https://api.ilmlar.com/courses/" + profile.mycurs[i].cursId,
           {
             headers: {
               Authorization: localStorage.getItem("token"),
@@ -66,7 +66,7 @@ const Darslar = () => {
           }}
         >
           <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.obloshka)}
+            src={"https://api.ilmlar.com" + deleteplatforma(item.obloshka)}
             alt=""
           />
           <div className="scroll_paragraph_div">

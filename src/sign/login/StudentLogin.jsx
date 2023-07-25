@@ -20,7 +20,7 @@ const StudentLogin = () => {
     };
     
     axios
-      .post("http://165.232.127.62:5001/users/login", obj)
+      .post("https://api.ilmlar.com/users/login", obj)
       .then((res) => {
         
         if (res.status === 200) {

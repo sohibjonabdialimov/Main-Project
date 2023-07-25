@@ -16,7 +16,7 @@ const TeacherLogin = () => {
       password: passwordRef.current.value,
     };
     axios
-      .post("http://165.232.127.62:5001/teacher/login", obj)
+      .post("https://api.ilmlar.com/teacher/login", obj)
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem("token", res.data.token);

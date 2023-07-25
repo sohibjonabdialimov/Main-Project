@@ -17,7 +17,7 @@ function AboutCourseInfo() {
   function savekurs(id) {
     axios
       .post(
-        "http://165.232.127.62:5001/users/savecurs",
+        "https://api.ilmlar.com/users/savecurs",
         {
           cursId: id,
         },
@@ -35,7 +35,7 @@ function AboutCourseInfo() {
 
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -80,7 +80,7 @@ function AboutCourseInfo() {
   }
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/courses/" + kursId, {
+      .get("https://api.ilmlar.com/courses/" + kursId, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -90,8 +90,8 @@ function AboutCourseInfo() {
         axios
           .get(
             res.data.teacher_Id
-              ? "http://165.232.127.62:5001/teacherinfo/" + res.data.teacher_Id
-              : "http://165.232.127.62:5001/teacherinfo/" + res.data.teacherId
+              ? "https://api.ilmlar.com/teacherinfo/" + res.data.teacher_Id
+              : "https://api.ilmlar.com/teacherinfo/" + res.data.teacherId
           )
           .then((res) => {
             setTeacher(res.data);
@@ -103,7 +103,7 @@ function AboutCourseInfo() {
   const [profile, setProfil] = useState({});
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -137,7 +137,7 @@ function AboutCourseInfo() {
             className="every__cource-bigImg"
             style={{
               backgroundImage: `url(${
-                "http://165.232.127.62:5001" + deleteplatforma(kurs.obloshka)
+                "https://api.ilmlar.com" + deleteplatforma(kurs.obloshka)
               })`,
             }}
           ></div>
@@ -152,7 +152,7 @@ function AboutCourseInfo() {
               >
                 <img
                   src={
-                    "http://165.232.127.62:5001" + deleteplatforma(teacher.path)
+                    "https://api.ilmlar.com" + deleteplatforma(teacher.path)
                   }
                   alt=""
                 />

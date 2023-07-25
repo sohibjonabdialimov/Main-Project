@@ -24,7 +24,7 @@ const Subs = () => {
 
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -38,7 +38,7 @@ const Subs = () => {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.teachers.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/teacherinfo/" + profile.teachers[i]
+          "https://api.ilmlar.com/teacherinfo/" + profile.teachers[i]
         );
         fetchedTeacherData.push(response.data);
       }
@@ -60,7 +60,7 @@ const Subs = () => {
           }}
         >
           <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(item.path)}
+            src={"https://api.ilmlar.com" + deleteplatforma(item.path)}
             alt=""
           />
           <div>

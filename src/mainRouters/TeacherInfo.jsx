@@ -35,7 +35,7 @@ function TeacherInfo() {
 
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/teacherinfo/" + teacherId)
+      .get("https://api.ilmlar.com/teacherinfo/" + teacherId)
       .then((res) => {
         setTeacherData(res.data.mekurs);
         setProfil(res.data);
@@ -47,7 +47,7 @@ function TeacherInfo() {
   //       const fetchedTeacherData = [];
   //       for (let i = 0; i < profile.teachers.length; i++) {
   //         const response = await axios.get(
-  //           "http://165.232.127.62:5001/teacherinfo/" + profile.teachers[i]
+  //           "https://api.ilmlar.com/teacherinfo/" + profile.teachers[i]
   //         );
   //         if(response.status === 200){
   //             console.log(response.data);
@@ -64,7 +64,7 @@ function TeacherInfo() {
 
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -86,7 +86,7 @@ function TeacherInfo() {
   //     const fetchedTeacherData = [];
   //     for (let i = 0; i < teacherData.length; i++) {
   //       await axios
-  //         .get("http://165.232.127.62:5001/courses/" + teacherData[i], {
+  //         .get("https://api.ilmlar.com/courses/" + teacherData[i], {
   //           headers: {
   //             Authorization: localStorage.getItem("token"),
   //           },
@@ -112,7 +112,7 @@ function TeacherInfo() {
     setLoader(true);
     for (let i = 0; i < teacherData.length; i++) {
       const response = await axios.get(
-        "http://165.232.127.62:5001/courses/" + teacherData[i],
+        "https://api.ilmlar.com/courses/" + teacherData[i],
         {
           headers: {
             Authorization: localStorage.getItem("token"),
@@ -135,7 +135,7 @@ function TeacherInfo() {
   function saveObuna(id) {
     axios
       .post(
-        "http://165.232.127.62:5001/users/obuna",
+        "https://api.ilmlar.com/users/obuna",
         {
           teacher_Id: id,
         },
@@ -163,7 +163,7 @@ function TeacherInfo() {
                 <img
                   className="teacher_img"
                   src={
-                    "http://165.232.127.62:5001" + deleteplatforma(profile.path)
+                    "https://api.ilmlar.com" + deleteplatforma(profile.path)
                   }
                   alt=""
                 />
@@ -211,7 +211,7 @@ function TeacherInfo() {
                         <div key={item._id} className="courses_list">
                           <img
                             src={
-                              "http://165.232.127.62:5001" +
+                              "https://api.ilmlar.com" +
                               deleteplatforma(profile.path)
                             }
                             alt=""

@@ -15,7 +15,7 @@ function TeacherBalance() {
   const [profile, setProfile] = useState([]);
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/teacherme/", {
+      .get("https://api.ilmlar.com/teacherme/", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },

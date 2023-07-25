@@ -23,7 +23,7 @@ function deleteplatforma(url) {
 const StatisticCard = (props) => {
   const navigate = useNavigate();
   useEffect(() => {
-    axios.post("http://165.232.127.62:5001/courseone/me", { cursId: kursId }, {
+    axios.post("https://api.ilmlar.com/courseone/me", { cursId: kursId }, {
       headers: {
         Authorization: localStorage.getItem("token"),
       },
@@ -37,7 +37,7 @@ const StatisticCard = (props) => {
       }}
     >
       <div className="main-cart">
-        <img className="statistic_img" src={"http://165.232.127.62:5001" + deleteplatforma(props.cart.obloshka)} alt="" />
+        <img className="statistic_img" src={"https://api.ilmlar.com" + deleteplatforma(props.cart.obloshka)} alt="" />
         <div className="cart-desc">
           <h3>{props.cart.Kursname}</h3>
           <p>{props.cart.Kursdesc}</p>

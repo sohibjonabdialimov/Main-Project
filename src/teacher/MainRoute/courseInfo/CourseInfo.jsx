@@ -37,7 +37,7 @@ function CourseInfo() {
   useEffect(() => {
     axios
       .post(
-        "http://165.232.127.62:5001/courseone/me",
+        "https://api.ilmlar.com/courseone/me",
         { cursId: courseId },
         {
           headers: {
@@ -82,7 +82,7 @@ function CourseInfo() {
         <div className="video_information video_information_scroll">
           <div className="img_div">
             <video
-              src={`http://165.232.127.62:5001/${deleteplatforma(
+              src={`https://api.ilmlar.com/${deleteplatforma(
                 selectedVideo.orni
               )}`}
               alt=""

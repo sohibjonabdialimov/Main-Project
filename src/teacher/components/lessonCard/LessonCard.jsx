@@ -27,7 +27,7 @@ const LessonCard = (props) => {
       }}
     >
       <div className="main-cart">
-        <img src={"http://165.232.127.62:5001"+deleteplatforma(props.cart.obloshka)} alt="" />
+        <img src={"https://api.ilmlar.com"+deleteplatforma(props.cart.obloshka)} alt="" />
         <div className="cart__content">
           <h3>{props.cart.Kursname}</h3>
           <p>{props.cart.Kursdesc}</p>

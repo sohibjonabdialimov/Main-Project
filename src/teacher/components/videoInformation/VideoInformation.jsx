@@ -4,7 +4,7 @@ import img from "../../../imgs/video_information.png";
 import video_player from "../../../imgs/video_player.png";
 
 const VideoInformation = () => {
-  "http://165.232.127.62:5001/courseone/me"
+  "https://api.ilmlar.com/courseone/me"
   return (
     <div className="video_information video_information_scroll">
       <div className="img_div">

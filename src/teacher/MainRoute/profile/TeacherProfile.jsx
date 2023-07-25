@@ -24,7 +24,7 @@ function TeacherProfile() {
   const [profile, setProfile] = useState([]);
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/teacherme/", {
+      .get("https://api.ilmlar.com/teacherme/", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -76,7 +76,7 @@ function TeacherProfile() {
       <div className="teacherHomePage main_profile_container sidebar-wrap teacher-main-sidebar">
       <div className={styles.teacher_profile_wrap}>
         <img
-          src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)}
+          src={"https://api.ilmlar.com" + deleteplatforma(profile.path)}
           alt=""
         />
         <h2>{profile.fullname}</h2>

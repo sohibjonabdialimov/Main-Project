@@ -34,7 +34,7 @@ function Baykurs() {
   const [kurs, setKurs] = useState({});
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/courses/" + kursId, {
+      .get("https://api.ilmlar.com/courses/" + kursId, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -73,7 +73,7 @@ function Baykurs() {
         <div className="video_information video_information_scroll">
           <div className="img_div">
             <video
-              src={`http://165.232.127.62:5001/${deleteplatforma(
+              src={`https://api.ilmlar.com/${deleteplatforma(
                 selectedVideo.orni
               )}`}
               alt=""

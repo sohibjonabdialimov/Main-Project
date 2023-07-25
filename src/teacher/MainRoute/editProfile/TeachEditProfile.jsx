@@ -51,7 +51,7 @@ const TeachEditProfile = () => {
     formData.append("file", userimgRef.current.files[0]);
     
     axios
-      .put("http://165.232.127.62:5001/teacher/", formData, {
+      .put("https://api.ilmlar.com/teacher/", formData, {
         headers: {
           Authorization: localStorage.getItem("token"),
           "Content-Type": "multipart/form-data",
@@ -66,7 +66,7 @@ const TeachEditProfile = () => {
 
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/teacherme/", {
+      .get("https://api.ilmlar.com/teacherme/", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -89,7 +89,7 @@ const TeachEditProfile = () => {
         </button>
         <div className={styles.imgs_div}>
           <img
-            src={image || "http://165.232.127.62:5001" + deleteplatforma(profile.path)}
+            src={image || "https://api.ilmlar.com" + deleteplatforma(profile.path)}
             alt=""
           />
           <input type="file" ref={userimgRef} onChange={handleImageChange} />

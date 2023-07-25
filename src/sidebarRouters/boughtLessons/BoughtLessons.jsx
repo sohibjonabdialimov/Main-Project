@@ -33,7 +33,7 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
   const [save, setSave] = useState([]);
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -47,7 +47,7 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
       const fetchedTeacherData = [];
       for (let i = 0; i < profile.mycurs.length; i++) {
         const response = await axios.get(
-          "http://165.232.127.62:5001/courses/" + profile.mycurs[i].cursId,
+          "https://api.ilmlar.com/courses/" + profile.mycurs[i].cursId,
           {
             headers: {
               Authorization: localStorage.getItem("token"),
@@ -82,7 +82,7 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
             <div className="darslar-cart cursor_bought_class">
               <img
                 src={
-                  "http://165.232.127.62:5001" + deleteplatforma(item.obloshka)
+                  "https://api.ilmlar.com" + deleteplatforma(item.obloshka)
                 }
                 alt=""
               />

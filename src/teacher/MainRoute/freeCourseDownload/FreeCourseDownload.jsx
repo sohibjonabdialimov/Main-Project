@@ -93,7 +93,7 @@ function FreeCourseDownload() {
     }
 
     axios
-      .post("http://165.232.127.62:5001/courses/", formData, {
+      .post("https://api.ilmlar.com/courses/", formData, {
         headers: {
           Authorization: localStorage.getItem("token"),
           "Content-Type": "multipart/form-data",

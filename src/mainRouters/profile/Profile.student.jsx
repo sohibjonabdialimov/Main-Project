@@ -26,7 +26,7 @@ function Profile() {
   const [profile, setProfil] = useState({});
   useEffect(() => {
     axios
-      .get("http://165.232.127.62:5001/usersme", {
+      .get("https://api.ilmlar.com/usersme", {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
@@ -85,7 +85,7 @@ function Profile() {
 
         <div className="profile-content">
           <img
-            src={"http://165.232.127.62:5001" + deleteplatforma(profile.path)}
+            src={"https://api.ilmlar.com" + deleteplatforma(profile.path)}
             alt=""
           />
           <h1>{profile.fullname}</h1>

@@ -30,7 +30,7 @@ const TeacherRegistration = () => {
     );
 
     axios
-      .post("http://165.232.127.62:5001/teacher/register/", formData)
+      .post("https://api.ilmlar.com/teacher/register/", formData)
       .then((response) => {
         // Handle successful registration
         console.log(response.data);
