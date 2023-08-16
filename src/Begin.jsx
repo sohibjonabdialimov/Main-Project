@@ -30,18 +30,18 @@ function Begin() {
     <div className="ionex">
       <div className="ionex_header">
         <div className="ionex_logo">
-          <Link>ionex</Link>
+          <Link>Ilmlar.com</Link>
         </div>
         <nav>
           <ul>
             <li>
-              <Link>Biz haqimizda</Link>
+              <a href="#aboutIlmlar">Biz haqimizda</a>
             </li>
             <li>
-              <Link>O'qituvchilar</Link>
+              <a href="#forteacher">O'qituvchilar</a>
             </li>
             <li>
-              <Link>O'rganuvchilar</Link>
+              <a href="#forstudent">O'rganuvchilar</a>
             </li>
           </ul>
         </nav>
@@ -56,7 +56,7 @@ function Begin() {
       <div className="ionex_hero">
         <div className="hero_logo">
           {/* <img src={logo} alt="" /> */}
-          <button className="ionex-btn">ionex</button>
+          <button id="aboutIlmlar" className="ionex-btn">Ilmlar.com</button>
           <p>Yangi avlod ta'lim platformasi</p>
         </div>
         <div>
@@ -75,14 +75,14 @@ function Begin() {
       </div>
       <div className="hero_text_content">
         <p className="mobile--text">
-          ionex.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish va
+          Ilmlar.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish va
           o’rgatish uchun yaratilgan.
         </p>
       </div>
       <div className="ionex_about_content">
         <img src={ionex_content} alt="" />
         <div className="ionex_about_content_desc">
-          <h3>O’qituvchilar</h3>
+          <h3 id="forteacher" >O’qituvchilar</h3>
           <p className="mobile--text">
             <span className="bold_class">ionex.com</span> ta'lim platformasi,
             masofaviy ta'lim berishni maqsad qilgan o'qituvchilar uchun
@@ -93,14 +93,14 @@ function Begin() {
         </div>
       </div>
       <div className="ionex_advertise">
-        <p>ionex.com</p>
+        <p>Ilmlar.com</p>
       </div>
 
       <div className="ionex_about_content ionex-more">
         <div className="ionex_about_content_desc child-1">
-          <h3>O’qituvchilar</h3>
+          <h3 id="forstudent">O’quvchilar</h3>
           <p className="mobile--text">
-            <span className="bold_class">ionex.com</span> ta'lim platformasi,
+            <span className="bold_class">Ilmlar.com</span> ta'lim platformasi,
             masofaviy ta'lim olishni istaganlar uchun to'g'ri tanlov. Siz bu
             platformada, barcha fanlar bo'yicha video kurslarni topishingiz
             mumkin. O'zingiz uchun qulay vaqtda va qulay joyda ta'lim oling.
@@ -110,7 +110,7 @@ function Begin() {
       </div>
 
       <div className="ionex_advertise">
-        <p>ionex.com</p>
+        <p>Ilmlar.com</p>
       </div>
       <footer className="footer_section">
         <p>Footer section</p>

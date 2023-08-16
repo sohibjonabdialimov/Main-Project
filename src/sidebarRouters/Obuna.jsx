@@ -23,7 +23,7 @@ function Obuna({ modalDarslar, changeModalDars, topic, me }) {
           >
             <img src={prev} alt="prev" />
           </div>
-          <NavLink to="/student/profile/subs">obunalar</NavLink>
+          <NavLink to="/student/profile/subs" className={"necha"}>obunalar</NavLink>
           <NavLink to="/student/profile/darslar">darslar</NavLink>
         </div>
         <div className="line-main users_subs">

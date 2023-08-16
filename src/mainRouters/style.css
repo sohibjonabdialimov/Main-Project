@@ -29,6 +29,22 @@
     display: block;
     /* height: 100%; */
   }
+  .courses_list {
+    width: 100%;
+    padding: 7px;
+    display: flex;
+    height: 161px;
+    background-color: #40325D;
+    
+    margin-bottom: 10px;
+  }
+  .courses_list img {
+      width: 40% !important;
+      border-radius: 0 !important;
+      border-top-left-radius: 50px !important;
+      border-bottom-left-radius: 50px !important;
+
+  }
 }
 .darslar_wrapper {
   padding: 0 8px;

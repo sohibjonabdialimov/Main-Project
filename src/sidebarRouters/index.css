@@ -178,7 +178,7 @@
 .mobile__header{
   width: 100%;
   display: flex;
-  gap: 72px;
+  gap: 40px;
 
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
@@ -193,7 +193,7 @@ border-radius: 50px 50px 0px 0px;
   margin-bottom: 17px;
 }
 .mobile__header h2{
-  max-width: 320px;
+  max-width: 250px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -206,7 +206,7 @@ border-radius: 50px 50px 0px 0px;
 .mobile__header .circle{
   position: absolute;
   top: 15px;
-  left: 25px;
+  left: 14px;
   margin: 0;
 }
 .mobileForPadding{
