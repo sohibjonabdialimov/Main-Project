@@ -47,7 +47,7 @@ function LessonsTeacher() {
           <p>Darslar</p>
         </div>
       </header> */}
-      <div className="teacher">
+      <div className="teacher edit_teacher">
         <div className={modal ? "def modal-navbar" : "def yoq"}>
           {/* <StudentNavbar changeModal={changeModal} modal={modal} /> */}
           <TeacherNavbar changeModal={changeModal} modal={modal} />

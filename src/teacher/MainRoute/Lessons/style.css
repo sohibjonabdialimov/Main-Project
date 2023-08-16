@@ -1,4 +1,5 @@
 .lessons_wrap {
+  width: 100%;
   display: grid;
   column-gap: 24px;
   row-gap: 24px;
@@ -11,8 +12,8 @@
     grid-template-columns: auto auto;
   }
 }
-/* @media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .lessons_wrap {
     grid-template-columns: auto;
   } 
-} */
+}
