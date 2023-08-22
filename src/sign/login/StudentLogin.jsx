@@ -43,7 +43,7 @@ const StudentLogin = () => {
       });
   };
   return (
-    <div className="app-content">
+    <div className="app-content student-app-content">
        <ToastContainer />
       <div className="sign_wrap">
         <button onClick={onBack} className="back">

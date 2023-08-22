@@ -17,6 +17,10 @@
   color: #fff;
   font-size: 27px;
 }
+.student-app-content{
+    padding-right: 24px !important;
+
+}
 .sign_wrap {
   background-color: #5b4784;
   width: 70%;
