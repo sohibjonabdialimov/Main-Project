@@ -25,6 +25,7 @@
   width: 100%;
   height: 100%;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .ionex_header {
@@ -46,7 +47,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 39px;
   color: #ffffff;
 }
@@ -99,8 +100,6 @@
   line-height: 121px;
   text-align: center;
   color: #ffffff;
-  padding: 0 40px;
-  background: #3545ff;
   border-radius: 30px;
   border: 0;
   margin-bottom: 10px;
@@ -126,18 +125,40 @@
   height: 374px;
 }
 
-.carousel_imgs {
-  padding: 0 112px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 36px;
-  padding-bottom: 74px;
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-.carousel_imgs img {
-  width: 237px;
-  height: 144px;
-  object-fit: cover;
+.carousel__inner {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel__image {
+  flex: 0 0 25%;
+  width: 100%;
+  height: auto;
+}
+
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px;
+  font-size: 18px;
+}
+
+.carousel__prev {
+  left: 10px;
+}
+
+.carousel__next {
+  right: 10px;
 }
 
 .hero_big_img {
@@ -434,7 +455,7 @@
     padding: 32px 10px;
   }
   .ionex-btn {
-    font-size: 80px;
+    font-size: 48px;
     line-height: 97px;
     max-width: 350px;
   }

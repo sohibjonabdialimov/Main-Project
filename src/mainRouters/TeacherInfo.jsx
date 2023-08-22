@@ -172,7 +172,7 @@ function TeacherInfo() {
                       saveObuna(teacherId);
                     }}
                   >
-                    Obunadan chiqish
+                    Obuna bolish
                   </button>
                 ) : (
                   <button
@@ -181,7 +181,7 @@ function TeacherInfo() {
                       saveObuna(teacherId);
                     }}
                   >
-                    Obuna bo'lish
+                    Obunadan chiqish
                   </button>
                 )}
 

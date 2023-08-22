@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import logo from "./imgs/ionex.png";
-import carousel1 from "./imgs/carousel1.png";
-import carousel2 from "./imgs/carousel2.png";
-import carousel3 from "./imgs/carousel3.png";
-import carousel4 from "./imgs/carousel4.png";
+import carousel1 from "./imgs/carusel/1.jpg";
+import logoilm from "./imgs/logo.png";
+
+import carousel2 from "./imgs/carusel/2.jpg";
+import carousel3 from "./imgs/carusel/3.png";
+import carousel4 from "./imgs/carusel/4.jpg";
+import carousel6 from "./imgs/carusel/6.jpg";
+import carousel7 from "./imgs/carusel/7.jpg";
+import carousel8 from "./imgs/carusel/8.png";
+import carousel9 from "./imgs/carusel/9.jpg";
+import carousel10 from "./imgs/carusel/10.jpg";
+import carousel11 from "./imgs/carusel/11.jpg";
+import carousel12 from "./imgs/carusel/12.jpg";
+import carousel13 from "./imgs/carusel/13.jpg";
+import carousel14 from "./imgs/carusel/14.jpg";
+import carousel15 from "./imgs/carusel/16.jpg";
 import hero_img from "./imgs/hero_img.png";
 import ionex_content from "./imgs/hero_img_2.png";
 import ionex_content2 from "./imgs/hero_img_3.png";
@@ -15,7 +29,7 @@ import { useNavigate } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 function Begin() {
-  const [start,setStart]=useState(false)
+  const [start, setStart] = useState(false);
   const navigate = useNavigate();
   const startFunc = () => {
     navigate("/select");
@@ -24,8 +38,27 @@ function Begin() {
     navigate("/selectLogin");
   };
   const startClick = () => {
-   setStart(!start)
+    setStart(!start);
   };
+
+  ///
+
+  
+
+  const WithStyles = ({ headline, description, image }) => (
+    <div>
+
+      <img className="caruosel-img" style={{ width: "100%", height: "330px", padding:"20px", borderRadius:"20px" }} src={image} alt={headline} />
+    </div>
+  );
+
+
+
+
+
+
+
+  ///
   return (
     <div className="ionex">
       <div className="ionex_header">
@@ -47,7 +80,7 @@ function Begin() {
         </nav>
         <button onClick={startClick}>Boshlash</button>
         {/* className="route-select"  */}
-        <div className={start?'route-select':'route-select d-none'} >
+        <div className={start ? "route-select" : "route-select d-none"}>
           <div onClick={() => startFuncLogin()}>Kirish</div>
           <div onClick={() => startFunc()}>Ro'yhatdan o'tish</div>
         </div>
@@ -56,7 +89,7 @@ function Begin() {
       <div className="ionex_hero">
         <div className="hero_logo">
           {/* <img src={logo} alt="" /> */}
-          <button id="aboutIlmlar" className="ionex-btn">Ilmlar.com</button>
+          <img src={logoilm} id="aboutIlmlar" className="ionex-btn" alt="" />
           <p>Yangi avlod ta'lim platformasi</p>
         </div>
         <div>
@@ -64,25 +97,107 @@ function Begin() {
           <img src={ionex_mobile} alt="img" className="desktop-none" />
         </div>
       </div>
-      <div className="carousel_imgs">
-        <img src={carousel1} alt="" />
-        <img src={carousel2} alt="" />
-        <img src={carousel3} alt="" />
-        <img src={carousel4} alt="" />
-      </div>
+
+      <Carousel
+        additionalTransfrom={0}
+        arrows={false}
+        autoPlay
+        autoPlaySpeed={3000}
+        centerMode={false}
+        className=""
+        containerClass="container-with-dots"
+        customTransition="all 1s linear"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024
+            },
+            items: 4,
+            partialVisibilityGutter: 40
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0
+            },
+            items: 1,
+            partialVisibilityGutter: 30
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464
+            },
+            items: 2,
+            partialVisibilityGutter: 30
+          }
+        }}
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        showDots={false}
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
+      >
+        <WithStyles
+          image={carousel1}
+        /><WithStyles
+          image={carousel2}
+        /><WithStyles
+          image={carousel3}
+        /><WithStyles
+          image={carousel4}
+        /><WithStyles
+          image={carousel6}
+        /><WithStyles
+          image={carousel7}
+        />
+        <WithStyles
+          image={carousel8}
+        /><WithStyles
+          image={carousel9}
+        /><WithStyles
+          image={carousel10}
+        /><WithStyles
+          image={carousel11}
+        /><WithStyles
+          image={carousel12}
+        /><WithStyles
+          image={carousel13}
+        /><WithStyles
+          image={carousel14}
+        />
+        <WithStyles
+          image={carousel15}
+        />
+
+      </Carousel>
       <div className="hero_big_img">
         <img src={big_img} alt="" />
       </div>
       <div className="hero_text_content">
         <p className="mobile--text">
-          Ilmlar.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish va
-          o’rgatish uchun yaratilgan.
+          Ilmlar.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish
+          va o’rgatish uchun yaratilgan.
         </p>
       </div>
       <div className="ionex_about_content">
         <img src={ionex_content} alt="" />
         <div className="ionex_about_content_desc">
-          <h3 id="forteacher" >O’qituvchilar</h3>
+          <h3 id="forteacher">O’qituvchilar</h3>
           <p className="mobile--text">
             <span className="bold_class">ionex.com</span> ta'lim platformasi,
             masofaviy ta'lim berishni maqsad qilgan o'qituvchilar uchun

@@ -5,7 +5,6 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { MenuProvider } from "./context/MenuContext.jsx";
 import 'react-toastify/dist/ReactToastify.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
