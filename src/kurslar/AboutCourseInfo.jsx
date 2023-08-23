@@ -134,9 +134,8 @@ function AboutCourseInfo() {
           <div
             className="every__cource-bigImg"
             style={{
-              backgroundImage: `url(${
-                "https://api.ilmlar.com" + deleteplatforma(kurs?.obloshka)
-              })`,
+              backgroundImage: `url(${"https://api.ilmlar.com" + deleteplatforma(kurs?.obloshka)
+                })`,
             }}
           ></div>
 
@@ -150,7 +149,7 @@ function AboutCourseInfo() {
               >
                 <img
                   src={
-                    "https://api.ilmlar.com" + deleteplatforma(teacher?.path)
+                    ("https://api.ilmlar.com" + deleteplatforma(teacher?.path)) ? ("https://api.ilmlar.com" + deleteplatforma(teacher?.path)) : ("https://api.ilmlar.com" + (teacher?.path))
                   }
                   alt=""
                 />
@@ -206,7 +205,7 @@ function AboutCourseInfo() {
                   if (isCursIdExists) {
                     navigate("/student/kurs/olinganlar/" + kursId);
                   } else {
-                    alert(`bu kurs sotib olinmagan`);
+                    navigate("/student/notboughtcouse/" + kursId)
                   }
                 }}
               >

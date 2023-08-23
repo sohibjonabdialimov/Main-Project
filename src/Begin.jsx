@@ -28,6 +28,7 @@ import big_img from "./imgs/hero_img_1.svg";
 import { useNavigate } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import Footer from "./layout/footer/footer";
 function Begin() {
   const [start, setStart] = useState(false);
   const navigate = useNavigate();
@@ -228,7 +229,7 @@ function Begin() {
         <p>Ilmlar.com</p>
       </div>
       <footer className="footer_section">
-        <p>Footer section</p>
+        <Footer />
       </footer>
     </div>
   );

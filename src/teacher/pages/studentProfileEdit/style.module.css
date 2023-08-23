@@ -7,6 +7,7 @@
   border-radius: 50px;
   position: relative;
 }
+
 .imgs_div {
   padding-top: 50px;
   width: 501px;
@@ -51,13 +52,17 @@
   margin: 0 auto;
 }
 .form button {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 39px;
   text-align: center;
-  background: linear-gradient(180deg, #3706f4 4.65%, rgba(55, 6, 244, 0) 181.36%);
+  background: linear-gradient(
+    180deg,
+    #3706f4 4.65%,
+    rgba(55, 6, 244, 0) 181.36%
+  );
   border-radius: 50px;
   color: #ffffff;
   outline: none;
@@ -96,4 +101,36 @@
 }
 .input_wrap input {
   width: 50%;
+}
+
+@media (max-width: 512px) {
+  .edit_profile {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .imgs_div {
+    width: 100px;
+    gap: 5px;
+  }
+  .imgs_div img:first-child {
+    width: 100px;
+    height: 100px;
+  }
+  .imgs_div img:last-child {
+    width: 40px;
+    height: 40px;
+  }
+  .form {
+    width: 100%;
+  }
+  .form button {
+    font-size: 24px;
+    padding: 5px 20px;
+    margin-top: 30px;
+  }
+  .edit_profile input {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 }
