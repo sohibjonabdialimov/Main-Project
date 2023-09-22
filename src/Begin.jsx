@@ -28,7 +28,6 @@ import big_img from "./imgs/hero_img_1.svg";
 import { useNavigate } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
-import Footer from "./layout/footer/footer";
 function Begin() {
   const [start, setStart] = useState(false);
   const navigate = useNavigate();
@@ -42,7 +41,7 @@ function Begin() {
     setStart(!start);
   };
 
-  ///
+
 
   const WithStyles = ({ headline, description, image }) => (
     <div>
@@ -199,9 +198,7 @@ function Begin() {
       <div className="ionex_advertise">
         <p>ilmlar.com</p>
       </div>
-      {/* <footer className="footer_section">
-        <Footer />
-      </footer> */}
+     
     </div>
   );
 }

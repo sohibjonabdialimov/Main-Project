@@ -30,12 +30,10 @@ const StudentRegistration = () => {
     axios
       .post("https://api.ilmlar.com/users/register/", formData)
       .then((response) => {
-        // Handle successful registration
         console.log(response.data);
         navigate("/login");
       })
       .catch((error) => {
-        // Handle registration error
         console.error(error);
       });
   };
@@ -60,7 +58,7 @@ const StudentRegistration = () => {
           </div>
           
         </form>
-        {/* <Link className="alright_note" to={"/login"}>alright, do you have an account?</Link> */}
+        <Link className="alright_note" to={"/login"}>alright, do you have an account?</Link>
       </div>
     </div>
   );

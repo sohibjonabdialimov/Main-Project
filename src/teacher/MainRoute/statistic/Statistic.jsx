@@ -43,7 +43,7 @@ function Statistic() {
           {/* <StudentNavbar changeModal={changeModal} modal={modal} /> */}
           <TeacherNavbar changeModal={changeModal} modal={modal} />
         </div>
-        <div
+        {/* <div
           className={
             modal || modalDarslar
               ? "blur w100 main_lesson mobile"
@@ -58,7 +58,7 @@ function Statistic() {
             type={"search"}
             where="teacher"
           />
-        </div>
+        </div> */}
       <div className="main_teacher_content sidebar-main-wrap statistic__wrapper">
         {courses.map((course, index) => {
           return <StatisticCard cart={course} key={index} />;
