@@ -13,7 +13,7 @@ const Subs = () => {
         }
         return res;
       }
-      return "/" + url;
+      return "" + url;
     } catch (error) {
       console.log(error);
     }
@@ -58,14 +58,15 @@ const Subs = () => {
           onClick={() => {
             navigate("/student/teacherinfo/" + item._id);
           }}
+          
         >
           <img
             src={"https://api.ilmlar.com" + deleteplatforma(item.path)}
             alt=""
           />
           <div>
-            <p>{item.fullname}</p>
-            <span>{item.fullname}</span>
+            <p>{item?.fullname}</p>
+            <span>{item?.bio}</span>
           </div>
         </div>
       ))}

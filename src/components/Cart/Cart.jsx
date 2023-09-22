@@ -40,7 +40,7 @@ const Cart = (props) => {
           <h3>{props?.cart?.Kursname?.length < 45 ? props?.cart?.Kursname : props?.cart?.Kursname?.split(0, 43) + "..."}</h3>
           <p>{props?.cart?.Kursdesc}</p>
           <div className="desc">
-            <img className="small_img" src={"https://api.ilmlar.com"+deleteplatforma(teacher.path)} alt="" />
+            <img className="small_img" src={"https://api.ilmlar.com"+(teacher.path)} alt="" />
             <span>{teacher?.fullname?.length < 30 ? teacher?.fullname : teacher.fullname?.split(0, 28) + "..."}</span>
           </div>
         </div>

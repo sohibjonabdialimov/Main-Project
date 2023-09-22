@@ -5,6 +5,7 @@
   border-radius: 25px;
   border-bottom-left-radius: 0;
   position: relative;
+  color: #fff;
 }
 .commit-div img {
   position: absolute;

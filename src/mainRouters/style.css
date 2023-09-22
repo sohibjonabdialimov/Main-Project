@@ -4,8 +4,7 @@
   padding: 0 6px;
   flex-wrap: wrap;
   background-color: #5b4784;
-  /* padding-top: 20px; */
-  /* padding-bottom: 20px; */
+
   border-radius: 50px;
   gap: 21px;
   height: 100%;
@@ -165,9 +164,10 @@
 }
 .courses_list img {
   height: 100%;
-  width: 259px;
+  width: 250px;
   background: url(There-are-lots-of-English-courses-so-you-can-choose-a-trusted-one.png);
-  border-radius: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 .courses_list p {
   font-family: 'Inter';
@@ -178,9 +178,12 @@
   color: #FFFFFF;
   margin: 0;
   padding: 0;
-  padding: 10px 20px 27px 10px;
-  text-indent: 10px;
+  /* padding: 10px 20px 27px 10px; */
+  /* text-indent: 10px; */
   text-align: start;
-  height: 95%;
+  /* height: 95%; */
   overflow-y: scroll;
+}
+.courses_list div{
+  padding-left: 15px;
 }

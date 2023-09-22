@@ -110,7 +110,6 @@ function AboutCourseInfo() {
         setProfil(res.data);
       });
   }, []);
-
   return (
     <div className="main__course-buy">
       <div className="every__cource-info sidebar-main-wrap w100">
@@ -228,7 +227,7 @@ function AboutCourseInfo() {
         <CommentsList
           modalDarslar={modalDarslar}
           changeModalDars={changeModalDars}
-          commints={kurs?.Commint}
+          commints={kurs?.Comments}
         />
       </div>
     </div>

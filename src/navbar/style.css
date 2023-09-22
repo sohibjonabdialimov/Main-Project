@@ -82,8 +82,12 @@
 }
 .teacher-navbar ul li {
     position: relative;
-    padding: 11px 12px;
+    padding: 8px 12px;
 }
+.teacher_nav_main li.active, .student_nav_main li.active{
+    border-radius: 25px;
+}
+
 .teacher-navbar ul li a {
     display: block;
     border-radius: 15px;

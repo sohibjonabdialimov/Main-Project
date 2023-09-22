@@ -160,7 +160,7 @@ function TeacherInfo() {
               <div className="my_subs">
                 <img
                   className="teacher_img"
-                  src={"https://api.ilmlar.com" + deleteplatforma(profile.path)}
+                  src={"https://api.ilmlar.com" +profile.path}
                   alt=""
                 />
                 <h2>{profile.fullname}</h2>
@@ -172,7 +172,7 @@ function TeacherInfo() {
                       saveObuna(teacherId);
                     }}
                   >
-                    Obuna bolish
+                    Obunadan chiqish 
                   </button>
                 ) : (
                   <button
@@ -181,7 +181,7 @@ function TeacherInfo() {
                       saveObuna(teacherId);
                     }}
                   >
-                    Obunadan chiqish
+                    Obuna bo'lish
                   </button>
                 )}
 
@@ -212,10 +212,11 @@ function TeacherInfo() {
                             }
                             alt=""
                           />
-                          <div style={{position:"relative"}}>
+                          <div className="teacherinfo_courses" style={{position:"relative"}}>
                             <h5 style={{paddingLeft:"10px"}}>{item.Kursname}</h5>
                             <br />
-                            <p style={{position:"absolute", top:"15px", left:"-10px"}}>{item.Kursdesc} </p>
+                            <p>{item.Kursdesc} </p> 
+                            {/* style={{position:"absolute", top:"15px", left:"-10px"}} */}
                           </div>
                         </div>
                       );

@@ -9,3 +9,29 @@
 /* .modalDarslar .commit{
   background-color: red !important;
 } */
+.commit{
+  position: relative;
+}
+.writing_comment{
+  position: fixed;
+  width: 20%;
+  bottom: 70px;
+}
+.writing_comment input{
+  width: 100%;
+  padding: 5px 20px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  position: relative;
+  color: #fff;
+}
+.writing_comment input::placeholder{
+  color: #fff;
+}
+.writing_comment img{
+  position: absolute;
+
+}

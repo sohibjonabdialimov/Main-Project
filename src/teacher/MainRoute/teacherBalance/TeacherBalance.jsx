@@ -58,11 +58,11 @@ function TeacherBalance() {
       
       </div>
 
-      <div className="main_teacher_content sidebar-main-wrap teacher-main-sidebar">
+      <div className="main_teacher_content teacher__hisoblar_wrap teacher-main-sidebar">
         <div className="fife main-content teacher_hisoblar__wrapper">
           <div className="teacher_hisoblar">
             <h2 style={{ fontSize: 22 }}>Hisob balansi:</h2>
-            <p style={{ fontSize: 45 }}>{profile.hisob}</p>
+            <p style={{ fontSize: 45 }}>{profile.hisob} so'm</p>
             <NavLink to="/hisoblar/pulyichish" className="price_btn">
               Pul yechib olish
             </NavLink>

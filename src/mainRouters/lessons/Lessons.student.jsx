@@ -11,13 +11,14 @@ import Loader from "../../loader/Loader";
 function Lessons() {
   const [courses, setCourses] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [query, setquery] = useState('');
   useEffect(() => {
     setLoader(true);
-    axios.get("https://api.ilmlar.com/courses/").then((res) => {
+    axios.get("https://api.ilmlar.com/courses/?q="+query).then((res) => {
       setLoader(false);
       setCourses(res.data);
     });
-  }, []);
+  }, [query]);
   let [modal, setModal] = useState(false);
   let [modalDarslar, setModalDarslar] = useState(false);
   function clickModal() {
@@ -58,6 +59,7 @@ function Lessons() {
               modal={modal}
               modalDarslar={modalDarslar}
               type={"search"}
+              setquery={setquery}
             />
             <div className="fife  main-content sidebar-main-wrap_all">
               <div className="student_lessons_wrap">

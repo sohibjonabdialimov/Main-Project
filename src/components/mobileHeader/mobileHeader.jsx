@@ -9,7 +9,8 @@ function MobileHeader({
   modal,
   modalDarslar,
   type,
-  where
+  where,
+  setquery,
 }) {
   const handleClickDarslar = () => {
     changeModalDars(!modalDarslar);
@@ -26,19 +27,29 @@ function MobileHeader({
         </div>
       </div>
       <div className="search-div">
-        <input
-        ref={searchRef}
-          className={type == "search" ? "search-main" : "d-none"}
-          placeholder="search..."
-        />
-        <div onClick={() => searchRef.current.focus()} className={type == "search" ? "search-img-box" : "d-none"}>
-          <img src={search} alt="" />
-        </div>
-        <button className={type != "search" ? "search-main" : "d-none"}>
-          {type}
-        </button>
+          <input
+            ref={searchRef}
+            className={type == "search" ? "search-main" : "d-none"}
+            placeholder="search..."
+          />
+          <div
+            className={type == "search" ? "search-img-box" : "d-none"}
+            onClick={()=>{setquery(searchRef.current.value)}}
+          >
+            <img src={search} alt="" />
+          </div>
+          <button
+            type="submit"
+            
+            className={type != "search" ? "search-main" : "d-none"}
+          >
+            {type}
+          </button>
       </div>
-      <div className={(where) ? "burger d-none" : "burger"} onClick={handleClickDarslar}>
+      <div
+        className={where ? "burger d-none" : "burger"}
+        onClick={handleClickDarslar}
+      >
         <div className="burger-box">
           <img src={mobileMenu} alt="burger" />
         </div>

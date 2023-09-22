@@ -73,6 +73,7 @@
 .video_information {
   background-color: #5b4784;
   width: 71vw;
+  min-height: 85vh;
   border-radius: 50px;
 }
 .video_information .img_div {

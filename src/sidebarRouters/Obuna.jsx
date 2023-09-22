@@ -14,7 +14,7 @@ function Obuna({ modalDarslar, changeModalDars, topic, me }) {
           className={
             modalDarslar
               ? "mobile__header users_subs-buttons"
-              : "d-none users_subs-buttons"
+              : "users_subs-buttons"
           }
         >
           <div
