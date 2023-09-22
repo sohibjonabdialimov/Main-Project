@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import logo from "./imgs/ionex.png";
 import carousel1 from "./imgs/carusel/1.jpg";
 import logoilm from "./imgs/logo.png";
@@ -44,27 +44,27 @@ function Begin() {
 
   ///
 
-  
-
   const WithStyles = ({ headline, description, image }) => (
     <div>
-
-      <img className="caruosel-img" style={{ width: "100%", height: "330px", padding:"20px", borderRadius:"20px" }} src={image} alt={headline} />
+      <img
+        className="caruosel-img"
+        style={{
+          width: "100%",
+          height: "330px",
+          padding: "20px",
+          borderRadius: "50px",
+        }}
+        src={image}
+        alt={headline}
+      />
     </div>
   );
 
-
-
-
-
-
-
-  ///
   return (
     <div className="ionex">
       <div className="ionex_header">
         <div className="ionex_logo">
-          <Link>Ilmlar.com</Link>
+          <Link>ilmlar.com</Link>
         </div>
         <nav>
           <ul>
@@ -80,7 +80,6 @@ function Begin() {
           </ul>
         </nav>
         <button onClick={startClick}>Boshlash</button>
-        {/* className="route-select"  */}
         <div className={start ? "route-select" : "route-select d-none"}>
           <div onClick={() => startFuncLogin()}>Kirish</div>
           <div onClick={() => startFunc()}>Ro'yhatdan o'tish</div>
@@ -89,7 +88,6 @@ function Begin() {
 
       <div className="ionex_hero">
         <div className="hero_logo">
-          {/* <img src={logo} alt="" /> */}
           <img src={logoilm} id="aboutIlmlar" className="ionex-btn" alt="" />
           <p>Yangi avlod ta'lim platformasi</p>
         </div>
@@ -122,27 +120,27 @@ function Begin() {
           desktop: {
             breakpoint: {
               max: 3000,
-              min: 1024
+              min: 1024,
             },
             items: 4,
-            partialVisibilityGutter: 40
+            partialVisibilityGutter: 40,
           },
           mobile: {
             breakpoint: {
               max: 464,
-              min: 0
+              min: 0,
             },
             items: 1,
-            partialVisibilityGutter: 30
+            partialVisibilityGutter: 30,
           },
           tablet: {
             breakpoint: {
               max: 1024,
-              min: 464
+              min: 464,
             },
             items: 2,
-            partialVisibilityGutter: 30
-          }
+            partialVisibilityGutter: 30,
+          },
         }}
         rewind={false}
         rewindWithAnimation={false}
@@ -153,45 +151,27 @@ function Begin() {
         slidesToSlide={1}
         swipeable
       >
-        <WithStyles
-          image={carousel1}
-        /><WithStyles
-          image={carousel2}
-        /><WithStyles
-          image={carousel3}
-        /><WithStyles
-          image={carousel4}
-        /><WithStyles
-          image={carousel6}
-        /><WithStyles
-          image={carousel7}
-        />
-        <WithStyles
-          image={carousel8}
-        /><WithStyles
-          image={carousel9}
-        /><WithStyles
-          image={carousel10}
-        /><WithStyles
-          image={carousel11}
-        /><WithStyles
-          image={carousel12}
-        /><WithStyles
-          image={carousel13}
-        /><WithStyles
-          image={carousel14}
-        />
-        <WithStyles
-          image={carousel15}
-        />
-
+        <WithStyles image={carousel1} />
+        <WithStyles image={carousel2} />
+        <WithStyles image={carousel3} />
+        <WithStyles image={carousel4} />
+        <WithStyles image={carousel6} />
+        <WithStyles image={carousel7} />
+        <WithStyles image={carousel8} />
+        <WithStyles image={carousel9} />
+        <WithStyles image={carousel10} />
+        <WithStyles image={carousel11} />
+        <WithStyles image={carousel12} />
+        <WithStyles image={carousel13} />
+        <WithStyles image={carousel14} />
+        <WithStyles image={carousel15} />
       </Carousel>
       <div className="hero_big_img">
         <img src={big_img} alt="" />
       </div>
       <div className="hero_text_content">
         <p className="mobile--text">
-          Ilmlar.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish
+          ilmlar.com ta’lim platformasi, insonlar o’rtasida ilmlarni o’rganish
           va o’rgatish uchun yaratilgan.
         </p>
       </div>
@@ -209,14 +189,14 @@ function Begin() {
         </div>
       </div>
       <div className="ionex_advertise">
-        <p>Ilmlar.com</p>
+        <p>ilmlar.com</p>
       </div>
 
       <div className="ionex_about_content ionex-more">
         <div className="ionex_about_content_desc child-1">
           <h3 id="forstudent">O’quvchilar</h3>
           <p className="mobile--text">
-            <span className="bold_class">Ilmlar.com</span> ta'lim platformasi,
+            <span className="bold_class">ilmlar.com</span> ta'lim platformasi,
             masofaviy ta'lim olishni istaganlar uchun to'g'ri tanlov. Siz bu
             platformada, barcha fanlar bo'yicha video kurslarni topishingiz
             mumkin. O'zingiz uchun qulay vaqtda va qulay joyda ta'lim oling.
@@ -226,11 +206,11 @@ function Begin() {
       </div>
 
       <div className="ionex_advertise">
-        <p>Ilmlar.com</p>
+        <p>ilmlar.com</p>
       </div>
-      <footer className="footer_section">
+      {/* <footer className="footer_section">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }

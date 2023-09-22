@@ -112,14 +112,21 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
               <div className="darslar-cart">
                 <img
                   src={
-                    "https://api.ilmlar.com" +
-                    deleteplatforma(item.obloshka)
+                    "https://api.ilmlar.com" + deleteplatforma(item.obloshka)
                   }
                   alt=""
                 />
                 <div>
-                  <p>{item.Kursname}</p>
-                  <p>{item.Kursdesc}</p>
+                  <p>
+                    {item.Kursname.length > 12
+                      ? item.Kursname.slice(0, 12) + "..."
+                      : item.Kursname}
+                  </p>
+                  <p>
+                    {item.Kursdesc.length > 15
+                      ? item.Kursdesc.slice(0, 15) + "..."
+                      : item.Kursdesc}
+                  </p>
                 </div>
               </div>
             </div>
@@ -138,14 +145,21 @@ function Navvedio({ modalDarslar, changeModalDars, topic }) {
               <div className="darslar-cart">
                 <img
                   src={
-                    "https://api.ilmlar.com" +
-                    deleteplatforma(item.obloshka)
+                    "https://api.ilmlar.com" + deleteplatforma(item.obloshka)
                   }
                   alt=""
                 />
                 <div>
-                  <p>{item.Kursname}</p>
-                  <p>{item.Kursdesc}</p>
+                  <p>
+                    {item.Kursname.length > 12
+                      ? item.Kursname.slice(0, 12) + "..."
+                      : item.Kursname}
+                  </p>
+                  <p>
+                    {item.Kursdesc.length > 15
+                      ? item.Kursdesc.slice(0, 15) + "..."
+                      : item.Kursdesc}
+                  </p>
                 </div>
               </div>
             </div>
