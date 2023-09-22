@@ -46,17 +46,8 @@ function Begin() {
 
   const WithStyles = ({ headline, description, image }) => (
     <div>
-      <img
-        className="caruosel-img"
-        style={{
-          width: "100%",
-          height: "330px",
-          padding: "20px",
-          borderRadius: "50px",
-        }}
-        src={image}
-        alt={headline}
-      />
+
+      <img className="caruosel-img" style={{ width: "100%", height: "330px", padding:"20px", borderRadius:"20px" }} src={image} alt={headline} />
     </div>
   );
 
