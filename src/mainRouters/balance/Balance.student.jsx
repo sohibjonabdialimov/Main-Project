@@ -70,7 +70,7 @@ function Balance() {
         <div className="fife main-content">
           <div className="hisoblar">
             <p className="hisoblar_header">Hisobdagi pul miqdori:</p>
-            <p className="hisoblar_number">{profile.price}UZS</p>
+            <p className="hisoblar_number">{profile.price}SO'M</p>
             <p className="hisoblar_header">Tolov uchun Id:</p>
             <p className="hisoblar_number">{profile._id}</p>
           </div>

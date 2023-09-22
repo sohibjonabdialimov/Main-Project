@@ -88,6 +88,7 @@ function Baystudy({ modalDarslar, changeModalDars, topic }) {
               />
               <div>
                 <p>{item?.Kursname}</p>
+                <strong>{item?.price}</strong>
               </div>
             </div>
           ))}

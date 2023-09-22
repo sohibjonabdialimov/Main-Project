@@ -409,7 +409,10 @@
     height: 200px;
     object-fit: contain;
   }
-
+  .caruosel-img-dev img{
+    width: 300px;
+    height: 250px;
+  }
   .carousel_imgs {
     margin-top: 43px;
     margin-bottom: 82px;

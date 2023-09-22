@@ -1,0 +1,66 @@
+.ionex_hero {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 97px 24px 35px 123px;
+  }
+  
+  .hero_logo1 {
+    width: 300px;
+    margin-right: 4%;
+    justify-self: unset;
+  }
+  
+  @media only screen and (max-width: 540px) {
+    .ionex_hero {
+      flex-direction: column-reverse;
+      padding: 0;
+      padding-top: 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .ionex_hero {
+      flex-direction: column-reverse;
+      padding-left: 60px;
+      padding-right: 0;
+      gap: 50px;
+    }
+  }
+  
+  .text-small {
+    font-size: 0.9rem;
+  }
+  
+  li a {
+    color: blue;
+    font-size: 22px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  .hero {
+    color: blue;
+  }
+  
+  .form-control:focus {
+    background: #212529;
+  }
+  
+  .footer_p {
+    font-size: 22px;
+    color: #2c2ce4 !important;
+  }
+  
+  .domen {
+    color: blue;
+    font-weight: 600;
+  }
+  
+  .mobile-none {
+    display: none;
+  }
+  
+  .justi {
+    margin-bottom: 4%;
+  }
