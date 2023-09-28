@@ -323,11 +323,18 @@ function PaidCourseDownload() {
                   <p htmlFor="amount" className={styles.amount}>
                     Davomiylik
                   </p>
-                  <input
+                  {/* <input
                     ref={courseMuddatiRef}
                     className={styles.second}
                     type="text"
-                  />
+                  /> */}
+                  <select ref={courseMuddatiRef} className={styles.second} name="" id="">
+                    <option value="1">1 oy</option>
+                    <option value="3">3 oy</option>
+                    <option value="6">6 oy</option>
+                    <option value="9">9 oy</option>
+                    <option value="12">12 oy</option>
+                  </select>
                 </div>
               </div>
               <button className={styles.btn} type="submit">

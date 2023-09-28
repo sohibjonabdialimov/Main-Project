@@ -28,6 +28,7 @@ import big_img from "./imgs/hero_img_1.svg";
 import { useNavigate } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import Footer from "./components/Footer/Footer";
 function Begin() {
   const [start, setStart] = useState(false);
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ function Begin() {
 
       <div className="ionex_hero">
         <div className="hero_logo">
-          <img src={logoilm} id="aboutIlmlar" className="ionex-btn" alt="" />
+          <img src={logoilm} className="ionex-btn" alt="" />
           <p>Yangi avlod ta'lim platformasi</p>
         </div>
         <div>
@@ -156,7 +157,7 @@ function Begin() {
         <WithStyles image={carousel14} />
         <WithStyles image={carousel15} />
       </Carousel>
-      <div className="hero_big_img">
+      <div id="aboutIlmlar" className="hero_big_img">
         <img src={big_img} alt="" />
       </div>
       <div className="hero_text_content">
@@ -165,10 +166,10 @@ function Begin() {
           va o’rgatish uchun yaratilgan.
         </p>
       </div>
-      <div className="ionex_about_content">
+      <div id="forteacher" className="ionex_about_content">
         <img src={ionex_content} alt="" />
         <div className="ionex_about_content_desc">
-          <h3 id="forteacher">O’qituvchilar</h3>
+          <h3>O’qituvchilar</h3>
           <p className="mobile--text">
             <span className="bold_class">ionex.com</span> ta'lim platformasi,
             masofaviy ta'lim berishni maqsad qilgan o'qituvchilar uchun
@@ -182,9 +183,9 @@ function Begin() {
         <p>ilmlar.com</p>
       </div>
 
-      <div className="ionex_about_content ionex-more">
+      <div id="forstudent" className="ionex_about_content ionex-more">
         <div className="ionex_about_content_desc child-1">
-          <h3 id="forstudent">O’quvchilar</h3>
+          <h3>O’quvchilar</h3>
           <p className="mobile--text">
             <span className="bold_class">ilmlar.com</span> ta'lim platformasi,
             masofaviy ta'lim olishni istaganlar uchun to'g'ri tanlov. Siz bu
@@ -198,7 +199,7 @@ function Begin() {
       <div className="ionex_advertise">
         <p>ilmlar.com</p>
       </div>
-     
+     <Footer />
     </div>
   );
 }

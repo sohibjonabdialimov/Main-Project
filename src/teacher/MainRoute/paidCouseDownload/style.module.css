@@ -13,6 +13,14 @@
   align-items: center;
   cursor: pointer;
 }
+.second{
+  background-color: #40325d; 
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+ }
 .back ion-icon {
   color: #fff;
   font-size: 27px;
@@ -224,7 +232,7 @@
 .extra_div {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 10px;
   width: 25%;
 }
 
@@ -249,7 +257,7 @@
   border: 3px solid #4f0190;
   padding: 12px 24px;
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
