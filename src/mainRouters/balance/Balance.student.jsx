@@ -72,7 +72,7 @@ function Balance() {
             <p className="hisoblar_header">Hisobdagi pul miqdori:</p>
             <p className="hisoblar_number">{profile.price} so'm</p>
             <p className="hisoblar_header">Tolov uchun ID:</p>
-            <p className="hisoblar_number">{profile._id}</p>
+            <p className="hisoblar_number">ID: {profile.tolovId}</p>
           </div>
         </div>
       </div>

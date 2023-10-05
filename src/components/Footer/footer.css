@@ -21,6 +21,9 @@
     padding: 0;
     padding-top: 16px;
   }
+  .hero_logo1 img{
+    display:none
+  }
 }
 
 @media only screen and (max-width: 900px) {
