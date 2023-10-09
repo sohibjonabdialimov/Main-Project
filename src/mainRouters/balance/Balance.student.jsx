@@ -10,21 +10,6 @@ let money = 650000;
 money = money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 let hisobraqam = 1234567890123456;
 hisobraqam = hisobraqam.toString().replace(/\B(?=(\d{4})+(?!\d))/g, " ");
-function deleteplatforma(url) {
-  try {
-    if (url.includes("platforma")) {
-      url = url.split("/");
-      let res = "";
-      for (let i = 2; i < url.length; i++) {
-        res += "/" + url[i];
-      }
-      return res;
-    }
-    return "/" + url;
-  } catch (error) {
-    console.log(error);
-  }
-}
 function Balance() {
   const [profile, setProfil] = useState({});
   useEffect(() => {
@@ -70,9 +55,9 @@ function Balance() {
         <div className="fife main-content">
           <div className="hisoblar">
             <p className="hisoblar_header">Hisobdagi pul miqdori:</p>
-            <p className="hisoblar_number">{profile.price} so'm</p>
+            <p className="hisoblar_number">{profile?.price} so'm</p>
             <p className="hisoblar_header">Tolov uchun ID:</p>
-            <p className="hisoblar_number">ID: {profile.tolovId}</p>
+            <p className="hisoblar_number">ID: {profile?.tolovId}</p>
           </div>
         </div>
       </div>
