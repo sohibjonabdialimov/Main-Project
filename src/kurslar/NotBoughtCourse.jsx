@@ -46,7 +46,7 @@ function NotBoughtCourse() {
         }
         return res;
       }
-      return "/" + url;
+      return "" + url;
     } catch (error) {
       console.log(error);
     }
@@ -85,6 +85,7 @@ function NotBoughtCourse() {
       )
       .then((response) => {
         console.log(response.data);
+        navigate("/student/kurs/olinganlar/" + kursId)
       })
       .catch((error) => {
         console.error(error);
@@ -108,7 +109,7 @@ function NotBoughtCourse() {
             changeModal={changeModal}
             modal={modal}
             modalDarslar={modalDarslar}
-            type={"Hisob balansi"}
+            type={"Kurs haqida"}
           />
           <div
             className="every__cource-bigImg"

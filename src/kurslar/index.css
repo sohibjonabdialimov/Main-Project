@@ -220,12 +220,16 @@ position: relative;
   .every__cource-nav {
     gap: 12px;
   }
+  .every__cource-info{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width:390px) {
   .every__cource-bigImg {
     height: 200px;
   }
+  
 }
 .free_mark{
   display: block;

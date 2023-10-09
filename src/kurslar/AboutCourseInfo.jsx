@@ -66,7 +66,7 @@ function AboutCourseInfo() {
 
   function deleteplatforma(url) {
     try {
-      if (url.includes("platforma")) {
+      if (url?.includes("platforma")) {
         url = url.split("/");
         let res = "";
         for (let i = 2; i < url.length; i++) {
@@ -128,12 +128,12 @@ function AboutCourseInfo() {
             changeModal={changeModal}
             modal={modal}
             modalDarslar={modalDarslar}
-            type={"Hisob balansi"}
+            type={"Kurs haqida"}
           />
           <div
             className="every__cource-bigImg"
             style={{
-              backgroundImage: `url(${"https://api.ilmlar.com" + deleteplatforma(kurs?.obloshka)
+              backgroundImage: `url(${"https://api.ilmlar.com/" + kurs?.obloshka
                 })`,
             }}
           ></div>
@@ -148,7 +148,7 @@ function AboutCourseInfo() {
               >
                 <img
                   src={
-                    ("https://api.ilmlar.com" + deleteplatforma(teacher?.path)) ? ("https://api.ilmlar.com" + deleteplatforma(teacher?.path)) : ("https://api.ilmlar.com" + (teacher?.path))
+                    ("https://api.ilmlar.com" + deleteplatforma(teacher?.path)) ? ("https://api.ilmlar.com" + (teacher?.path)) : ("https://api.ilmlar.com" + (teacher?.path))
                   }
                   alt=""
                 />

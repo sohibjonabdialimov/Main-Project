@@ -9,7 +9,7 @@ import axios from "axios";
 function Profile() {
   function deleteplatforma(url){
     try {
-      if(url.includes("platforma")){
+      if(url?.includes("platforma")){
         url=url.split("/")
         let res=""
         for(let i=2;i<url.length;i++){
