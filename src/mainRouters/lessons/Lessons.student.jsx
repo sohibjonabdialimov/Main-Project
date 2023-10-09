@@ -61,7 +61,7 @@ function Lessons() {
               type={"search"}
               setquery={setquery}
             />
-            <div className="fife  main-content sidebar-main-wrap_all">
+            <div className="main-content sidebar-main-wrap_all">
               <div className="student_lessons_wrap">
                 {courses.map((cart, index) => {
                   return <Cart cart={cart} key={index} />;

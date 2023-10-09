@@ -3,9 +3,10 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-bottom: 22px;
+  margin-bottom: 15px;
 }
 .profile-buttons button {
+  width: 145px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -17,7 +18,7 @@
   border: none;
   outline: none;
   color: #ffffff;
-  padding: 7px 23px;
+  padding: 7px 0px;
 }
 
 .profile-content {
@@ -46,7 +47,7 @@
 .profile-content {
   text-align: center;
     overflow-y: scroll;
-    /* height: 79vh; */
+    height: 89vh;
 }
 .profile-content-para {
   display: flex;
@@ -67,5 +68,13 @@
 @media  only screen and (max-width:540px) {
   .profile-content {
       height: 79vh;
+  }
+  .profile-content h1 {
+    font-size: 25px;
+    line-height: 39px;
+    margin-bottom: 25px;
+  }
+  .profile-content-para {
+    margin-bottom: 85px;
   }
 }

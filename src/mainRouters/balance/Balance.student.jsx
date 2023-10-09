@@ -67,7 +67,7 @@ function Balance() {
           modalDarslar={modalDarslar}
           type={"Hisob balansi"}
         />
-        <div className="fife main-content">
+        <div className="main-content">
           <div className="hisoblar">
             <p className="hisoblar_header">Hisobdagi pul miqdori:</p>
             <p className="hisoblar_number">{profile.price} so'm</p>
