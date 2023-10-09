@@ -5,10 +5,11 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import styles from "./courseInfo.module.css";
+import MobileHeader from "../components/mobileHeader/mobileHeader";
 
 function deleteplatforma(url) {
   try {
-    if (url.includes("platforma")) {
+    if (url?.includes("platforma")) {
       const parts = url.split("/");
       const s = parts.slice(2).join("/");
       console.log(s);
@@ -49,12 +50,30 @@ function Baykurs() {
   }, [kursId]);
   console.log(courseData);
   console.log(selectedVideo);
-  return (
+  let [modal, setModal] = useState(false);
+  let [modalDarslar, setModalDarslar] = useState(false);
+  const changeModal = (value) => {
+    setModal(value);
+  };
+
+  const changeModalDars = (value) => {
+    setModalDarslar(value);
+  };
+  return (<>
+    <MobileHeader
+            changeModalDars={changeModalDars}
+            changeModal={changeModal}
+            modal={modal}
+            modalDarslar={modalDarslar}
+            type={"playlist"}
+          />
     <div className="app-content">
+      
       <div className={styles.course_info}>
         <button onClick={onBack} className={styles.back}>
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
+        
         <div className="videos_navbar">
           <ul>
             {courseData.map((course, index) => (
@@ -87,7 +106,7 @@ function Baykurs() {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 
